@@ -38,11 +38,11 @@ It's free to use on ['https://beefree.io'](https://beefree.io): you don't even n
 > You can either install it with [npm](https://nodejs.org) or [yarn](https://yarnpkg.com).
 
 ```sh
-npm install --save bee-plugin
+npm install --save @mailupinc/bee-plugin
 ```
 or
 ```sh
-yarn add bee-plugin
+yarn add @mailupinc/bee-plugin
 ```
 
 ## Get token
@@ -51,7 +51,7 @@ yarn add bee-plugin
 It's not really raccomended to do it client side but it's possible with the module, just call getToken
 
 ```js
-import Bee from 'bee-plugin'
+import Bee from '@mailupinc/bee-plugin'
 
 const beeTest = new Bee()
 
@@ -63,7 +63,7 @@ beeTest.getToken(clientId, clientSecret)
 > Initialize the BEE instance with a server side generated token
 
 ```js
-import Bee from 'bee-plugin'
+import Bee from '@mailupinc/bee-plugin'
 
 const beeTest = new Bee(token)
 
