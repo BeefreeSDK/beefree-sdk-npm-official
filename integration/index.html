@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>BEE Plugin - Integration Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+      * {
+        margin:0px;
+        padding:0px;
+      }
+      body {
+        overflow:hidden;
+        background-color: #CCCCCC;
+        color:#000000;
+      }
+      button,
+      input[type="file"] {
+        font-size: 11px;
+        background: white;
+        border: 0;
+        border-radius: 4px;
+        font-weight: bold;
+        color: #888888;
+      }
+      button {
+        padding: 3px 15px;
+      }
+      #bee-plugin-container {
+        position: absolute;
+        top:5px;
+        bottom:30px;
+        left:5px;
+        right:5px;
+      }
+      #integrator-bottom-bar {
+        position: absolute;
+        height: 25px;
+        bottom:0px;
+        left:5px;
+        right:0px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bee-plugin-container"></div>
+    <div id="integrator-bottom-bar">
+      <span>Select template (json) to load (trigger load): <input id="trigger-load" type="file" /></span>
+      <button id="trigger-save" type="button">Trigger save</button>
+      <button id="trigger-saveAsTemplate" type="button">Trigger saveAsTemplate</button>
+      <button id="trigger-send" type="button">Trigger send</button>
+      <button id="trigger-preview" type="button">Trigger preview</button>
+      <button id="trigger-toggleStructure" type="button">Trigger toggleStructure</button>
+    </div>
+  </body>
+</html>
