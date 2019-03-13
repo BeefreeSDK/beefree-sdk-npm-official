@@ -2,10 +2,13 @@ import loadScript from 'load-script'
 import beeActions from './utils/Constants'
 
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
+
 const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
 
+let beeLoaderUrl = null; 
+
 const load = (bee) => {
-  loadScript(BEEJS_URL, err => {
+  loadScript(beeLoaderUrl.beePluginUrl, err => {
     if (err) {
       throw new Error('BeePlugin.js is not reachable')
     }
@@ -29,15 +32,17 @@ const isValidAction = action => {
 const { LOAD, SAVE, SEND, PREVIEW, SAVE_AS_TEMPLATE, TOGGLE_STRUCTURE } = beeActions
 
 export default class Bee {
-  constructor(token) {
+  constructor(token, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {    
+    beeLoaderUrl = urlConfig
     this.bee = (call) => load(() => call())
     this.token = token || null
     this.config = null
-    this.instance = null
+    this.instance = null    
   }
 
-  getToken(clientId, clientSecret) {
-    const config = {
+  getToken(clientId, clientSecret, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {
+    beeLoaderUrl = urlConfig;
+    const beeConfig = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -48,7 +53,9 @@ export default class Bee {
     if (this.token) {
       throw new Error('Toker already declared')
     }
-    return fetch(new Request(API_AUTH_URL, config))
+    
+    
+    return fetch(new Request(beeLoaderUrl.authUrl, beeConfig))
     .then(res => res.json())
     .then(token => {
       this.token = token

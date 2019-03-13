@@ -3,6 +3,9 @@ import { clientId, clientSecret } from '../config/integrationKeys'
 
 const BEE_TEMPLATE_URL = 'https://rsrc.getbee.io/api/templates/m-bee'
 
+const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
+const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
+
 const specialLinks = [{
   type: 'unsubscribe',
   label: 'SpecialLink.Unsubscribe',
@@ -87,7 +90,9 @@ const addEvents = () => {
   .addEventListener('click', () => beeTest.toggleStructure(), false)
 }
 
-beeTest.getToken(clientId, clientSecret)
+const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
+
+beeTest.getToken(clientId, clientSecret, conf)
 .then(() => fetch(new Request(BEE_TEMPLATE_URL, { method: 'GET' })))
 .then(res => res.json())
 .then(template => {
