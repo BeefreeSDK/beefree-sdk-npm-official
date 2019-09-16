@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "clean": "rimraf dist",
-    "build": "(npm run lint && npm run clean && webpack --config ./config/webpack.config.module.js)",
+    "build": "(npm run lint && npm run clean && webpack --mode=production --config ./config/webpack.config.module.js)",
     "lint": "eslint --ignore-path .gitignore ./src"
   },
   "repository": "git+https://github.com/BEE-Plugin/Bee-plugin-official.git",
@@ -42,6 +42,7 @@
     "http-proxy-middleware": "^0.20.0",
     "rimraf": "^3.0.0",
     "webpack": "^4.0.0",
+    "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.0.0"
   },
   "dependencies": {

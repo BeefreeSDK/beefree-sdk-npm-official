@@ -29,7 +29,14 @@ const isValidAction = action => {
   }
 }
 
-const { LOAD, SAVE, SEND, PREVIEW, SAVE_AS_TEMPLATE, TOGGLE_STRUCTURE } = beeActions
+const { 
+  LOAD, 
+  SAVE, 
+  SEND, 
+  PREVIEW, 
+  SAVE_AS_TEMPLATE, 
+  TOGGLE_STRUCTURE 
+} = beeActions
 
 export default class Bee {
   constructor(token, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {    
@@ -56,11 +63,11 @@ export default class Bee {
     
     
     return fetch(new Request(beeLoaderUrl.authUrl, beeConfig))
-    .then(res => res.json())
-    .then(token => {
-      this.token = token
-      return token
-    })
+      .then(res => res.json())
+      .then(token => {
+        this.token = token
+        return token
+      })
   }
 
   start(config, template) {
@@ -72,13 +79,11 @@ export default class Bee {
       throw new Error('Token NOT declared, call getToken or pass token on new BEE')
     }
     return new Promise(resolve => {
-      bee(() =>
-        BeePlugin.create(token, config, instance => {
-          this.instance = instance
-          instance.start(template)
-          resolve(instance)
-        })
-      )
+      bee(() => BeePlugin.create(token, config, instance => {
+        this.instance = instance
+        instance.start(template)
+        resolve(instance)
+      }))
     })
   }
 
