@@ -12,14 +12,10 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader?presets[]=env'
-      }
-    ]
+  optimization: {
+    minimize: false,
+  },
+  module: { 
   },
   plugins: [
     new HtmlWebpackPlugin({

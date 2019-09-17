@@ -72,32 +72,31 @@ const loadTemplate = (e) => {
 
 const addEvents = () => {
   window.document.getElementById('trigger-load')
-  .addEventListener('change', loadTemplate, false)
+    .addEventListener('change', loadTemplate, false)
 
   window.document.getElementById('trigger-save')
-  .addEventListener('click', () => beeTest.save(), false)
+    .addEventListener('click', () => beeTest.save(), false)
 
   window.document.getElementById('trigger-send')
-  .addEventListener('click', () => beeTest.send(), false)
+    .addEventListener('click', () => beeTest.send(), false)
 
   window.document.getElementById('trigger-saveAsTemplate')
-  .addEventListener('click', () => beeTest.saveAsTemplate(), false)
+    .addEventListener('click', () => beeTest.saveAsTemplate(), false)
 
   window.document.getElementById('trigger-preview')
-  .addEventListener('click', () => beeTest.preview(), false)
+    .addEventListener('click', () => beeTest.preview(), false)
 
   window.document.getElementById('trigger-toggleStructure')
-  .addEventListener('click', () => beeTest.toggleStructure(), false)
+    .addEventListener('click', () => beeTest.toggleStructure(), false)
 }
 
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
 
 beeTest.getToken(clientId, clientSecret, conf)
-.then(() => fetch(new Request(BEE_TEMPLATE_URL, { method: 'GET' })))
-.then(res => res.json())
-.then(template => {
-  beeTest.start(beeConfig, template)
-   .then(instance =>
-     console.log('promise resolve return instance', instance))
-  addEvents()
-})
+  .then(() => fetch(new Request(BEE_TEMPLATE_URL, { method: 'GET' })))
+  .then(res => res.json())
+  .then(template => {
+    beeTest.start(beeConfig, template)
+      .then(instance => console.log('promise resolve return instance', instance))
+    addEvents()
+  })
