@@ -41,11 +41,14 @@ const beeConfig = {
   onSave: (jsonFile, htmlFile) => {
     console.log('onSave', jsonFile, htmlFile)
   },
+  onLoad: (jsonFile) => {
+    console.error('*** [integration] loading a new template...', jsonFile);
+  },
   onSaveAsTemplate: (jsonFile) => {
     console.log('onSaveAsTemplate', jsonFile)
   },
   onAutoSave: (jsonFile) => {
-    console.log(`${new Date().toISOString()} autosaving...`)
+    console.log(`${new Date().toISOString()} autosaving...,`, jsonFile)
     window.localStorage.setItem('newsletter.autosave', jsonFile)
   },
   onSend: (htmlFile) => {
@@ -53,6 +56,18 @@ const beeConfig = {
   },
   onError: (errorMessage) => {
     console.log('onError ', errorMessage)
+  }, 
+  onChange: (msg, response) => {
+    console.warn('*** [integration] (OnChange) message > ', msg, response);
+  },
+  onWarning: (a, b) => {
+    console.warn('*** [integration] (OnWarning) message a > ', a);
+  },
+  onPreview: () => {
+    console.warn('*** [integration] --> (onPreview) ');
+  },
+  onTogglePreview: () => {
+    console.warn('*** [integration] --> (onTogglePreview) ');
   }
 }
 
@@ -67,11 +82,13 @@ const loadTemplate = (e) => {
     const template = JSON.parse(templateString)
     beeTest.load(template)
   }
+
+  document.getElementById('choose-template').value = ''
   reader.readAsText(templateFile)
 }
 
 const addEvents = () => {
-  window.document.getElementById('trigger-load')
+  window.document.getElementById('choose-template')
     .addEventListener('change', loadTemplate, false)
 
   window.document.getElementById('trigger-save')
@@ -88,6 +105,9 @@ const addEvents = () => {
 
   window.document.getElementById('trigger-toggleStructure')
     .addEventListener('click', () => beeTest.toggleStructure(), false)
+
+  window.document.getElementById('trigger-togglePreview')
+    .addEventListener('click', () => beeTest.togglePreview(), false)
 }
 
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
