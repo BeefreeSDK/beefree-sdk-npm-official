@@ -4,54 +4,45 @@
   <title>BEE Plugin - Integration Example</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type="text/css">
-      * {
-        margin:0px;
-        padding:0px;
-      }
-      body {
-        overflow:hidden;
-        background-color: #CCCCCC;
-        color:#000000;
-      }
-      button,
-      input[type="file"] {
-        font-size: 11px;
-        background: white;
-        border: 0;
-        border-radius: 4px;
-        font-weight: bold;
-        color: #888888;
-      }
-      button {
-        padding: 3px 15px;
-      }
-      #bee-plugin-container {
-        position: absolute;
-        top:5px;
-        bottom:30px;
-        left:5px;
-        right:5px;
-      }
-      #integrator-bottom-bar {
-        position: absolute;
-        height: 25px;
-        bottom:0px;
-        left:5px;
-        right:0px;
-        font-size: 14px;
-      }
-    </style>
+    <link rel="stylesheet" href="index.css">
+    <script>
+         function chooseFile () {
+          document.getElementById('choose-template').click();
+        }
+    </script>
   </head>
   <body>
     <div id="bee-plugin-container"></div>
     <div id="integrator-bottom-bar">
-      <span>Select template (json) to load (trigger load): <input id="trigger-load" type="file" /></span>
+      <span class="btnGroup btnGroupLeft" style="display:inline-block;vertical-align:top;"> 
+          <span style="display:inline-block;vertical-align:top;" class="loadTemplate" >
+            <label>Select template to load:</label>
+            <input id="choose-template" type="file">
+            <button class="btn loadButton" type="button" value="send" onclick="chooseFile()">
+              Load file
+            </button>
+          </span>
+        </span>
+        <span class="btnGroup btnGroupCenter" style="display:inline-block;vertical-align:top;"> 
+            <span class="sendTest">
+              <span style="display:inline-block;vertical-align:top;"><label>Send test e-mail to:</label> <input id="integrator-test-emails" type="text"></span>
+              <span style="display:inline-block;vertical-align:top;"> 
+                <button id='trigger-send' class="btn sendTestButton" type="button" value="send">Send</button>
+              </span>
+            </span>
+          </span>
+          <span class="btnGroup btnGroupRight" style="display:inline-block;vertical-align:top;"> 
+            <button id="trigger-saveAsTemplate" class="btn saveButton" type="button" value="save">Save HTML</button>
+            <button  id="trigger-save" class="btn saveAsTemplateButton" type="button" value="save json"></i>save json</button>
+            <button id="trigger-preview"  class="btn previewButton" type="button" value="preview"></i>preview</button>
+            <button  id="trigger-toggleStructure" class="btn toggleStructureButton" type="button" value="toggle structure"></i>toggle structure</button>
+      </span>
+      <!--<span>Select template (json) to load (trigger load): <input id="trigger-load" type="file" /></span>
       <button id="trigger-save" type="button">Trigger save</button>
       <button id="trigger-saveAsTemplate" type="button">Trigger saveAsTemplate</button>
       <button id="trigger-send" type="button">Trigger send</button>
       <button id="trigger-preview" type="button">Trigger preview</button>
-      <button id="trigger-toggleStructure" type="button">Trigger toggleStructure</button>
+      <button id="trigger-toggleStructure" type="button">Trigger toggleStructure</button>-->
     </div>
   </body>
 </html>
