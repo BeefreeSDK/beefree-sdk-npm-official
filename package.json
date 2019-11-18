@@ -20,7 +20,7 @@
     "plugin"
   ],
   "author": "BeeFree.io",
-  "license": "MIT",
+  "license": "Apache 2.0",
   "bugs": {
     "url": "https://github.com/BEE-Plugin/Bee-plugin-official"
   },
