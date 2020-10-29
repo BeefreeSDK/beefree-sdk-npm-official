@@ -35,7 +35,12 @@ const {
   SEND, 
   PREVIEW, 
   SAVE_AS_TEMPLATE, 
-  TOGGLE_STRUCTURE 
+  TOGGLE_STRUCTURE,
+  TOGGLE_COMMENTS,
+  RELOAD,
+  JOIN,
+  OPEN_FILE_PICKER,
+  LOAD_WORKSPACE
 } = beeActions
 
 export default class Bee {
@@ -110,11 +115,31 @@ export default class Bee {
     return this.executeAction(SEND)
   }
 
+  join() {
+    return this.executeAction(JOIN)
+  }
+
   preview() {
     return this.executeAction(PREVIEW)
   }
 
   toggleStructure() {
     return this.executeAction(TOGGLE_STRUCTURE)
+  }
+
+  toggleComments() {
+    return this.executeAction(TOGGLE_COMMENTS)
+  }
+
+  reload() {
+    return this.executeAction(RELOAD)
+  }
+
+  openFilePicker() {
+    return this.executeAction(OPEN_FILE_PICKER)
+  }
+  
+  loadWorkspace() {
+    return this.executeAction(LOAD_WORKSPACE)
   }
 }
