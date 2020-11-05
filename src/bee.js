@@ -75,7 +75,7 @@ export default class Bee {
       })
   }
 
-  start(config, template) {
+  start(config, template, bucketDir) {
     const { bee, token } = this
     if (!config || !template) {
       throw new Error('Config or template are missing')
@@ -88,15 +88,15 @@ export default class Bee {
         this.instance = instance
         instance.start(template)
         resolve(instance)
-      }))
+      }, bucketDir))
     })
   }
 
-  executeAction(action, param) {
+  executeAction(action, param, options) {
     const { instance } = this
     beeExists(instance)
     isValidAction(action)
-    return instance[action](param)
+    return instance[action](param, options)
   }
 
   load(template) {
@@ -115,8 +115,8 @@ export default class Bee {
     return this.executeAction(SEND)
   }
 
-  join() {
-    return this.executeAction(JOIN)
+  join(sessionId) {
+    return this.executeAction(JOIN, sessionId)
   }
 
   preview() {
@@ -131,15 +131,15 @@ export default class Bee {
     return this.executeAction(TOGGLE_COMMENTS)
   }
 
-  reload() {
-    return this.executeAction(RELOAD)
+  reload(template, options) {
+    return this.executeAction(RELOAD, template, options)
   }
 
   openFilePicker() {
     return this.executeAction(OPEN_FILE_PICKER)
   }
   
-  loadWorkspace() {
-    return this.executeAction(LOAD_WORKSPACE)
+  loadWorkspace(type) {
+    return this.executeAction(LOAD_WORKSPACE, type)
   }
 }

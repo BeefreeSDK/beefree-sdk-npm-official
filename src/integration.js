@@ -30,6 +30,29 @@ const mergeContents = [{
   value: '[content1]'
 }]
 
+function userInput(message, sample) {
+  return function handler(resolve, reject) {
+    var data = prompt(message, JSON.stringify(sample));
+    return data == null || data == ""
+      ? reject()
+      : resolve(JSON.parse(data));
+  };
+}
+
+const contentDialog = {
+  filePicker: {
+    label: 'Picker',
+    handler: (reject, resolve, args) => {
+      console.log('reject: ', reject)
+      console.log('resolve: ', resolve)
+      console.log('args: ', args)
+      userInput('Enter image path:', {
+        url: 'https://d1oco4z2z1fhwp.cloudfront.net/templates/default/113/rocket-color.png',
+      })
+    }
+  },
+}
+
 const beeConfig = {
   uid: 'test1-clientside',
   container: 'bee-plugin-container',
@@ -38,6 +61,7 @@ const beeConfig = {
   specialLinks,
   mergeTags,
   mergeContents,
+  contentDialog,
   onSave: (jsonFile, htmlFile) => {
     console.log('onSave', jsonFile, htmlFile)
   },
@@ -106,8 +130,23 @@ const addEvents = () => {
   window.document.getElementById('trigger-toggleStructure')
     .addEventListener('click', () => beeTest.toggleStructure(), false)
 
-  window.document.getElementById('trigger-togglePreview')
+  window.document.getElementById('trigger-preview')
     .addEventListener('click', () => beeTest.togglePreview(), false)
+
+  window.document.getElementById('trigger-toggleComments')
+    .addEventListener('click', () => beeTest.toggleComments(), false)
+
+  window.document.getElementById('trigger-reload')
+    .addEventListener('click', () => beeTest.reload(), false)
+
+  window.document.getElementById('trigger-join')
+    .addEventListener('click', () => beeTest.join(), false)
+
+  window.document.getElementById('trigger-loadWorkspace')
+    .addEventListener('click', () => beeTest.loadWorkspace('mixed'), false)
+
+  window.document.getElementById('trigger-openFilePicker')
+    .addEventListener('click', () => beeTest.openFilePicker(), false)
 }
 
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
