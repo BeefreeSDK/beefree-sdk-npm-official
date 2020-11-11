@@ -150,6 +150,18 @@ This call BeePlugin `preview` which trigger the preview modal inside the editor.
 ### toggleStructure()
 This call BeePlugin `toggleStructure` which toggle the structure helper on the editor's stage.
 
+### toggleComments()
+This call BeePlugin `toggleStructure` which toggle the comments section on the editor's sidebar.
+
+### join(sessionId)
+This call BeePlugin `join` which ...
+
+### reload(template, options)
+This call BeePlugin `reload` which ...
+
+### loadWorkspace(type)
+This call BeePlugin `loadWorkspace` which ...
+
 ## Test (WIP)
 ```sh
 npm test

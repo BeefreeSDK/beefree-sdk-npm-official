@@ -134,10 +134,6 @@ export default class Bee {
   reload(template, options) {
     return this.executeAction(RELOAD, template, options)
   }
-
-  openFilePicker() {
-    return this.executeAction(OPEN_FILE_PICKER)
-  }
   
   loadWorkspace(type) {
     return this.executeAction(LOAD_WORKSPACE, type)

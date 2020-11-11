@@ -9,8 +9,7 @@ const beeActions = {
   TOGGLE_STRUCTURE: 'toggleStructure',
   TOGGLE_COMMENTS: 'toggleComments',
   JOIN: 'join',
-  RELOAD: 'reload',
-  OPEN_FILE_PICKER: 'openFilePicker',
+  RELOAD: 'reload',  
   LOAD_WORKSPACE: 'loadWorkspace'
 }
 
