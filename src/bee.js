@@ -38,8 +38,6 @@ const {
   TOGGLE_STRUCTURE,
   TOGGLE_COMMENTS,
   RELOAD,
-  JOIN,
-  OPEN_FILE_PICKER,
   LOAD_WORKSPACE
 } = beeActions
 
@@ -65,8 +63,7 @@ export default class Bee {
     if (this.token) {
       throw new Error('Toker already declared')
     }
-    
-    
+
     return fetch(new Request(beeLoaderUrl.authUrl, beeConfig))
       .then(res => res.json())
       .then(token => {
@@ -75,7 +72,7 @@ export default class Bee {
       })
   }
 
-  start(config, template, bucketDir) {
+  start(config, template, bucketDir, options) {
     const { bee, token } = this
     if (!config || !template) {
       throw new Error('Config or template are missing')
@@ -86,7 +83,24 @@ export default class Bee {
     return new Promise(resolve => {
       bee(() => BeePlugin.create(token, config, instance => {
         this.instance = instance
-        instance.start(template)
+        instance.start(template, options)
+        resolve(instance)
+      }, bucketDir))
+    })
+  }
+
+  join(config, sessionId, bucketDir) {
+    const { bee, token } = this
+    if (!config || !sessionId) {
+      throw new Error('Config or session id are missing')
+    }
+    if (!this.token) {
+      throw new Error('Token NOT declared, call getToken or pass token on new BEE')
+    }
+    return new Promise(resolve => {
+      bee(() => BeePlugin.create(token, config, instance => {
+        this.instance = instance
+        instance.join(sessionId)
         resolve(instance)
       }, bucketDir))
     })
@@ -113,10 +127,6 @@ export default class Bee {
 
   send() {
     return this.executeAction(SEND)
-  }
-
-  join(sessionId) {
-    return this.executeAction(JOIN, sessionId)
   }
 
   preview() {

@@ -219,7 +219,11 @@ button {
   margin-right: 0;
 }
 
-#choose-template {
+#load-template {
+  display: none;
+}
+
+#reload-template {
   display: none;
 }
 

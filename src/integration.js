@@ -2,7 +2,6 @@ import Bee from './bee'
 import { clientId, clientSecret } from '../config/integrationKeys'
 
 const BEE_TEMPLATE_URL = 'https://rsrc.getbee.io/api/templates/m-bee'
-
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
 const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
 
@@ -46,17 +45,31 @@ const contentDialog = {
   },
 }
 
-function save(filename, content) {  
+function save(filename, content) {
   saveAs(
     new Blob([content], { type: "text/plain;charset=utf-8" }),
     filename
   );
 }
 
+function getParameterByName(name, url) {
+  var url = window.location.href;
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+  if (!results) return '';
+  if (!results[2]) return '';
+  var val = decodeURIComponent(results[2].replace(/\+/g, " "));
+  return val;
+}
 
 const beeConfig = {
   uid: 'test1-clientside',
   container: 'bee-plugin-container',
+  username: getParameterByName('username') || 'Test User',
+  userColor: `#${getParameterByName('userColor') || '00aba5'}`,
+  commenting: getParameterByName('commenting') == 'true' ? true : false,
+  userHandle: getParameterByName('userHandle') || '2468',
   autosave: 15,
   language: 'en-US',
   specialLinks,
@@ -68,7 +81,7 @@ const beeConfig = {
     save('newsletter-template.html', htmlFile)
   },
   onLoad: (jsonFile) => {
-    console.error('*** [integration] loading a new template...', jsonFile);    
+    console.error('*** [integration] loading a new template...', jsonFile);
   },
   onSaveAsTemplate: (jsonFile) => {
     console.log('onSaveAsTemplate', jsonFile)
@@ -83,7 +96,7 @@ const beeConfig = {
   },
   onError: (errorMessage) => {
     console.log('onError ', errorMessage)
-  }, 
+  },
   onChange: (msg, response) => {
     console.warn('*** [integration] (OnChange) message > ', msg, response);
   },
@@ -95,28 +108,41 @@ const beeConfig = {
   },
   onTogglePreview: () => {
     console.warn('*** [integration] --> (onTogglePreview) ');
-  }
+  },
+  onSessionStarted: function (sessionInfo) {
+    console.warn('*** [integration] --> (onSessionStarted) ', sessionInfo);
+    prompt("press ctrl+c to copy the session ID", sessionInfo.sessionId)
+  },
+  onSessionChange: function (sessionInfo) {
+    console.warn('*** [integration] --> (onSessionChange) ', sessionInfo);
+  },
 }
-
 
 const beeTest = new Bee()
 
-const loadTemplate = (e) => {
+const loadTemplate = (e, method) => {
   const templateFile = e.target.files[0]
   const reader = new FileReader()
   reader.onload = () => {
     const templateString = reader.result
     const template = JSON.parse(templateString)
-    beeTest.load(template)
+    if (method === 'load') {
+      beeTest.load(template)
+    } else {
+      beeTest.reload(template)
+    }    
   }
-
-  document.getElementById('choose-template').value = ''
+  document.getElementById('load-template').value = ''
+  document.getElementById('reload-template').value = ''
   reader.readAsText(templateFile)
 }
 
 const addEvents = () => {
-  window.document.getElementById('choose-template')
-    .addEventListener('change', loadTemplate, false)
+  window.document.getElementById('load-template')
+    .addEventListener('change', e => loadTemplate(e, 'load'), false)
+
+  window.document.getElementById('reload-template')
+    .addEventListener('change', e => loadTemplate(e, 'reload'), false)
 
   window.document.getElementById('trigger-save')
     .addEventListener('click', () => beeTest.save(), false)
@@ -139,12 +165,6 @@ const addEvents = () => {
   window.document.getElementById('trigger-toggleComments')
     .addEventListener('click', () => beeTest.toggleComments(), false)
 
-  window.document.getElementById('trigger-reload')
-    .addEventListener('click', () => beeTest.reload(), false)
-
-  window.document.getElementById('trigger-join')
-    .addEventListener('click', () => beeTest.join(), false)
-
   window.document.getElementById('trigger-loadWorkspace')
     .addEventListener('click', () => beeTest.loadWorkspace('mixed'), false)
 }
@@ -155,7 +175,13 @@ beeTest.getToken(clientId, clientSecret, conf)
   .then(() => fetch(new Request(BEE_TEMPLATE_URL, { method: 'GET' })))
   .then(res => res.json())
   .then(template => {
-    beeTest.start(beeConfig, template)
-      .then(instance => console.log('promise resolve return instance', instance))
+    const sessionId = getParameterByName('sessionId')
+    const shared = getParameterByName('shared') === 'true'
+    if (sessionId) {
+      beeTest.join(beeConfig, sessionId, null)
+    } else {
+      beeTest.start(beeConfig, template, null, { shared })
+        .then(instance => console.log('promise resolve return instance', instance))
+    }
     addEvents()
   })

@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="index.css">
     <script>
-         function chooseFile () {
-          document.getElementById('choose-template').click();
+        function chooseFile (method) {
+          if (method === 'load') {
+            document.getElementById('load-template').click();
+          } else {
+            document.getElementById('reload-template').click();
+          }          
         }
     </script>
     <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/5ed507ef8aa53d8ecfea96d96bc7214cd2476fd2/FileSaver.min.js"></script>
@@ -18,8 +22,9 @@
       <span class="btnGroup btnGroupLeft" style="display:inline-block;vertical-align:top;"> 
           <span style="display:inline-block;vertical-align:top;" class="loadTemplate" >
             <label>Select template to load:</label>
-            <input id="choose-template" type="file">
-            <button class="btn loadButton" type="button" value="send" onclick="chooseFile()">
+            <input id="load-template" type="file">
+            <input id="reload-template" type="file">
+            <button class="btn loadButton" type="button" value="send" onclick="chooseFile('load')">
               Load file
             </button>
           </span>
@@ -42,9 +47,8 @@
               <span class="otherActions">Other actions</span>
               <div class="dropdown-content">
                 <div id="trigger-toggleComments" class="item-dropdown" type="button" value="toggle comments"></i>toggle comments</div>
-                <div id="trigger-reload"  class="item-dropdown" type="button" value="reload"></i>reload</div>
-                <div id="trigger-join"  class="item-dropdown" type="button" value="join"></i>join</div>
-                <div id="trigger-loadWorkspace"  class="item-dropdown" type="button" value="join"></i>load workspace</div>                
+                <!-- <div id="trigger-reload" onclick="chooseFile('reload')" class="item-dropdown" type="button" value="reload"></i>reload</div> -->
+                <div id="trigger-loadWorkspace"  class="item-dropdown" type="button" value="workspace"></i>load workspace</div>                
               </div>
             </div>
         </span>        
