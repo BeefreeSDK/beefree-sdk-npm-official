@@ -35,7 +35,10 @@ const {
   SEND, 
   PREVIEW, 
   SAVE_AS_TEMPLATE, 
-  TOGGLE_STRUCTURE 
+  TOGGLE_STRUCTURE,
+  TOGGLE_COMMENTS,
+  RELOAD,
+  LOAD_WORKSPACE
 } = beeActions
 
 export default class Bee {
@@ -60,8 +63,7 @@ export default class Bee {
     if (this.token) {
       throw new Error('Toker already declared')
     }
-    
-    
+
     return fetch(new Request(beeLoaderUrl.authUrl, beeConfig))
       .then(res => res.json())
       .then(token => {
@@ -70,7 +72,7 @@ export default class Bee {
       })
   }
 
-  start(config, template) {
+  start(config, template, bucketDir, options) {
     const { bee, token } = this
     if (!config || !template) {
       throw new Error('Config or template are missing')
@@ -81,17 +83,34 @@ export default class Bee {
     return new Promise(resolve => {
       bee(() => BeePlugin.create(token, config, instance => {
         this.instance = instance
-        instance.start(template)
+        instance.start(template, options)
         resolve(instance)
-      }))
+      }, bucketDir))
     })
   }
 
-  executeAction(action, param) {
+  join(config, sessionId, bucketDir) {
+    const { bee, token } = this
+    if (!config || !sessionId) {
+      throw new Error('Config or session id are missing')
+    }
+    if (!this.token) {
+      throw new Error('Token NOT declared, call getToken or pass token on new BEE')
+    }
+    return new Promise(resolve => {
+      bee(() => BeePlugin.create(token, config, instance => {
+        this.instance = instance
+        instance.join(sessionId)
+        resolve(instance)
+      }, bucketDir))
+    })
+  }
+
+  executeAction(action, param, options) {
     const { instance } = this
     beeExists(instance)
     isValidAction(action)
-    return instance[action](param)
+    return instance[action](param, options)
   }
 
   load(template) {
@@ -116,5 +135,17 @@ export default class Bee {
 
   toggleStructure() {
     return this.executeAction(TOGGLE_STRUCTURE)
+  }
+
+  toggleComments() {
+    return this.executeAction(TOGGLE_COMMENTS)
+  }
+
+  reload(template, options) {
+    return this.executeAction(RELOAD, template, options)
+  }
+  
+  loadWorkspace(type) {
+    return this.executeAction(LOAD_WORKSPACE, type)
   }
 }
