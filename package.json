@@ -1,6 +1,6 @@
 {
   "name": "@mailupinc/bee-plugin",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "wrapper of bee-plugin",
   "main": "dist/index.js",
   "files": [
