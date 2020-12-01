@@ -40,6 +40,8 @@ const DEFAULT_PORT = process.env.PORT || 3030
 let compiler
 let handleCompile
 
+console.log('listening on port: ', DEFAULT_PORT)
+
 var friendlySyntaxErrorLabel = 'Syntax error:';
 
 function isLikelyASyntaxError(message) {
