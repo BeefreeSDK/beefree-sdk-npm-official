@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Bee from './bee'
 import { clientId, clientSecret } from '../config/integrationKeys'
 
@@ -47,19 +48,19 @@ const contentDialog = {
 
 function save(filename, content) {
   saveAs(
-    new Blob([content], { type: "text/plain;charset=utf-8" }),
+    new Blob([content], { type: 'text/plain;charset=utf-8' }),
     filename
   );
 }
 
-function getParameterByName(name, url) {
-  var url = window.location.href;
-  name = name.replace(/[\[\]]/g, "\\$&");
-  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-    results = regex.exec(url);
+function getParameterByName(name) {
+  const newUrl = window.location.href;
+  name.replace(/[[\]]/g, '\\$&');
+  const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`);
+  const results = regex.exec(newUrl);
   if (!results) return '';
   if (!results[2]) return '';
-  var val = decodeURIComponent(results[2].replace(/\+/g, " "));
+  const val = decodeURIComponent(results[2].replace(/\+/g, ' '));
   return val;
 }
 
@@ -68,7 +69,7 @@ const beeConfig = {
   container: 'bee-plugin-container',
   username: getParameterByName('username') || 'Test User',
   userColor: `#${getParameterByName('userColor') || '00aba5'}`,
-  commenting: getParameterByName('commenting') == 'true' ? true : false,
+  commenting: getParameterByName('commenting') === 'true',
   userHandle: getParameterByName('userHandle') || '2468',
   autosave: 15,
   language: 'en-US',
@@ -109,11 +110,11 @@ const beeConfig = {
   onTogglePreview: () => {
     console.warn('*** [integration] --> (onTogglePreview) ');
   },
-  onSessionStarted: function (sessionInfo) {
+  onSessionStarted: (sessionInfo) => {
     console.warn('*** [integration] --> (onSessionStarted) ', sessionInfo);
-    prompt("press ctrl+c to copy the session ID", sessionInfo.sessionId)
+    prompt('press ctrl+c to copy the session ID', sessionInfo.sessionId)
   },
-  onSessionChange: function (sessionInfo) {
+  onSessionChange: (sessionInfo) => {
     console.warn('*** [integration] --> (onSessionChange) ', sessionInfo);
   },
 }
