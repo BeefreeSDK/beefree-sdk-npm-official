@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "@mailupinc/eslint-config",
+    "@mailupinc/eslint-config/react/hooks"
+  ],
+  "rules": {
+    "react/prop-types": 0,
+    "no-shadow": 0,
+    "no-undef": 0,
+    "react/require-default-props": 0
+  },
+  "parserOptions": {
+    "project": "tsconfig.eslint.json"
+  }
+}

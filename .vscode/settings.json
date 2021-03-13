@@ -1,0 +1,16 @@
+{
+  "eslint.alwaysShowStatus": true,
+  "javascript.validate.enable": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.enable": true,
+  "files.associations": {
+    "yarn.lock": "yaml",
+    ".eslintrc": "json"
+  },
+  "stylelint.autoFixOnSave": false,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "deno.enable": false
+}
