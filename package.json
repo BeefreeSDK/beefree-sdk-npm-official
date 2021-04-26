@@ -12,10 +12,13 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "lint-staged": {
+    "*.ts": "eslint"
+  },
   "scripts": {
     "start": "node scripts/start.js",
     "clean": "rimraf dist",
-    "build": "(npm run lint && npm run clean && webpack --mode=production --config ./config/webpack.config.module.js)",
+    "build": "rollup -c",
     "lint": "eslint --ignore-path .gitignore ./src"
   },
   "repository": "git+https://github.com/BEE-Plugin/Bee-plugin-official.git",
@@ -54,6 +57,8 @@
     "lint-staged": "^10.5.4",
     "rimraf": "^3.0.0",
     "rollup": "^2.41.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.2.3",
     "webpack": "^4.0.0",
@@ -62,6 +67,8 @@
   },
   "dependencies": {
     "ajv": "^6.10.2",
+    "axios": "^0.21.1",
+    "fp-ts": "^2.9.5",
     "load-script": "^1.0.0",
     "whatwg-fetch": "^3.0.0"
   }

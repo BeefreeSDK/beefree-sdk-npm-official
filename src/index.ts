@@ -1,11 +1,17 @@
 import loadScript from 'load-script'
+import { IBee, IBeeLoader } from './types/bee';
 import beeActions from './utils/Constants'
+import { useStore } from './store/store'
+import { fetchBeeToken } from './store/actions';
 
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
 
 const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
 
-let beeLoaderUrl = null; 
+let beeLoaderUrl: IBeeLoader = {
+  beePluginUrl: '',
+  authUrl: ''
+}
 
 const load = (bee) => {
   loadScript(beeLoaderUrl.beePluginUrl, err => {
@@ -41,7 +47,26 @@ const {
   LOAD_WORKSPACE
 } = beeActions
 
+export const BeeFC = ({ token, bee, config, instance }: IBee) => {
+  const [store, dispatch] = useStore()
+
+  const { 
+    auth: {
+      maybeToken
+    }
+   } = store
+
+  const getToken = () => {
+    dispatch(fetchBeeToken({ authUrl: '' }))
+  }
+}
+
 export default class Bee {
+  token: string
+  bee: any
+  config: any
+  instance: any
+
   constructor(token, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {    
     beeLoaderUrl = urlConfig
     this.bee = (call) => load(() => call())
@@ -106,7 +131,7 @@ export default class Bee {
     })
   }
 
-  executeAction(action, param, options) {
+  executeAction(action, param= {}, options= {}) {
     const { instance } = this
     beeExists(instance)
     isValidAction(action)
