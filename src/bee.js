@@ -81,11 +81,15 @@ export default class Bee {
       throw new Error('Token NOT declared, call getToken or pass token on new BEE')
     }
     return new Promise(resolve => {
-      bee(() => BeePlugin.create(token, config, instance => {
-        this.instance = instance
-        instance.start(template, options)
-        resolve(instance)
-      }, bucketDir))
+      bee(() => BeePlugin.create(
+        token,
+        { ...config, startOrigin: '[npm] @mailupinc/bee-plugin' },
+        instance => {
+          this.instance = instance
+          instance.start(template, options)
+          resolve(instance)
+        }, bucketDir)
+      )
     })
   }
 
