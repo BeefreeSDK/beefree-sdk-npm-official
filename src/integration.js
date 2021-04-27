@@ -170,7 +170,7 @@ const addEvents = () => {
     .addEventListener('click', () => beeTest.togglePreview(), false)
 
   window.document.getElementById('trigger-showComment')
-    .addEventListener('click', () => beeTest.showComment(1), false)
+    .addEventListener('click', () => beeTest.showComment('sample-uuid'), false)
 
   window.document.getElementById('trigger-loadWorkspace')
     .addEventListener('click', () => beeTest.loadWorkspace('mixed'), false)
