@@ -166,8 +166,17 @@ const addEvents = () => {
   window.document.getElementById('trigger-toggleComments')
     .addEventListener('click', () => beeTest.toggleComments(), false)
 
+  window.document.getElementById('trigger-togglePreview')
+    .addEventListener('click', () => beeTest.togglePreview(), false)
+
+  window.document.getElementById('trigger-showComment')
+    .addEventListener('click', () => beeTest.showComment(1), false)
+
   window.document.getElementById('trigger-loadWorkspace')
     .addEventListener('click', () => beeTest.loadWorkspace('mixed'), false)
+
+  window.document.getElementById('trigger-loadStageMode')
+    .addEventListener('click', () => beeTest.loadStageMode({ mode: 'mobile', display: 'blur' }), false)  
 }
 
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
