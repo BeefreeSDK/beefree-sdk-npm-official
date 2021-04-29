@@ -5,7 +5,7 @@ const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
 
 const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
 
-let beeLoaderUrl = null; 
+let beeLoaderUrl = null;
 
 const load = (bee) => {
   loadScript(beeLoaderUrl.beePluginUrl, err => {
@@ -29,25 +29,28 @@ const isValidAction = action => {
   }
 }
 
-const { 
-  LOAD, 
-  SAVE, 
-  SEND, 
-  PREVIEW, 
-  SAVE_AS_TEMPLATE, 
+const {
+  LOAD,
+  SAVE,
+  SEND,
+  PREVIEW,
+  SAVE_AS_TEMPLATE,
   TOGGLE_STRUCTURE,
   TOGGLE_COMMENTS,
+  TOGGLE_PREVIEW,
+  SHOW_COMMENT,
   RELOAD,
-  LOAD_WORKSPACE
+  LOAD_WORKSPACE,
+  LOAD_STAGE_MODE
 } = beeActions
 
 export default class Bee {
-  constructor(token, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {    
+  constructor(token, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {   
     beeLoaderUrl = urlConfig
     this.bee = (call) => load(() => call())
     this.token = token || null
     this.config = null
-    this.instance = null    
+    this.instance = null   
   }
 
   getToken(clientId, clientSecret, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {
@@ -88,8 +91,8 @@ export default class Bee {
           this.instance = instance
           instance.start(template, options)
           resolve(instance)
-        }, bucketDir)
-      )
+        }, bucketDir
+      ))
     })
   }
 
@@ -141,15 +144,27 @@ export default class Bee {
     return this.executeAction(TOGGLE_STRUCTURE)
   }
 
+  togglePreview() {
+    return this.executeAction(TOGGLE_PREVIEW)
+  }
+
   toggleComments() {
     return this.executeAction(TOGGLE_COMMENTS)
+  }
+
+  showComment(comment) {
+    return this.executeAction(SHOW_COMMENT, comment)
   }
 
   reload(template, options) {
     return this.executeAction(RELOAD, template, options)
   }
-  
+
   loadWorkspace(type) {
     return this.executeAction(LOAD_WORKSPACE, type)
+  }
+
+  loadStageMode(mode) {
+    return this.executeAction(LOAD_STAGE_MODE, mode)
   }
 }
