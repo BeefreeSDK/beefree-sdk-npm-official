@@ -1,7 +1,6 @@
 {
   "extends": [
-    "@mailupinc/eslint-config",
-    "@mailupinc/eslint-config/react/hooks"
+    "@mailupinc/eslint-config"
   ],
   "rules": {
     "react/prop-types": 0,

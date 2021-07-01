@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-import Bee from './bee'
+import Bee from './index'
 import { clientId, clientSecret } from '../config/integrationKeys'
 
 const BEE_TEMPLATE_URL = 'https://rsrc.getbee.io/api/templates/m-bee'

@@ -1,8 +1,7 @@
 import loadScript from 'load-script'
-import { IBee, IBeeLoader } from './types/bee';
+import { IBeeLoader } from './types/bee'
 import beeActions from './utils/Constants'
-import { useStore } from './store/store'
-import { fetchBeeToken } from './store/actions';
+import { fetchToken } from './services/api'
 
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
 
@@ -47,25 +46,13 @@ const {
   LOAD_WORKSPACE
 } = beeActions
 
-export const BeeFC = ({ token, bee, config, instance }: IBee) => {
-  const [store, dispatch] = useStore()
-
-  const { 
-    auth: {
-      maybeToken
-    }
-   } = store
-
-  const getToken = () => {
-    dispatch(fetchBeeToken({ authUrl: '' }))
-  }
-}
 
 export default class Bee {
   token: string
   bee: any
   config: any
   instance: any
+  BeePlugin: any = null
 
   constructor(token, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {    
     beeLoaderUrl = urlConfig
@@ -77,24 +64,16 @@ export default class Bee {
 
   getToken(clientId, clientSecret, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {
     beeLoaderUrl = urlConfig;
-    const beeConfig = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: `grant_type=password&client_id=${clientId}&client_secret=${clientSecret}`,
-      mode: 'cors',
-    }
     if (this.token) {
       throw new Error('Toker already declared')
     }
 
-    return fetch(new Request(beeLoaderUrl.authUrl, beeConfig))
-      .then(res => res.json())
-      .then(token => {
-        this.token = token
-        return token
-      })
+    return fetchToken({ authUrl: urlConfig.authUrl, clientId, clientSecret })
+      .then(res => console.log('response on get token --> ', res))
+      // .then(token => {
+      //   this.token = token
+      //   return token
+      // })
   }
 
   start(config, template, bucketDir, options) {
@@ -106,7 +85,7 @@ export default class Bee {
       throw new Error('Token NOT declared, call getToken or pass token on new BEE')
     }
     return new Promise(resolve => {
-      bee(() => BeePlugin.create(token, config, instance => {
+      bee(() => this.BeePlugin.create(token, config, instance => {
         this.instance = instance
         instance.start(template, options)
         resolve(instance)
@@ -123,7 +102,7 @@ export default class Bee {
       throw new Error('Token NOT declared, call getToken or pass token on new BEE')
     }
     return new Promise(resolve => {
-      bee(() => BeePlugin.create(token, config, instance => {
+      bee(() => this.BeePlugin.create(token, config, instance => {
         this.instance = instance
         instance.join(sessionId)
         resolve(instance)

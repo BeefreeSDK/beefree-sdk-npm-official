@@ -3,10 +3,13 @@ export interface IBeeLoader {
   authUrl: string
 }
 
+export interface IUrlConfig {
+  authUrl: string
+  beePluginUrl: string
+}
 
 export interface IBee {
   token: string
-  bee: any
-  config: any
-  instance: any
+  urlConfig?: IUrlConfig
+  onGetTokenCompleted: (token: string) => void
 }

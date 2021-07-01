@@ -2,7 +2,9 @@
   "name": "@mailupinc/bee-plugin",
   "version": "1.2.2",
   "description": "wrapper of bee-plugin",
-  "main": "dist/index.js",
+  "main": "dist/index.ts",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
   "files": [
     "dist"
   ],
@@ -16,7 +18,7 @@
     "*.ts": "eslint"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "rollup -c -w",
     "clean": "rimraf dist",
     "build": "rollup -c",
     "lint": "eslint --ignore-path .gitignore ./src"
@@ -38,7 +40,9 @@
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
     "@mailupinc/eslint-config": "^0.1.2",
+    "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
     "@rollup/plugin-url": "^6.0.0",
     "babel-eslint": "^10.0.3",

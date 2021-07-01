@@ -1,3 +1,0 @@
-export {
-  fetchBeeToken
-} from './auth'
