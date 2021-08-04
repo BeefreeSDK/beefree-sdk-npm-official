@@ -1,9 +1,6 @@
 import { Story, Meta } from '@storybook/html';
 import { BeePluginProps, createBeePlugin } from './BeePlugin';
 import Bee from '../index'
-
-
-import { clientId, clientSecret } from '../../config/integrationKeys'
 import { fetchTemplate } from '../services/api';
 
 
@@ -138,7 +135,10 @@ BeePlugin.args = {
 
 const beeTest = new Bee()
 
-beeTest.getToken(clientId, clientSecret, conf)
+console.log('PLUGIN_CLIENT_ID --> ', process.env.PLUGIN_CLIENT_ID)
+console.log('PLUGIN_CLIENT_SECRET --> ', process.env.PLUGIN_CLIENT_SECRET)
+
+beeTest.getToken(process.env.PLUGIN_CLIENT_ID, process.env.PLUGIN_CLIENT_SECRET, conf)
   .then(() => fetchTemplate({ templateUrl: BEE_TEMPLATE_URL }))
 .then(res => res.data.page)
 .then(template => {

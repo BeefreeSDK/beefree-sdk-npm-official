@@ -12,3 +12,13 @@ build
 .DS_Store
 .env
 npm-debug.log
+
+# Environments
+.env
+.env.*
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
