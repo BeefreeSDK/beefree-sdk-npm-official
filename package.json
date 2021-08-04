@@ -21,7 +21,9 @@
     "start": "rollup -c -w",
     "clean": "rimraf dist",
     "build": "rollup -c",
-    "lint": "eslint --ignore-path .gitignore ./src"
+    "lint": "eslint --ignore-path .gitignore ./src",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": "git+https://github.com/BEE-Plugin/Bee-plugin-official.git",
   "keywords": [
@@ -45,8 +47,12 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
     "@rollup/plugin-url": "^6.0.0",
+    "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/addon-links": "^6.3.4",
+    "@storybook/html": "^6.3.4",
     "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.2.2",
     "babel-preset-env": "^1.7.0",
     "chalk": "^2.4.2",
     "connect-history-api-fallback": "^1.6.0",

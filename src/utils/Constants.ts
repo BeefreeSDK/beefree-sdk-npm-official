@@ -1,4 +1,4 @@
-const beeActions = {
+const beeActions : Record<string, string> = {
   CREATE: 'create',
   START: 'start',
   LOAD: 'load',

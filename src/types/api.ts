@@ -3,3 +3,7 @@ export interface IFetchTokenPayload {
   clientId: string
   clientSecret: string
 }
+
+export interface IFetchTemplate {
+  templateUrl: string,
+}

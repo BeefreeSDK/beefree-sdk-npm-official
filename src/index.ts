@@ -2,6 +2,9 @@ import loadScript from 'load-script'
 import { IBeeLoader } from './types/bee'
 import beeActions from './utils/Constants'
 import { fetchToken } from './services/api'
+import { pipe } from 'fp-ts/lib/pipeable'
+import * as E from 'fp-ts/lib/Either'
+import { eitherCanExecuteAction, eitherCheckJoinParams, eitherCheckStartParams } from './utils/utils'
 
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
 
@@ -19,19 +22,6 @@ const load = (bee) => {
     }
     return bee()
   })
-}
-
-const beeExists = instance => {
-  if (!instance) {
-    throw new Error('Bee is not started')
-  }
-}
-
-const isValidAction = action => {
-  const actions = Object.keys(beeActions)
-  if (!actions.some(x => beeActions[x] === action)) {
-    throw new Error('Is not a correct method')
-  }
 }
 
 const { 
@@ -69,55 +59,61 @@ export default class Bee {
     }
 
     return fetchToken({ authUrl: urlConfig.authUrl, clientId, clientSecret })
-      .then(res => console.log('response on get token --> ', res))
-      // .then(token => {
-      //   this.token = token
-      //   return token
-      // })
+      .then(res => this.token = res.data)
   }
 
   start(config, template, bucketDir, options) {
     const { bee, token } = this
-    if (!config || !template) {
-      throw new Error('Config or template are missing')
-    }
-    if (!this.token) {
-      throw new Error('Token NOT declared, call getToken or pass token on new BEE')
-    }
-    return new Promise(resolve => {
-      bee(() => this.BeePlugin.create(token, config, instance => {
-        this.instance = instance
-        instance.start(template, options)
-        resolve(instance)
-      }, bucketDir))
-    })
+    debugger
+    return pipe(
+      eitherCheckStartParams(config, template, token),
+      E.fold(
+        ({ message }) => new Promise(reject=> reject(message)), //{ throw new Error(message) },
+        () => new Promise(resolve => {
+          bee(() => BeePlugin.create(
+            token,
+            { ...config, startOrigin: '[npm] @mailupinc/bee-plugin' },
+            instance => {
+              this.instance = instance
+              instance.start(template, options)
+              resolve(instance)
+            }, bucketDir
+          ))
+        })
+      )
+    )
   }
 
   join(config, sessionId, bucketDir) {
     const { bee, token } = this
-    if (!config || !sessionId) {
-      throw new Error('Config or session id are missing')
-    }
-    if (!this.token) {
-      throw new Error('Token NOT declared, call getToken or pass token on new BEE')
-    }
-    return new Promise(resolve => {
-      bee(() => this.BeePlugin.create(token, config, instance => {
-        this.instance = instance
-        instance.join(sessionId)
-        resolve(instance)
-      }, bucketDir))
-    })
+    return pipe(
+      eitherCheckJoinParams(config, sessionId, this.token),
+      E.fold(
+        ({ message }) => { throw new Error(message) },
+        () => new Promise(resolve => {
+          bee(() => this.BeePlugin.create(token, config, instance => {
+            this.instance = instance
+            instance.join(sessionId)
+            resolve(instance)
+          }, bucketDir))
+        })
+      )
+    )
   }
 
   executeAction(action, param= {}, options= {}) {
     const { instance } = this
-    beeExists(instance)
-    isValidAction(action)
-    return instance[action](param, options)
+
+    pipe(
+      eitherCanExecuteAction(instance, action),
+      E.fold(
+        ({ message }) => { throw new Error(message) },
+        () => instance[action](param, options)
+      )
+    )
   }
 
-  load(template) {
+  load(template: Record<string, unknown>) {
     return this.executeAction(LOAD, template)
   }
 
