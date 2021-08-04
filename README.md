@@ -155,6 +155,12 @@ This call BeePlugin `toggleStructure` which toggle the structure helper on the e
 ### toggleComments()
 This call BeePlugin `toggleStructure` which toggle the comments section on the editor's sidebar.
 
+### togglePreview()
+This call BeePlugin `togglePreview` which open/close the message preview behavior within the editor.
+
+### showComment(uuid)
+This call BeePlugin `showComment` which opens a specific comment and scrolls the stage to the related element. The method needs one parameter, a comment 'uuid' as a string.
+
 ### join(beeConfig, sessionId)
 After the initizalization you can call join for creating the editor on the page and joining a collaborative editing session; the method needs two parameters:
 
@@ -164,7 +170,10 @@ After the initizalization you can call join for creating the editor on the page 
 this return a promise that has resolved after we call the plugin start function. Visit [the docs](https://docs.beefree.io/co-editing/) for more details about co-editing.
 
 ### loadWorkspace(type)
-This call BeePlugin `loadWorkspace`, which accepts on of the following parameters: 'default'|'mixed'|'amp_only'|'html_only'. Visit [the docs](https://docs.beefree.io/workspaces/) for more details about workspaces.
+This call BeePlugin `loadWorkspace`, which accepts one of the following parameters: 'default'|'mixed'|'amp_only'|'html_only'. Visit [the docs](https://docs.beefree.io/workspaces/) for more details about workspaces.
+
+### loadStageMode(arg)
+This call BeePlugin `loadStageMode`, which accepts an object parameter with the following structure: { mode: 'desktop'|'mobile', display: 'blur'|'hide'}. Visit [the docs](https://docs.beefree.io/mobile-design-mode/#customization-options) for more details about design mode.
 
 ## Test (WIP)
 ```sh

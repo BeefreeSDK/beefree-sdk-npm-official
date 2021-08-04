@@ -32,8 +32,11 @@ const {
   SAVE_AS_TEMPLATE, 
   TOGGLE_STRUCTURE,
   TOGGLE_COMMENTS,
+  TOGGLE_PREVIEW,
+  SHOW_COMMENT,
   RELOAD,
-  LOAD_WORKSPACE
+  LOAD_WORKSPACE,
+  LOAD_STAGE_MODE
 } = beeActions
 
 
@@ -49,7 +52,7 @@ export default class Bee {
     this.bee = (call) => load(() => call())
     this.token = token || null
     this.config = null
-    this.instance = null    
+    this.instance = null   
   }
 
   getToken(clientId, clientSecret, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {
@@ -137,15 +140,27 @@ export default class Bee {
     return this.executeAction(TOGGLE_STRUCTURE)
   }
 
+  togglePreview() {
+    return this.executeAction(TOGGLE_PREVIEW)
+  }
+
   toggleComments() {
     return this.executeAction(TOGGLE_COMMENTS)
+  }
+
+  showComment(comment) {
+    return this.executeAction(SHOW_COMMENT, comment)
   }
 
   reload(template, options) {
     return this.executeAction(RELOAD, template, options)
   }
-  
+
   loadWorkspace(type) {
     return this.executeAction(LOAD_WORKSPACE, type)
+  }
+
+  loadStageMode(mode) {
+    return this.executeAction(LOAD_STAGE_MODE, mode)
   }
 }
