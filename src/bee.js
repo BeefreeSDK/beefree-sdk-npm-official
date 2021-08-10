@@ -38,6 +38,7 @@ const {
   TOGGLE_STRUCTURE,
   TOGGLE_COMMENTS,
   TOGGLE_PREVIEW,
+  TOGGLE_MERGETAGS_PREVIEW,
   SHOW_COMMENT,
   RELOAD,
   LOAD_WORKSPACE,
@@ -150,6 +151,10 @@ export default class Bee {
 
   toggleComments() {
     return this.executeAction(TOGGLE_COMMENTS)
+  }
+
+  toggleMergeTagsPreview() {
+    return this.executeAction(TOGGLE_MERGETAGS_PREVIEW)
   }
 
   showComment(comment) {
