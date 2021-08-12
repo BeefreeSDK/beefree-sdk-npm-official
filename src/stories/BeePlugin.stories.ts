@@ -118,9 +118,6 @@ BeePlugin.args = {
 
 const beeTest = new Bee()
 
-console.log('PLUGIN_CLIENT_ID --> ', process.env.PLUGIN_CLIENT_ID)
-console.log('PLUGIN_CLIENT_SECRET --> ', process.env.PLUGIN_CLIENT_SECRET)
-
 beeTest.getToken(process.env.PLUGIN_CLIENT_ID, process.env.PLUGIN_CLIENT_SECRET, conf)
   .then(() => fetchTemplate({ templateUrl: BEE_TEMPLATE_URL }))
   .then(res => res.data.page)
