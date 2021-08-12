@@ -21,6 +21,7 @@
     "start": "rollup -c -w",
     "clean": "rimraf dist",
     "build": "rollup -c",
+    "prepare": "husky install",
     "lint": "eslint ./src --ext ts",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
