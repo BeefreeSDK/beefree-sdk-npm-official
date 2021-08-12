@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/html';
-import { BeePluginProps, createBeePlugin } from './BeePlugin';
+import { createBeePlugin } from './BeePlugin';
 import Bee from '../index'
 import { fetchTemplate } from '../services/api';
 
@@ -65,7 +65,6 @@ const beeConfig = {
   },
   onSaveAsTemplate: (jsonFile) => {
     console.log('onSaveAsTemplate', jsonFile)
-
   },
   onAutoSave: (jsonFile) => {
     console.log(`${new Date().toISOString()} autosaving...,`, jsonFile)
@@ -105,27 +104,11 @@ const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
 
 export default {
-  title: 'Example/BeePlugin', 
+  title: 'Example/BeePlugin',
 } as Meta;
 
 
-const Template: Story<BeePluginProps> = (args) => createBeePlugin(args)
-
-
-// export const BeePlugin =  () => {
-  
-//   const beeTest = new Bee()
-
-//   beeTest.getToken(clientId, clientSecret, conf)
-//   .then(() => fetch(new Request(BEE_TEMPLATE_URL, { method: 'GET' })))
-//   .then(res => res.json())
-//   .then(template => {
-
-//     beeTest.start(beeConfig, template, null, { shared: false })
-//       .then(instance => console.log('promise resolve return instance', instance))
-//   })
-//   return Template.bind({});
-// }
+const Template: Story = () => createBeePlugin()
 
 export const BeePlugin = Template.bind({});
 
@@ -140,9 +123,10 @@ console.log('PLUGIN_CLIENT_SECRET --> ', process.env.PLUGIN_CLIENT_SECRET)
 
 beeTest.getToken(process.env.PLUGIN_CLIENT_ID, process.env.PLUGIN_CLIENT_SECRET, conf)
   .then(() => fetchTemplate({ templateUrl: BEE_TEMPLATE_URL }))
-.then(res => res.data.page)
-.then(template => {
-
-  beeTest.start(beeConfig, template, null, { shared: false })
-    .then(instance => console.log('promise resolve return instance', instance))
+  .then(res => res.data.page)
+  .then(template => {
+    beeTest.start(beeConfig, template, '', { shared: false })
+    .then(instance => {      
+      console.log('promise resolve return instance', instance)
+   })
 })

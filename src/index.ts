@@ -1,10 +1,14 @@
 import loadScript from 'load-script'
-import { IBeeLoader } from './types/bee'
-import beeActions from './utils/Constants'
-import { fetchToken } from './services/api'
 import { pipe } from 'fp-ts/lib/pipeable'
 import * as E from 'fp-ts/lib/Either'
+import {
+  IBeeLoader, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions 
+} from './types/bee'
+import beeActions from './utils/Constants'
+import { fetchToken } from './services/api'
 import { eitherCanExecuteAction, eitherCheckJoinParams, eitherCheckStartParams } from './utils/utils'
+
+declare let BeePlugin: any;
 
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
 
@@ -39,39 +43,53 @@ const {
   LOAD_STAGE_MODE
 } = beeActions
 
-
 export default class Bee {
   token: string
-  bee: any
-  config: any
-  instance: any
-  BeePlugin: any = null
 
-  constructor(token, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {    
+  bee: any
+
+  config: any
+
+  instance: any
+
+  constructor(
+    token?: string, urlConfig: IUrlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
+  ) {
     beeLoaderUrl = urlConfig
     this.bee = (call) => load(() => call())
-    this.token = token || null
+    this.token = token || ''
     this.config = null
     this.instance = null   
   }
 
-  getToken(clientId, clientSecret, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {
+  getToken = (
+    clientId: string, 
+    clientSecret: string, 
+    urlConfig:IUrlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
+  ) => {
     beeLoaderUrl = urlConfig;
     if (this.token) {
       throw new Error('Toker already declared')
     }
 
     return fetchToken({ authUrl: urlConfig.authUrl, clientId, clientSecret })
-      .then(res => this.token = res.data)
+      .then(res => {
+        this.token = res.data
+        return res.data
+      })
   }
 
-  start(config, template, bucketDir, options) {
-    const { bee, token } = this
-    debugger
+  start = (
+    config: any, 
+    template: any, 
+    bucketDir: string, 
+    options: any
+  ) => {
+    const { bee, token } = this    
     return pipe(
       eitherCheckStartParams(config, template, token),
       E.fold(
-        ({ message }) => new Promise(reject=> reject(message)), //{ throw new Error(message) },
+        ({ message }) => new Promise(reject => reject(message)), //{ throw new Error(message) },
         () => new Promise(resolve => {
           bee(() => BeePlugin.create(
             token,
@@ -87,14 +105,18 @@ export default class Bee {
     )
   }
 
-  join(config, sessionId, bucketDir) {
+  join = (
+    config: any, 
+    sessionId: string, 
+    bucketDir: string
+  ) => {
     const { bee, token } = this
     return pipe(
       eitherCheckJoinParams(config, sessionId, this.token),
       E.fold(
         ({ message }) => { throw new Error(message) },
         () => new Promise(resolve => {
-          bee(() => this.BeePlugin.create(token, config, instance => {
+          bee(() => BeePlugin.create(token, config, instance => {
             this.instance = instance
             instance.join(sessionId)
             resolve(instance)
@@ -104,7 +126,7 @@ export default class Bee {
     )
   }
 
-  executeAction(action, param= {}, options= {}) {
+  executeAction = (action, param = {}, options = {}) => {
     const { instance } = this
 
     pipe(
@@ -116,51 +138,27 @@ export default class Bee {
     )
   }
 
-  load(template: Record<string, unknown>) {
-    return this.executeAction(LOAD, template)
-  }
+  load = (template: Record<string, unknown>) => this.executeAction(LOAD, template)
 
-  save() {
-    return this.executeAction(SAVE)
-  }
+  save = () => this.executeAction(SAVE)
 
-  saveAsTemplate() {
-    return this.executeAction(SAVE_AS_TEMPLATE)
-  }
+  saveAsTemplate = () => this.executeAction(SAVE_AS_TEMPLATE)
 
-  send() {
-    return this.executeAction(SEND)
-  }
+  send = () => this.executeAction(SEND)
+  
+  preview = () => this.executeAction(PREVIEW)
+  
+  toggleStructure = () => this.executeAction(TOGGLE_STRUCTURE)  
 
-  preview() {
-    return this.executeAction(PREVIEW)
-  }
+  togglePreview = () => this.executeAction(TOGGLE_PREVIEW)
 
-  toggleStructure() {
-    return this.executeAction(TOGGLE_STRUCTURE)
-  }
+  toggleComments = () => this.executeAction(TOGGLE_COMMENTS)
 
-  togglePreview() {
-    return this.executeAction(TOGGLE_PREVIEW)
-  }
+  showComment = (comment) => this.executeAction(SHOW_COMMENT, comment) 
 
-  toggleComments() {
-    return this.executeAction(TOGGLE_COMMENTS)
-  }
+  reload = (template, options) => this.executeAction(RELOAD, template, options)
 
-  showComment(comment) {
-    return this.executeAction(SHOW_COMMENT, comment)
-  }
+  loadWorkspace = (type: LoadWorkspaceOptions) => this.executeAction(LOAD_WORKSPACE, type)
 
-  reload(template, options) {
-    return this.executeAction(RELOAD, template, options)
-  }
-
-  loadWorkspace(type) {
-    return this.executeAction(LOAD_WORKSPACE, type)
-  }
-
-  loadStageMode(mode) {
-    return this.executeAction(LOAD_STAGE_MODE, mode)
-  }
+  loadStageMode = (args: ILoadStageMode) => this.executeAction(LOAD_STAGE_MODE, args)
 }
