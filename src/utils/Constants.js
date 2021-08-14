@@ -9,6 +9,7 @@ const beeActions = {
   TOGGLE_STRUCTURE: 'toggleStructure',
   TOGGLE_COMMENTS: 'toggleComments',
   TOGGLE_PREVIEW: 'togglePreview',
+  TOGGLE_MERGETAGS_PREVIEW: 'toggleMergeTagsPreview',
   SHOW_COMMENT: 'showComment',
   JOIN: 'join',
   RELOAD: 'reload', 
