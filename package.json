@@ -1,6 +1,6 @@
 {
   "name": "@mailupinc/bee-plugin",
-  "version": "1.3.4",
+  "version": "1.3.6",
   "description": "wrapper of bee-plugin",
   "main": "dist/index.js",
   "files": [
@@ -20,7 +20,7 @@
     "plugin"
   ],
   "author": "BeeFree.io",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/BEE-Plugin/Bee-plugin-official"
   },
