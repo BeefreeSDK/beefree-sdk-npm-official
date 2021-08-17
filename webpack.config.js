@@ -4,7 +4,7 @@ process.env.NODE_ENV = 'development'
 require('dotenv').config({ path: './.env' })
 
 module.exports = {
-    entry: './src/integration.ts',
+    entry: './example/integration.ts',
     devtool: 'inline-source-map',
     module: {
         rules: [{
@@ -18,10 +18,11 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
+        publicPath: '/dist',
         path: path.resolve(__dirname, 'dist')
     },
     devServer: {
-        contentBase: './',
+        contentBase: './example/',
         port: 8080,
         writeToDisk: true
     },

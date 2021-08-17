@@ -1,6 +1,5 @@
-/* eslint-disable no-undef */
-import Bee from './index'
-import { LoadWorkspaceOptions, StageDisplayOptions, StageModeOptions } from './types/bee';
+import Bee from '../src/index'
+import { LoadWorkspaceOptions, StageDisplayOptions, StageModeOptions } from '../src/types/bee';
 declare let saveAs: any;
 
 const BEE_TEMPLATE_URL = 'https://rsrc.getbee.io/api/templates/m-bee'
@@ -82,9 +81,7 @@ const beeConfig = {
     console.log('onSave', jsonFile, htmlFile)
     save('newsletter-template.html', htmlFile)
   },
-  onLoad: (jsonFile) => {
-    console.error('*** [integration] loading a new template...', jsonFile);
-  },
+  onLoad: (jsonFile) => console.error('*** [integration] loading a new template...', jsonFile),
   onSaveAsTemplate: (jsonFile) => {
     console.log('onSaveAsTemplate', jsonFile)
     save('newsletter-template.json', jsonFile)
@@ -93,31 +90,17 @@ const beeConfig = {
     console.log(`${new Date().toISOString()} autosaving...,`, jsonFile)
     window.localStorage.setItem('newsletter.autosave', jsonFile)
   },
-  onSend: (htmlFile) => {
-    console.log('onSend', htmlFile)
-  },
-  onError: (errorMessage) => {
-    console.log('onError ', errorMessage)
-  },
-  onChange: (msg, response) => {
-    console.warn('*** [integration] (OnChange) message > ', msg, response);
-  },
-  onWarning: (a, b) => {
-    console.warn('*** [integration] (OnWarning) message a, b > ', a, b);
-  },
-  onPreview: () => {
-    console.warn('*** [integration] --> (onPreview) ');
-  },
-  onTogglePreview: () => {
-    console.warn('*** [integration] --> (onTogglePreview) ');
-  },
+  onSend: (htmlFile) => console.log('onSend', htmlFile),
+  onError: (errorMessage) => console.log('onError ', errorMessage),
+  onChange: (msg, response) => console.warn('*** [integration] (OnChange) message > ', msg, response),
+  onWarning: (a, b) => console.warn('*** [integration] (OnWarning) message a, b > ', a, b),
+  onPreview: () => console.warn('*** [integration] --> (onPreview) '),
+  onTogglePreview: () => console.warn('*** [integration] --> (onTogglePreview) '),
   onSessionStarted: (sessionInfo) => {
     console.warn('*** [integration] --> (onSessionStarted) ', sessionInfo);
     prompt('press ctrl+c to copy the session ID', sessionInfo.sessionId)
   },
-  onSessionChange: (sessionInfo) => {
-    console.warn('*** [integration] --> (onSessionChange) ', sessionInfo);
-  },
+  onSessionChange: (sessionInfo) => console.warn('*** [integration] --> (onSessionChange) ', sessionInfo),
 }
 
 const beeTest = new Bee()

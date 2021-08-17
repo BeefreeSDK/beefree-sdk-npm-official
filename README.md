@@ -1,9 +1,9 @@
 # Official BEE plugin wrapper [![Build Status](https://travis-ci.org/samuv/bee-plugin.svg?branch=master)](https://travis-ci.org/samuv/bee-plugin.svg?branch=master)
 A simple module to use the [BEE editor](http://beefree.io)
 
-## What is BEE?
-Long story short: it's a drag-&-drop editor to author responsive design emails.
-It makes it easy and quick to create a great-looking email message that can be used to send a company newsletter, announce a new product, promote a sale, etc.
+## What is BEE Plugin?
+BEE Plugin is a React web plugin, easily and quickly embeddable in your SaaS application
+It makes it easy and quick to create a great-looking email message or landing page that can be used to send a company newsletter, announce a new product, promote a sale, for your personal portfolio, etc.
 
 You can embed it into your application :)
 Using with the BEE free version, you can embed the editor anywhere, regardless of the pricing model.
@@ -25,9 +25,9 @@ It's free to use on ['https://beefree.io'](https://beefree.io): you don't even n
 1. Install Nodejs (also npm, which should come with nodejs already).
 2. clone this repository
 3. `npm install` or `yarn install`(if you have it installed) in the folder cloned
-4. put your `clientId` and `clientSecret` in ./config/integrationKeys.js
-5. `npm start`
-6. Open `http://localhost:3030`.
+4. rename the local `.env.sample` file into `.env`
+5. run `npm start` or `yarn start`
+6. Open `http://localhost:8080`.
 7. Have fun!
 
 
