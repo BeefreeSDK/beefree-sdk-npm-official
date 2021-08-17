@@ -2,6 +2,7 @@ import loadScript from 'load-script'
 import { pipe } from 'fp-ts/lib/pipeable'
 import * as E from 'fp-ts/lib/Either'
 import {
+  IBeeConfig,
   IBeeLoader, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions 
 } from './types/bee'
 import beeActions from './utils/Constants'
@@ -45,11 +46,7 @@ const {
 
 export default class Bee {
   token: string
-
   bee: any
-
-  config: any
-
   instance: any
 
   constructor(
@@ -58,7 +55,6 @@ export default class Bee {
     beeLoaderUrl = urlConfig
     this.bee = (call) => load(() => call())
     this.token = token || ''
-    this.config = null
     this.instance = null   
   }
 
@@ -80,7 +76,7 @@ export default class Bee {
   }
 
   start = (
-    config: any, 
+    config: IBeeConfig,
     template: any, 
     bucketDir: string, 
     options: any
@@ -106,7 +102,7 @@ export default class Bee {
   }
 
   join = (
-    config: any, 
+    config: IBeeConfig,
     sessionId: string, 
     bucketDir?: string,
   ) => {

@@ -1,12 +1,12 @@
 import Bee from '../src/index'
-import { LoadWorkspaceOptions, StageDisplayOptions, StageModeOptions } from '../src/types/bee';
+import { IBeeConfig, IMergeContent, IMergeTag, ISpecialLink, LoadWorkspaceOptions, StageDisplayOptions, StageModeOptions } from '../src/types/bee';
 declare let saveAs: any;
 
 const BEE_TEMPLATE_URL = 'https://rsrc.getbee.io/api/templates/m-bee'
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
 const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
 
-const specialLinks = [{
+const specialLinks: ISpecialLink[] = [{
   type: 'unsubscribe',
   label: 'SpecialLink.Unsubscribe',
   link: 'http://[unsubscribe]/'
@@ -15,14 +15,14 @@ const specialLinks = [{
   label: 'SpecialLink.Subscribe',
   link: 'http://[subscribe]/'
 }]
-const mergeTags = [{
+const mergeTags: IMergeTag[] = [{
   name: 'tag 1',
   value: '[tag1]'
 }, {
   name: 'tag 2',
   value: '[tag2]'
 }]
-const mergeContents = [{
+const mergeContents: IMergeContent[] = [{
   name: 'content 1',
   value: '[content1]'
 }, {
@@ -64,7 +64,7 @@ function getParameterByName(name) {
   return val;
 }
 
-const beeConfig = {
+const beeConfig :IBeeConfig = {
   uid: 'test1-clientside',
   container: 'bee-plugin-container',
   username: getParameterByName('username') || 'Test User',
@@ -77,15 +77,9 @@ const beeConfig = {
   mergeTags,
   mergeContents,
   contentDialog,
-  onSave: (jsonFile, htmlFile) => {
-    console.log('onSave', jsonFile, htmlFile)
-    save('newsletter-template.html', htmlFile)
-  },
-  onLoad: (jsonFile) => console.error('*** [integration] loading a new template...', jsonFile),
-  onSaveAsTemplate: (jsonFile) => {
-    console.log('onSaveAsTemplate', jsonFile)
-    save('newsletter-template.json', jsonFile)
-  },
+  onSave: (_, htmlFile) => save('newsletter-template.html', htmlFile),
+  onLoad: () => console.warn('*** [integration] loading a new template...'),
+  onSaveAsTemplate: (json: Record<string, unknown>) => void save('newsletter-template.json', json),
   onAutoSave: (jsonFile) => {
     console.log(`${new Date().toISOString()} autosaving...,`, jsonFile)
     window.localStorage.setItem('newsletter.autosave', jsonFile)
