@@ -20,7 +20,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "clean": "rimraf dist",
-    "build": "rollup -c",
+    "build": "yarn lint && yarn clean && rollup -c",
     "prepare": "husky install",
     "lint": "eslint ./src --ext ts",
     "storybook": "start-storybook -p 6006",
