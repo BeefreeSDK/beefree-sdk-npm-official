@@ -1,0 +1,244 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  overflow: hidden;
+  background-color: #CCCCCC;
+  color: #000000;
+}
+
+button,
+input[type="file"] {
+  font-size: 11px;
+  background: white;
+  border: 0;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #888888;
+}
+
+button {
+  padding: 3px 15px;
+}
+
+#bee-plugin-container {
+  position: absolute;
+  top: 5px;
+  bottom: 30px;
+  left: 5px;
+  right: 5px;
+  height: calc(100% - 75px);
+}
+
+#integrator-bottom-bar {
+  position: absolute;
+  padding: 15px;
+  background: #2e90c1;
+  color: #fff;
+  height: 40px;
+  line-height: 30px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  font-size: 12px;
+  border-bottom-left-radius: 3px;
+  vertical-align: top;
+  -webkit-box-shadow: 0px -6px 15px -8px rgba(139, 160, 245, 1);
+  -moz-box-shadow: 0px -6px 15px -8px rgba(139, 160, 245, 1);
+  box-shadow: 0px -6px 15px -8px rgba(139, 160, 245, 1);
+}
+
+.sendIco {
+  background: url('https://image.flaticon.com/icons/svg/126/126494.svg');
+}
+
+.btnGroupLeft,
+.btnGroupCenter {
+  width: 25%;
+  float: left;
+}
+
+.btnGroupRight {
+  width: 40%;
+  text-align: right;
+}
+
+.btnGroupRight .btn {
+  margin-top: 0 !important;
+}
+
+.btnGroupCenter span {
+  vertical-align: bottom;
+}
+
+
+.btnGroupCenter label {
+  display: block;
+  line-height: 15px;
+  padding: 0;
+  text-align: left;
+}
+
+.btnGroupCenter input {
+  color: #fff;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  padding-bottom: 3px;
+}
+
+.sendTest {
+  padding-right: 0px;
+  margin-right: 5px;
+}
+
+.sendTest,
+.loadTemplate {
+  background: transparent;
+  text-align: right;
+  display: inline-block;
+  padding-left: 30px;
+  border-radius: 70px;
+  border: 2px solid white;
+}
+
+
+.sendTest span,
+.loadTemplate span {
+  text-align: right;
+}
+
+.btnGroupLeft label {
+  display: inline-block;
+  line-height: 15px;
+  max-width: 88px;
+}
+
+.loadTemplate label {
+  padding-top: 10px;
+  text-align: left;
+}
+
+.loadButton {
+  margin-right: 7px;
+  position: relative;
+  bottom: 10px;
+}
+
+.sendTestButton {
+  position: relative;
+  top: 5px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 4px 8px;
+  z-index: 1;
+  bottom: 30px;
+  left: -30px;
+  background: #2e90c1;
+  border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+#integrator-bottom-bar .sendTestButton,
+#integrator-bottom-bar .toggleStructureButton {
+  border-top-right-radius: 70px;
+  border-bottom-right-radius: 70px;
+  padding-right: 30px;
+}
+
+#integrator-bottom-bar .saveButton {
+  border-top-left-radius: 70px;
+  border-bottom-left-radius: 70px;
+  padding-left: 30px;
+}
+
+#integrator-bottom-bar .btn {
+  margin-top: -28px;
+  margin-left: 0px;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 7px 15px;
+  cursor: pointer;
+  border-radius: 15px;
+  color: #fff;
+  border: 2px solid #fff;
+  background-color: transparent;
+  margin: 2px;
+
+}
+
+.item-dropdown {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+  background-color: transparent;
+  width: 100%;
+  border-radius: 3px;
+  transition: all 0.2s ease-in;
+}
+
+.otherActions {
+  font-size: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.otherActions:hover {
+  opacity: 0.6;
+}
+
+.item-dropdown:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#integrator-bottom-bar .btn:hover {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.2s ease-in;
+}
+
+#integrator-bottom-bar .btn:active {
+  outline: none;
+}
+
+.btnGroupLeft .btn,
+.btnGroupCenter .btn {
+  margin-top: 0 !important;
+  margin-right: 0;
+}
+
+#load-template {
+  display: none;
+}
+
+#reload-template {
+  display: none;
+}
+
+#integrator-bottom-bar .btn i {
+  display: block;
+  padding: 0 0 7px 0;
+  font-size: 19px;
+}

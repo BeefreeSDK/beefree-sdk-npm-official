@@ -18,7 +18,7 @@
     "*.ts": "eslint"
   },
   "scripts": {
-    "start": "rollup -c -w",
+    "start": "webpack-dev-server --mode development",
     "clean": "rimraf dist",
     "build": "rollup -c",
     "prepare": "husky install",
@@ -73,6 +73,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-typescript2": "^0.30.0",
+    "ts-loader": "^8.2.0",
     "typescript": "^4.2.3",
     "webpack": "^4.0.0",
     "webpack-cli": "^3.3.8",

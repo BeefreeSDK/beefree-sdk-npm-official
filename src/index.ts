@@ -108,7 +108,7 @@ export default class Bee {
   join = (
     config: any, 
     sessionId: string, 
-    bucketDir: string
+    bucketDir?: string,
   ) => {
     const { bee, token } = this
     return pipe(
@@ -156,7 +156,7 @@ export default class Bee {
 
   showComment = (comment) => this.executeAction(SHOW_COMMENT, comment) 
 
-  reload = (template, options) => this.executeAction(RELOAD, template, options)
+  reload = (template, options?) => this.executeAction(RELOAD, template, options)
 
   loadWorkspace = (type: LoadWorkspaceOptions) => this.executeAction(LOAD_WORKSPACE, type)
 

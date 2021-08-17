@@ -27,7 +27,7 @@
     "strict": true,
     "module": "esnext",
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": false
   },
   "include": [
     "src"
