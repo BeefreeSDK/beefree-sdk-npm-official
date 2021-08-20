@@ -30,7 +30,7 @@ const mergeContents: IMergeContent[] = [{
   value: '[content1]'
 }]
 
-const userInput = (message, sample) => function handler(resolve, reject) {
+const userInput = (message: string, sample) => function handler(resolve, reject) {
   const data = prompt(message, JSON.stringify(sample));
   return data == null || data === ''
     ? reject()
@@ -46,7 +46,7 @@ const contentDialog = {
   },
 }
 
-function save(filename, content) {
+function save(filename: string, content) {
   saveAs(
     new Blob([content], { type: 'text/plain;charset=utf-8' }),
     filename

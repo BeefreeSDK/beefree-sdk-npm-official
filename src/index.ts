@@ -3,12 +3,13 @@ import { pipe } from 'fp-ts/lib/pipeable'
 import * as E from 'fp-ts/lib/Either'
 import {
   IBeeConfig,
-  IBeeLoader, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions 
+  IBeeLoader, IBeeOptions, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions 
 } from './types/bee'
 import beeActions from './utils/Constants'
 import { fetchToken } from './services/api'
 import { eitherCanExecuteAction, eitherCheckJoinParams, eitherCheckStartParams } from './utils/utils'
 
+//this is the global variable injected from BeePlugin.js 
 declare let BeePlugin: any;
 
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
@@ -38,6 +39,7 @@ const {
   TOGGLE_STRUCTURE,
   TOGGLE_COMMENTS,
   TOGGLE_PREVIEW,
+  TOGGLE_MERGETAGS_PREVIEW,
   SHOW_COMMENT,
   RELOAD,
   LOAD_WORKSPACE,
@@ -77,15 +79,15 @@ export default class Bee {
 
   start = (
     config: IBeeConfig,
-    template: any, 
+    template: Record<string, unknown>,
     bucketDir: string, 
-    options: any
+    options: IBeeOptions
   ) => {
     const { bee, token } = this    
     return pipe(
       eitherCheckStartParams(config, template, token),
       E.fold(
-        ({ message }) => new Promise(reject => reject(message)), //{ throw new Error(message) },
+        ({ message }) => new Promise(reject => reject(message)),
         () => new Promise(resolve => {
           bee(() => BeePlugin.create(
             token,
@@ -122,9 +124,8 @@ export default class Bee {
     )
   }
 
-  executeAction = (action, param = {}, options = {}) => {
+  executeAction = (action: string, param = {}, options = {}) => {
     const { instance } = this
-
     pipe(
       eitherCanExecuteAction(instance, action),
       E.fold(
@@ -150,9 +151,11 @@ export default class Bee {
 
   toggleComments = () => this.executeAction(TOGGLE_COMMENTS)
 
+  toggleMergeTagsPreview = () => this.executeAction(TOGGLE_MERGETAGS_PREVIEW)
+
   showComment = (comment) => this.executeAction(SHOW_COMMENT, comment) 
 
-  reload = (template, options?) => this.executeAction(RELOAD, template, options)
+  reload = (template: Record<string, unknown>, options?: IBeeOptions) => this.executeAction(RELOAD, template, options)
 
   loadWorkspace = (type: LoadWorkspaceOptions) => this.executeAction(LOAD_WORKSPACE, type)
 

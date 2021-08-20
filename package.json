@@ -1,6 +1,6 @@
 {
   "name": "@mailupinc/bee-plugin",
-  "version": "1.3.2",
+  "version": "1.3.4",
   "description": "wrapper of bee-plugin",
   "main": "dist/index.ts",
   "module": "dist/index.es.js",
@@ -24,6 +24,11 @@
     "prepare": "husky install",
     "lint": "eslint ./src --ext ts",
     "storybook": "start-storybook -p 6006",
+    "prerelease": "git pull",
+    "release": "standard-version",
+    "postrelease": "git push --follow-tags --no-verify",
+    "release:alpha": "yarn prerelease && standard-version --prerelease alpha && yarn postrelease",
+    "release:beta": "yarn prerelease && standard-version --prerelease beta && yarn postrelease",
     "build-storybook": "build-storybook"
   },
   "repository": "git+https://github.com/BEE-Plugin/Bee-plugin-official.git",
@@ -73,6 +78,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-typescript2": "^0.30.0",
+    "standard-version": "^9.3.1",
     "ts-loader": "^8.2.0",
     "typescript": "^4.2.3",
     "webpack": "^4.0.0",

@@ -10,10 +10,8 @@ export interface IUrlConfig {
   beePluginUrl: string
 }
 
-export interface IBee {
-  token: string,
-  urlConfig?: IUrlConfig,
-  onGetTokenCompleted: (token: string) => void
+export interface IBeeOptions {
+  shared?: boolean
 }
 
 export interface IGetTokenPayload {
@@ -58,7 +56,7 @@ export interface IPluginRow {
   }
   content: unknown
   locked: boolean
-  metadata: any
+  metadata: Record<string, unknown>
   type: string
   uuid: string
 }
@@ -242,7 +240,7 @@ export interface IBeeConfig {
   onSessionChange?: (sessionInfo: IPluginSessionInfo) => void
   onReady?: (args: Record<string, unknown>) => void
   onSave?: (jsonFile: unknown, htmlFile: unknown) => void
-  onSaveRow?: (_: unknown, html: string) => void
+  onSaveRow?: (jsonfile: unknown, html: string) => void
   onError: (error: BeePluginError) => void
   onAutoSave?: (json: string) => void
   onSaveAsTemplate?: (json: Record<string, unknown>) => void

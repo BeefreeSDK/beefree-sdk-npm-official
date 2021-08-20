@@ -1,4 +1,4 @@
-const beeActions : Record<string, string> = {
+const beeActions = {
   CREATE: 'create',
   START: 'start',
   LOAD: 'load',
@@ -9,11 +9,12 @@ const beeActions : Record<string, string> = {
   TOGGLE_STRUCTURE: 'toggleStructure',
   TOGGLE_COMMENTS: 'toggleComments',
   TOGGLE_PREVIEW: 'togglePreview',
+  TOGGLE_MERGETAGS_PREVIEW: 'toggleMergeTagsPreview',
   SHOW_COMMENT: 'showComment',
   JOIN: 'join',
-  RELOAD: 'reload', 
+  RELOAD: 'reload',
   LOAD_WORKSPACE: 'loadWorkspace',
   LOAD_STAGE_MODE: 'loadStageMode',
 }
- 
+
 export default beeActions

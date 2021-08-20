@@ -30,7 +30,8 @@
     "noEmit": false
   },
   "include": [
-    "src"
+    "src",
+    "example"
   ],
   "exclude": [
     "node_modules",
