@@ -46,7 +46,7 @@ const {
   LOAD_STAGE_MODE
 } = beeActions
 
-export default class Bee {
+class Bee {
   token: string
   bee: any
   instance: any
@@ -161,3 +161,6 @@ export default class Bee {
 
   loadStageMode = (args: ILoadStageMode) => this.executeAction(LOAD_STAGE_MODE, args)
 }
+
+
+export default Bee

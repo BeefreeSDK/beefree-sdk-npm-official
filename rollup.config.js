@@ -3,7 +3,7 @@ import external from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import url from '@rollup/plugin-url';
 import json from '@rollup/plugin-json';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 import dotenv from 'dotenv';
 import pkg from './package.json';
 
@@ -25,6 +25,7 @@ export default {
       sourcemap: true,
     },
   ],
+  external: ['crypto'],
   plugins: [
     external(),
     url(),
@@ -36,10 +37,7 @@ export default {
         browser: true,
       },
     ),
-    typescript({
-      rollupCommonJSResolveHack: true,
-      clean: true,
-    }),
-    commonjs(),
+    typescript({target: "es5"}),
+    commonjs({}),
   ],
 };
