@@ -22,9 +22,14 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     devServer: {
-        contentBase: './example/',
-        port: 8080,
-        writeToDisk: true
+        bonjour: true,
+        static: './example/',
+        client: {
+            overlay: {
+                errors: true,
+                warnings: false,
+            },
+        },
     },
     plugins:[
         new webpack.DefinePlugin({"process.env": JSON.stringify(process.env)}),

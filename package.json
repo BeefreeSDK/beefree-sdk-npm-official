@@ -18,7 +18,7 @@
     "*.ts": "eslint"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development",
+    "start": "npx webpack serve",
     "clean": "rimraf dist",
     "build": "yarn lint && yarn clean && rollup -c",
     "prepare": "husky install",
@@ -70,9 +70,9 @@
     "standard-version": "^9.3.1",
     "ts-loader": "^8.2.0",
     "typescript": "^4.3.5",
-    "webpack": "^4.0.0",
-    "webpack-cli": "^3.3.8",
-    "webpack-dev-server": "^3.0.0"
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
     "axios": "^0.21.1",
