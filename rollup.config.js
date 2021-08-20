@@ -4,7 +4,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import url from '@rollup/plugin-url';
 import json from '@rollup/plugin-json';
 import typescript from 'rollup-plugin-typescript2';
-import alias from '@rollup/plugin-alias';
 import dotenv from 'dotenv';
 import pkg from './package.json';
 
