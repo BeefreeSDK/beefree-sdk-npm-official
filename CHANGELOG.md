@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0-alpha.5](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0-alpha.4...v1.4.0-alpha.5) (2021-08-31)
+
+
+### Bug Fixes
+
+* **fp-ts:** fixed deprecated import ([b0c7a6d](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b0c7a6d9290f198c647be09a00e16e7b569783bc))
+
 ## [1.4.0-alpha.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0-alpha.3...v1.4.0-alpha.4) (2021-08-23)
 
 ## [1.4.0-alpha.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0-alpha.2...v1.4.0-alpha.3) (2021-08-23)
