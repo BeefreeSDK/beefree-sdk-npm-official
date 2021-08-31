@@ -11,8 +11,10 @@ on:
       - '*'
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
+    environment:
+      name: build
     strategy:
       matrix:
         node-version: [12.x, 14.x]
@@ -52,8 +54,10 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
+    environment:
+      name: release
     if: contains(github.ref, 'tag')
-    needs: test
+    needs: build
     steps:
     - uses: actions/checkout@v2
 
