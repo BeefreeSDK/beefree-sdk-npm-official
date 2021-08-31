@@ -1,5 +1,5 @@
 import loadScript from 'load-script'
-import { pipe } from 'fp-ts/lib/pipeable'
+import { pipe } from 'fp-ts/lib/function'
 import * as E from 'fp-ts/lib/Either'
 import {
   IBeeConfig,
@@ -48,7 +48,7 @@ const {
 
 class Bee {
   token: string
-  bee: any
+  bee: any // todo delete
   instance: any
 
   constructor(

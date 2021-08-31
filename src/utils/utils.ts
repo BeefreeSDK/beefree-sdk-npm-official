@@ -1,5 +1,5 @@
 import * as E from 'fp-ts/lib/Either'
-import { pipe } from 'fp-ts/lib/pipeable'
+import { pipe } from 'fp-ts/lib/function'
 import { IBeeConfig } from '../types/bee'
 import beeActions from './Constants'
 
