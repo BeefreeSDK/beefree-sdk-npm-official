@@ -12,9 +12,10 @@ const beeActions = {
   TOGGLE_MERGETAGS_PREVIEW: 'toggleMergeTagsPreview',
   SHOW_COMMENT: 'showComment',
   JOIN: 'join',
-  RELOAD: 'reload', 
+  RELOAD: 'reload',
   LOAD_WORKSPACE: 'loadWorkspace',
   LOAD_STAGE_MODE: 'loadStageMode',
+  LOAD_CONFIG: 'loadConfig'
 }
- 
+
 export default beeActions

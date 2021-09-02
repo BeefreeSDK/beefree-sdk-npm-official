@@ -42,16 +42,17 @@ const {
   SHOW_COMMENT,
   RELOAD,
   LOAD_WORKSPACE,
-  LOAD_STAGE_MODE
+  LOAD_STAGE_MODE,
+  LOAD_CONFIG
 } = beeActions
 
 export default class Bee {
-  constructor(token, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {   
+  constructor(token, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {
     beeLoaderUrl = urlConfig
     this.bee = (call) => load(() => call())
     this.token = token || null
     this.config = null
-    this.instance = null   
+    this.instance = null
   }
 
   getToken(clientId, clientSecret, urlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }) {
@@ -165,11 +166,19 @@ export default class Bee {
     return this.executeAction(RELOAD, template, options)
   }
 
+  reload(template, options) {
+    return this.executeAction(RELOAD, template, options)
+  }
+
   loadWorkspace(type) {
     return this.executeAction(LOAD_WORKSPACE, type)
   }
 
   loadStageMode(mode) {
     return this.executeAction(LOAD_STAGE_MODE, mode)
+  }
+
+  loadConfig(config) {
+    return this.executeAction(LOAD_CONFIG, config)
   }
 }

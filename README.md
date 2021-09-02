@@ -135,36 +135,42 @@ this return a promise that has resolved after we call the plugin start function
 ## After you have started the editor it's possible to trigger this methods
 
 ### load(template)
-This change the template: just call `load` with the new template
+This changes the template; just call `load` with the new template
+
+### reload(template)
+This changes the template with trigging the loading dialog; just call `reload` with the new template
 
 ### save()
-This call BeePlugin `save`, which in turn will trigger the callback `onSave` defined on the configuration for getting fresh HTML of the email and the JSON template updated.
+This calls BeePlugin `save`, which in turn will trigger the callback `onSave` defined on the configuration for getting fresh HTML of the email and the JSON template updated.
 
 ### saveAsTemplate()
-This call BeePlugin `saveAsTemplate`, which in turn will trigger the callback onSaveAsTemplate defined in the configuration for getting only the current JSON of the instance.
+This calls BeePlugin `saveAsTemplate`, which in turn will trigger the callback onSaveAsTemplate defined in the configuration for getting only the current JSON of the instance.
 
 ### send()
-This call BeePlugin `send`, which in turn will trigger the callback send defined in the configuration for getting only the current html of the instance.
+This calls BeePlugin `send`, which in turn will trigger the callback send defined in the configuration for getting only the current html of the instance.
 
 ### preview()
-This call BeePlugin `preview` which trigger the preview modal inside the editor.
+This calls BeePlugin `preview`, which trigger the preview modal inside the editor.
 
 ### toggleStructure()
-This call BeePlugin `toggleStructure` which toggle the structure helper on the editor's stage.
+This calls BeePlugin `toggleStructure`, which toggle the structure helper on the editor's stage.
 
 ### toggleComments()
-This call BeePlugin `toggleStructure` which toggle the comments section on the editor's sidebar.
+This calls BeePlugin `toggleStructure`, which toggle the comments section on the editor's sidebar.
 
 ### togglePreview()
-This call BeePlugin `togglePreview` which open/close the message preview behavior within the editor.
+This calls BeePlugin `togglePreview`, which open/close the message preview behavior within the editor.
 
 ### showComment(uuid)
-This call BeePlugin `showComment` which opens a specific comment and scrolls the stage to the related element. The method needs one parameter, a comment 'uuid' as a string.
+This calls BeePlugin `showComment`, which opens a specific comment and scrolls the stage to the related element. The method needs one parameter, a comment 'uuid' as a string.
+
+### loadConfig(ClientConfig)
+This calls BeePlugin `loadConfig`, which reloads the JSON configuration used to initialize the plugin.
 
 ### join(beeConfig, sessionId)
-After the initizalization you can call join for creating the editor on the page and joining a collaborative editing session; the method needs two parameters:
+After the initialization you can call join for creating the editor on the page and joining a collaborative editing session; the method needs two parameters:
 
-- BEE configuration (js object)
+- BEE configuration (JS object)
 - SessionID (string obtained from `onSessionStarted` callback)
 
 this return a promise that has resolved after we call the plugin start function. Visit [the docs](https://docs.beefree.io/co-editing/) for more details about co-editing.

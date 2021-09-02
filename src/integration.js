@@ -131,11 +131,16 @@ const loadTemplate = (e, method) => {
       beeTest.load(template)
     } else {
       beeTest.reload(template)
-    }    
+    }
   }
   document.getElementById('load-template').value = ''
   document.getElementById('reload-template').value = ''
   reader.readAsText(templateFile)
+}
+
+const newRowsConfiguration = {
+  emptyRows: true,
+  defaultRows: true,
 }
 
 const addEvents = () => {
@@ -176,7 +181,10 @@ const addEvents = () => {
     .addEventListener('click', () => beeTest.loadWorkspace('mixed'), false)
 
   window.document.getElementById('trigger-loadStageMode')
-    .addEventListener('click', () => beeTest.loadStageMode({ mode: 'mobile', display: 'blur' }), false)  
+    .addEventListener('click', () => beeTest.loadStageMode({ mode: 'mobile', display: 'blur' }), false)
+
+  window.document.getElementById('trigger-loadConfig')
+    .addEventListener('click', () => beeTest.loadConfig({ rowsConfiguration: newRowsConfiguration }))
 }
 
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
