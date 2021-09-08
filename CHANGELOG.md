@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0-beta.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0-beta.2...v1.4.0-beta.3) (2021-09-08)
+
+
+### Bug Fixes
+
+* fixed sintax error on CI :smirk: ([ed6b0c7](https://github.com/BEE-Plugin/Bee-plugin-official/commit/ed6b0c70e6139fed914c8a9f25b797d9a8a22c40))
+
 ## [1.4.0-beta.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0-beta.1...v1.4.0-beta.2) (2021-09-08)
 
 ## [1.4.0-beta.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0-beta.0...v1.4.0-beta.1) (2021-09-08)
