@@ -85,8 +85,8 @@ jobs:
       if: steps.cache-yarn-cache.outputs.cache-hit != 'true' || steps.cache-node-modules.outputs.cache-hit != 'true'
 
     - name: Build package
-        run: yarn build     
-          
+      run: yarn build     
+
     - name: Publish package
       run: npm publish --production
       env:
