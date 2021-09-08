@@ -24,7 +24,6 @@
     "build": "yarn lint && yarn clean && rollup -c && tsc",
     "prepare": "husky install",
     "lint": "eslint ./src --ext ts",
-    "storybook": "start-storybook -p 6006",
     "prerelease": "git pull",
     "release": "standard-version",
     "postrelease": "git push --follow-tags --no-verify",
