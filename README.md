@@ -1,4 +1,4 @@
-# Official BEE plugin wrapper [![CI](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml/badge.svg?branch=master)](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml)
+# Official BEE plugin wrapper [![CI](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml/badge.svg?branch=master)](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml) [![.github/workflows/cy.yml](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml/badge.svg?event=release)](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml)
 A simple module to use the [BEE editor](http://beefree.io)
 
 ## What is BEE Plugin?
