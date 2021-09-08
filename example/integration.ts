@@ -147,7 +147,14 @@ const addEvents = () => {
 
   window.document.getElementById('trigger-loadStageMode')?.addEventListener(
     'click', () => beeTest.loadStageMode({ mode: StageModeOptions.DESKTOP, display: StageDisplayOptions.BLUR }
-  ), false)  
+  ), false)
+  
+  window.document.getElementById('trigger-loadConfig')?.addEventListener('click', () => beeTest.loadConfig({
+    rowsConfiguration: {
+      emptyRows: true,
+      defaultRows: true,
+    }
+  }), false)
 }
 
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }

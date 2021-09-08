@@ -3,7 +3,7 @@ import { pipe } from 'fp-ts/lib/function'
 import * as E from 'fp-ts/lib/Either'
 import {
   IBeeConfig,
-  IBeeLoader, IBeeOptions, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions 
+  IBeeLoader, IBeeOptions, ILoadConfig, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions 
 } from './types/bee'
 import beeActions from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -43,7 +43,8 @@ const {
   SHOW_COMMENT,
   RELOAD,
   LOAD_WORKSPACE,
-  LOAD_STAGE_MODE
+  LOAD_STAGE_MODE,
+  LOAD_CONFIG
 } = beeActions
 
 class Bee {
@@ -160,6 +161,8 @@ class Bee {
   loadWorkspace = (type: LoadWorkspaceOptions) => this.executeAction(LOAD_WORKSPACE, type)
 
   loadStageMode = (args: ILoadStageMode) => this.executeAction(LOAD_STAGE_MODE, args)
+
+  loadConfig = (args: ILoadConfig) => this.executeAction(LOAD_CONFIG, args)
 }
 
 

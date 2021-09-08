@@ -34,6 +34,10 @@ export interface ILoadStageMode {
   display: StageDisplayOptions
 }
 
+export interface ILoadConfig {
+  [key: string]: unknown;
+}
+
 export enum LoadWorkspaceOptions {
   DEFAULT = 'default',
   MIXED = 'mixed',

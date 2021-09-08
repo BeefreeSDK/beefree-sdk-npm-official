@@ -175,8 +175,11 @@ This call BeePlugin `loadWorkspace`, which accepts one of the following paramete
 ### loadStageMode(arg)
 This call BeePlugin `loadStageMode`, which accepts an object parameter with the following structure: { mode: 'desktop'|'mobile', display: 'blur'|'hide'}. Visit [the docs](https://docs.beefree.io/mobile-design-mode/#customization-options) for more details about design mode.
 
+### loadConfig(ClientConfig)
+This calls BeePlugin `loadConfig`, which reloads the JSON configuration used to initialize the plugin.
+
 ## Test (WIP)
-```sh
+```sh+
 npm test
 ```
 or
