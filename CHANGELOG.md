@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0-beta.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0-alpha.5...v1.4.0-beta.0) (2021-09-08)
+
+
+### Features
+
+* **loadConfig:** added loadConfig action ([ecb1d17](https://github.com/BEE-Plugin/Bee-plugin-official/commit/ecb1d175ede1f672dee98ae4731692b742e5cf9e))
+
 ## [1.4.0-alpha.5](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0-alpha.4...v1.4.0-alpha.5) (2021-08-31)
 
 
