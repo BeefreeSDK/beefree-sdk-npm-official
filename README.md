@@ -47,30 +47,53 @@ yarn add @mailupinc/bee-plugin
 ```
 
 ## Get token
+
+
+## Initialize the plugin
+### Get token(clientId, clientSecret)
 > You need to be authorized to start using the editor: beefree help documentation portal [has a nice post](http://help.beefree.io/hc/en-us/articles/202991192-Initializing-the-plugin) explaining how to do it
 
-It's not really raccomended to do it client side but it's possible with the module, just call getToken
+It's not really raccomended to do it client side but it's possible with the module, just call getToken.
+
+Pass your credential on `getToken` method and start the plugin in the returning promise. Example below:
 
 ```js
-import Bee from '@mailupinc/bee-plugin'
+import BeePlugin from '@mailupinc/bee-plugin'
 
-const beeTest = new Bee()
+// put your credentials in the .env file
+const clientId = process.env.PLUGIN_CLIENT_ID
+const clientSecret = process.env.PLUGIN_CLIENT_SECRET
+const beeConfig = {...}
+
+const template = {...}
+const beeTest = new BeePlugin(token, authConfiguration)
 
 beeTest.getToken(clientId, clientSecret)
+  .then(() => beeTest.start(beeConfig, template))
 
 ```
 
-## Initialize the plugin
+### new Bee(token, authConf?)
 > Initialize the BEE instance with a server side generated token
 
 ```js
-import Bee from '@mailupinc/bee-plugin'
 
-const beeTest = new Bee(token)
+import BeePlugin from '@mailupinc/bee-plugin'
 
+const authConf = {...}
+const beeConfig = {...}
+const template = {...}
+
+// you can add you personal configuration, if you omit some properties, plugin will use it's default configuration
+const authConfiguration = {
+  authUrl: process.env.YOR_AUTH_URL,
+  beePluginUrl: process.env.YOR_HOST_PLUGIN_URL
+}
+const beeInstance = new BeePlugin(token, authConf)
+beeInstance.start(beeConfig, template)
 ```
 
-## Configuring the editor
+## Configuring the editor (beeConfig)
 > It requires a configuration for using the editor, beefree help documentation portal [has a nice post](http://help.beefree.io/hc/en-us/articles/202991192-Initializing-the-plugin) explaining how to do it
 
 Here is an example of the configuration; just read the official documentation for an extended version
@@ -102,47 +125,9 @@ const beeConfig = {
 
 Some json avaible here  [https://github.com/BEE-Plugin/BEE-FREE-templates](https://github.com/BEE-Plugin/BEE-FREE-templates)
 
+## After you have started the editor it's possible to trigger this methods
+
 ## Methods
-
-### getToken(clientId, clientSecret)
-
-Pass your credential on `getToken` method and start the plugin in the returning promise. Example below:
-
-```js
-import BeePlugin from '@mailupinc/bee-plugin'
-
-// put your credentials in the .env file
-const clientId = process.env.PLUGIN_CLIENT_ID
-const clientSecret = process.env.PLUGIN_CLIENT_SECRET
-const beeConfig = {...}
-
-const template = {...}
-const beeTest = new BeePlugin(token, authConfiguration)
-
-beeTest.getToken(clientId, clientSecret)
-  .then(() => beeTest.start(beeConfig, template))
-
-```
-
-### new Bee(token)
-Initializes a class with the token that are stored on constructor
-```js
-
-import BeePlugin from '@mailupinc/bee-plugin'
-
-const authConf = {...}
-const beeConfig = {...}
-const template = {...}
-
-// you can add you personal configuration, if you omit some properties, plugin will use it's default configuration
-const authConfiguration = {
-  authUrl: process.env.YOR_AUTH_URL,
-  beePluginUrl: process.env.YOR_HOST_PLUGIN_URL
-}
-const beeInstance = new BeePlugin(token, authConf)
-beeInstance.start(beeConfig, template)
-```
-
 ### start(beeConfig, template, endpoint, options)
 After the initizalization you can call start for creating the editor on the page; the method needs two parameters:
 
@@ -153,7 +138,7 @@ After the initizalization you can call start for creating the editor on the page
 
 this return a promise that has resolved after we call the plugin start function
 
-## After you have started the editor it's possible to trigger this methods
+
 
 ### load(template)
 This change the template: just call `load` with the new template
