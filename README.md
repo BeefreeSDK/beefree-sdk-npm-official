@@ -46,9 +46,6 @@ or
 yarn add @mailupinc/bee-plugin
 ```
 
-## Get token
-
-
 ## Initialize the plugin
 ### Get token(clientId, clientSecret)
 > You need to be authorized to start using the editor: beefree help documentation portal [has a nice post](http://help.beefree.io/hc/en-us/articles/202991192-Initializing-the-plugin) explaining how to do it
