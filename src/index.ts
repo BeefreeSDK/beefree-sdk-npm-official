@@ -8,6 +8,7 @@ import {
 import beeActions from './utils/Constants'
 import { fetchToken } from './services/api'
 import { eitherCanExecuteAction, eitherCheckJoinParams, eitherCheckStartParams } from './utils/utils'
+import * as beeTypes from './types/bee'
 
 //this is the global variable injected from BeePlugin.js 
 declare let BeePlugin: any;
@@ -167,3 +168,5 @@ class Bee {
 
 
 export default Bee
+
+export { beeTypes }
