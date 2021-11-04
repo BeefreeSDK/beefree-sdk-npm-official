@@ -5,7 +5,6 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
-  "types": "dist/src/main.d.ts",
   "files": [
     "dist"
   ],
