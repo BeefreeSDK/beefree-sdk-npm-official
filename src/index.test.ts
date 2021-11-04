@@ -7,7 +7,7 @@ describe("BeePlugin", () => {
         expect(typeof beeInstance.preview).toBe("function")
         expect(typeof beeInstance.reload).toBe("function")
         expect(typeof beeInstance.save).toBe("function")
-        expect(typeof beeInstance.saveAsTemplate).toBe("fusnction")
+        expect(typeof beeInstance.saveAsTemplate).toBe("function")
         expect(typeof beeInstance.send).toBe("function")
         expect(typeof beeInstance.showComment).toBe("function")
         expect(typeof beeInstance.start).toBe("function")
