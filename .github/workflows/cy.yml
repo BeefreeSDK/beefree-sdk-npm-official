@@ -9,7 +9,6 @@ on:
   pull_request:
     branches:
       - '*'
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,7 +16,7 @@ jobs:
       name: build
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
+        node-version: [12.x, 14.x, 16.x]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node Version ${{ matrix.node-version }}
@@ -48,9 +47,24 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-
 
+      - uses: actions/cache@v2
+        name: Cache Jest cache
+        id: cache-jest-cache
+        with:
+          path: .jest-cache
+          key: ${{ runner.os }}-${{ matrix.node-version }}-jest        
+
       - name: Install Dependencies
         run: yarn --frozen-lockfile
-        if: steps.cache-yarn-cache.outputs.cache-hit != 'true' || steps.cache-node-modules.outputs.cache-hit != 'true'   
+        if: steps.cache-yarn-cache.outputs.cache-hit != 'true' || steps.cache-node-modules.outputs.cache-hit != 'true'
+      
+      - name: Unit tests
+        run: yarn test --all --cacheDirectory .jest-cache --coverage --watchAll false
+      - uses: vebr/jest-lcov-reporter@v0.2.0
+        # Print comment only on 1 build and PR
+        if: matrix.node-version == '12.x' && github.event_name == 'pull_request'
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}  
 
   release:
     runs-on: ubuntu-latest

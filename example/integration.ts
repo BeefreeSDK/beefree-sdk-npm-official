@@ -1,5 +1,8 @@
 import Bee from '../src/index'
-import { IBeeConfig, IMergeContent, IMergeTag, ISpecialLink, LoadWorkspaceOptions, StageDisplayOptions, StageModeOptions } from '../src/types/bee';
+import { 
+  IBeeConfig, IMergeContent, IMergeTag, ISpecialLink, 
+  LoadWorkspaceOptions, StageDisplayOptions, StageModeOptions 
+} from '../src/types/bee';
 declare let saveAs: any;
 
 const BEE_TEMPLATE_URL = 'https://rsrc.getbee.io/api/templates/m-bee'
