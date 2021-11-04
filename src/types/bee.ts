@@ -53,6 +53,22 @@ export type BeePluginError = {
 
 type CSSProperties = CSS.Properties<string | number>
 
+export interface ISavedRow {
+  category: number | { name: string }
+  content_html?: string
+  content_json: JSON
+  dateCreated?: string
+  dateModified?: string
+  description: string
+  idParent: number | null
+  name: string
+  slug: string
+  thumb_large?: string
+  thumb_medium?: string
+  thumb_small?: string
+  uuid: string
+}
+
 export interface IPluginRow {
   columns: unknown[]
   container: {
@@ -60,7 +76,7 @@ export interface IPluginRow {
   }
   content: unknown
   locked: boolean
-  metadata: Record<string, unknown>
+  metadata: ISavedRow
   type: string
   uuid: string
 }
@@ -192,6 +208,34 @@ export type IPluginSessionInfo = {
   sessionId: string
 }
 
+export interface IEntityContentJson {
+  page: {
+    body: unknown
+    description: string
+    rows: unknown[]
+    template: {
+      name: string
+      type: string
+      version: string
+    }
+    title: string
+  }
+}
+
+export type BeePluginMessageEditDetailPatch = {
+  op: string
+  path: string
+  value: string
+}
+
+export type BeePluginMessageEditDetail = {
+  code: unknown
+  value: string
+  description: string
+  patches: BeePluginMessageEditDetailPatch[]
+}
+
+
 export interface IBeeConfig {
   uid: string
   container: string
@@ -216,7 +260,7 @@ export interface IBeeConfig {
   contentDefaults?: unknown
   customCss?: string
   workspace?: BeePluginWorkspace
-  autosave?: number | string,
+  autosave?: number,
   saveRows?: boolean,
   contentDialog?: {
     engage?: {
@@ -249,7 +293,7 @@ export interface IBeeConfig {
   onAutoSave?: (json: string) => void
   onSaveAsTemplate?: (json: Record<string, unknown>) => void
   onSend?: (html: string) => void
-  onChange?: (json: string, _: unknown, version: number) => void
+  onChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
   onWarning?: (a: unknown, b: unknown,) => void
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
 }

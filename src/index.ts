@@ -2,7 +2,7 @@ import loadScript from 'load-script'
 import { pipe } from 'fp-ts/lib/function'
 import * as E from 'fp-ts/lib/Either'
 import {
-  IBeeConfig,
+  IBeeConfig, IEntityContentJson,
   IBeeLoader, IBeeOptions, ILoadConfig, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions 
 } from './types/bee'
 import beeActions from './utils/Constants'
@@ -81,9 +81,9 @@ class Bee {
 
   start = (
     config: IBeeConfig,
-    template: Record<string, unknown>,
-    bucketDir: string, 
-    options: IBeeOptions
+    template: IEntityContentJson,
+    bucketDir?: string, 
+    options?: IBeeOptions
   ) => {
     const { bee, token } = this    
     return pipe(
@@ -168,5 +168,4 @@ class Bee {
 
 
 export default Bee
-
 export { beeTypes }
