@@ -23,6 +23,7 @@ module.exports = {
     },
     devServer: {
         bonjour: true,
+        open: true,
         static: './example/',
         client: {
             overlay: {

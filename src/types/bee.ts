@@ -178,7 +178,6 @@ export type BeePluginAdvancedPermissionStageToggle = {
   }
 }
 
-
 export type BeePluginAdvancedPermission = {
   rows: {
     displayConditions: {

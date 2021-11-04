@@ -24,8 +24,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "strict": true,
-    "module": "esnext",
+    "strict": true,    
     "isolatedModules": false,
     "noEmit": false
   },
