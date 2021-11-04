@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0-beta.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0-beta.3...v1.4.0-beta.4) (2021-11-04)
+
 ## [1.4.0-beta.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0-beta.2...v1.4.0-beta.3) (2021-09-08)
 
 
