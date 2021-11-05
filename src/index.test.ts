@@ -23,11 +23,7 @@ describe("BeePlugin", () => {
         expect(typeof beeInstance.loadConfig).toBe("function")
     })
 
-    test('should call getToken', () => {
-        const getTokenSpy = jest.spyOn(beeInstance, "getToken")
-        
-        beeInstance.getToken('', '')
-        expect(getTokenSpy).toHaveBeenCalled()
-
+    test('should call getToken', async () => {
+        await expect(beeInstance.getToken('', '')).rejects.toThrowError(Error);
     })
 })
