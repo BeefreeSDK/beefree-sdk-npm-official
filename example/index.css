@@ -1,12 +1,14 @@
 * {
-  margin:0px;
-  padding:0px;
+  margin: 0px;
+  padding: 0px;
 }
+
 body {
-  overflow:hidden;
+  overflow: hidden;
   background-color: #CCCCCC;
-  color:#000000;
+  color: #000000;
 }
+
 button,
 input[type="file"] {
   font-size: 11px;
@@ -16,17 +18,20 @@ input[type="file"] {
   font-weight: bold;
   color: #888888;
 }
+
 button {
   padding: 3px 15px;
 }
+
 #bee-plugin-container {
   position: absolute;
-  top:5px;
-  bottom:30px;
-  left:5px;
-  right:5px;
+  top: 5px;
+  bottom: 30px;
+  left: 5px;
+  right: 5px;
   height: calc(100% - 75px);
 }
+
 #integrator-bottom-bar {
   position: absolute;
   padding: 15px;
@@ -40,22 +45,23 @@ button {
   font-size: 12px;
   border-bottom-left-radius: 3px;
   vertical-align: top;
-  -webkit-box-shadow: 0px -6px 15px -8px rgba(139,160,245,1);
-  -moz-box-shadow: 0px -6px 15px -8px rgba(139,160,245,1);
-  box-shadow: 0px -6px 15px -8px rgba(139,160,245,1);
+  -webkit-box-shadow: 0px -6px 15px -8px rgba(139, 160, 245, 1);
+  -moz-box-shadow: 0px -6px 15px -8px rgba(139, 160, 245, 1);
+  box-shadow: 0px -6px 15px -8px rgba(139, 160, 245, 1);
 }
 
 .sendIco {
   background: url('https://image.flaticon.com/icons/svg/126/126494.svg');
 }
 
-.btnGroupLeft, .btnGroupCenter {
-  width: 25%;    
+.btnGroupLeft,
+.btnGroupCenter {
+  width: 25%;
   float: left;
 }
 
 .btnGroupRight {
-  width: 40%;  
+  width: 40%;
   text-align: right;
 }
 
@@ -89,8 +95,9 @@ button {
   margin-right: 5px;
 }
 
-.sendTest, .loadTemplate {
-  background:transparent;
+.sendTest,
+.loadTemplate {
+  background: transparent;
   text-align: right;
   display: inline-block;
   padding-left: 30px;
@@ -99,7 +106,8 @@ button {
 }
 
 
-.sendTest span, .loadTemplate span {
+.sendTest span,
+.loadTemplate span {
   text-align: right;
 }
 
@@ -122,7 +130,7 @@ button {
 
 .sendTestButton {
   position: relative;
-  top:5px;
+  top: 5px;
 }
 
 .dropdown {
@@ -135,7 +143,7 @@ button {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 4px 8px;
   z-index: 1;
   bottom: 30px;
@@ -147,11 +155,12 @@ button {
 .dropdown:hover .dropdown-content {
   display: flex;
   align-items: center;
-  flex-flow: column wrap;  
+  flex-flow: column wrap;
   justify-content: center;
 }
 
-#integrator-bottom-bar .sendTestButton, #integrator-bottom-bar .toggleStructureButton {
+#integrator-bottom-bar .sendTestButton,
+#integrator-bottom-bar .toggleStructureButton {
   border-top-right-radius: 70px;
   border-bottom-right-radius: 70px;
   padding-right: 30px;
@@ -180,9 +189,9 @@ button {
 }
 
 .item-dropdown {
-  display: flex;  
+  display: flex;
   justify-content: center;
-  text-transform: uppercase;  
+  text-transform: uppercase;
   cursor: pointer;
   color: #fff;
   background-color: transparent;
@@ -202,11 +211,11 @@ button {
 }
 
 .item-dropdown:hover {
-  background-color:rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #integrator-bottom-bar .btn:hover {
-  background-color:rgba(0,0,0,0.5) !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
   transition: all 0.2s ease-in;
 }
 
@@ -214,7 +223,8 @@ button {
   outline: none;
 }
 
-.btnGroupLeft .btn, .btnGroupCenter .btn {
+.btnGroupLeft .btn,
+.btnGroupCenter .btn {
   margin-top: 0 !important;
   margin-right: 0;
 }

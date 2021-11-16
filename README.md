@@ -1,12 +1,13 @@
-# Official BEE plugin wrapper [![Build Status](https://travis-ci.org/samuv/bee-plugin.svg?branch=master)](https://travis-ci.org/samuv/bee-plugin.svg?branch=master)
+# Official BEE plugin wrapper [![CI](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml/badge.svg?branch=master)](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml) [![.github/workflows/cy.yml](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml/badge.svg?event=release)](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml)
 A simple module to use the [BEE editor](http://beefree.io)
 
-## What is BEE?
-Long story short: it's a drag-&-drop editor to author responsive design emails.
-It makes it easy and quick to create a great-looking email message that can be used to send a company newsletter, announce a new product, promote a sale, etc.
+## Why BEE Plugin?
+Choose a reliable, easy to integrate multi-content type digital platform you can build on. BEE Plugin is more than an embeddable visual builder with a great drag-n-drop user experience. It’s a reliable, highly-customizable email, landing page & popup builder.
 
-You can embed it into your application :)
-Using with the BEE free version, you can embed the editor anywhere, regardless of the pricing model.
+Go from proof-of-concept to production in days, not months. BEE Plugin can be highly customized in the way it looks, what it does and how it interacts with your application. Deliver your business exactly what it needs, with a small development effort
+
+You can embed it into your application!
+
 
 ## How to use it
 
@@ -22,12 +23,12 @@ It's free to use on ['https://beefree.io'](https://beefree.io): you don't even n
 
 ## Do you want to try out an integration locally?
 
-1. Install Nodejs (also npm, which should come with nodejs already).
+1. Install Nodejs (also npm, which should come with nodejs already) or Yarn.
 2. clone this repository
 3. `npm install` or `yarn install`(if you have it installed) in the folder cloned
-4. put your `clientId` and `clientSecret` in ./config/integrationKeys.js
-5. `npm start`
-6. Open `http://localhost:3030`.
+4. rename the local `.env.sample` file into `.env`
+5. run `npm start` or `yarn start`
+6. Open `http://localhost:8080`.
 7. Have fun!
 
 
@@ -45,31 +46,51 @@ or
 yarn add @mailupinc/bee-plugin
 ```
 
-## Get token
+## Initialize the plugin
+### Get token(clientId, clientSecret)
 > You need to be authorized to start using the editor: beefree help documentation portal [has a nice post](http://help.beefree.io/hc/en-us/articles/202991192-Initializing-the-plugin) explaining how to do it
 
-It's not really raccomended to do it client side but it's possible with the module, just call getToken
+It's not really raccomended to do it client side but it's possible with the module, just call getToken.
+
+Pass your credential on `getToken` method and start the plugin in the returning promise. Example below:
 
 ```js
-import Bee from '@mailupinc/bee-plugin'
+import BeePlugin from '@mailupinc/bee-plugin'
 
-const beeTest = new Bee()
+// put your credentials in the .env file
+const clientId = process.env.PLUGIN_CLIENT_ID
+const clientSecret = process.env.PLUGIN_CLIENT_SECRET
+const beeConfig = {...}
+
+const template = {...}
+const beeTest = new BeePlugin(token, authConfiguration)
 
 beeTest.getToken(clientId, clientSecret)
+  .then(() => beeTest.start(beeConfig, template))
 
 ```
 
-## Initialize the plugin
+### new Bee(token, authConf?)
 > Initialize the BEE instance with a server side generated token
 
 ```js
-import Bee from '@mailupinc/bee-plugin'
 
-const beeTest = new Bee(token)
+import BeePlugin from '@mailupinc/bee-plugin'
 
+const authConf = {...}
+const beeConfig = {...}
+const template = {...}
+
+// you can add you personal configuration, if you omit some properties, plugin will use it's default configuration
+const authConfiguration = {
+  authUrl: process.env.YOR_AUTH_URL,
+  beePluginUrl: process.env.YOR_HOST_PLUGIN_URL
+}
+const beeInstance = new BeePlugin(token, authConf)
+beeInstance.start(beeConfig, template)
 ```
 
-## Configuring the editor
+## Configuring the editor (beeConfig)
 > It requires a configuration for using the editor, beefree help documentation portal [has a nice post](http://help.beefree.io/hc/en-us/articles/202991192-Initializing-the-plugin) explaining how to do it
 
 Here is an example of the configuration; just read the official documentation for an extended version
@@ -101,27 +122,9 @@ const beeConfig = {
 
 Some json avaible here  [https://github.com/BEE-Plugin/BEE-FREE-templates](https://github.com/BEE-Plugin/BEE-FREE-templates)
 
+## After you have started the editor it's possible to trigger this methods
+
 ## Methods
-
-### getToken(clientId, clientSecret)
-
-Pass your keys on parms and return a promise; example:
-
-```js
-const clientId = 'MYclientId'
-const clientSecret = 'MYclientSecret'
-const beeConfig = {...}
-const template = {...}
-const beeTest = new Bee()
-
-beeTest.getToken(clientId, clientSecret)
-  .then(() => beeTest.start(beeConfig, template))
-
-```
-
-### new Bee(token)
-Initializes a class with the token that are stored on constructor
-
 ### start(beeConfig, template, endpoint, options)
 After the initizalization you can call start for creating the editor on the page; the method needs two parameters:
 
@@ -132,7 +135,7 @@ After the initizalization you can call start for creating the editor on the page
 
 this return a promise that has resolved after we call the plugin start function
 
-## After you have started the editor it's possible to trigger this methods
+
 
 ### load(template)
 This changes the template; just call `load` with the new template
@@ -181,14 +184,8 @@ This call BeePlugin `loadWorkspace`, which accepts one of the following paramete
 ### loadStageMode(arg)
 This call BeePlugin `loadStageMode`, which accepts an object parameter with the following structure: { mode: 'desktop'|'mobile', display: 'blur'|'hide'}. Visit [the docs](https://docs.beefree.io/mobile-design-mode/#customization-options) for more details about design mode.
 
-## Test (WIP)
-```sh
-npm test
-```
-or
-```sh
-yarn test
-```
+### loadConfig(ClientConfig)
+This calls BeePlugin `loadConfig`, which reloads the JSON configuration used to initialize the plugin.
 
 
 [node]: https://nodejs.org/en/
