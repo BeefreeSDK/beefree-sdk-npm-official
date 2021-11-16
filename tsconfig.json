@@ -35,7 +35,7 @@
     "node_modules",
     "build",
     "dist",    
-    "rollup.config.js",
+    "rollup.config.ts",
     "**/*.test.ts"
   ]
 }
