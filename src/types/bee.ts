@@ -53,22 +53,6 @@ export type BeePluginError = {
 
 type CSSProperties = CSS.Properties<string | number>
 
-export interface ISavedRow {
-  category: number | { name: string }
-  content_html?: string
-  content_json: JSON
-  dateCreated?: string
-  dateModified?: string
-  description: string
-  idParent: number | null
-  name: string
-  slug: string
-  thumb_large?: string
-  thumb_medium?: string
-  thumb_small?: string
-  uuid: string
-}
-
 export interface IPluginRow {
   columns: unknown[]
   container: {
@@ -76,9 +60,15 @@ export interface IPluginRow {
   }
   content: unknown
   locked: boolean
-  metadata: ISavedRow
+  metadata: Record<string, unknown>
   type: string
   uuid: string
+}
+
+export interface IMention {
+  username: string
+  value: string
+  uid: string | number
 }
 
 export interface IPluginForm {
@@ -99,13 +89,6 @@ export enum EngageHandle {
   MDM = 'mdm',
 }
 
-export type BeePluginEngageDialogHandler = (
-  resolve: () => void,
-  reject: () => void,
-  handle: EngageHandle
-) => Promise<void>
-
-
 export type BeePluginContentDialogHandler<K> = (
   resolve: (data: K) => void,
   reject: () => void,
@@ -114,7 +97,7 @@ export type BeePluginContentDialogHandler<K> = (
 
 export type BeePluginConfigurationsHooks = {
   getMentions?: {
-    handler: BeePluginContentDialogHandler<any> // Todo type with onMention payload
+    handler: BeePluginContentDialogHandler<IMention> // Todo type with onMention payload
   }
 }
 
@@ -255,6 +238,7 @@ export interface IBeeConfig {
   loadingSpinnerDisableOnSave?: boolean
   editorFonts?: unknown
   roleHash?: string
+  role?: 'reviewer',
   defaultColors?: string[]
   contentDefaults?: unknown
   customCss?: string
@@ -263,7 +247,7 @@ export interface IBeeConfig {
   saveRows?: boolean,
   contentDialog?: {
     engage?: {
-      handler: BeePluginEngageDialogHandler
+      handler: BeePluginContentDialogHandler<EngageHandle>
     },
     saveRow?: {
       label: string
@@ -276,6 +260,10 @@ export interface IBeeConfig {
     filePicker?: {
       label: string
       handler: BeePluginContentDialogHandler<IPluginFilePicker>
+    },
+    getMention?: {
+      label: string
+      handler: BeePluginContentDialogHandler<IMention>
     }
   },
   rowsConfiguration?: Record<string, unknown>
