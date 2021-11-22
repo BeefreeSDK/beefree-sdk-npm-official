@@ -1,4 +1,6 @@
-# Official BEE plugin wrapper [![CI](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml/badge.svg?branch=master)](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml) [![.github/workflows/cy.yml](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml/badge.svg?event=release)](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml)
+![alt bee-plugin-logo](https://developers.beefree.io/static/assets/img/bee-plugin-logo.png)
+
+# Official BEE plugin wrapper [![CI](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml/badge.svg?branch=master)](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml)
 A simple module to use the [BEE editor](http://beefree.io)
 
 ## Why BEE Plugin?
@@ -8,8 +10,10 @@ Go from proof-of-concept to production in days, not months. BEE Plugin can be hi
 
 You can embed it into your application!
 
+Visit our developer documentation [https://docs.beefree.io/]
 
-## How to use it
+
+## How to use it 
 
 - go to the developer portal [https://developers.beefree.io/signup](https://developers.beefree.io/signup)
 - sign up with the free plan

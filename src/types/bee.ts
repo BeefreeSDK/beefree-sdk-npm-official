@@ -89,10 +89,11 @@ export enum EngageHandle {
   MDM = 'mdm',
 }
 
-export type BeePluginContentDialogHandler<K> = (
+export type BeePluginContentDialogHandler<K, T = undefined> = (
   resolve: (data: K) => void,
   reject: () => void,
-  args: K
+  args: K,
+  handle?: T
 ) => Promise<void>
 
 export type BeePluginConfigurationsHooks = {
@@ -217,6 +218,10 @@ export type BeePluginMessageEditDetail = {
   patches: BeePluginMessageEditDetailPatch[]
 }
 
+export enum BeePluginRole {
+  REVIEWER = 'reviewer'
+}
+
 
 export interface IBeeConfig {
   uid: string
@@ -238,7 +243,7 @@ export interface IBeeConfig {
   loadingSpinnerDisableOnSave?: boolean
   editorFonts?: unknown
   roleHash?: string
-  role?: 'reviewer',
+  role?: BeePluginRole,
   defaultColors?: string[]
   contentDefaults?: unknown
   customCss?: string
