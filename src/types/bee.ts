@@ -65,7 +65,7 @@ export interface IPluginRow {
   uuid: string
 }
 
-export interface IMention {
+export interface IInvitedMention {
   username: string
   value: string
   uid: string | number
@@ -98,7 +98,7 @@ export type BeePluginContentDialogHandler<K, T = undefined> = (
 
 export type BeePluginConfigurationsHooks = {
   getMentions?: {
-    handler: BeePluginContentDialogHandler<IMention> // Todo type with onMention payload
+    handler: BeePluginContentDialogHandler<IInvitedMention>
   }
 }
 
@@ -218,7 +218,7 @@ export type BeePluginMessageEditDetail = {
   patches: BeePluginMessageEditDetailPatch[]
 }
 
-export enum BeePluginRole {
+export enum BeePluginRoles {
   REVIEWER = 'reviewer'
 }
 
@@ -243,7 +243,7 @@ export interface IBeeConfig {
   loadingSpinnerDisableOnSave?: boolean
   editorFonts?: unknown
   roleHash?: string
-  role?: BeePluginRole,
+  role?: BeePluginRoles,
   defaultColors?: string[]
   contentDefaults?: unknown
   customCss?: string
@@ -268,7 +268,7 @@ export interface IBeeConfig {
     },
     getMention?: {
       label: string
-      handler: BeePluginContentDialogHandler<IMention>
+      handler: BeePluginContentDialogHandler<IInvitedMention>
     }
   },
   rowsConfiguration?: Record<string, unknown>
