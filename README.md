@@ -2,12 +2,14 @@
 
 # Official BEE plugin wrapper [![CI](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml/badge.svg?branch=master)](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml)
 
-[![PRs Welcome][prs-badge]][prs] [![Code of Conduct][coc-badge]][coc]
-[![version][version-badge]][package] [![downloads][downloads-badge]][npmtrends]
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![NPM](https://nodei.co/npm/@mailupinc/bee-plugin.png?compact=true)](https://npmjs.org/package/@mailupinc/bee-plugin)
 
-[![Watch on GitHub][github-watch-badge]][github-watch]
-[![Star on GitHub][github-star-badge]][github-star]
+
+
+<!-- [![Watch on GitHub][github-watch-badge]][github-watch]
+[![Star on GitHub][github-star-badge]][github-star] -->
 
 A simple module to use the [BEE editor](http://beefree.io)
 
