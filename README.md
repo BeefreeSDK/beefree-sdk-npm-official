@@ -5,10 +5,11 @@
 [![PRs Welcome][prs-badge]][prs] [![Code of Conduct][coc-badge]][coc]
 [![version][version-badge]][package] [![downloads][downloads-badge]][npmtrends]
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-A simple module to use the [BEE editor](http://beefree.io)
 
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
+
+A simple module to use the [BEE editor](http://beefree.io)
 
 ## Why BEE Plugin?
 Choose a reliable, easy to integrate multi-content type digital platform you can build on. BEE Plugin is more than an embeddable visual builder with a great drag-n-drop user experience. It’s a reliable, highly-customizable email, landing page & popup builder.
