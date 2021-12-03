@@ -89,8 +89,8 @@ const beeConfig :IBeeConfig = {
   },
   onSend: (htmlFile) => console.log('onSend', htmlFile),
   onError: (errorMessage) => console.log('onError ', errorMessage),
-  onChange: (msg, response) => console.warn('*** [integration] (OnChange) message > ', msg, response),
-  onWarning: (a, b) => console.warn('*** [integration] (OnWarning) message a, b > ', a, b),
+  onChange: (msg, response) => console.warn('*** [integration] (OnChange) message --> ', msg, response),
+  onWarning: (e) => console.warn('*** [integration] (OnWarning) message --> ', e.message),
   onPreview: () => console.warn('*** [integration] --> (onPreview) '),
   onTogglePreview: () => console.warn('*** [integration] --> (onTogglePreview) '),
   onSessionStarted: (sessionInfo) => {
