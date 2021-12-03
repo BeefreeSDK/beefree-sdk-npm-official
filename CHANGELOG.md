@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0-beta.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.0-alpha.1...v1.5.0-beta.0) (2021-11-26)
+
+## [1.5.0-alpha.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.0-alpha.0...v1.5.0-alpha.1) (2021-11-22)
+
+## [1.5.0-alpha.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0...v1.5.0-alpha.0) (2021-11-22)
+
+
+### Features
+
+* added role and getMentions dialog. Little bugfixing on types ([400836f](https://github.com/BEE-Plugin/Bee-plugin-official/commit/400836fb1322d66fe15941ed8f0fda49ba084a5e))
+
 ## [1.4.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0-beta.10...v1.4.0) (2021-11-16)
 
 ## [1.4.0-beta.10](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.4.0-beta.9...v1.4.0-beta.10) (2021-11-05)

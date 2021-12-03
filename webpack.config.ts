@@ -1,9 +1,10 @@
-const path = require('path')
-const webpack = require('webpack')
+import path from 'path'
+import webpack from 'webpack'
+import dotenv from 'dotenv'
 process.env.NODE_ENV = 'development'
-require('dotenv').config({ path: './.env' })
+dotenv.config({ path: './.env' })
 
-module.exports = {
+export default {
     entry: './example/integration.ts',
     devtool: 'inline-source-map',
     module: {

@@ -1,4 +1,16 @@
-# Official BEE plugin wrapper [![CI](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml/badge.svg?branch=master)](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml) [![.github/workflows/cy.yml](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml/badge.svg?event=release)](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml)
+![alt bee-plugin-logo](https://developers.beefree.io/static/assets/img/bee-plugin-logo.png)
+
+# Official BEE plugin wrapper [![CI](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml/badge.svg?branch=master)](https://github.com/BEE-Plugin/Bee-plugin-official/actions/workflows/cy.yml)
+
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![NPM](https://nodei.co/npm/@mailupinc/bee-plugin.png?compact=true)](https://npmjs.org/package/@mailupinc/bee-plugin)
+
+
+
+<!-- [![Watch on GitHub][github-watch-badge]][github-watch]
+[![Star on GitHub][github-star-badge]][github-star] -->
+
 A simple module to use the [BEE editor](http://beefree.io)
 
 ## Why BEE Plugin?
@@ -8,8 +20,10 @@ Go from proof-of-concept to production in days, not months. BEE Plugin can be hi
 
 You can embed it into your application!
 
+Visit our developer documentation [https://docs.beefree.io/]
 
-## How to use it
+
+## How to use it 
 
 - go to the developer portal [https://developers.beefree.io/signup](https://developers.beefree.io/signup)
 - sign up with the free plan
