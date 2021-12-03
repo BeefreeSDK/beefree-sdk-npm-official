@@ -231,6 +231,8 @@ export type BeePluginCustomHeader = {
   value: string
 }
 
+export type IRefreshSavedRow = boolean
+
 
 export interface IBeeConfig {
   uid: string
@@ -279,6 +281,14 @@ export interface IBeeConfig {
     getMention?: {
       label: string
       handler: BeePluginContentDialogHandler<IInvitedMention>
+    }
+    onDeleteRow?: {
+      label: string
+      handler: BeePluginContentDialogHandler<IRefreshSavedRow>
+    }
+    onEditRow?: {
+      label: string
+      handler: BeePluginContentDialogHandler<IRefreshSavedRow>
     }
   },
   rowsConfiguration?: Record<string, unknown>
