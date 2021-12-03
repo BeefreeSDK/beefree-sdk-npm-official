@@ -34,12 +34,8 @@ export interface ILoadStageMode {
   display: StageDisplayOptions
 }
 
-//contentDefaults
-//advancedPermissions
-//rowsConfiguration
-//customHeaders
-export interface ILoadConfig {
-  [key: string]: unknown;
+export type ILoadConfig = {
+  [key in keyof ILoadableProps]: unknown
 }
 
 export enum LoadWorkspaceOptions {
@@ -233,6 +229,8 @@ export type BeePluginCustomHeader = {
 
 export type IRefreshSavedRow = boolean
 
+
+export type ILoadableProps = Pick<IBeeConfig, 'advancedPermissions' | 'contentDefaults' | 'customHeaders' | 'rowsConfiguration'>
 
 export interface IBeeConfig {
   uid: string
