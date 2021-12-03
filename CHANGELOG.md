@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1-alpha.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.0...v1.5.1-alpha.0) (2021-12-03)
+
+
+### Bug Fixes
+
+* added custom headers definition ([0cc3bb9](https://github.com/BEE-Plugin/Bee-plugin-official/commit/0cc3bb9aa7ea021bd82b7a8a7f2fdbd95cb00dba))
+* added load config type definition ([aae2e52](https://github.com/BEE-Plugin/Bee-plugin-official/commit/aae2e5211f66e1f73beed40e669e7b8a0d480f68))
+* added on delete row and on edit row content dialogs definition ([533a35b](https://github.com/BEE-Plugin/Bee-plugin-official/commit/533a35bf7f974d127f1ac8d9897b13f4b7ee82c8))
+* added on load workspace method definition ([192acf5](https://github.com/BEE-Plugin/Bee-plugin-official/commit/192acf5d5db35b29d66274583dcbc67d6c0c115e))
+* added on warning parameters definition ([0b4ffad](https://github.com/BEE-Plugin/Bee-plugin-official/commit/0b4ffad963c44308480907a0985b824a59e25419))
+* fixed example ([e96ff92](https://github.com/BEE-Plugin/Bee-plugin-official/commit/e96ff9262a352bf6866fcd56120c1e42a5c14834))
+
 ## [1.5.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.0-beta.0...v1.5.0) (2021-12-03)
 
 ## [1.5.0-beta.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.0-alpha.1...v1.5.0-beta.0) (2021-11-26)
