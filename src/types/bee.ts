@@ -34,6 +34,10 @@ export interface ILoadStageMode {
   display: StageDisplayOptions
 }
 
+//contentDefaults
+//advancedPermissions
+//rowsConfiguration
+//customHeaders
 export interface ILoadConfig {
   [key: string]: unknown;
 }
@@ -222,6 +226,11 @@ export enum BeePluginRoles {
   REVIEWER = 'reviewer'
 }
 
+export type BeePluginCustomHeader = {
+  name: string
+  value: string
+}
+
 
 export interface IBeeConfig {
   uid: string
@@ -249,6 +258,7 @@ export interface IBeeConfig {
   customCss?: string
   workspace?: BeePluginWorkspace
   autosave?: number,
+  customHeaders?: BeePluginCustomHeader[]
   saveRows?: boolean,
   contentDialog?: {
     engage?: {
