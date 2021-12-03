@@ -287,5 +287,6 @@ export interface IBeeConfig {
   onSend?: (html: string) => void
   onChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
   onWarning?: (a: unknown, b: unknown,) => void
-  onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
+  onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void 
+  onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
 }
