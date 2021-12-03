@@ -286,7 +286,7 @@ export interface IBeeConfig {
   onSaveAsTemplate?: (json: Record<string, unknown>) => void
   onSend?: (html: string) => void
   onChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
-  onWarning?: (a: unknown, b: unknown,) => void
+  onWarning?: (error: BeePluginError) => void
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void 
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
 }
