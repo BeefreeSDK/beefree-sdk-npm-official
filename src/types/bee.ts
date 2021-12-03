@@ -53,10 +53,57 @@ export type BeePluginError = {
 
 type CSSProperties = CSS.Properties<string | number>
 
+export interface IPluginColumn {
+  'grid-columns': number
+  modules: unknown[]
+  style: CSSProperties
+  uuid: string
+}
+
+export interface IPluginDisplayCondition {
+  after?: string
+  before?: string
+  className?: string
+  description?: string
+  isActive: boolean
+  label?: string
+  type?: string
+  name?: string
+}
+
+export interface IPluginComputedStyle {
+  class?: string
+  height?: number | string
+  width?: number | string
+  hideContentOnAmp?: boolean
+  hideContentOnHtml?: boolean
+  hideContentOnMobile?: boolean
+  hideContentOnDesktop?: boolean
+  linkColor?: string
+  messageBackgroundColor?: string
+  messageWidth?: string
+  rowColStackOnMobile?: boolean
+  rowReverseColStackOnMobile?: boolean
+  iconsDefaultWidth?: number
+  padding?: string
+  align?:string
+  iconSpacing?: {
+    [x: string]: string
+  }
+  itemsSpacing?: string
+  iconHeight?: string
+}
+
+export interface IPluginContent {
+  style?: CSSProperties
+  computedStyle?: IPluginComputedStyle
+}
+
 export interface IPluginRow {
-  columns: unknown[]
+  columns: IPluginColumn[]
   container: {
     style: CSSProperties
+    displayCondition?: IPluginDisplayCondition
   }
   content: unknown
   locked: boolean
