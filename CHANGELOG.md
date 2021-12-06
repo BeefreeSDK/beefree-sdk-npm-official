@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1-beta.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.1-beta.0...v1.5.1-beta.1) (2021-12-06)
+
+
+### Bug Fixes
+
+* added type definition for get rows hooks ([84836cf](https://github.com/BEE-Plugin/Bee-plugin-official/commit/84836cf60588afdc76f010a3605136daeb5da3c1))
+
 ### [1.5.1-beta.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.1-alpha.0...v1.5.1-beta.0) (2021-12-06)
 
 
