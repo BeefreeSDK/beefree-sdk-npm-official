@@ -146,6 +146,9 @@ export type BeePluginContentDialogHandler<K, T = undefined> = (
 export type BeePluginConfigurationsHooks = {
   getMentions?: {
     handler: BeePluginContentDialogHandler<IInvitedMention>
+  },
+  getRows?: {
+    handler: BeePluginContentDialogHandler<IPluginRow[]>
   }
 }
 
