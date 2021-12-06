@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1-beta.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.1-alpha.0...v1.5.1-beta.0) (2021-12-06)
+
+
+### Bug Fixes
+
+* added column, content, display condition, computed styles type definition ([2acfca9](https://github.com/BEE-Plugin/Bee-plugin-official/commit/2acfca9a58a47287ea946f70b9d760a725cad355))
+
 ### [1.5.1-alpha.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.0...v1.5.1-alpha.0) (2021-12-03)
 
 
