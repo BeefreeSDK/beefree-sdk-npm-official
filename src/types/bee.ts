@@ -34,8 +34,8 @@ export interface ILoadStageMode {
   display: StageDisplayOptions
 }
 
-export interface ILoadConfig {
-  [key: string]: unknown;
+export type ILoadConfig = {
+  [key in keyof ILoadableProps]: unknown
 }
 
 export enum LoadWorkspaceOptions {
@@ -53,10 +53,57 @@ export type BeePluginError = {
 
 type CSSProperties = CSS.Properties<string | number>
 
+export interface IPluginColumn {
+  'grid-columns': number
+  modules: unknown[]
+  style: CSSProperties
+  uuid: string
+}
+
+export interface IPluginDisplayCondition {
+  after?: string
+  before?: string
+  className?: string
+  description?: string
+  isActive: boolean
+  label?: string
+  type?: string
+  name?: string
+}
+
+export interface IPluginComputedStyle {
+  class?: string
+  height?: number | string
+  width?: number | string
+  hideContentOnAmp?: boolean
+  hideContentOnHtml?: boolean
+  hideContentOnMobile?: boolean
+  hideContentOnDesktop?: boolean
+  linkColor?: string
+  messageBackgroundColor?: string
+  messageWidth?: string
+  rowColStackOnMobile?: boolean
+  rowReverseColStackOnMobile?: boolean
+  iconsDefaultWidth?: number
+  padding?: string
+  align?:string
+  iconSpacing?: {
+    [x: string]: string
+  }
+  itemsSpacing?: string
+  iconHeight?: string
+}
+
+export interface IPluginContent {
+  style?: CSSProperties
+  computedStyle?: IPluginComputedStyle
+}
+
 export interface IPluginRow {
-  columns: unknown[]
+  columns: IPluginColumn[]
   container: {
     style: CSSProperties
+    displayCondition?: IPluginDisplayCondition
   }
   content: unknown
   locked: boolean
@@ -99,6 +146,9 @@ export type BeePluginContentDialogHandler<K, T = undefined> = (
 export type BeePluginConfigurationsHooks = {
   getMentions?: {
     handler: BeePluginContentDialogHandler<IInvitedMention>
+  },
+  getRows?: {
+    handler: BeePluginContentDialogHandler<IPluginRow[]>
   }
 }
 
@@ -222,6 +272,15 @@ export enum BeePluginRoles {
   REVIEWER = 'reviewer'
 }
 
+export type BeePluginCustomHeader = {
+  name: string
+  value: string
+}
+
+export type IRefreshSavedRow = boolean
+
+
+export type ILoadableProps = Pick<IBeeConfig, 'advancedPermissions' | 'contentDefaults' | 'customHeaders' | 'rowsConfiguration'>
 
 export interface IBeeConfig {
   uid: string
@@ -249,6 +308,7 @@ export interface IBeeConfig {
   customCss?: string
   workspace?: BeePluginWorkspace
   autosave?: number,
+  customHeaders?: BeePluginCustomHeader[]
   saveRows?: boolean,
   contentDialog?: {
     engage?: {
@@ -270,6 +330,14 @@ export interface IBeeConfig {
       label: string
       handler: BeePluginContentDialogHandler<IInvitedMention>
     }
+    onDeleteRow?: {
+      label: string
+      handler: BeePluginContentDialogHandler<IRefreshSavedRow>
+    }
+    onEditRow?: {
+      label: string
+      handler: BeePluginContentDialogHandler<IRefreshSavedRow>
+    }
   },
   rowsConfiguration?: Record<string, unknown>
   hooks?: BeePluginConfigurationsHooks
@@ -286,6 +354,7 @@ export interface IBeeConfig {
   onSaveAsTemplate?: (json: Record<string, unknown>) => void
   onSend?: (html: string) => void
   onChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
-  onWarning?: (a: unknown, b: unknown,) => void
-  onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
+  onWarning?: (error: BeePluginError) => void
+  onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void 
+  onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
 }
