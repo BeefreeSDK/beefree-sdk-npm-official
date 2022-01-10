@@ -340,7 +340,11 @@ export interface IBeeConfig {
       handler: BeePluginContentDialogHandler<IRefreshSavedRow>
     }
   },
-  rowsConfiguration?: Record<string, unknown>
+  rowsConfiguration?: { 
+    defaultRows?: boolean,
+    emptyRows?: boolean,
+    externalContentURLs?: Array<{name: string, value: string}>
+  }
   hooks?: BeePluginConfigurationsHooks
   onLoad: () => void
   onPreview?: () => void
