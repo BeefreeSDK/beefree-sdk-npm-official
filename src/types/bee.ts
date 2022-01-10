@@ -343,7 +343,16 @@ export interface IBeeConfig {
   rowsConfiguration?: { 
     defaultRows?: boolean,
     emptyRows?: boolean,
-    externalContentURLs?: Array<{name: string, value: string, id?: string | number}>
+    externalContentURLs?: Array<{
+      name: string
+      value: string
+      id?: string | number
+      handle?: string
+      behaviors?: {
+        canEdit?: boolean,
+        canDelete?: boolean,
+      },
+    }>
   }
   hooks?: BeePluginConfigurationsHooks
   onLoad: () => void
