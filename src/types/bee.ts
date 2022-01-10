@@ -189,6 +189,7 @@ export interface IMergeTag {
   name: string
   value: string
   id?: number
+  previewValue?: string
 }
 export interface IMergeContent {
   name: string

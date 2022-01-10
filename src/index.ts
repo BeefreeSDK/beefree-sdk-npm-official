@@ -137,7 +137,7 @@ class Bee {
     )
   }
 
-  load = (template: Record<string, unknown>) => this.executeAction(LOAD, template)
+  load = (template: IEntityContentJson) => this.executeAction(LOAD, template)
 
   save = () => this.executeAction(SAVE)
 
@@ -157,7 +157,7 @@ class Bee {
 
   showComment = (comment) => this.executeAction(SHOW_COMMENT, comment) 
 
-  reload = (template: Record<string, unknown>, options?: IBeeOptions) => this.executeAction(RELOAD, template, options)
+  reload = (template: IEntityContentJson, options?: IBeeOptions) => this.executeAction(RELOAD, template, options)
 
   loadWorkspace = (type: LoadWorkspaceOptions) => this.executeAction(LOAD_WORKSPACE, type)
 
