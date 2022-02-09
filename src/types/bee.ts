@@ -136,7 +136,7 @@ export enum EngageHandle {
   MDM = 'mdm',
 }
 
-export type BeePluginContentDialogHandler<K, A, T = undefined> = (
+export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
   resolve: (data: K) => void,
   reject: () => void,
   args: A,
@@ -316,15 +316,15 @@ export interface IBeeConfig {
     },
     saveRow?: {
       label: string
-      handler: BeePluginContentDialogHandler<IPluginRow, IPluginRow>
+      handler: BeePluginContentDialogHandler<IPluginRow>
     }
     manageForm?: {
       label: string
-      handler: BeePluginContentDialogHandler<IPluginForm, IPluginForm>
+      handler: BeePluginContentDialogHandler<IPluginForm>
     },
     filePicker?: {
       label: string
-      handler: BeePluginContentDialogHandler<IPluginFilePicker, IPluginFilePicker>
+      handler: BeePluginContentDialogHandler<IPluginFilePicker>
     },
     getMention?: {
       label: string
@@ -332,11 +332,11 @@ export interface IBeeConfig {
     }
     onDeleteRow?: {
       label: string
-      handler: BeePluginContentDialogHandler<IRefreshSavedRow, IRefreshSavedRow>
+      handler: BeePluginContentDialogHandler<IRefreshSavedRow>
     }
     onEditRow?: {
       label: string
-      handler: BeePluginContentDialogHandler<IRefreshSavedRow, IRefreshSavedRow>
+      handler: BeePluginContentDialogHandler<IRefreshSavedRow>
     }
   },
   rowsConfiguration?: Record<string, unknown>
