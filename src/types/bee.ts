@@ -45,8 +45,22 @@ export enum LoadWorkspaceOptions {
   HTML_ONLY = 'html_only'
 }
 
+export enum BeePluginErrorCodes {
+  SAVE_UNAVAILABLE = 1000,
+  AMP_CONTENT_DETECTED = 1001,
+  WORKSPACE_NOT_AVAILABLE = 1002,
+  GENERIC_BUMP_ERROR = 2000,
+  INVALID_TARGET_VERSION = 2100,
+  VALIDATION_ERROR_DETAIL = 2200,
+  MISSING_TEMPLATE_VERSION = 2300,
+  INVALID_TEMPLATE_VERSION = 2400,
+  TRASFORMATION_ERROR = 2500,
+  BACKWARD_TRASFORMATION_ERROR = 2600,
+  SERVICE_ERROR = 3000
+}
+
 export type BeePluginError = {
-  code?: number
+  code?: BeePluginErrorCodes
   detail?: string
   message: string
   data?: BeePluginErrorData
