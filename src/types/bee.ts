@@ -145,10 +145,10 @@ export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
 
 export type BeePluginConfigurationsHooks = {
   getMentions?: {
-    handler: BeePluginContentDialogHandler<IInvitedMention[], string>
+    handler: BeePluginContentDialogHandler<IInvitedMention[], undefined, string>
   },
   getRows?: {
-    handler: BeePluginContentDialogHandler<IPluginRow[], IPluginRow[]>
+    handler: BeePluginContentDialogHandler<IPluginRow[]>
   }
 }
 
@@ -312,7 +312,7 @@ export interface IBeeConfig {
   saveRows?: boolean,
   contentDialog?: {
     engage?: {
-      handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, EngageHandle>
+      handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, undefined, EngageHandle>
     },
     saveRow?: {
       label: string
@@ -328,7 +328,7 @@ export interface IBeeConfig {
     },
     getMention?: {
       label: string
-      handler: BeePluginContentDialogHandler<IInvitedMention[], string>
+      handler: BeePluginContentDialogHandler<IInvitedMention[], undefined, string>
     }
     onDeleteRow?: {
       label: string
