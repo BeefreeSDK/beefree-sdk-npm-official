@@ -136,19 +136,19 @@ export enum EngageHandle {
   MDM = 'mdm',
 }
 
-export type BeePluginContentDialogHandler<K, T = undefined> = (
+export type BeePluginContentDialogHandler<K, A, T = undefined> = (
   resolve: (data: K) => void,
   reject: () => void,
-  args: K,
+  args: A,
   handle?: T
 ) => Promise<void>
 
 export type BeePluginConfigurationsHooks = {
   getMentions?: {
-    handler: BeePluginContentDialogHandler<IInvitedMention>
+    handler: BeePluginContentDialogHandler<IInvitedMention[], string>
   },
   getRows?: {
-    handler: BeePluginContentDialogHandler<IPluginRow[]>
+    handler: BeePluginContentDialogHandler<IPluginRow[], IPluginRow[]>
   }
 }
 
@@ -312,31 +312,31 @@ export interface IBeeConfig {
   saveRows?: boolean,
   contentDialog?: {
     engage?: {
-      handler: BeePluginContentDialogHandler<EngageHandle>
+      handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, EngageHandle>
     },
     saveRow?: {
       label: string
-      handler: BeePluginContentDialogHandler<IPluginRow>
+      handler: BeePluginContentDialogHandler<IPluginRow, IPluginRow>
     }
     manageForm?: {
       label: string
-      handler: BeePluginContentDialogHandler<IPluginForm>
+      handler: BeePluginContentDialogHandler<IPluginForm, IPluginForm>
     },
     filePicker?: {
       label: string
-      handler: BeePluginContentDialogHandler<IPluginFilePicker>
+      handler: BeePluginContentDialogHandler<IPluginFilePicker, IPluginFilePicker>
     },
     getMention?: {
       label: string
-      handler: BeePluginContentDialogHandler<IInvitedMention>
+      handler: BeePluginContentDialogHandler<IInvitedMention[], string>
     }
     onDeleteRow?: {
       label: string
-      handler: BeePluginContentDialogHandler<IRefreshSavedRow>
+      handler: BeePluginContentDialogHandler<IRefreshSavedRow, IRefreshSavedRow>
     }
     onEditRow?: {
       label: string
-      handler: BeePluginContentDialogHandler<IRefreshSavedRow>
+      handler: BeePluginContentDialogHandler<IRefreshSavedRow, IRefreshSavedRow>
     }
   },
   rowsConfiguration?: Record<string, unknown>
