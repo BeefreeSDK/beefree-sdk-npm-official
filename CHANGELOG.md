@@ -10,6 +10,14 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * **typing:** module types, on warning error data, row content, module, layout type ([09be9e5](https://github.com/BEE-Plugin/Bee-plugin-official/commit/09be9e5c6980e8e4be3a97736ec097b6f160366c))
+### [1.5.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.1...v1.5.2) (2022-02-10)
+
+
+### Bug Fixes
+
+* added undefined as second arsgument for BeePluginContentDialogHandler ([34f685d](https://github.com/BEE-Plugin/Bee-plugin-official/commit/34f685d6cae958e2e436776d97d7d137ea0a077b))
+* fixed BeePluginContentDialogHandler for getMentions handler and engage handler ([306d2e1](https://github.com/BEE-Plugin/Bee-plugin-official/commit/306d2e1be8457e6e33f9cddf09c2f8b558651121))
+* made BeePluginContentDialogHandler backward compatible from prev releases ([77efd5e](https://github.com/BEE-Plugin/Bee-plugin-official/commit/77efd5e62978706fd8502e717f36d4ac5f5a7588))
 
 ### [1.5.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.1-beta.1...v1.5.1) (2021-12-09)
 
