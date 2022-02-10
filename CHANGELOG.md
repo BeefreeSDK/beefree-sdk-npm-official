@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0-beta.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.2...v1.6.0-beta.2) (2022-02-10)
+
+## [1.6.0-beta.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.0-beta.0...v1.6.0-beta.1) (2022-02-09)
+
+## [1.6.0-beta.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.1...v1.6.0-beta.0) (2022-02-08)
+
+
+### Features
+
+* **typing:** module types, on warning error data, row content, module, layout type ([09be9e5](https://github.com/BEE-Plugin/Bee-plugin-official/commit/09be9e5c6980e8e4be3a97736ec097b6f160366c))
+
 ## [1.6.0-beta.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.0-beta.0...v1.6.0-beta.1) (2022-02-09)
 
 ## [1.6.0-beta.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.1...v1.6.0-beta.0) (2022-02-08)
