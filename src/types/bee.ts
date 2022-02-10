@@ -136,16 +136,16 @@ export enum EngageHandle {
   MDM = 'mdm',
 }
 
-export type BeePluginContentDialogHandler<K, T = undefined> = (
+export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
   resolve: (data: K) => void,
   reject: () => void,
-  args: K,
+  args: A,
   handle?: T
 ) => Promise<void>
 
 export type BeePluginConfigurationsHooks = {
   getMentions?: {
-    handler: BeePluginContentDialogHandler<IInvitedMention>
+    handler: BeePluginContentDialogHandler<IInvitedMention[], undefined, string>
   },
   getRows?: {
     handler: BeePluginContentDialogHandler<IPluginRow[]>
@@ -312,7 +312,7 @@ export interface IBeeConfig {
   saveRows?: boolean,
   contentDialog?: {
     engage?: {
-      handler: BeePluginContentDialogHandler<EngageHandle>
+      handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, undefined, EngageHandle>
     },
     saveRow?: {
       label: string
@@ -328,7 +328,7 @@ export interface IBeeConfig {
     },
     getMention?: {
       label: string
-      handler: BeePluginContentDialogHandler<IInvitedMention>
+      handler: BeePluginContentDialogHandler<IInvitedMention[], undefined, string>
     }
     onDeleteRow?: {
       label: string
