@@ -33,6 +33,7 @@ export default {
     resolve(
       {
         preferBuiltins: true,
+        browser: true,
       },
     ),
     typescript({
