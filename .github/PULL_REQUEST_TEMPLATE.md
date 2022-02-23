@@ -1,7 +1,7 @@
 
 ## Description
 
-Describe your change in detauks
+Describe your change in details
 
 ## Motivation and Context
 
