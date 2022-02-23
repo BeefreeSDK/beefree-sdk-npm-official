@@ -45,17 +45,71 @@ export enum LoadWorkspaceOptions {
   HTML_ONLY = 'html_only'
 }
 
+export enum BeePluginErrorCodes {
+  SAVE_UNAVAILABLE = 1000,
+  AMP_CONTENT_DETECTED = 1001,
+  LOCKED_ROW_CLICKED = 1300,
+  LOCKED_MODULE_CLICKED = 1310,
+  WORKSPACE_NOT_AVAILABLE = 1002,
+  GENERIC_BUMP_ERROR = 2000,
+  INVALID_TARGET_VERSION = 2100,
+  VALIDATION_ERROR_DETAIL = 2200,
+  MISSING_TEMPLATE_VERSION = 2300,
+  INVALID_TEMPLATE_VERSION = 2400,
+  TRASFORMATION_ERROR = 2500,
+  BACKWARD_TRASFORMATION_ERROR = 2600,
+  SERVICE_ERROR = 3000
+}
+
 export type BeePluginError = {
-  code?: number
+  code?: BeePluginErrorCodes
   detail?: string
   message: string
+  data?: BeePluginErrorData
 }
 
 type CSSProperties = CSS.Properties<string | number>
 
+export type BeePluginErrorData = {
+  uuid: string
+  config: IPluginRow | IPluginModule
+}
+
+export enum ModuleTypes {
+  DIVIDER = 'mailup-bee-newsletter-modules-divider',
+  TEXT = 'mailup-bee-newsletter-modules-text',
+  IMAGE = 'mailup-bee-newsletter-modules-image',
+  BUTTON = 'mailup-bee-newsletter-modules-button',
+  HTML = 'mailup-bee-newsletter-modules-html',
+  SOCIAL = 'mailup-bee-newsletter-modules-social',
+  EMPTY = 'mailup-bee-newsletter-modules-empty',
+  VIDEO = 'mailup-bee-newsletter-modules-video',
+  ADDON = 'mailup-bee-newsletter-modules-addon',
+  FORM = 'mailup-bee-newsletter-modules-form',
+  MERGE_CONTENT = 'mailup-bee-newsletter-modules-merge-content',
+  CAROUSEL = 'mailup-bee-newsletter-modules-carousel',
+  MENU = 'mailup-bee-newsletter-modules-menu',
+  ICONS = 'mailup-bee-newsletter-modules-icons',
+  HEADING = 'mailup-bee-newsletter-modules-heading',
+  SPACER = 'mailup-bee-newsletter-modules-spacer',
+  PARAGRAPH = 'mailup-bee-newsletter-modules-paragraph',
+  LIST = 'mailup-bee-newsletter-modules-list'
+}
+
+export interface IPluginModule {
+  descriptor: {
+    [x: string]: unknown // Todo type with possible keys
+    computedStyle: IPluginComputedStyle
+    style: CSSProperties
+    
+  }
+  type: ModuleTypes
+  uuid: string
+}
+
 export interface IPluginColumn {
   'grid-columns': number
-  modules: unknown[]
+  modules: IPluginModule[]
   style: CSSProperties
   uuid: string
 }
@@ -99,16 +153,40 @@ export interface IPluginContent {
   computedStyle?: IPluginComputedStyle
 }
 
+export interface IPluginRowContent {
+  computedStyle: {
+    rowColStackOnMobile: boolean
+    rowReverseColStackOnMobile: boolean
+  },
+  style: CSSProperties
+}
+export interface IPluginRowContainer {
+  style: CSSProperties
+  displayCondition?: IPluginDisplayCondition
+}
+
+export enum RowLayoutType {
+  ONE_COLUMNS_EMPTY = 'one-column-empty',
+  TWO_COLUMNS_EMPTY = 'two-columns-empty',
+  TWO_COLUMNS_4_8_EMPTY = 'two-columns-4-8-empty',
+  TWO_COLUMNS_8_4_EMPTY = 'two-columns-8-4-empty',
+  TWO_COLUMNS_3_9_EMPTY = 'two-columns-3-9-empty',
+  TWO_COLUMNS_9_3_EMPTY = 'two-columns-9-3-empty',
+  THREE_COLUMNS_EMPTY = 'three-columns-empty',
+  THREE_COLUMNS_3_3_6_EMPTY = 'three-columns-3-3-6-empty',
+  THREE_COLUMNS_3_6_3_EMPTY = 'three-columns-3-6-3-empty',
+  THREE_COLUMNS_6_3_3_EMPTY = 'three-columns-6-3-3-empty',
+  FOUR_COLUMNS_EMPTY = 'four-columns-empty',
+  SIX_COLUMNS_EMPTY = 'six-columns-empty',
+}
+
 export interface IPluginRow {
   columns: IPluginColumn[]
-  container: {
-    style: CSSProperties
-    displayCondition?: IPluginDisplayCondition
-  }
-  content: unknown
+  container: IPluginRowContainer
+  content: IPluginRowContent
   locked: boolean
-  metadata: Record<string, unknown>
-  type: string
+  metadata?: Record<string, unknown>
+  type: RowLayoutType
   uuid: string
 }
 
@@ -245,7 +323,7 @@ export interface IEntityContentJson {
   page: {
     body: unknown
     description: string
-    rows: unknown[]
+    rows: IPluginRow[]
     template: {
       name: string
       type: string
