@@ -465,6 +465,14 @@ export interface IBeeConfig {
       label: string
       handler: BeePluginContentDialogHandler<IPluginRow>
     }
+    specialLinks?: {
+      label: string
+      handler: BeePluginContentDialogHandler<ISpecialLink>
+    }
+    mergeTags?: {
+      label: string
+      handler: BeePluginContentDialogHandler<IMergeTag>
+    }
     manageForm?: {
       label: string
       handler: BeePluginContentDialogHandler<IPluginForm>
