@@ -40,6 +40,16 @@ const userInput = (message: string, sample) => function handler(resolve, reject)
     : resolve(JSON.parse(data));
 }
 
+const handleSpecialLinks = (resolve) => {
+  const mockedSpecialLinks: ISpecialLink = { id: 1, label: 'Sample special links', link: 'http://sample.com', type: 'test'} 
+  return resolve(mockedSpecialLinks)
+}
+
+const handleMergeTags = (resolve) => {
+  const mockedMergeTg: IMergeTag = { id: 1, name: 'Sample merge tag', value:'Lorem Ipsum'} 
+  return resolve(mockedMergeTg)
+}
+
 const contentDialog = {
   filePicker: {
     label: 'Picker',
@@ -47,6 +57,14 @@ const contentDialog = {
       url: 'https://d1oco4z2z1fhwp.cloudfront.net/templates/default/113/rocket-color.png',
     })
   },
+  specialLinks: {
+    label: 'Special links',
+    handler: handleSpecialLinks
+  },
+  mergeTags: {
+    label: 'Merge Tags',
+    handler: handleMergeTags   
+  }
 }
 
 function save(filename: string, content) {
