@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.1...v1.6.2) (2022-03-25)
+
+
+### Bug Fixes
+
+* added special links and merge tags dialog types ([e48ddbd](https://github.com/BEE-Plugin/Bee-plugin-official/commit/e48ddbdf1f4ff98bb13ff34b60b5a87a0bff64a6))
+
 ### [1.6.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.0...v1.6.1) (2022-03-04)
 
 ## [1.6.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.5.3...v1.6.0) (2022-02-23)
