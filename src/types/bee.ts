@@ -497,8 +497,8 @@ export interface IBeeConfig {
   rowsConfiguration?: Record<string, unknown>
   hooks?: BeePluginConfigurationsHooks
   onLoad: () => void
-  onPreview?: () => void
-  onTogglePreview?: () => void
+  onPreview?: (opened: boolean) => void
+  onTogglePreview?: (toggled: boolean) => void
   onSessionStarted?: (sessionInfo: IPluginSessionInfo) => void
   onSessionChange?: (sessionInfo: IPluginSessionInfo) => void
   onReady?: (args: Record<string, unknown>) => void
