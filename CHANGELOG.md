@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.2...v1.6.3) (2022-04-05)
+
+
+### Bug Fixes
+
+* added status to onPreview and onTogglePreview callbacks ([b6259ab](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b6259abe8792af84239848898b0005763e6fb334))
+
 ### [1.6.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.1...v1.6.2) (2022-03-25)
 
 
