@@ -109,8 +109,8 @@ const beeConfig :IBeeConfig = {
   onError: (errorMessage) => console.log('onError ', errorMessage),
   onChange: (msg, response) => console.warn('*** [integration] (OnChange) message --> ', msg, response),
   onWarning: (e) => console.warn('*** [integration] (OnWarning) message --> ', e.message),
-  onPreview: () => console.warn('*** [integration] --> (onPreview) '),
-  onTogglePreview: () => console.warn('*** [integration] --> (onTogglePreview) '),
+  onPreview: (opened) => console.warn(`*** [integration] --> (onPreview) preview open status ${opened}`),
+  onTogglePreview: (toggled) => console.warn(`*** [integration] --> (onTogglePreview) toggle status ${toggled}`),
   onSessionStarted: (sessionInfo) => {
     console.warn('*** [integration] --> (onSessionStarted) ', sessionInfo);
     prompt('press ctrl+c to copy the session ID', sessionInfo.sessionId)
