@@ -252,6 +252,9 @@ export type IPluginComputedStyle = Partial<{
   itemsSpacing: string
   iconHeight: string
   layout: string
+  menuItemsSpacing: {
+    [x: string]: string
+  }
   iconSpacing: {
     [x: string]: string
   }
