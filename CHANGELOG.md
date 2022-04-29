@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.1...v1.6.4-types-improvements.2) (2022-04-29)
+
+
+### Bug Fixes
+
+* added menuItemsSpacing to IPluginComputedStyle ([b3b5800](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b3b5800cb826fbb1f05c996458dbe6b82e61e609))
+
 ### [1.6.4-types-improvements.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.0...v1.6.4-types-improvements.1) (2022-04-29)
 
 
