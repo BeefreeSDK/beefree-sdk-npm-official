@@ -29,7 +29,8 @@
     "release": "standard-version",
     "postrelease": "git push --follow-tags --no-verify",
     "release:alpha": "yarn prerelease && standard-version --prerelease alpha && yarn postrelease",
-    "release:beta": "yarn prerelease && standard-version --prerelease beta && yarn postrelease"
+    "release:beta": "yarn prerelease && standard-version --prerelease beta && yarn postrelease",
+    "release:unstable": "yarn prerelease && standard-version --prerelease $(git branch --show-current | sed 's/\\//-/g') && yarn postrelease"
   },
   "repository": "git+https://github.com/BEE-Plugin/Bee-plugin-official.git",
   "keywords": [
@@ -69,7 +70,7 @@
     "ts-jest": "^27.0.7",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",
-    "typescript": "^4.4.4",
+    "typescript": "^4.5",
     "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0",

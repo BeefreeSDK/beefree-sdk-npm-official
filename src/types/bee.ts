@@ -1,4 +1,5 @@
 import * as CSS from 'csstype'
+import { KebabKeys, ValueOf } from './utils'
 
 export interface IBeeLoader {
   beePluginUrl: string,
@@ -34,9 +35,7 @@ export interface ILoadStageMode {
   display: StageDisplayOptions
 }
 
-export type ILoadConfig = {
-  [key in keyof ILoadableProps]: unknown
-}
+export type ILoadConfig = ILoadableProps
 
 export enum LoadWorkspaceOptions {
   DEFAULT = 'default',
@@ -137,49 +136,82 @@ export type BeePluginError = {
   data?: BeePluginErrorData
 }
 
-type CSSProperties = CSS.Properties<string | number>
+// TOFIX: understand which properties are passed using kebab and which are using camelCase
+// TOFIX: ask parser developer if possible to set font-weight to number
+type KebabCSSProperties = KebabKeys<CSS.Properties>
 
 export type BeePluginErrorData = {
   uuid: string
   config: IPluginRow | IPluginModule
 }
 
-export enum ModuleTypes {
-  DIVIDER = 'mailup-bee-newsletter-modules-divider',
-  TEXT = 'mailup-bee-newsletter-modules-text',
-  IMAGE = 'mailup-bee-newsletter-modules-image',
-  BUTTON = 'mailup-bee-newsletter-modules-button',
-  HTML = 'mailup-bee-newsletter-modules-html',
-  SOCIAL = 'mailup-bee-newsletter-modules-social',
-  EMPTY = 'mailup-bee-newsletter-modules-empty',
-  VIDEO = 'mailup-bee-newsletter-modules-video',
-  ADDON = 'mailup-bee-newsletter-modules-addon',
-  FORM = 'mailup-bee-newsletter-modules-form',
-  MERGE_CONTENT = 'mailup-bee-newsletter-modules-merge-content',
-  CAROUSEL = 'mailup-bee-newsletter-modules-carousel',
-  MENU = 'mailup-bee-newsletter-modules-menu',
-  ICONS = 'mailup-bee-newsletter-modules-icons',
-  HEADING = 'mailup-bee-newsletter-modules-heading',
-  SPACER = 'mailup-bee-newsletter-modules-spacer',
-  PARAGRAPH = 'mailup-bee-newsletter-modules-paragraph',
-  LIST = 'mailup-bee-newsletter-modules-list'
-}
+export const ModuleTypes = {
+  DIVIDER: 'mailup-bee-newsletter-modules-divider',
+  TEXT: 'mailup-bee-newsletter-modules-text',
+  IMAGE: 'mailup-bee-newsletter-modules-image',
+  BUTTON: 'mailup-bee-newsletter-modules-button',
+  HTML: 'mailup-bee-newsletter-modules-html',
+  SOCIAL: 'mailup-bee-newsletter-modules-social',
+  EMPTY: 'mailup-bee-newsletter-modules-empty',
+  VIDEO: 'mailup-bee-newsletter-modules-video',
+  ADDON: 'mailup-bee-newsletter-modules-addon',
+  FORM: 'mailup-bee-newsletter-modules-form',
+  MERGE_CONTENT: 'mailup-bee-newsletter-modules-merge-content',
+  CAROUSEL: 'mailup-bee-newsletter-modules-carousel',
+  MENU: 'mailup-bee-newsletter-modules-menu',
+  ICONS: 'mailup-bee-newsletter-modules-icons',
+  HEADING: 'mailup-bee-newsletter-modules-heading',
+  SPACER: 'mailup-bee-newsletter-modules-spacer',
+  PARAGRAPH: 'mailup-bee-newsletter-modules-paragraph',
+  LIST: 'mailup-bee-newsletter-modules-list'
+} as const
+
+export const ModuleDescriptorNames = {
+  DIVIDER: 'divider',
+  TEXT: 'text',
+  IMAGE: 'image',
+  BUTTON: 'button',
+  HTML: 'html',
+  SOCIAL: 'social',
+  VIDEO: 'video',
+  ADDON: 'addon',
+  FORM: 'form',
+  MERGE_CONTENT: 'mergeContent',
+  CAROUSEL: 'carousel',
+  MENU: 'menu',
+  ICONS: 'icons',
+  HEADING: 'heading',
+  SPACER: 'spacer',
+  PARAGRAPH: 'paragraph',
+  LIST: 'list'
+} as const
+
+type X = ValueOf<typeof ModuleDescriptorNames>
 
 export interface IPluginModule {
   descriptor: {
-    [x: string]: unknown // Todo type with possible keys
-    computedStyle: IPluginComputedStyle
-    style: CSSProperties
-    
+      [key in X]?: {
+        style?: KebabCSSProperties & {
+          [key: string]: unknown  
+        }
+        computedStyle?: IPluginComputedStyle
+        [key: string]: unknown
+      } 
+    } & {
+      id?: string
+      style?: KebabCSSProperties
+      computedStyle: IPluginComputedStyle
+      [key: string]: unknown
   }
-  type: ModuleTypes
+  locked?: boolean
+  type: ValueOf<typeof ModuleTypes>
   uuid: string
 }
 
 export interface IPluginColumn {
   'grid-columns': number
   modules: IPluginModule[]
-  style: CSSProperties
+  style: KebabCSSProperties
   uuid: string
 }
 
@@ -194,68 +226,80 @@ export interface IPluginDisplayCondition {
   name?: string
 }
 
-export interface IPluginComputedStyle {
-  class?: string
-  height?: number | string
-  width?: number | string
-  hideContentOnAmp?: boolean
-  hideContentOnHtml?: boolean
-  hideContentOnMobile?: boolean
-  hideContentOnDesktop?: boolean
-  linkColor?: string
-  messageBackgroundColor?: string
-  messageWidth?: string
-  rowColStackOnMobile?: boolean
-  rowReverseColStackOnMobile?: boolean
-  iconsDefaultWidth?: number
-  padding?: string
-  align?:string
-  iconSpacing?: {
+export type IPluginComputedStyle = Partial<{
+  class: string
+  height: number | string
+  width: number | string
+  hideContentOnAmp: boolean
+  hideContentOnHtml: boolean
+  hideContentOnMobile: boolean
+  hideContentOnDesktop: boolean
+  linkColor: string
+  messageBackgroundColor: string
+  messageWidth: string
+  rowColStackOnMobile: boolean
+  rowReverseColStackOnMobile: boolean
+  iconsDefaultWidth: number
+  padding: string
+  align: string
+  paragraphSpacing: string
+  liIndent: string
+  liSpacing: string
+  listStylePosition: string
+  listStyleType: string
+  startList: string
+  startListFrom: string
+  itemsSpacing: string
+  iconHeight: string
+  layout: string
+  iconSpacing: {
     [x: string]: string
   }
-  itemsSpacing?: string
-  iconHeight?: string
-}
+  hamburger: {
+    [x: string]: unknown
+  }
+}>
 
+//TOFIX: understand if we can rename
 export interface IPluginContent {
-  style?: CSSProperties
+  style?: KebabCSSProperties
+  //TOFIX: only pick correct properties
   computedStyle?: IPluginComputedStyle
 }
 
 export interface IPluginRowContent {
-  computedStyle: {
-    rowColStackOnMobile: boolean
-    rowReverseColStackOnMobile: boolean
-  },
-  style: CSSProperties
+  //TOFIX: only pick correct properties
+  computedStyle?: IPluginComputedStyle
+  style: KebabCSSProperties
 }
 export interface IPluginRowContainer {
-  style: CSSProperties
+  style: KebabCSSProperties
   displayCondition?: IPluginDisplayCondition
 }
 
-export enum RowLayoutType {
-  ONE_COLUMNS_EMPTY = 'one-column-empty',
-  TWO_COLUMNS_EMPTY = 'two-columns-empty',
-  TWO_COLUMNS_4_8_EMPTY = 'two-columns-4-8-empty',
-  TWO_COLUMNS_8_4_EMPTY = 'two-columns-8-4-empty',
-  TWO_COLUMNS_3_9_EMPTY = 'two-columns-3-9-empty',
-  TWO_COLUMNS_9_3_EMPTY = 'two-columns-9-3-empty',
-  THREE_COLUMNS_EMPTY = 'three-columns-empty',
-  THREE_COLUMNS_3_3_6_EMPTY = 'three-columns-3-3-6-empty',
-  THREE_COLUMNS_3_6_3_EMPTY = 'three-columns-3-6-3-empty',
-  THREE_COLUMNS_6_3_3_EMPTY = 'three-columns-6-3-3-empty',
-  FOUR_COLUMNS_EMPTY = 'four-columns-empty',
-  SIX_COLUMNS_EMPTY = 'six-columns-empty',
-}
+export const RowLayoutType = {
+  ONE_COLUMNS_EMPTY: 'one-column-empty',
+  TWO_COLUMNS_EMPTY: 'two-columns-empty',
+  TWO_COLUMNS_4_8_EMPTY: 'two-columns-4-8-empty',
+  TWO_COLUMNS_8_4_EMPTY: 'two-columns-8-4-empty',
+  TWO_COLUMNS_3_9_EMPTY: 'two-columns-3-9-empty',
+  TWO_COLUMNS_9_3_EMPTY: 'two-columns-9-3-empty',
+  THREE_COLUMNS_EMPTY: 'three-columns-empty',
+  THREE_COLUMNS_3_3_6_EMPTY: 'three-columns-3-3-6-empty',
+  THREE_COLUMNS_3_6_3_EMPTY: 'three-columns-3-6-3-empty',
+  THREE_COLUMNS_6_3_3_EMPTY: 'three-columns-6-3-3-empty',
+  FOUR_COLUMNS_EMPTY: 'four-columns-empty',
+  SIX_COLUMNS_EMPTY: 'six-columns-empty',
+} as const
 
 export interface IPluginRow {
+  // TOFIX name: string
   columns: IPluginColumn[]
   container: IPluginRowContainer
-  content: IPluginRowContent
-  locked: boolean
+  content: IPluginContent
+  locked?: boolean
   metadata?: Record<string, unknown>
-  type: RowLayoutType
+  type: ValueOf<typeof RowLayoutType>
   uuid: string
 }
 
@@ -359,7 +403,7 @@ export type BeePluginAdvancedPermissionStageToggle = {
   }
 }
 
-export type BeePluginAdvancedPermission = {
+export type BeePluginAdvancedPermission = Partial<{
   rows: {
     displayConditions: {
       show: boolean
@@ -369,7 +413,7 @@ export type BeePluginAdvancedPermission = {
   workspace: {
     stageToggle: BeePluginAdvancedPermissionStageToggle
   }
-}
+}>
 
 export enum WorkspaceStage {
   desktop = 'desktop',
@@ -378,10 +422,11 @@ export enum WorkspaceStage {
 }
 
 export type BeePluginWorkspace = {
-  type: LoadWorkspaceOptions
-  stage: WorkspaceStage
-  displayHidden: StageDisplayOptions
-  hideStageToggle: boolean
+  type?: LoadWorkspaceOptions
+  stage?: WorkspaceStage
+  displayHidden?: StageDisplayOptions
+  hideStageToggle?: boolean
+  editSingleRow?: boolean
 }
 
 export type IPluginSessionInfo = {
@@ -426,8 +471,8 @@ export type BeePluginCustomHeader = {
 
 export type IRefreshSavedRow = boolean
 
-
-export type ILoadableProps = Pick<IBeeConfig, 'advancedPermissions' | 'contentDefaults' | 'customHeaders' | 'rowsConfiguration'>
+// TOFIX: Need to remove some properties with Omit generics
+export type ILoadableProps = Partial<IBeeConfig>
 
 export interface IBeeConfig {
   uid: string
@@ -462,7 +507,7 @@ export interface IBeeConfig {
       handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, undefined, EngageHandle>
     },
     saveRow?: {
-      label: string
+      label?: string
       handler: BeePluginContentDialogHandler<IPluginRow>
     }
     specialLinks?: {
@@ -474,24 +519,24 @@ export interface IBeeConfig {
       handler: BeePluginContentDialogHandler<IMergeTag>
     }
     manageForm?: {
-      label: string
+      label?: string
       handler: BeePluginContentDialogHandler<IPluginForm>
     },
     filePicker?: {
-      label: string
+      label?: string
       handler: BeePluginContentDialogHandler<IPluginFilePicker>
     },
     getMention?: {
-      label: string
+      label?: string
       handler: BeePluginContentDialogHandler<IInvitedMention[], undefined, string>
     }
     onDeleteRow?: {
-      label: string
-      handler: BeePluginContentDialogHandler<IRefreshSavedRow>
+      label?: string
+      handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
     }
     onEditRow?: {
-      label: string
-      handler: BeePluginContentDialogHandler<IRefreshSavedRow>
+      label?: string
+      handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
     }
   },
   rowsConfiguration?: Record<string, unknown>
