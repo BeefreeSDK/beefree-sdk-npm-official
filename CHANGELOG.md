@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.0...v1.6.4-types-improvements.1) (2022-04-29)
+
+
+### Bug Fixes
+
+* added carret to typescript version in package.json ([8bddefa](https://github.com/BEE-Plugin/Bee-plugin-official/commit/8bddefa08601fdbf7e1b1b2ac0e06d6a36a860eb))
+
 ### [1.6.4-types-improvements.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.3...v1.6.4-types-improvements.0) (2022-04-29)
 
 
