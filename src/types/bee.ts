@@ -204,8 +204,357 @@ export interface IPluginModule {
       [key: string]: unknown
   }
   locked?: boolean
-  type: ValueOf<typeof ModuleTypes>
+  type: string
   uuid: string
+}
+
+export interface IPluginModuleHeading {
+  type: typeof ModuleTypes.HEADING
+  locked?: boolean
+  uuid: string
+  descriptor: {
+    id?: string
+    computedStyle: {
+      height: number
+      width: number
+    },
+    style: {
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+      'text-align': string
+      width: string
+    }
+    heading: {
+      style: {
+        color: string
+        direction: string
+        'font-family': string
+        'font-size': string
+        'font-weight': string
+        'letter-spacing': string
+        'line-height': string
+        'link-color': string
+        'text-align': string
+      }
+      text: string
+      title: 'h1' | 'h2' | 'h3'
+    }
+  }
+}
+
+export interface IPluginModuleParagraph {
+  type: typeof ModuleTypes.PARAGRAPH
+  locked?: boolean
+  uuid: string
+  descriptor: {
+    id?: string
+    style: Partial<{
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+    }>
+    computedStyle: Partial<{
+      hideContentOnAmp: boolean
+      hideContentOnDesktop: boolean
+      hideContentOnHtml: boolean
+      hideContentOnMobile: boolean
+    }>
+    paragraph: {
+      computedStyle: Partial<{
+        linkColor: string
+        paragraphSpacing: string
+      }>
+      html: string
+      style: Partial<{
+        color: string
+        direction: string
+        'font-family': string
+        'font-size': string
+        'font-weight': string
+        'letter-spacing': string
+        'line-height': string
+        'text-align': string
+      }>
+    }
+  }
+}
+
+export interface IPluginModuleButton {
+  type: typeof ModuleTypes.BUTTON
+  uuid: string
+  descriptor: {
+    id?: string
+    style: {
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+      'text-align': string
+    }
+    computedStyle: {
+      height: number
+      hideContentOnMobile: boolean
+      width: number
+    }
+    button: {
+      href: string
+      label: string
+      style: {
+        'background-color': string
+        'border-bottom': string
+        'border-left': string
+        'border-radius': string
+        'border-right': string
+        'border-top': string
+        'color': string
+        'font-family': string
+        'font-weight': string
+        'line-height': string
+        'max-width': string
+        'padding-bottom': string
+        'padding-left': string
+        'padding-right': string
+        'padding-top': string
+        'width': string
+      }
+    }
+  }
+}
+
+export interface IPluginModuleList {
+  type: typeof ModuleTypes.LIST
+  uuid: string
+  descriptor: {
+    id: string
+    style: {
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+    }
+    computedStyle: {
+      hideContentOnAmp: boolean
+      hideContentOnDesktop: boolean
+      hideContentOnHtml: boolean
+      hideContentOnMobile: boolean
+    }
+    list: {
+      html: string
+      tag: string
+      style: {
+        color: string
+        direction: string
+        'font-family': string
+        'font-size': string
+        'font-weight': string
+        'letter-spacing': string
+        'line-height': string
+        'text-align': string
+      }
+      computedStyle: {
+        liIndent: string
+        liSpacing: string
+        linkColor: string
+        listStylePosition: string
+        listStyleType: string
+        startList: string
+        startListFrom: string
+      }
+    }
+  }
+}
+
+export interface IPluginModuleDivider {
+  type: typeof ModuleTypes.DIVIDER
+  uuid: string
+  descriptor: {
+    id: string
+    style: {
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+    }
+    computedStyle: {
+      align: string
+      hideContentOnMobile: boolean
+    }
+    divider: {
+      style: {
+        'border-top': string
+        width: string
+      }
+    }
+  }
+}
+
+export interface IPluginModuleForm {
+  type: typeof ModuleTypes.FORM
+  uuid: string
+  descriptor: {
+    computedStyle: {
+      class: string
+      hideContentOnDesktop: boolean
+      hideContentOnMobile: boolean
+    }
+    style: {
+      'background-color': string
+      'font-family': string
+      'font-size': string
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+      'text-align': string
+      width: string
+    }
+    form: {
+      id: string
+      style: {
+        buttons: {
+          backgroundColor: string
+          'border-bottom': string
+          'border-left': string
+          'border-radius': string
+          'border-right': string
+          'border-top': string
+          color: string
+          'line-height': string
+          'max-width': string
+          'padding-bottom': string
+          'padding-left': string
+          'padding-right': string
+          'padding-top': string
+          'text-align': string
+          width: string
+          outer: {
+            flexGrow: number
+            display: string
+            'padding-bottom': string
+            'padding-left': string
+            'padding-right': string
+            'padding-top': string
+          },
+        }
+        fields: {
+          backgroundColor: string
+          'border-bottom': string
+          'border-left': string
+          'border-radius': string
+          'border-right': string
+          'border-top': string
+          color: string
+          outlineColor: string
+          'padding-bottom': string
+          'padding-left': string
+          'padding-right': string
+          'padding-top': string
+        }
+        labels: {
+          color: string
+          'font-style': string
+          'font-weight': string
+          'label-position': string
+          'line-height': string
+          'text-align': string
+        }
+      }
+    }
+    id: string
+    locked?: boolean
+  }
+}
+
+export interface IPluginModuleSocialIcon {
+  image: {
+    alt: string,
+    href: string,
+    prefix: string,
+    src: string,
+    title: string,
+  },
+  name: string,
+  text: string,
+  type: string,
+} 
+
+export interface IPluginModuleSocial {
+  type: typeof ModuleTypes.SOCIAL
+  uuid: string
+  descriptor: {
+    id: string
+    locked?: boolean
+    style: {
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+      'text-align': string
+    }
+    computedStyle: {
+      height: number
+      hideContentOnMobile: boolean
+      iconsDefaultWidth: number
+      padding: string
+      width: number
+    }
+    iconsList: {
+      icons: IPluginModuleSocialIcon[]
+    }
+  }
+}
+
+export interface IPluginModuleMenuItem {
+  link: {
+    href: string,
+    target: string,
+    title: string,
+  },
+  text: string,
+}
+
+export interface IPluginModuleMenu {
+  type: typeof ModuleTypes.MENU
+  uuid: string
+  descriptor: {
+    id: string
+    locked?: boolean
+    computedStyle: {
+      hideContentOnDesktop: boolean
+      hideContentOnMobile: boolean
+      layout: string
+      linkColor: string
+      hamburger: {
+        backgroundColor: string
+        foregroundColor: string
+        iconSize: string
+        iconType: string
+        mobile: boolean
+      },
+      menuItemsSpacing: {
+        'padding-bottom': string
+        'padding-left': string
+        'padding-right': string
+        'padding-top': string
+      },
+    },
+    style: {
+      color: string
+      'font-family': string
+      'font-size': string
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+      'text-align': string
+    }
+    menuItemsList: {
+      items: IPluginModuleMenuItem[]
+    }
+  }
 }
 
 export interface IPluginColumn {
@@ -477,6 +826,368 @@ export type IRefreshSavedRow = boolean
 // TOFIX: Need to remove some properties with Omit generics
 export type ILoadableProps = Partial<IBeeConfig>
 
+// TOFIX documentation (h3 is missing)
+// TOFIX documentation (add font-weight for h1, h2, h3)
+
+export type ContentDefaultsTitle = Partial<{
+  // TOFIX: understand why they are not handled in the plugin
+  // hideContentOnMobile: boolean
+  defaultHeadingLevel: string
+  blockOptions: Partial<{
+    align: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+}>
+
+export type TitleDefaultStyle = {
+  color: string
+  'font-size': string
+  'font-weight': string
+  'font-family': string
+  'link-color': string
+  'line-height': string
+  'text-align': string
+  'direction': string
+  'letter-spacing': number
+}
+
+export type TitleDefaultStyles = {
+  h1: TitleDefaultStyle
+  h2: TitleDefaultStyle
+  h3: TitleDefaultStyle
+}
+
+// TOFIX: this module will probably be removed in the near future
+export type ContentDefaultsText = {
+  // we can't use partial for ContentDefaultsText since html is required
+  html: string
+  styles?: Partial<{
+    color: string
+    linkColor: string
+    fontSize: string
+    lineHeight: string
+    fontFamily: string
+  }>
+  blockOptions?: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    hideContentOnMobile: boolean
+  }>
+}
+
+export type ContentDefaultsImage = Partial<{
+  alt: string
+  href: string
+  src: string
+  width: string
+  blockOptions: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    align: string   
+    hideContentOnMobile: boolean
+  }>
+}>
+
+export type ContentDefaultsButton = Partial<{
+  html: string
+  label: string
+  href: string
+  width: string
+  styles: Partial<{
+    color: string
+    fontSize: string
+    fontFamily: string
+    fontWeight: string
+    backgroundColor: string
+    borderBottom: string
+    borderLeft: string
+    borderRadius: string
+    borderRight: string
+    borderTop: string
+    lineHeight: string
+    maxWidth: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+  }>,
+  blockOptions: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    align: string
+    hideContentOnMobile: boolean
+  }>
+}>
+
+export type ContentDefaultsDivider = Partial<{
+  width: string
+  line: string
+  align: string
+  blockOptions: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    hideContentOnMobile: boolean
+  }>
+}>
+
+export type ContentDefaultsSocial = Partial<{
+  icons: IPluginModuleSocialIcon[]
+  blockOptions: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    // TOFIX: documentation (from textAlign to align)
+    align: string
+    hideContentOnMobile: boolean
+    // TOFIX: understand why they are not handled in the plugin
+    // height: number
+    // TOFIX: understand why they are not handled in the plugin
+    // width: number
+    // TOFIX: understand why they are not handled in the plugin
+    // iconWidth: number
+  }>
+}>
+
+export type ContentDefaultsDynamic = Partial<{
+  blockOptions: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    hideContentOnMobile: boolean
+  }>
+}>
+
+export type ContentDefaultsVideo = Partial<{
+  src: string
+  blockOptions: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    hideContentOnMobile: boolean
+  }>
+}>
+
+export type ContentDefaultsForm = Partial<{
+  structure: unknown
+  styles: Partial<{
+    // TOFIX: documentation (add)
+    width: string
+    fontSize: string
+    fontFamily: string
+  }>
+  labelsOptions: Partial<{
+    color: string
+    lineHeight: string
+    fontWeight: string
+    fontStyle: string
+    align: string
+    position: string
+  }>
+  fieldsOptions: Partial<{
+    color: string
+    backgroundColor: string
+    outlineColor: string
+    borderRadius: string
+    borderTop: string
+    borderRight: string
+    borderBottom: string
+    borderLeft: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+  }>
+  buttonsOptions: Partial<{
+    color: string
+    backgroundColor: string
+    borderRadius: string
+    borderTop: string
+    borderRight: string
+    borderBottom: string
+    borderLeft: string
+    lineHeight: string
+    align: string
+    width: string
+    maxWidth: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    marginBottom: string
+    margingLeft: string
+    marginRight: string
+    marginTop: string
+  }>
+  blockOptions: Partial<{
+    align: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    // TOFIX: documentation (add)
+    backgroundColor: string
+    hideContentOnMobile: boolean
+    hideContentOnDesktop: boolean
+  }>
+}>
+
+export type ContentDefaultsIcons = Partial<{
+  items: unknown
+  styles: Partial<{
+    color: string
+    fontSize: string
+    fontFamily: string
+  }>
+  blockOptions: Partial<{
+    align: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    hideContentOnMobile: boolean
+    hideContentOnDesktop: boolean
+    itemSpacing: string
+    // TOFIX: documentation (add)
+    iconHeight: string
+  }>
+  iconSpacing: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+  }>
+}>
+
+export type ContentDefaultsMenu = Partial<{
+  items: unknown
+  // TOFIX: documentation (fix style to styles)
+  styles: Partial<{
+    color: string
+    linkColor: string
+    fontSize: string
+    fontFamily: string
+  }>
+  hamburger: Partial<{
+    mobile: boolean
+    foregroundColor: string
+    backgroundColor: string
+    iconSize: string
+    iconType: string
+  }>
+  blockOptions: Partial<{
+    align: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    // TOFIX: documentation (add)
+    layout: string
+    hideContentOnMobile: boolean
+    hideContentOnDesktop: boolean
+  }>
+  itemsSpacing: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+  }>
+}>
+
+export type ContentDefaultsSpacer = Partial<{
+  height: string
+  blockOptions: Partial<{
+    hideContentOnMobile: boolean
+  }>
+}>
+
+export type ContentDefaultsParagraph = Partial<{
+  styles: Partial<{
+    color: string
+    fontSize: string
+    fontFamily: string
+    fontWeight: string
+    lineHeight: string
+    textAlign: string
+    direction: string
+    letterSpacing: string
+    linkColor: string
+    paragraphSpacing: string
+  }>
+  blockOptions: Partial<{
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+}>
+
+export type ContentDefaultsList = Partial<{
+  styles: Partial<{
+    color: string
+    fontSize: string
+    fontFamily: string
+    fontWeight: string
+    lineHeight: string
+    textAlign: string
+    direction: string
+    letterSpacing: string
+    linkColor: string
+    liSpacing: string
+    liIndent: string
+    listType: string
+    listStyleType: string
+    // TOFIX: documentation (from startListFrom to startList)
+    startList: string
+    listStylePosition: string
+  }>
+  blockOptions: Partial<{
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+}>
+
+export type ContentDefaultsGeneral = Partial<{
+  backgroundColor: string
+  contentAreaBackgroundColor: string
+  defaultFont: string
+  linkColor: string
+}>
+
+export type ContentDefaults = Partial<{
+  title: ContentDefaultsTitle
+  text: ContentDefaultsText
+  image: ContentDefaultsImage
+  button: ContentDefaultsButton
+  divider: ContentDefaultsDivider
+  social: ContentDefaultsSocial
+  // TOFIX: documentation (from dynamicContent to dynamic)
+  dynamic: ContentDefaultsDynamic
+  video: ContentDefaultsVideo
+  form: ContentDefaultsForm
+  paragraph: ContentDefaultsParagraph
+  spacer: ContentDefaultsSpacer
+  menu: ContentDefaultsMenu
+  icons: ContentDefaultsIcons
+  list: ContentDefaultsList
+  general: ContentDefaultsGeneral
+}>
+
 export interface IBeeConfig {
   uid: string
   container: string
@@ -499,7 +1210,7 @@ export interface IBeeConfig {
   roleHash?: string
   role?: BeePluginRoles,
   defaultColors?: string[]
-  contentDefaults?: unknown
+  contentDefaults?: ContentDefaults
   customCss?: string
   workspace?: BeePluginWorkspace
   autosave?: number,
@@ -561,3 +1272,5 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void 
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
 }
+
+export type { KebabCSSProperties } 
