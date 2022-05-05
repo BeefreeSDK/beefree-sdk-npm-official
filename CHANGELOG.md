@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.2...v1.6.4-types-improvements.3) (2022-05-05)
+
+
+### Bug Fixes
+
+* fixed module types and defaultContent types ([ff33abb](https://github.com/BEE-Plugin/Bee-plugin-official/commit/ff33abb397d45643d6e7cbe2b6166f9b755fe6de))
+* fixed module types removing general base type ([94bbc3e](https://github.com/BEE-Plugin/Bee-plugin-official/commit/94bbc3e19bf49978aa083af7fbb78e4a16b3c90c))
+
 ### [1.6.4-types-improvements.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.1...v1.6.4-types-improvements.2) (2022-04-29)
 
 
