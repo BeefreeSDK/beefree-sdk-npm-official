@@ -186,28 +186,6 @@ export const ModuleDescriptorNames = {
   LIST: 'list'
 } as const
 
-type X = ValueOf<typeof ModuleDescriptorNames>
-
-export interface IPluginModule {
-  descriptor: {
-      [key in X]?: {
-        style?: KebabCSSProperties & {
-          [key: string]: unknown  
-        }
-        computedStyle?: IPluginComputedStyle
-        [key: string]: unknown
-      } 
-    } & {
-      id?: string
-      style?: KebabCSSProperties
-      computedStyle: IPluginComputedStyle
-      [key: string]: unknown
-  }
-  locked?: boolean
-  type: string
-  uuid: string
-}
-
 export interface IPluginModuleHeading {
   type: typeof ModuleTypes.HEADING
   locked?: boolean
@@ -243,7 +221,6 @@ export interface IPluginModuleHeading {
     }
   }
 }
-
 export interface IPluginModuleParagraph {
   type: typeof ModuleTypes.PARAGRAPH
   locked?: boolean
@@ -284,6 +261,7 @@ export interface IPluginModuleParagraph {
 
 export interface IPluginModuleButton {
   type: typeof ModuleTypes.BUTTON
+  locked?: boolean
   uuid: string
   descriptor: {
     id?: string
@@ -326,9 +304,10 @@ export interface IPluginModuleButton {
 
 export interface IPluginModuleList {
   type: typeof ModuleTypes.LIST
+  locked?: boolean
   uuid: string
   descriptor: {
-    id: string
+    id?: string
     style: {
       'padding-bottom': string
       'padding-left': string
@@ -366,12 +345,12 @@ export interface IPluginModuleList {
     }
   }
 }
-
 export interface IPluginModuleDivider {
   type: typeof ModuleTypes.DIVIDER
+  locked?: boolean
   uuid: string
   descriptor: {
-    id: string
+    id?: string
     style: {
       'padding-bottom': string
       'padding-left': string
@@ -393,8 +372,10 @@ export interface IPluginModuleDivider {
 
 export interface IPluginModuleForm {
   type: typeof ModuleTypes.FORM
+  locked?: boolean
   uuid: string
   descriptor: {
+    id?: string
     computedStyle: {
       class: string
       hideContentOnDesktop: boolean
@@ -412,7 +393,8 @@ export interface IPluginModuleForm {
       width: string
     }
     form: {
-      id: string
+      attributes: unknown
+      structure: unknown
       style: {
         buttons: {
           backgroundColor: string
@@ -463,11 +445,8 @@ export interface IPluginModuleForm {
         }
       }
     }
-    id: string
-    locked?: boolean
   }
 }
-
 export interface IPluginModuleSocialIcon {
   image: {
     alt: string,
@@ -479,14 +458,14 @@ export interface IPluginModuleSocialIcon {
   name: string,
   text: string,
   type: string,
-} 
+}
 
 export interface IPluginModuleSocial {
   type: typeof ModuleTypes.SOCIAL
+  locked?: boolean
   uuid: string
   descriptor: {
-    id: string
-    locked?: boolean
+    id?: string
     style: {
       'padding-bottom': string
       'padding-left': string
@@ -518,10 +497,10 @@ export interface IPluginModuleMenuItem {
 
 export interface IPluginModuleMenu {
   type: typeof ModuleTypes.MENU
+  locked?: boolean
   uuid: string
   descriptor: {
-    id: string
-    locked?: boolean
+    id?: string
     computedStyle: {
       hideContentOnDesktop: boolean
       hideContentOnMobile: boolean
@@ -556,6 +535,28 @@ export interface IPluginModuleMenu {
     }
   }
 }
+
+export interface IPluginModuleSpacer {
+  type: typeof ModuleTypes.SPACER
+  locked?: boolean
+  uuid: string
+  descriptor: {
+    id?: string
+    spacer: {
+      style: {
+        height: string
+      }
+    }
+    computedStyle: {
+      hideContentOnMobile: boolean
+    }
+  }
+}
+
+export type IPluginModule = 
+  IPluginModuleHeading | IPluginModuleParagraph | IPluginModuleButton | 
+  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | 
+  IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer
 
 export interface IPluginColumn {
   'grid-columns': number
@@ -842,7 +843,7 @@ export type ContentDefaultsTitle = Partial<{
   }>
 }>
 
-export type TitleDefaultStyle = {
+export type TitleDefaultStyle = Partial<{
   color: string
   'font-size': string
   'font-weight': string
@@ -852,7 +853,7 @@ export type TitleDefaultStyle = {
   'text-align': string
   'direction': string
   'letter-spacing': number
-}
+}>
 
 export type TitleDefaultStyles = {
   h1: TitleDefaultStyle
