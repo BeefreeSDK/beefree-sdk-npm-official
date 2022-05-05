@@ -98,6 +98,19 @@ const beeConfig :IBeeConfig = {
   mergeTags,
   mergeContents,
   contentDialog,
+  customAssetsOptions: {
+    pendo: {
+      variables: {
+        pendo_visitor_id: 123,       // occurrences of "~#{pendo_visitor_id}" placeholder are replaced
+        pendo_visitor_email: '', // 
+        pendo_visitor_role: 'admin',   // admin, manager...
+        pendo_visitor_customer_id: 123,
+        pendo_account_id: 122,
+        pendo_account_state: 233,
+        pendo_account_plan_level: 444,
+      },
+    },
+  },
   onSave: (_, htmlFile) => save('newsletter-template.html', htmlFile),
   onLoad: () => console.warn('*** [integration] loading a new template...'),
   onSaveAsTemplate: (json: Record<string, unknown>) => void save('newsletter-template.json', json),
