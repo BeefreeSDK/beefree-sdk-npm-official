@@ -6,3 +6,14 @@ type Kebab<T extends string, A extends string = ""> =
 export type KebabKeys<T> = { [K in keyof T as K extends string ? Kebab<K> : K]: T[K] };
 
 export type ValueOf<T> = T[keyof T];
+
+export type RecursivePartial<T> = {
+  [P in keyof T]?:
+  T[P] extends (infer U)[] ? RecursivePartial<U>[] :
+    T[P] extends Record<string, unknown> ? RecursivePartial<T[P]> :
+      T[P];
+};
+
+export type RecursiveRequired<T> = Required<{
+  [P in keyof T]: T[P] extends Record<string, unknown> | undefined ? RecursiveRequired<Required<T[P]>> : T[P];
+}>;

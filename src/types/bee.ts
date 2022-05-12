@@ -1,5 +1,5 @@
 import * as CSS from 'csstype'
-import { KebabKeys, ValueOf } from './utils'
+import { KebabKeys, RecursivePartial, ValueOf } from './utils'
 
 export interface IBeeLoader {
   beePluginUrl: string,
@@ -136,8 +136,6 @@ export type BeePluginError = {
   data?: BeePluginErrorData
 }
 
-// TOFIX: understand which properties are passed using kebab and which are using camelCase
-// TOFIX: ask parser developer if possible to set font-weight to number
 type KebabCSSProperties = KebabKeys<CSS.Properties>
 
 export type BeePluginErrorData = {
@@ -756,15 +754,272 @@ export type BeePluginAdvancedPermissionStageToggle = {
   }
 }
 
-export type BeePluginAdvancedPermission = Partial<{
-  rows: {
-    displayConditions: {
-      show: boolean
-      locked: boolean
-    }
-  }
+export type AdvancedSettingsBehaviours = {
+  canSelect: boolean
+  canAdd: boolean
+  canViewSidebar: boolean
+  canClone: boolean
+  canMove: boolean
+  canDelete: boolean
+}
+
+export type AdvancedSettingsShowLocked = {
+  show: boolean
+  locked: boolean
+}
+
+export type AdvancedSettingsTextEditor = {
+  toolbar: string[]
+  fontSizes: string
+}
+
+export type BeePluginAdvancedPermission = RecursivePartial<{
   workspace: {
     stageToggle: BeePluginAdvancedPermissionStageToggle
+  }
+  tabs: {
+    rows: AdvancedSettingsShowLocked
+    settings: AdvancedSettingsShowLocked
+    content: AdvancedSettingsShowLocked
+  }
+  rows: {
+    behaviors: AdvancedSettingsBehaviours
+    backgroundColorRow: AdvancedSettingsShowLocked
+    backgroundColorContent: AdvancedSettingsShowLocked
+    doNotStackOnMobile: AdvancedSettingsShowLocked
+    backgroundImage: AdvancedSettingsShowLocked
+    backgroundVideo: AdvancedSettingsShowLocked
+    displayConditions: AdvancedSettingsShowLocked
+    columnTabs: AdvancedSettingsShowLocked
+  },
+  settings: {
+    title: AdvancedSettingsShowLocked
+    description: AdvancedSettingsShowLocked
+    language: AdvancedSettingsShowLocked
+    favicon: AdvancedSettingsShowLocked
+    contentAreaWidth: AdvancedSettingsShowLocked
+    contentAreaAlign: AdvancedSettingsShowLocked
+    containerBackgroundColor: AdvancedSettingsShowLocked
+    contentBackgroundColor: AdvancedSettingsShowLocked
+    defaultFontFamily: AdvancedSettingsShowLocked
+    linkColor: AdvancedSettingsShowLocked
+  }
+  columns: {
+    behaviors: {
+      canResize: boolean
+      canAdd: boolean
+      canDelete: boolean
+    }
+  }
+  content: {
+    title: {
+      textEditor: AdvancedSettingsTextEditor
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        title: AdvancedSettingsShowLocked
+        fontFamily: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked
+        lineHeight: AdvancedSettingsShowLocked
+        letterSpacing: AdvancedSettingsShowLocked
+        direction: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    viwed: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        id: AdvancedSettingsShowLocked
+      }
+    },
+    spacer: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      },
+    },
+    text: {
+      textEditor: AdvancedSettingsTextEditor
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        lineHeight: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+
+      }
+    }
+    button: {
+      textEditor: AdvancedSettingsTextEditor
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        link: AdvancedSettingsShowLocked
+        buttonWidth: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        backgroundColor: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked
+        buttonLineHeight: AdvancedSettingsShowLocked
+        borderRadius: AdvancedSettingsShowLocked
+        contentPadding: AdvancedSettingsShowLocked
+        border: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    image: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        imageWidth: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked
+        dynamicImage: AdvancedSettingsShowLocked
+        imageSelector: AdvancedSettingsShowLocked
+        inputText: AdvancedSettingsShowLocked
+        link: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    divider: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        lineHeight: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    social: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        iconsMode: AdvancedSettingsShowLocked
+        icons: AdvancedSettingsShowLocked
+        align: AdvancedSettingsShowLocked
+        iconSpacing: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    dynamic: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        mergeContent: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    html: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        htmlEditor: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    video: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        videoUrl: AdvancedSettingsShowLocked
+        videoIcon: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    form: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        layOutFields: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    icons: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    paragraph: {
+      behaviors: AdvancedSettingsBehaviours
+      textEditor: AdvancedSettingsTextEditor
+      properties: {
+        fontFamily: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
+        fontWeight: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        lineHeight: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked
+        direction: AdvancedSettingsShowLocked
+        letterSpacing: AdvancedSettingsShowLocked
+        paragraphSpacing: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      },
+    },
+    list: {
+      behaviors: AdvancedSettingsBehaviours
+      textEditor: AdvancedSettingsTextEditor
+      properties: {
+        tag: AdvancedSettingsShowLocked
+        listStyleType: AdvancedSettingsShowLocked
+        fontFamily: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
+        fontWeight: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        lineHeight: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked
+        direction: AdvancedSettingsShowLocked
+        letterSpacing: AdvancedSettingsShowLocked
+        startListFrom: AdvancedSettingsShowLocked
+        liSpacing: AdvancedSettingsShowLocked
+        liIndent: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+
+
+      },
+    },
+    menu: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        menuItems: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+
+      }
+    }
   }
 }>
 
