@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.5](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.4...v1.6.4-types-improvements.5) (2022-05-14)
+
+
+### Bug Fixes
+
+* fixed social module type, id was missing ([9659cd2](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9659cd2f9ec6a977281aba999239c29aa322be44))
+
 ### [1.6.4-types-improvements.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.3...v1.6.4-types-improvements.4) (2022-05-12)
 
 
