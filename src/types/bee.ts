@@ -446,16 +446,17 @@ export interface IPluginModuleForm {
   }
 }
 export interface IPluginModuleSocialIcon {
+  id: string
   image: {
-    alt: string,
-    href: string,
-    prefix: string,
-    src: string,
-    title: string,
-  },
-  name: string,
-  text: string,
-  type: string,
+    alt: string
+    href: string
+    prefix: string
+    src: string
+    title: string
+  }
+  name: string
+  text: string
+  type: string
 }
 
 export interface IPluginModuleSocial {
