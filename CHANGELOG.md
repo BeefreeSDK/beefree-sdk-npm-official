@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.7](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.6...v1.6.4-types-improvements.7) (2022-05-16)
+
+
+### Bug Fixes
+
+* added align attribute to content.computerStyle for type IEntityContentJson ([0e2170c](https://github.com/BEE-Plugin/Bee-plugin-official/commit/0e2170c42f747b1fc7fcc1fff38d5559d64cff86))
+
 ### [1.6.4-types-improvements.6](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.5...v1.6.4-types-improvements.6) (2022-05-16)
 
 
