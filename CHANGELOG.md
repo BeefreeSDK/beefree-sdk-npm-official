@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.6](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.5...v1.6.4-types-improvements.6) (2022-05-16)
+
+
+### Bug Fixes
+
+* typed body for IEntityContentJson ([252c442](https://github.com/BEE-Plugin/Bee-plugin-official/commit/252c44243cbd09f09f99c58b20a0fad5afff2d02))
+
 ### [1.6.4-types-improvements.5](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.4...v1.6.4-types-improvements.5) (2022-05-14)
 
 
