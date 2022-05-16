@@ -1044,7 +1044,26 @@ export type IPluginSessionInfo = {
 
 export interface IEntityContentJson {
   page: {
-    body: unknown
+    body: {
+      type: string
+      webFonts: unknown[]
+      container: {
+        style: {
+          "background-color": string
+        }
+      }
+      content: {
+        style: {
+            "font-family": string
+            color: string
+        }
+        computedStyle: {
+            linkColor: string
+            messageBackgroundColor: string
+            messageWidth: string
+        }
+      }
+    }
     description: string
     rows: IPluginRow[]
     template: {
