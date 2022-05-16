@@ -1058,6 +1058,7 @@ export interface IEntityContentJson {
             color: string
         }
         computedStyle: {
+            align: string
             linkColor: string
             messageBackgroundColor: string
             messageWidth: string
