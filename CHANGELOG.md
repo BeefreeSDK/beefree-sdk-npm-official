@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.7.0-feat-custom-assets.0...v1.7.0) (2022-05-17)
+
 ## [1.7.0-feat-custom-assets.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.3...v1.7.0-feat-custom-assets.0) (2022-05-05)
 
 
