@@ -1444,6 +1444,7 @@ export type ContentDefaultsGeneral = Partial<{
   contentAreaBackgroundColor: string
   defaultFont: string
   linkColor: string
+  contentAreaWidth: string
 }>
 
 export type ContentDefaults = Partial<{
