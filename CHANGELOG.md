@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.8](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.7...v1.6.4-types-improvements.8) (2022-05-17)
+
+
+### Bug Fixes
+
+* added contentAreaWidth for general contentDefaults ([7041bdc](https://github.com/BEE-Plugin/Bee-plugin-official/commit/7041bdc85aa7adfd457512e21a50d7a68f64f7f0))
+
 ### [1.6.4-types-improvements.7](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.6...v1.6.4-types-improvements.7) (2022-05-16)
 
 
