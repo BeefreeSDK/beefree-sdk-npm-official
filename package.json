@@ -1,6 +1,6 @@
 {
   "name": "@mailupinc/bee-plugin",
-  "version": "1.6.3",
+  "version": "1.7.0-feat-custom-assets.0",
   "description": "wrapper of bee-plugin",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -29,7 +29,8 @@
     "release": "standard-version",
     "postrelease": "git push --follow-tags --no-verify",
     "release:alpha": "yarn prerelease && standard-version --prerelease alpha && yarn postrelease",
-    "release:beta": "yarn prerelease && standard-version --prerelease beta && yarn postrelease"
+    "release:beta": "yarn prerelease && standard-version --prerelease beta && yarn postrelease",
+    "release:unstable": "yarn prerelease && standard-version --prerelease $(git branch --show-current | sed 's/\\//-/g') && yarn postrelease"
   },
   "repository": "git+https://github.com/BEE-Plugin/Bee-plugin-official.git",
   "keywords": [

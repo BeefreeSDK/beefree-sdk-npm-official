@@ -443,6 +443,7 @@ export interface IBeeConfig {
   userColor?: string
   userHandle?: string
   commenting?: boolean
+  customAssetsOptions?: Record<string, unknown>
   advancedPermissions?: BeePluginAdvancedPermission
   defaultForm?: unknown
   loadingSpinnerTheme?: string
