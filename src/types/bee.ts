@@ -817,9 +817,10 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
       textEditor: AdvancedSettingsTextEditor
       behaviors: AdvancedSettingsBehaviours
       properties: {
+        fontWeight: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked 
         title: AdvancedSettingsShowLocked
         fontFamily: AdvancedSettingsShowLocked
-        fontSize: AdvancedSettingsShowLocked
         textColor: AdvancedSettingsShowLocked
         linkColor: AdvancedSettingsShowLocked
         textAlign: AdvancedSettingsShowLocked
@@ -841,6 +842,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     spacer: {
       behaviors: AdvancedSettingsBehaviours
       properties: {
+        height: AdvancedSettingsShowLocked
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
@@ -850,6 +852,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
       textEditor: AdvancedSettingsTextEditor
       behaviors: AdvancedSettingsBehaviours
       properties: {
+        letterSpacing: AdvancedSettingsShowLocked
         textColor: AdvancedSettingsShowLocked
         linkColor: AdvancedSettingsShowLocked
         lineHeight: AdvancedSettingsShowLocked
@@ -876,6 +879,9 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         border: AdvancedSettingsShowLocked
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
+        fontWeight: AdvancedSettingsShowLocked
+        fontFamily: AdvancedSettingsShowLocked
+        letterSpacing: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
       }
     }
@@ -897,6 +903,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     divider: {
       behaviors: AdvancedSettingsBehaviours
       properties: {
+        dividerMode: AdvancedSettingsShowLocked
         textColor: AdvancedSettingsShowLocked
         linkColor: AdvancedSettingsShowLocked
         lineHeight: AdvancedSettingsShowLocked
@@ -951,6 +958,34 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     form: {
       behaviors: AdvancedSettingsBehaviours
       properties: {
+        width: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked 
+        fontFamily: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        labelTextColor: AdvancedSettingsShowLocked
+        labelLineHeight: AdvancedSettingsShowLocked
+        labelTextAlign: AdvancedSettingsShowLocked
+        labelStyle: AdvancedSettingsShowLocked
+        labelPosition: AdvancedSettingsShowLocked
+        labelMinWidth: AdvancedSettingsShowLocked
+        labelLetterSpacing: AdvancedSettingsShowLocked
+        fieldTextColor: AdvancedSettingsShowLocked
+        fieldBackgroundColor: AdvancedSettingsShowLocked
+        fieldPadding: AdvancedSettingsShowLocked
+        fieldBorder: AdvancedSettingsShowLocked
+        fieldBorderRadius: AdvancedSettingsShowLocked
+        fieldOutline: AdvancedSettingsShowLocked
+        buttonWidth: AdvancedSettingsShowLocked
+        buttonTextColor: AdvancedSettingsShowLocked
+        buttonBackgroundColor: AdvancedSettingsShowLocked
+        buttonAlign: AdvancedSettingsShowLocked
+        buttonPadding: AdvancedSettingsShowLocked
+        buttonOuterPadding: AdvancedSettingsShowLocked
+        buttonBorder: AdvancedSettingsShowLocked
+        buttonBorderRadius: AdvancedSettingsShowLocked
+        buttonLetterSpacing: AdvancedSettingsShowLocked
+        buttonStyle: AdvancedSettingsShowLocked
         layOutFields: AdvancedSettingsShowLocked
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
@@ -960,6 +995,15 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     icons: {
       behaviors: AdvancedSettingsBehaviours
       properties: {
+        fontFamily: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked 
+        align: AdvancedSettingsShowLocked 
+        letterSpacing: AdvancedSettingsShowLocked 
+        iconSize: AdvancedSettingsShowLocked 
+        itemsSpacing: AdvancedSettingsShowLocked 
+        iconSpacing: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
@@ -1014,6 +1058,17 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     menu: {
       behaviors: AdvancedSettingsBehaviours
       properties: {
+        fontFamily: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        align: AdvancedSettingsShowLocked
+        letterSpacing: AdvancedSettingsShowLocked
+        layout: AdvancedSettingsShowLocked
+        separator: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hamburger: AdvancedSettingsShowLocked
+        itemSpacing: AdvancedSettingsShowLocked
         menuItems: AdvancedSettingsShowLocked
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
