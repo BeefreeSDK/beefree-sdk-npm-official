@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.9](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.8...v1.6.4-types-improvements.9) (2022-05-18)
+
+
+### Bug Fixes
+
+* added some more types to AdvancedPermissions ([ff41870](https://github.com/BEE-Plugin/Bee-plugin-official/commit/ff41870ee71e428717cb914f94f100bcd683b8fc))
+
 ### [1.6.4-types-improvements.8](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.7...v1.6.4-types-improvements.8) (2022-05-17)
 
 
