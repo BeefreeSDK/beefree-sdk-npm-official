@@ -409,6 +409,9 @@ export interface IPluginModuleForm {
           'padding-right': string
           'padding-top': string
           'text-align': string
+          'font-weight': string
+          'font-style': string
+          'letter-spacing': string
           width: string
           outer: {
             flexGrow: number
@@ -440,6 +443,8 @@ export interface IPluginModuleForm {
           'label-position': string
           'line-height': string
           'text-align': string
+          'min-width': string
+          'letter-spacing': string
         }
       }
     }
@@ -792,6 +797,8 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     backgroundVideo: AdvancedSettingsShowLocked
     displayConditions: AdvancedSettingsShowLocked
     columnTabs: AdvancedSettingsShowLocked
+    hideOnMobile: AdvancedSettingsShowLocked
+    rowLayout: AdvancedSettingsShowLocked
   },
   settings: {
     title: AdvancedSettingsShowLocked
