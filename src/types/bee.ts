@@ -1083,6 +1083,9 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
 
       }
     }
+    [uuid: string]: {
+      behaviors: AdvancedSettingsBehaviours
+    }
   }
 }>
 
@@ -1164,9 +1167,6 @@ export type IRefreshSavedRow = boolean
 
 // TOFIX: Need to remove some properties with Omit generics
 export type ILoadableProps = Partial<IBeeConfig>
-
-// TOFIX documentation (h3 is missing)
-// TOFIX documentation (add font-weight for h1, h2, h3)
 
 export type ContentDefaultsTitle = Partial<{
   // TOFIX: understand why they are not handled in the plugin
@@ -1287,7 +1287,6 @@ export type ContentDefaultsSocial = Partial<{
     paddingLeft: string
     paddingRight: string
     paddingTop: string
-    // TOFIX: documentation (from textAlign to align)
     align: string
     hideContentOnMobile: boolean
     // TOFIX: understand why they are not handled in the plugin
@@ -1323,7 +1322,6 @@ export type ContentDefaultsVideo = Partial<{
 export type ContentDefaultsForm = Partial<{
   structure: unknown
   styles: Partial<{
-    // TOFIX: documentation (add)
     width: string
     fontSize: string
     fontFamily: string
@@ -1382,7 +1380,6 @@ export type ContentDefaultsForm = Partial<{
     paddingLeft: string
     paddingRight: string
     paddingTop: string
-    // TOFIX: documentation (add)
     backgroundColor: string
     hideContentOnMobile: boolean
     hideContentOnDesktop: boolean
@@ -1405,7 +1402,6 @@ export type ContentDefaultsIcons = Partial<{
     hideContentOnMobile: boolean
     hideContentOnDesktop: boolean
     itemSpacing: string
-    // TOFIX: documentation (add)
     iconHeight: string
   }>
   iconSpacing: Partial<{
@@ -1418,7 +1414,6 @@ export type ContentDefaultsIcons = Partial<{
 
 export type ContentDefaultsMenu = Partial<{
   items: unknown
-  // TOFIX: documentation (fix style to styles)
   styles: Partial<{
     color: string
     linkColor: string
@@ -1438,7 +1433,6 @@ export type ContentDefaultsMenu = Partial<{
     paddingLeft: string
     paddingRight: string
     paddingTop: string
-    // TOFIX: documentation (add)
     layout: string
     hideContentOnMobile: boolean
     hideContentOnDesktop: boolean
@@ -1494,7 +1488,6 @@ export type ContentDefaultsList = Partial<{
     liIndent: string
     listType: string
     listStyleType: string
-    // TOFIX: documentation (from startListFrom to startList)
     startList: string
     listStylePosition: string
   }>
@@ -1521,7 +1514,6 @@ export type ContentDefaults = Partial<{
   button: ContentDefaultsButton
   divider: ContentDefaultsDivider
   social: ContentDefaultsSocial
-  // TOFIX: documentation (from dynamicContent to dynamic)
   dynamic: ContentDefaultsDynamic
   video: ContentDefaultsVideo
   form: ContentDefaultsForm
@@ -1539,7 +1531,7 @@ export interface IBeeConfig {
   trackChanges?: boolean
   preventClose?: boolean
   enable_display_conditions?: boolean
-  language: string
+  language?: string
   mergeTags?: IMergeTag[]
   mergeContents?: IMergeContent[]
   specialLinks?: ISpecialLink[]
@@ -1600,7 +1592,7 @@ export interface IBeeConfig {
   },
   rowsConfiguration?: Record<string, unknown>
   hooks?: BeePluginConfigurationsHooks
-  onLoad: () => void
+  onLoad?: () => void
   onPreview?: (opened: boolean) => void
   onTogglePreview?: (toggled: boolean) => void
   onSessionStarted?: (sessionInfo: IPluginSessionInfo) => void
@@ -1608,7 +1600,7 @@ export interface IBeeConfig {
   onReady?: (args: Record<string, unknown>) => void
   onSave?: (jsonFile: unknown, htmlFile: unknown) => void
   onSaveRow?: (jsonfile: unknown, html: string) => void
-  onError: (error: BeePluginError) => void
+  onError?: (error: BeePluginError) => void
   onAutoSave?: (json: string) => void
   onSaveAsTemplate?: (json: Record<string, unknown>) => void
   onSend?: (html: string) => void
