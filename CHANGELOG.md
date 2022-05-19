@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.12](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.11...v1.6.4-types-improvements.12) (2022-05-19)
+
+
+### Bug Fixes
+
+* now beeConfiguration has only container and uid as mandatory fields ([8e1cd6b](https://github.com/BEE-Plugin/Bee-plugin-official/commit/8e1cd6b8772539f6c3b9a2f2f73de8dbec217c32))
+
 ### [1.6.4-types-improvements.11](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.10...v1.6.4-types-improvements.11) (2022-05-19)
 
 
