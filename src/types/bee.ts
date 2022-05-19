@@ -1328,6 +1328,8 @@ export type ContentDefaultsForm = Partial<{
     fontStyle: string
     align: string
     position: string
+    letterSpacing: string
+    minWidth: string
   }>
   fieldsOptions: Partial<{
     color: string
@@ -1363,6 +1365,9 @@ export type ContentDefaultsForm = Partial<{
     margingLeft: string
     marginRight: string
     marginTop: string
+    letterSpacing: string
+    fontStyle: string
+    fontWeight: string
   }>
   blockOptions: Partial<{
     align: string
