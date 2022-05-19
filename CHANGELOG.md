@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.10](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.9...v1.6.4-types-improvements.10) (2022-05-19)
+
+
+### Bug Fixes
+
+* added 5 more contentDefaults for form label and form button ([da0505d](https://github.com/BEE-Plugin/Bee-plugin-official/commit/da0505dacfcc68510b5f6d1cd9291cccc6b1543c))
+
 ### [1.6.4-types-improvements.9](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.8...v1.6.4-types-improvements.9) (2022-05-18)
 
 
