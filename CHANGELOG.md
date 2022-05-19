@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.11](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.10...v1.6.4-types-improvements.11) (2022-05-19)
+
+
+### Bug Fixes
+
+* added other form module properties and other advancedPermissions properties ([19bfe3b](https://github.com/BEE-Plugin/Bee-plugin-official/commit/19bfe3b12269cdb6ee6dee89a0c8ee8598c4288c))
+
 ### [1.6.4-types-improvements.10](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.9...v1.6.4-types-improvements.10) (2022-05-19)
 
 
