@@ -1200,7 +1200,7 @@ export type TitleDefaultStyle = Partial<{
   'line-height': string
   'text-align': string
   'direction': string
-  'letter-spacing': number
+  'letter-spacing': string
 }>
 
 export type TitleDefaultStyles = {
