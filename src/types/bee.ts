@@ -1109,29 +1109,37 @@ export type IPluginSessionInfo = {
   sessionId: string
 }
 
+export type FontElement = {
+  fontFamily: string
+  name: string
+  url: string
+}
+
+export type EntityBody = {
+  type: string
+  webFonts: FontElement[]
+  container: {
+    style: {
+      "background-color": string
+    }
+  }
+  content: {
+    style: {
+        "font-family": string
+        color: string
+    }
+    computedStyle: {
+        align: string
+        linkColor: string
+        messageBackgroundColor: string
+        messageWidth: string
+    }
+  }
+}
+
 export interface IEntityContentJson {
   page: {
-    body: {
-      type: string
-      webFonts: unknown[]
-      container: {
-        style: {
-          "background-color": string
-        }
-      }
-      content: {
-        style: {
-            "font-family": string
-            color: string
-        }
-        computedStyle: {
-            align: string
-            linkColor: string
-            messageBackgroundColor: string
-            messageWidth: string
-        }
-      }
-    }
+    body: EntityBody
     description: string
     rows: IPluginRow[]
     template: {
