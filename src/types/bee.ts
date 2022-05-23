@@ -1112,7 +1112,7 @@ export type IPluginSessionInfo = {
 export type FontElement = {
   fontFamily: string
   name: string
-  url: string
+  url?: string
 }
 
 export type EntityBody = {
