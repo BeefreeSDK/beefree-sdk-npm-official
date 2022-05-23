@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.14](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.13...v1.6.4-types-improvements.14) (2022-05-23)
+
+
+### Bug Fixes
+
+* added EntityBody type ([714c82d](https://github.com/BEE-Plugin/Bee-plugin-official/commit/714c82dd6cb839b787ea51dc065e2947ab148499))
+
 ### [1.6.4-types-improvements.13](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.12...v1.6.4-types-improvements.13) (2022-05-19)
 
 
