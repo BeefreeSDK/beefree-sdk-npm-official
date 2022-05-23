@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.16](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.15...v1.6.4-types-improvements.16) (2022-05-23)
+
+
+### Bug Fixes
+
+* fixed type letter spacing for h1/h2/h3 content defaults ([04152fa](https://github.com/BEE-Plugin/Bee-plugin-official/commit/04152facf8f39404abd8490cb8030bfdedeaf9e4))
+
 ### [1.6.4-types-improvements.15](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.14...v1.6.4-types-improvements.15) (2022-05-23)
 
 
