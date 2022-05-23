@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.15](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.14...v1.6.4-types-improvements.15) (2022-05-23)
+
+
+### Bug Fixes
+
+* fixed FontElement type where url is not required ([0d545d6](https://github.com/BEE-Plugin/Bee-plugin-official/commit/0d545d6078689a1ddbe8781931b96157d007ccdf))
+
 ### [1.6.4-types-improvements.14](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.13...v1.6.4-types-improvements.14) (2022-05-23)
 
 
