@@ -128,6 +128,14 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * started fixing some types ([9fe9df5](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9fe9df5aa00e068c8279da35c835fdf08fba7f97))
+## [1.7.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.7.0-feat-custom-assets.0...v1.7.0) (2022-05-17)
+
+## [1.7.0-feat-custom-assets.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.3...v1.7.0-feat-custom-assets.0) (2022-05-05)
+
+
+### Features
+
+* added customAssetsOption type ([887d49c](https://github.com/BEE-Plugin/Bee-plugin-official/commit/887d49ca2b08830744324131390427a08baaa969))
 
 ### [1.6.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.2...v1.6.3) (2022-04-05)
 
