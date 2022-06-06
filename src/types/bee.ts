@@ -1,4 +1,5 @@
 import * as CSS from 'csstype'
+import { KebabKeys, RecursivePartial, ValueOf } from './utils'
 
 export interface IBeeLoader {
   beePluginUrl: string,
@@ -34,9 +35,7 @@ export interface ILoadStageMode {
   display: StageDisplayOptions
 }
 
-export type ILoadConfig = {
-  [key in keyof ILoadableProps]: unknown
-}
+export type ILoadConfig = ILoadableProps
 
 export enum LoadWorkspaceOptions {
   DEFAULT = 'default',
@@ -137,49 +136,436 @@ export type BeePluginError = {
   data?: BeePluginErrorData
 }
 
-type CSSProperties = CSS.Properties<string | number>
+type KebabCSSProperties = KebabKeys<CSS.Properties>
 
 export type BeePluginErrorData = {
   uuid: string
   config: IPluginRow | IPluginModule
 }
 
-export enum ModuleTypes {
-  DIVIDER = 'mailup-bee-newsletter-modules-divider',
-  TEXT = 'mailup-bee-newsletter-modules-text',
-  IMAGE = 'mailup-bee-newsletter-modules-image',
-  BUTTON = 'mailup-bee-newsletter-modules-button',
-  HTML = 'mailup-bee-newsletter-modules-html',
-  SOCIAL = 'mailup-bee-newsletter-modules-social',
-  EMPTY = 'mailup-bee-newsletter-modules-empty',
-  VIDEO = 'mailup-bee-newsletter-modules-video',
-  ADDON = 'mailup-bee-newsletter-modules-addon',
-  FORM = 'mailup-bee-newsletter-modules-form',
-  MERGE_CONTENT = 'mailup-bee-newsletter-modules-merge-content',
-  CAROUSEL = 'mailup-bee-newsletter-modules-carousel',
-  MENU = 'mailup-bee-newsletter-modules-menu',
-  ICONS = 'mailup-bee-newsletter-modules-icons',
-  HEADING = 'mailup-bee-newsletter-modules-heading',
-  SPACER = 'mailup-bee-newsletter-modules-spacer',
-  PARAGRAPH = 'mailup-bee-newsletter-modules-paragraph',
-  LIST = 'mailup-bee-newsletter-modules-list'
+export const ModuleTypes = {
+  DIVIDER: 'mailup-bee-newsletter-modules-divider',
+  TEXT: 'mailup-bee-newsletter-modules-text',
+  IMAGE: 'mailup-bee-newsletter-modules-image',
+  BUTTON: 'mailup-bee-newsletter-modules-button',
+  HTML: 'mailup-bee-newsletter-modules-html',
+  SOCIAL: 'mailup-bee-newsletter-modules-social',
+  EMPTY: 'mailup-bee-newsletter-modules-empty',
+  VIDEO: 'mailup-bee-newsletter-modules-video',
+  ADDON: 'mailup-bee-newsletter-modules-addon',
+  FORM: 'mailup-bee-newsletter-modules-form',
+  MERGE_CONTENT: 'mailup-bee-newsletter-modules-merge-content',
+  CAROUSEL: 'mailup-bee-newsletter-modules-carousel',
+  MENU: 'mailup-bee-newsletter-modules-menu',
+  ICONS: 'mailup-bee-newsletter-modules-icons',
+  HEADING: 'mailup-bee-newsletter-modules-heading',
+  SPACER: 'mailup-bee-newsletter-modules-spacer',
+  PARAGRAPH: 'mailup-bee-newsletter-modules-paragraph',
+  LIST: 'mailup-bee-newsletter-modules-list'
+} as const
+
+export const ModuleDescriptorNames = {
+  DIVIDER: 'divider',
+  TEXT: 'text',
+  IMAGE: 'image',
+  BUTTON: 'button',
+  HTML: 'html',
+  SOCIAL: 'social',
+  VIDEO: 'video',
+  ADDON: 'addon',
+  FORM: 'form',
+  MERGE_CONTENT: 'mergeContent',
+  CAROUSEL: 'carousel',
+  MENU: 'menu',
+  ICONS: 'icons',
+  HEADING: 'heading',
+  SPACER: 'spacer',
+  PARAGRAPH: 'paragraph',
+  LIST: 'list'
+} as const
+
+export interface IPluginModuleHeading {
+  type: typeof ModuleTypes.HEADING
+  locked?: boolean
+  uuid: string
+  descriptor: {
+    id?: string
+    computedStyle: {
+      height: number
+      width: number
+    },
+    style: {
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+      'text-align': string
+      width: string
+    }
+    heading: {
+      style: {
+        color: string
+        direction: string
+        'font-family': string
+        'font-size': string
+        'font-weight': string
+        'letter-spacing': string
+        'line-height': string
+        'link-color': string
+        'text-align': string
+      }
+      text: string
+      title: 'h1' | 'h2' | 'h3'
+    }
+  }
+}
+export interface IPluginModuleParagraph {
+  type: typeof ModuleTypes.PARAGRAPH
+  locked?: boolean
+  uuid: string
+  descriptor: {
+    id?: string
+    style: Partial<{
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+    }>
+    computedStyle: Partial<{
+      hideContentOnAmp: boolean
+      hideContentOnDesktop: boolean
+      hideContentOnHtml: boolean
+      hideContentOnMobile: boolean
+    }>
+    paragraph: {
+      computedStyle: Partial<{
+        linkColor: string
+        paragraphSpacing: string
+      }>
+      html: string
+      style: Partial<{
+        color: string
+        direction: string
+        'font-family': string
+        'font-size': string
+        'font-weight': string
+        'letter-spacing': string
+        'line-height': string
+        'text-align': string
+      }>
+    }
+  }
 }
 
-export interface IPluginModule {
-  descriptor: {
-    [x: string]: unknown // Todo type with possible keys
-    computedStyle: IPluginComputedStyle
-    style: CSSProperties
-    
-  }
-  type: ModuleTypes
+export interface IPluginModuleButton {
+  type: typeof ModuleTypes.BUTTON
+  locked?: boolean
   uuid: string
+  descriptor: {
+    id?: string
+    style: {
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+      'text-align': string
+    }
+    computedStyle: {
+      height: number
+      hideContentOnMobile: boolean
+      width: number
+    }
+    button: {
+      href: string
+      label: string
+      style: {
+        'background-color': string
+        'border-bottom': string
+        'border-left': string
+        'border-radius': string
+        'border-right': string
+        'border-top': string
+        'color': string
+        'font-family': string
+        'font-weight': string
+        'line-height': string
+        'max-width': string
+        'padding-bottom': string
+        'padding-left': string
+        'padding-right': string
+        'padding-top': string
+        'width': string
+      }
+    }
+  }
 }
+
+export interface IPluginModuleList {
+  type: typeof ModuleTypes.LIST
+  locked?: boolean
+  uuid: string
+  descriptor: {
+    id?: string
+    style: {
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+    }
+    computedStyle: {
+      hideContentOnAmp: boolean
+      hideContentOnDesktop: boolean
+      hideContentOnHtml: boolean
+      hideContentOnMobile: boolean
+    }
+    list: {
+      html: string
+      tag: string
+      style: {
+        color: string
+        direction: string
+        'font-family': string
+        'font-size': string
+        'font-weight': string
+        'letter-spacing': string
+        'line-height': string
+        'text-align': string
+      }
+      computedStyle: {
+        liIndent: string
+        liSpacing: string
+        linkColor: string
+        listStylePosition: string
+        listStyleType: string
+        startList: string
+        startListFrom: string
+      }
+    }
+  }
+}
+export interface IPluginModuleDivider {
+  type: typeof ModuleTypes.DIVIDER
+  locked?: boolean
+  uuid: string
+  descriptor: {
+    id?: string
+    style: {
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+    }
+    computedStyle: {
+      align: string
+      hideContentOnMobile: boolean
+    }
+    divider: {
+      style: {
+        'border-top': string
+        width: string
+      }
+    }
+  }
+}
+
+export interface IPluginModuleForm {
+  type: typeof ModuleTypes.FORM
+  locked?: boolean
+  uuid: string
+  descriptor: {
+    id?: string
+    computedStyle: {
+      class: string
+      hideContentOnDesktop: boolean
+      hideContentOnMobile: boolean
+    }
+    style: {
+      'background-color': string
+      'font-family': string
+      'font-size': string
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+      'text-align': string
+      width: string
+    }
+    form: {
+      attributes: unknown
+      structure: unknown
+      style: {
+        buttons: {
+          backgroundColor: string
+          'border-bottom': string
+          'border-left': string
+          'border-radius': string
+          'border-right': string
+          'border-top': string
+          color: string
+          'line-height': string
+          'max-width': string
+          'padding-bottom': string
+          'padding-left': string
+          'padding-right': string
+          'padding-top': string
+          'text-align': string
+          'font-weight': string
+          'font-style': string
+          'letter-spacing': string
+          width: string
+          outer: {
+            flexGrow: number
+            display: string
+            'padding-bottom': string
+            'padding-left': string
+            'padding-right': string
+            'padding-top': string
+          },
+        }
+        fields: {
+          backgroundColor: string
+          'border-bottom': string
+          'border-left': string
+          'border-radius': string
+          'border-right': string
+          'border-top': string
+          color: string
+          outlineColor: string
+          'padding-bottom': string
+          'padding-left': string
+          'padding-right': string
+          'padding-top': string
+        }
+        labels: {
+          color: string
+          'font-style': string
+          'font-weight': string
+          'label-position': string
+          'line-height': string
+          'text-align': string
+          'min-width': string
+          'letter-spacing': string
+        }
+      }
+    }
+  }
+}
+export interface IPluginModuleSocialIcon {
+  id: string
+  image: {
+    alt: string
+    href: string
+    prefix: string
+    src: string
+    title: string
+  }
+  name: string
+  text: string
+  type: string
+}
+
+export interface IPluginModuleSocial {
+  type: typeof ModuleTypes.SOCIAL
+  locked?: boolean
+  uuid: string
+  descriptor: {
+    id?: string
+    style: {
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+      'text-align': string
+    }
+    computedStyle: {
+      height: number
+      hideContentOnMobile: boolean
+      iconsDefaultWidth: number
+      padding: string
+      width: number
+    }
+    iconsList: {
+      icons: IPluginModuleSocialIcon[]
+    }
+  }
+}
+
+export interface IPluginModuleMenuItem {
+  link: {
+    href: string,
+    target: string,
+    title: string,
+  },
+  text: string,
+}
+
+export interface IPluginModuleMenu {
+  type: typeof ModuleTypes.MENU
+  locked?: boolean
+  uuid: string
+  descriptor: {
+    id?: string
+    computedStyle: {
+      hideContentOnDesktop: boolean
+      hideContentOnMobile: boolean
+      layout: string
+      linkColor: string
+      hamburger: {
+        backgroundColor: string
+        foregroundColor: string
+        iconSize: string
+        iconType: string
+        mobile: boolean
+      },
+      menuItemsSpacing: {
+        'padding-bottom': string
+        'padding-left': string
+        'padding-right': string
+        'padding-top': string
+      },
+    },
+    style: {
+      color: string
+      'font-family': string
+      'font-size': string
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+      'text-align': string
+    }
+    menuItemsList: {
+      items: IPluginModuleMenuItem[]
+    }
+  }
+}
+
+export interface IPluginModuleSpacer {
+  type: typeof ModuleTypes.SPACER
+  locked?: boolean
+  uuid: string
+  descriptor: {
+    id?: string
+    spacer: {
+      style: {
+        height: string
+      }
+    }
+    computedStyle: {
+      hideContentOnMobile: boolean
+    }
+  }
+}
+
+export type IPluginModule = 
+  IPluginModuleHeading | IPluginModuleParagraph | IPluginModuleButton | 
+  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | 
+  IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer
 
 export interface IPluginColumn {
   'grid-columns': number
   modules: IPluginModule[]
-  style: CSSProperties
+  style: KebabCSSProperties
   uuid: string
 }
 
@@ -194,68 +580,83 @@ export interface IPluginDisplayCondition {
   name?: string
 }
 
-export interface IPluginComputedStyle {
-  class?: string
-  height?: number | string
-  width?: number | string
-  hideContentOnAmp?: boolean
-  hideContentOnHtml?: boolean
-  hideContentOnMobile?: boolean
-  hideContentOnDesktop?: boolean
-  linkColor?: string
-  messageBackgroundColor?: string
-  messageWidth?: string
-  rowColStackOnMobile?: boolean
-  rowReverseColStackOnMobile?: boolean
-  iconsDefaultWidth?: number
-  padding?: string
-  align?:string
-  iconSpacing?: {
+export type IPluginComputedStyle = Partial<{
+  class: string
+  height: number | string
+  width: number | string
+  hideContentOnAmp: boolean
+  hideContentOnHtml: boolean
+  hideContentOnMobile: boolean
+  hideContentOnDesktop: boolean
+  linkColor: string
+  messageBackgroundColor: string
+  messageWidth: string
+  rowColStackOnMobile: boolean
+  rowReverseColStackOnMobile: boolean
+  iconsDefaultWidth: number
+  padding: string
+  align: string
+  paragraphSpacing: string
+  liIndent: string
+  liSpacing: string
+  listStylePosition: string
+  listStyleType: string
+  startList: string
+  startListFrom: string
+  itemsSpacing: string
+  iconHeight: string
+  layout: string
+  menuItemsSpacing: {
     [x: string]: string
   }
-  itemsSpacing?: string
-  iconHeight?: string
-}
+  iconSpacing: {
+    [x: string]: string
+  }
+  hamburger: {
+    [x: string]: unknown
+  }
+}>
 
+//TOFIX: understand if we can rename
 export interface IPluginContent {
-  style?: CSSProperties
+  style?: KebabCSSProperties
+  //TOFIX: only pick correct properties
   computedStyle?: IPluginComputedStyle
 }
 
 export interface IPluginRowContent {
-  computedStyle: {
-    rowColStackOnMobile: boolean
-    rowReverseColStackOnMobile: boolean
-  },
-  style: CSSProperties
+  //TOFIX: only pick correct properties
+  computedStyle?: IPluginComputedStyle
+  style: KebabCSSProperties
 }
 export interface IPluginRowContainer {
-  style: CSSProperties
+  style: KebabCSSProperties
   displayCondition?: IPluginDisplayCondition
 }
 
-export enum RowLayoutType {
-  ONE_COLUMNS_EMPTY = 'one-column-empty',
-  TWO_COLUMNS_EMPTY = 'two-columns-empty',
-  TWO_COLUMNS_4_8_EMPTY = 'two-columns-4-8-empty',
-  TWO_COLUMNS_8_4_EMPTY = 'two-columns-8-4-empty',
-  TWO_COLUMNS_3_9_EMPTY = 'two-columns-3-9-empty',
-  TWO_COLUMNS_9_3_EMPTY = 'two-columns-9-3-empty',
-  THREE_COLUMNS_EMPTY = 'three-columns-empty',
-  THREE_COLUMNS_3_3_6_EMPTY = 'three-columns-3-3-6-empty',
-  THREE_COLUMNS_3_6_3_EMPTY = 'three-columns-3-6-3-empty',
-  THREE_COLUMNS_6_3_3_EMPTY = 'three-columns-6-3-3-empty',
-  FOUR_COLUMNS_EMPTY = 'four-columns-empty',
-  SIX_COLUMNS_EMPTY = 'six-columns-empty',
-}
+export const RowLayoutType = {
+  ONE_COLUMNS_EMPTY: 'one-column-empty',
+  TWO_COLUMNS_EMPTY: 'two-columns-empty',
+  TWO_COLUMNS_4_8_EMPTY: 'two-columns-4-8-empty',
+  TWO_COLUMNS_8_4_EMPTY: 'two-columns-8-4-empty',
+  TWO_COLUMNS_3_9_EMPTY: 'two-columns-3-9-empty',
+  TWO_COLUMNS_9_3_EMPTY: 'two-columns-9-3-empty',
+  THREE_COLUMNS_EMPTY: 'three-columns-empty',
+  THREE_COLUMNS_3_3_6_EMPTY: 'three-columns-3-3-6-empty',
+  THREE_COLUMNS_3_6_3_EMPTY: 'three-columns-3-6-3-empty',
+  THREE_COLUMNS_6_3_3_EMPTY: 'three-columns-6-3-3-empty',
+  FOUR_COLUMNS_EMPTY: 'four-columns-empty',
+  SIX_COLUMNS_EMPTY: 'six-columns-empty',
+} as const
 
 export interface IPluginRow {
+  // TOFIX name: string
   columns: IPluginColumn[]
   container: IPluginRowContainer
-  content: IPluginRowContent
-  locked: boolean
+  content: IPluginContent
+  locked?: boolean
   metadata?: Record<string, unknown>
-  type: RowLayoutType
+  type: ValueOf<typeof RowLayoutType>
   uuid: string
 }
 
@@ -359,17 +760,337 @@ export type BeePluginAdvancedPermissionStageToggle = {
   }
 }
 
-export type BeePluginAdvancedPermission = {
-  rows: {
-    displayConditions: {
-      show: boolean
-      locked: boolean
-    }
-  }
+export type AdvancedSettingsBehaviours = {
+  canSelect: boolean
+  canAdd: boolean
+  canViewSidebar: boolean
+  canClone: boolean
+  canMove: boolean
+  canDelete: boolean
+}
+
+export type AdvancedSettingsShowLocked = {
+  show: boolean
+  locked: boolean
+}
+
+export type AdvancedSettingsTextEditor = {
+  toolbar: string[]
+  fontSizes: string
+}
+
+export type BeePluginAdvancedPermission = RecursivePartial<{
   workspace: {
     stageToggle: BeePluginAdvancedPermissionStageToggle
   }
-}
+  tabs: {
+    rows: AdvancedSettingsShowLocked
+    settings: AdvancedSettingsShowLocked
+    content: AdvancedSettingsShowLocked
+  }
+  rows: {
+    behaviors: AdvancedSettingsBehaviours
+    backgroundColorRow: AdvancedSettingsShowLocked
+    backgroundColorContent: AdvancedSettingsShowLocked
+    doNotStackOnMobile: AdvancedSettingsShowLocked
+    backgroundImage: AdvancedSettingsShowLocked
+    backgroundVideo: AdvancedSettingsShowLocked
+    displayConditions: AdvancedSettingsShowLocked
+    columnTabs: AdvancedSettingsShowLocked
+    hideOnMobile: AdvancedSettingsShowLocked
+    rowLayout: AdvancedSettingsShowLocked
+  },
+  settings: {
+    title: AdvancedSettingsShowLocked
+    description: AdvancedSettingsShowLocked
+    language: AdvancedSettingsShowLocked
+    favicon: AdvancedSettingsShowLocked
+    contentAreaWidth: AdvancedSettingsShowLocked
+    contentAreaAlign: AdvancedSettingsShowLocked
+    containerBackgroundColor: AdvancedSettingsShowLocked
+    contentBackgroundColor: AdvancedSettingsShowLocked
+    defaultFontFamily: AdvancedSettingsShowLocked
+    linkColor: AdvancedSettingsShowLocked
+    backgroundImage: AdvancedSettingsShowLocked
+  }
+  columns: {
+    behaviors: {
+      canResize: boolean
+      canAdd: boolean
+      canDelete: boolean
+    }
+  }
+  content: {
+    title: {
+      textEditor: AdvancedSettingsTextEditor
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        fontWeight: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked 
+        title: AdvancedSettingsShowLocked
+        fontFamily: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked
+        lineHeight: AdvancedSettingsShowLocked
+        letterSpacing: AdvancedSettingsShowLocked
+        direction: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    viwed: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        id: AdvancedSettingsShowLocked
+      }
+    },
+    spacer: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        height: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      },
+    },
+    text: {
+      textEditor: AdvancedSettingsTextEditor
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        letterSpacing: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        lineHeight: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+
+      }
+    }
+    button: {
+      textEditor: AdvancedSettingsTextEditor
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        link: AdvancedSettingsShowLocked
+        buttonWidth: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        backgroundColor: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked
+        buttonLineHeight: AdvancedSettingsShowLocked
+        borderRadius: AdvancedSettingsShowLocked
+        contentPadding: AdvancedSettingsShowLocked
+        border: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        fontWeight: AdvancedSettingsShowLocked
+        fontFamily: AdvancedSettingsShowLocked
+        letterSpacing: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    image: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        imageWidth: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked
+        dynamicImage: AdvancedSettingsShowLocked
+        imageSelector: AdvancedSettingsShowLocked
+        inputText: AdvancedSettingsShowLocked
+        link: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    divider: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        dividerMode: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        lineHeight: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    social: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        iconsMode: AdvancedSettingsShowLocked
+        icons: AdvancedSettingsShowLocked
+        align: AdvancedSettingsShowLocked
+        iconSpacing: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    dynamic: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        mergeContent: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    html: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        htmlEditor: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    video: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        videoUrl: AdvancedSettingsShowLocked
+        videoIcon: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    form: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        width: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked 
+        fontFamily: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        labelTextColor: AdvancedSettingsShowLocked
+        labelLineHeight: AdvancedSettingsShowLocked
+        labelTextAlign: AdvancedSettingsShowLocked
+        labelStyle: AdvancedSettingsShowLocked
+        labelPosition: AdvancedSettingsShowLocked
+        labelMinWidth: AdvancedSettingsShowLocked
+        labelLetterSpacing: AdvancedSettingsShowLocked
+        fieldTextColor: AdvancedSettingsShowLocked
+        fieldBackgroundColor: AdvancedSettingsShowLocked
+        fieldPadding: AdvancedSettingsShowLocked
+        fieldBorder: AdvancedSettingsShowLocked
+        fieldBorderRadius: AdvancedSettingsShowLocked
+        fieldOutline: AdvancedSettingsShowLocked
+        buttonWidth: AdvancedSettingsShowLocked
+        buttonTextColor: AdvancedSettingsShowLocked
+        buttonBackgroundColor: AdvancedSettingsShowLocked
+        buttonAlign: AdvancedSettingsShowLocked
+        buttonPadding: AdvancedSettingsShowLocked
+        buttonOuterPadding: AdvancedSettingsShowLocked
+        buttonBorder: AdvancedSettingsShowLocked
+        buttonBorderRadius: AdvancedSettingsShowLocked
+        buttonLetterSpacing: AdvancedSettingsShowLocked
+        buttonStyle: AdvancedSettingsShowLocked
+        layOutFields: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    icons: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        fontFamily: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked 
+        align: AdvancedSettingsShowLocked 
+        letterSpacing: AdvancedSettingsShowLocked 
+        iconSize: AdvancedSettingsShowLocked 
+        itemsSpacing: AdvancedSettingsShowLocked 
+        iconSpacing: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      }
+    }
+    paragraph: {
+      behaviors: AdvancedSettingsBehaviours
+      textEditor: AdvancedSettingsTextEditor
+      properties: {
+        fontFamily: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
+        fontWeight: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        lineHeight: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked
+        direction: AdvancedSettingsShowLocked
+        letterSpacing: AdvancedSettingsShowLocked
+        paragraphSpacing: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+      },
+    },
+    list: {
+      behaviors: AdvancedSettingsBehaviours
+      textEditor: AdvancedSettingsTextEditor
+      properties: {
+        tag: AdvancedSettingsShowLocked
+        listStyleType: AdvancedSettingsShowLocked
+        fontFamily: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
+        fontWeight: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        lineHeight: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked
+        direction: AdvancedSettingsShowLocked
+        letterSpacing: AdvancedSettingsShowLocked
+        startListFrom: AdvancedSettingsShowLocked
+        liSpacing: AdvancedSettingsShowLocked
+        liIndent: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+
+
+      },
+    },
+    menu: {
+      behaviors: AdvancedSettingsBehaviours
+      properties: {
+        fontFamily: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        align: AdvancedSettingsShowLocked
+        letterSpacing: AdvancedSettingsShowLocked
+        layout: AdvancedSettingsShowLocked
+        separator: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hamburger: AdvancedSettingsShowLocked
+        itemSpacing: AdvancedSettingsShowLocked
+        menuItems: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+
+      }
+    }
+    addon: {
+      [uuid: string]: {
+        behaviors: AdvancedSettingsBehaviours
+      }
+    }
+  }
+}>
 
 export enum WorkspaceStage {
   desktop = 'desktop',
@@ -378,19 +1099,48 @@ export enum WorkspaceStage {
 }
 
 export type BeePluginWorkspace = {
-  type: LoadWorkspaceOptions
-  stage: WorkspaceStage
-  displayHidden: StageDisplayOptions
-  hideStageToggle: boolean
+  type?: LoadWorkspaceOptions
+  stage?: WorkspaceStage
+  displayHidden?: StageDisplayOptions
+  hideStageToggle?: boolean
+  editSingleRow?: boolean
 }
 
 export type IPluginSessionInfo = {
   sessionId: string
 }
 
+export type FontElement = {
+  fontFamily: string
+  name: string
+  url?: string
+}
+
+export type EntityBody = {
+  type: string
+  webFonts: FontElement[]
+  container: {
+    style: {
+      "background-color": string
+    }
+  }
+  content: {
+    style: {
+        "font-family": string
+        color: string
+    }
+    computedStyle: {
+        align: string
+        linkColor: string
+        messageBackgroundColor: string
+        messageWidth: string
+    }
+  }
+}
+
 export interface IEntityContentJson {
   page: {
-    body: unknown
+    body: EntityBody
     description: string
     rows: IPluginRow[]
     template: {
@@ -426,8 +1176,365 @@ export type BeePluginCustomHeader = {
 
 export type IRefreshSavedRow = boolean
 
+// TOFIX: Need to remove some properties with Omit generics
+export type ILoadableProps = Partial<IBeeConfig>
 
-export type ILoadableProps = Pick<IBeeConfig, 'advancedPermissions' | 'contentDefaults' | 'customHeaders' | 'rowsConfiguration'>
+export type ContentDefaultsTitle = Partial<{
+  // TOFIX: understand why they are not handled in the plugin
+  // hideContentOnMobile: boolean
+  defaultHeadingLevel: string
+  blockOptions: Partial<{
+    align: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+}>
+
+export type TitleDefaultStyle = Partial<{
+  color: string
+  'font-size': string
+  'font-weight': string
+  'font-family': string
+  'link-color': string
+  'line-height': string
+  'text-align': string
+  'direction': string
+  'letter-spacing': string
+}>
+
+export type TitleDefaultStyles = {
+  h1: TitleDefaultStyle
+  h2: TitleDefaultStyle
+  h3: TitleDefaultStyle
+}
+
+// TOFIX: this module will probably be removed in the near future
+export type ContentDefaultsText = {
+  // we can't use partial for ContentDefaultsText since html is required
+  html: string
+  styles?: Partial<{
+    color: string
+    linkColor: string
+    fontSize: string
+    lineHeight: string
+    fontFamily: string
+  }>
+  blockOptions?: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    hideContentOnMobile: boolean
+  }>
+}
+
+export type ContentDefaultsImage = Partial<{
+  alt: string
+  href: string
+  src: string
+  width: string
+  blockOptions: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    align: string   
+    hideContentOnMobile: boolean
+  }>
+}>
+
+export type ContentDefaultsButton = Partial<{
+  html: string
+  label: string
+  href: string
+  width: string
+  styles: Partial<{
+    color: string
+    fontSize: string
+    fontFamily: string
+    fontWeight: string
+    backgroundColor: string
+    borderBottom: string
+    borderLeft: string
+    borderRadius: string
+    borderRight: string
+    borderTop: string
+    lineHeight: string
+    maxWidth: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+  }>,
+  blockOptions: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    align: string
+    hideContentOnMobile: boolean
+  }>
+}>
+
+export type ContentDefaultsDivider = Partial<{
+  width: string
+  line: string
+  align: string
+  blockOptions: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    hideContentOnMobile: boolean
+  }>
+}>
+
+export type ContentDefaultsSocial = Partial<{
+  icons: IPluginModuleSocialIcon[]
+  blockOptions: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    align: string
+    hideContentOnMobile: boolean
+    // TOFIX: understand why they are not handled in the plugin
+    // height: number
+    // TOFIX: understand why they are not handled in the plugin
+    // width: number
+    // TOFIX: understand why they are not handled in the plugin
+    // iconWidth: number
+  }>
+}>
+
+export type ContentDefaultsDynamic = Partial<{
+  blockOptions: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    hideContentOnMobile: boolean
+  }>
+}>
+
+export type ContentDefaultsVideo = Partial<{
+  src: string
+  blockOptions: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    hideContentOnMobile: boolean
+  }>
+}>
+
+export type ContentDefaultsForm = Partial<{
+  structure: unknown
+  styles: Partial<{
+    width: string
+    fontSize: string
+    fontFamily: string
+  }>
+  labelsOptions: Partial<{
+    color: string
+    lineHeight: string
+    fontWeight: string
+    fontStyle: string
+    align: string
+    position: string
+    letterSpacing: string
+    minWidth: string
+  }>
+  fieldsOptions: Partial<{
+    color: string
+    backgroundColor: string
+    outlineColor: string
+    borderRadius: string
+    borderTop: string
+    borderRight: string
+    borderBottom: string
+    borderLeft: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+  }>
+  buttonsOptions: Partial<{
+    color: string
+    backgroundColor: string
+    borderRadius: string
+    borderTop: string
+    borderRight: string
+    borderBottom: string
+    borderLeft: string
+    lineHeight: string
+    align: string
+    width: string
+    maxWidth: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    marginBottom: string
+    margingLeft: string
+    marginRight: string
+    marginTop: string
+    letterSpacing: string
+    fontStyle: string
+    fontWeight: string
+  }>
+  blockOptions: Partial<{
+    align: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    backgroundColor: string
+    hideContentOnMobile: boolean
+    hideContentOnDesktop: boolean
+  }>
+}>
+
+export type ContentDefaultsIcons = Partial<{
+  items: unknown
+  styles: Partial<{
+    color: string
+    fontSize: string
+    fontFamily: string
+  }>
+  blockOptions: Partial<{
+    align: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    hideContentOnMobile: boolean
+    hideContentOnDesktop: boolean
+    itemSpacing: string
+    iconHeight: string
+  }>
+  iconSpacing: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+  }>
+}>
+
+export type ContentDefaultsMenu = Partial<{
+  items: unknown
+  styles: Partial<{
+    color: string
+    linkColor: string
+    fontSize: string
+    fontFamily: string
+  }>
+  hamburger: Partial<{
+    mobile: boolean
+    foregroundColor: string
+    backgroundColor: string
+    iconSize: string
+    iconType: string
+  }>
+  blockOptions: Partial<{
+    align: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    layout: string
+    hideContentOnMobile: boolean
+    hideContentOnDesktop: boolean
+  }>
+  itemsSpacing: Partial<{
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+  }>
+}>
+
+export type ContentDefaultsSpacer = Partial<{
+  height: string
+  blockOptions: Partial<{
+    hideContentOnMobile: boolean
+  }>
+}>
+
+export type ContentDefaultsParagraph = Partial<{
+  styles: Partial<{
+    color: string
+    fontSize: string
+    fontFamily: string
+    fontWeight: string
+    lineHeight: string
+    textAlign: string
+    direction: string
+    letterSpacing: string
+    linkColor: string
+    paragraphSpacing: string
+  }>
+  blockOptions: Partial<{
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+}>
+
+export type ContentDefaultsList = Partial<{
+  styles: Partial<{
+    color: string
+    fontSize: string
+    fontFamily: string
+    fontWeight: string
+    lineHeight: string
+    textAlign: string
+    direction: string
+    letterSpacing: string
+    linkColor: string
+    liSpacing: string
+    liIndent: string
+    listType: string
+    listStyleType: string
+    startList: string
+    listStylePosition: string
+  }>
+  blockOptions: Partial<{
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+}>
+
+export type ContentDefaultsGeneral = Partial<{
+  backgroundColor: string
+  contentAreaBackgroundColor: string
+  defaultFont: string
+  linkColor: string
+  contentAreaWidth: string
+}>
+
+export type ContentDefaults = Partial<{
+  title: ContentDefaultsTitle
+  text: ContentDefaultsText
+  image: ContentDefaultsImage
+  button: ContentDefaultsButton
+  divider: ContentDefaultsDivider
+  social: ContentDefaultsSocial
+  dynamic: ContentDefaultsDynamic
+  video: ContentDefaultsVideo
+  form: ContentDefaultsForm
+  paragraph: ContentDefaultsParagraph
+  spacer: ContentDefaultsSpacer
+  menu: ContentDefaultsMenu
+  icons: ContentDefaultsIcons
+  list: ContentDefaultsList
+  general: ContentDefaultsGeneral
+}>
 
 export interface IBeeConfig {
   uid: string
@@ -435,7 +1542,7 @@ export interface IBeeConfig {
   trackChanges?: boolean
   preventClose?: boolean
   enable_display_conditions?: boolean
-  language: string
+  language?: string
   mergeTags?: IMergeTag[]
   mergeContents?: IMergeContent[]
   specialLinks?: ISpecialLink[]
@@ -452,7 +1559,7 @@ export interface IBeeConfig {
   roleHash?: string
   role?: BeePluginRoles,
   defaultColors?: string[]
-  contentDefaults?: unknown
+  contentDefaults?: ContentDefaults
   customCss?: string
   workspace?: BeePluginWorkspace
   autosave?: number,
@@ -463,7 +1570,7 @@ export interface IBeeConfig {
       handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, undefined, EngageHandle>
     },
     saveRow?: {
-      label: string
+      label?: string
       handler: BeePluginContentDialogHandler<IPluginRow>
     }
     specialLinks?: {
@@ -475,29 +1582,29 @@ export interface IBeeConfig {
       handler: BeePluginContentDialogHandler<IMergeTag>
     }
     manageForm?: {
-      label: string
+      label?: string
       handler: BeePluginContentDialogHandler<IPluginForm>
     },
     filePicker?: {
-      label: string
+      label?: string
       handler: BeePluginContentDialogHandler<IPluginFilePicker>
     },
     getMention?: {
-      label: string
+      label?: string
       handler: BeePluginContentDialogHandler<IInvitedMention[], undefined, string>
     }
     onDeleteRow?: {
-      label: string
-      handler: BeePluginContentDialogHandler<IRefreshSavedRow>
+      label?: string
+      handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
     }
     onEditRow?: {
-      label: string
-      handler: BeePluginContentDialogHandler<IRefreshSavedRow>
+      label?: string
+      handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
     }
   },
   rowsConfiguration?: Record<string, unknown>
   hooks?: BeePluginConfigurationsHooks
-  onLoad: () => void
+  onLoad?: () => void
   onPreview?: (opened: boolean) => void
   onTogglePreview?: (toggled: boolean) => void
   onSessionStarted?: (sessionInfo: IPluginSessionInfo) => void
@@ -505,7 +1612,7 @@ export interface IBeeConfig {
   onReady?: (args: Record<string, unknown>) => void
   onSave?: (jsonFile: unknown, htmlFile: unknown) => void
   onSaveRow?: (jsonfile: unknown, html: string) => void
-  onError: (error: BeePluginError) => void
+  onError?: (error: BeePluginError) => void
   onAutoSave?: (json: string) => void
   onSaveAsTemplate?: (json: Record<string, unknown>) => void
   onSend?: (html: string) => void
@@ -514,3 +1621,5 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void 
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
 }
+
+export type { KebabCSSProperties } 

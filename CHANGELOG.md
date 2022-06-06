@@ -2,6 +2,132 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.4-types-improvements.17](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.16...v1.6.4-types-improvements.17) (2022-06-06)
+
+
+### Bug Fixes
+
+* added backgroundImage to advacned permission settings section ([2b78687](https://github.com/BEE-Plugin/Bee-plugin-official/commit/2b786875db1b2242b5ee745a1978b69d42800e06))
+
+### [1.6.4-types-improvements.16](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.15...v1.6.4-types-improvements.16) (2022-05-23)
+
+
+### Bug Fixes
+
+* fixed type letter spacing for h1/h2/h3 content defaults ([04152fa](https://github.com/BEE-Plugin/Bee-plugin-official/commit/04152facf8f39404abd8490cb8030bfdedeaf9e4))
+
+### [1.6.4-types-improvements.15](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.14...v1.6.4-types-improvements.15) (2022-05-23)
+
+
+### Bug Fixes
+
+* fixed FontElement type where url is not required ([0d545d6](https://github.com/BEE-Plugin/Bee-plugin-official/commit/0d545d6078689a1ddbe8781931b96157d007ccdf))
+
+### [1.6.4-types-improvements.14](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.13...v1.6.4-types-improvements.14) (2022-05-23)
+
+
+### Bug Fixes
+
+* added EntityBody type ([714c82d](https://github.com/BEE-Plugin/Bee-plugin-official/commit/714c82dd6cb839b787ea51dc065e2947ab148499))
+
+### [1.6.4-types-improvements.13](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.12...v1.6.4-types-improvements.13) (2022-05-19)
+
+
+### Bug Fixes
+
+* fixed advanced permissions for addon ([d0f549c](https://github.com/BEE-Plugin/Bee-plugin-official/commit/d0f549ca58beedee15ff61599854693cb858daae))
+
+### [1.6.4-types-improvements.12](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.11...v1.6.4-types-improvements.12) (2022-05-19)
+
+
+### Bug Fixes
+
+* now beeConfiguration has only container and uid as mandatory fields ([8e1cd6b](https://github.com/BEE-Plugin/Bee-plugin-official/commit/8e1cd6b8772539f6c3b9a2f2f73de8dbec217c32))
+
+### [1.6.4-types-improvements.11](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.10...v1.6.4-types-improvements.11) (2022-05-19)
+
+
+### Bug Fixes
+
+* added other form module properties and other advancedPermissions properties ([19bfe3b](https://github.com/BEE-Plugin/Bee-plugin-official/commit/19bfe3b12269cdb6ee6dee89a0c8ee8598c4288c))
+
+### [1.6.4-types-improvements.10](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.9...v1.6.4-types-improvements.10) (2022-05-19)
+
+
+### Bug Fixes
+
+* added 5 more contentDefaults for form label and form button ([da0505d](https://github.com/BEE-Plugin/Bee-plugin-official/commit/da0505dacfcc68510b5f6d1cd9291cccc6b1543c))
+
+### [1.6.4-types-improvements.9](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.8...v1.6.4-types-improvements.9) (2022-05-18)
+
+
+### Bug Fixes
+
+* added some more types to AdvancedPermissions ([ff41870](https://github.com/BEE-Plugin/Bee-plugin-official/commit/ff41870ee71e428717cb914f94f100bcd683b8fc))
+
+### [1.6.4-types-improvements.8](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.7...v1.6.4-types-improvements.8) (2022-05-17)
+
+
+### Bug Fixes
+
+* added contentAreaWidth for general contentDefaults ([7041bdc](https://github.com/BEE-Plugin/Bee-plugin-official/commit/7041bdc85aa7adfd457512e21a50d7a68f64f7f0))
+
+### [1.6.4-types-improvements.7](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.6...v1.6.4-types-improvements.7) (2022-05-16)
+
+
+### Bug Fixes
+
+* added align attribute to content.computerStyle for type IEntityContentJson ([0e2170c](https://github.com/BEE-Plugin/Bee-plugin-official/commit/0e2170c42f747b1fc7fcc1fff38d5559d64cff86))
+
+### [1.6.4-types-improvements.6](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.5...v1.6.4-types-improvements.6) (2022-05-16)
+
+
+### Bug Fixes
+
+* typed body for IEntityContentJson ([252c442](https://github.com/BEE-Plugin/Bee-plugin-official/commit/252c44243cbd09f09f99c58b20a0fad5afff2d02))
+
+### [1.6.4-types-improvements.5](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.4...v1.6.4-types-improvements.5) (2022-05-14)
+
+
+### Bug Fixes
+
+* fixed social module type, id was missing ([9659cd2](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9659cd2f9ec6a977281aba999239c29aa322be44))
+
+### [1.6.4-types-improvements.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.3...v1.6.4-types-improvements.4) (2022-05-12)
+
+
+### Bug Fixes
+
+* added advancedPermission typing ([43783f4](https://github.com/BEE-Plugin/Bee-plugin-official/commit/43783f43717c64e6ae6e2396d8a8a49b8465e110))
+
+### [1.6.4-types-improvements.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.2...v1.6.4-types-improvements.3) (2022-05-05)
+
+
+### Bug Fixes
+
+* fixed module types and defaultContent types ([ff33abb](https://github.com/BEE-Plugin/Bee-plugin-official/commit/ff33abb397d45643d6e7cbe2b6166f9b755fe6de))
+* fixed module types removing general base type ([94bbc3e](https://github.com/BEE-Plugin/Bee-plugin-official/commit/94bbc3e19bf49978aa083af7fbb78e4a16b3c90c))
+
+### [1.6.4-types-improvements.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.1...v1.6.4-types-improvements.2) (2022-04-29)
+
+
+### Bug Fixes
+
+* added menuItemsSpacing to IPluginComputedStyle ([b3b5800](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b3b5800cb826fbb1f05c996458dbe6b82e61e609))
+
+### [1.6.4-types-improvements.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.0...v1.6.4-types-improvements.1) (2022-04-29)
+
+
+### Bug Fixes
+
+* added carret to typescript version in package.json ([8bddefa](https://github.com/BEE-Plugin/Bee-plugin-official/commit/8bddefa08601fdbf7e1b1b2ac0e06d6a36a860eb))
+
+### [1.6.4-types-improvements.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.3...v1.6.4-types-improvements.0) (2022-04-29)
+
+
+### Bug Fixes
+
+* started fixing some types ([9fe9df5](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9fe9df5aa00e068c8279da35c835fdf08fba7f97))
 ## [1.7.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.7.0-feat-custom-assets.0...v1.7.0) (2022-05-17)
 
 ## [1.7.0-feat-custom-assets.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.3...v1.7.0-feat-custom-assets.0) (2022-05-05)
