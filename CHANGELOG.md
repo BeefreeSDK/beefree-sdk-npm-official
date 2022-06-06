@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.7.0...v1.8.0) (2022-06-06)
+
+
+### Features
+
+* dummy commit to increase minor version ([49b283d](https://github.com/BEE-Plugin/Bee-plugin-official/commit/49b283d010e821e3a85ca4517d6e52852a54b966))
+
 ### [1.6.4-types-improvements.17](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.6.4-types-improvements.16...v1.6.4-types-improvements.17) (2022-06-06)
 
 
