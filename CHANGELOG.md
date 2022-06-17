@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.0...v1.8.1) (2022-06-17)
+
+
+### Bug Fixes
+
+* fixed containerBackgroundImage in advancedPermissions ([#70](https://github.com/BEE-Plugin/Bee-plugin-official/issues/70)) ([fcb0afd](https://github.com/BEE-Plugin/Bee-plugin-official/commit/fcb0afdf85e03bd3364829721d064812c1dc1041))
+
 ## [1.8.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.7.0...v1.8.0) (2022-06-06)
 
 
