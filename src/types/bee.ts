@@ -737,6 +737,7 @@ export interface IMergeTag {
   name: string
   value: string
   id?: number
+  previewValue?: string
 }
 export interface IMergeContent {
   name: string
@@ -1602,7 +1603,20 @@ export interface IBeeConfig {
       handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
     }
   },
-  rowsConfiguration?: Record<string, unknown>
+  rowsConfiguration?: { 
+    defaultRows?: boolean,
+    emptyRows?: boolean,
+    externalContentURLs?: Array<{
+      name: string
+      value: string
+      id?: string | number
+      handle?: string
+      behaviors?: {
+        canEdit?: boolean,
+        canDelete?: boolean,
+      },
+    }>
+  }
   hooks?: BeePluginConfigurationsHooks
   onLoad?: () => void
   onPreview?: (opened: boolean) => void
