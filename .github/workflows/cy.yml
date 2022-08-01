@@ -9,6 +9,17 @@ on:
   pull_request:
     branches:
       - '*'
+permissions:
+  actions: write
+  checks: write
+  contents: read
+  deployments: read
+  issues: read
+  packages: read
+  pull-requests: write
+  repository-projects: read
+  security-events: read
+  statuses: read
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -60,7 +71,7 @@ jobs:
       
       - name: Unit tests
         run: yarn test --all --cacheDirectory .jest-cache --coverage --watchAll false
-      - uses: vebr/jest-lcov-reporter@v0.2.0
+      - uses: vebr/jest-lcov-reporter@v0.2.1
         # Print comment only on 1 build and PR
         if: matrix.node-version == '12.x' && github.event_name == 'pull_request'
         with:
