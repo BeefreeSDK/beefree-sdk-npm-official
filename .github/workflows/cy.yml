@@ -9,6 +9,17 @@ on:
   pull_request:
     branches:
       - '*'
+permissions:
+  actions: write
+  checks: write
+  contents: read
+  deployments: read
+  issues: read
+  packages: read
+  pull-requests: write
+  repository-projects: read
+  security-events: read
+  statuses: read
 jobs:
   build:
     runs-on: ubuntu-latest
