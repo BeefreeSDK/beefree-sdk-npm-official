@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.1...v1.8.2) (2022-08-04)
+
+
+### Bug Fixes
+
+* add missing `IMergeTag.previewValue` property ([6fe86b0](https://github.com/BEE-Plugin/Bee-plugin-official/commit/6fe86b070f75871fe9a32f678fe78ce632959119))
+
 ### [1.8.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.0...v1.8.1) (2022-06-17)
 
 
