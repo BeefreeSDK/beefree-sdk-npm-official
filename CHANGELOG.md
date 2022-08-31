@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.3-beta.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.2...v1.8.3-beta.0) (2022-08-31)
+
+
+### Bug Fixes
+
+* removed id property from IMergeTag interface ([7080dde](https://github.com/BEE-Plugin/Bee-plugin-official/commit/7080dde62731d082d064f7040912a7b777ca59e8))
+
 ### [1.8.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.1...v1.8.2) (2022-08-04)
 
 
