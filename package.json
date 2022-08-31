@@ -46,7 +46,7 @@
   },
   "homepage": "https://github.com/BEE-Plugin/Bee-plugin-official#readme",
   "devDependencies": {
-    "@commitlint/config-conventional": "^14.1.0",
+    "@commitlint/config-conventional": "^17.1.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
