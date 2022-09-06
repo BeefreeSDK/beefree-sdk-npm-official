@@ -737,7 +737,6 @@ export interface IMergeTag {
   name: string
   value: string
   previewValue?: string
-  id?: number
 }
 export interface IMergeContent {
   name: string
