@@ -9,6 +9,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 * upgraded rollup, axios, typescript eslint ([77c7757](https://github.com/BEE-Plugin/Bee-plugin-official/commit/77c775793b2631f92e9ee75ca3a055e71d09c6d2))
 * upgraded rollup, axios, typescript eslint ([c4d8156](https://github.com/BEE-Plugin/Bee-plugin-official/commit/c4d81564793ec5abe67008c2555532733f66b1ff))
+### [1.8.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.3-beta.0...v1.8.3) (2022-09-06)
+
+### [1.8.3-beta.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.2...v1.8.3-beta.0) (2022-08-31)
+
+
+### Bug Fixes
+
+* removed id property from IMergeTag interface ([7080dde](https://github.com/BEE-Plugin/Bee-plugin-official/commit/7080dde62731d082d064f7040912a7b777ca59e8))
 
 ### [1.8.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.1...v1.8.2) (2022-08-04)
 
