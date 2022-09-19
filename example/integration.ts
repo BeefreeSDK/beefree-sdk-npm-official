@@ -46,7 +46,7 @@ const handleSpecialLinks = (resolve) => {
 }
 
 const handleMergeTags = (resolve) => {
-  const mockedMergeTg: IMergeTag = { id: 1, name: 'Sample merge tag', value:'Lorem Ipsum'} 
+  const mockedMergeTg: IMergeTag = { name: 'Sample merge tag', value:'Lorem Ipsum'} 
   return resolve(mockedMergeTg)
 }
 
