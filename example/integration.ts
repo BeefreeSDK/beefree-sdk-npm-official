@@ -112,7 +112,7 @@ const beeConfig :IBeeConfig = {
     },
   },
   onSave: (_, htmlFile) => save('newsletter-template.html', htmlFile),
-  onLoad: () => console.warn('*** [integration] loading a new template...'),
+  onLoad: () => console.warn('*** [integration] loading a new template... '),
   onSaveAsTemplate: (json: Record<string, unknown>) => void save('newsletter-template.json', json),
   onAutoSave: (jsonFile) => {
     console.log(`${new Date().toISOString()} autosaving...,`, jsonFile)

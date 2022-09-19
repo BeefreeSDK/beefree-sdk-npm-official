@@ -27,7 +27,7 @@ jobs:
       name: build
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [14.x, 16.x, 18.x]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node Version ${{ matrix.node-version }}
@@ -73,7 +73,7 @@ jobs:
         run: yarn test --all --cacheDirectory .jest-cache --coverage --watchAll false
       - uses: vebr/jest-lcov-reporter@v0.2.1
         # Print comment only on 1 build and PR
-        if: matrix.node-version == '12.x' && github.event_name == 'pull_request'
+        if: matrix.node-version == '14.x' && github.event_name == 'pull_request'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}  
 
@@ -86,11 +86,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Use Node Version 12.x
+    - name: Use Node Version 14.x
       uses: actions/setup-node@v1
       with:
         registry-url: 'https://registry.npmjs.org'
-        node-version: '12.x'
+        node-version: '14.x'
         scope: '@mailupinc'
 
     - name: Get yarn cache directory path
