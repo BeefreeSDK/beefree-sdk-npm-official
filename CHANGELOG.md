@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.3...v1.9.0) (2022-09-19)
+
+## [1.9.0-alpha.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.3-beta.0...v1.9.0-alpha.0) (2022-09-01)
+
+
+### Features
+
+* upgraded rollup, axios, typescript eslint ([77c7757](https://github.com/BEE-Plugin/Bee-plugin-official/commit/77c775793b2631f92e9ee75ca3a055e71d09c6d2))
+* upgraded rollup, axios, typescript eslint ([c4d8156](https://github.com/BEE-Plugin/Bee-plugin-official/commit/c4d81564793ec5abe67008c2555532733f66b1ff))
+
 ## [1.9.0-alpha.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.2...v1.9.0-alpha.0) (2022-09-01)
 
 
