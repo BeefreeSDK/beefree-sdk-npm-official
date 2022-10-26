@@ -658,6 +658,7 @@ export interface IPluginRow {
   metadata?: Record<string, unknown>
   type: ValueOf<typeof RowLayoutType>
   uuid: string
+  synced?: boolean
 }
 
 export interface IInvitedMention {
