@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0-feat-master-rows.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.0...v1.10.0-feat-master-rows.0) (2022-10-26)
+
+
+### Features
+
+* added synced parameter to plugin row ([efde0c2](https://github.com/BEE-Plugin/Bee-plugin-official/commit/efde0c21723f9f44d7952d01378c6e79b4d9ed3b))
+
 ## [1.9.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.3...v1.9.0) (2022-09-19)
 
 ## [1.9.0-alpha.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.3-beta.0...v1.9.0-alpha.0) (2022-09-01)
