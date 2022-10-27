@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0-feat-master-rows.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.0...v1.10.0-feat-master-rows.1) (2022-10-27)
+
+
+### Bug Fixes
+
+* updated resolve signature for BeePluginContentDialogHandler ([6ae946d](https://github.com/BEE-Plugin/Bee-plugin-official/commit/6ae946dda9bacc27b8d36ab29f0d9a25d76872c9))
+
 ## [1.10.0-feat-master-rows.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.0...v1.10.0-feat-master-rows.0) (2022-10-26)
 
 
