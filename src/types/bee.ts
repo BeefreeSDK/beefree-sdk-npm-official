@@ -686,7 +686,7 @@ export enum EngageHandle {
 }
 
 export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
-  resolve: (data: K) => void,
+  resolve: (data: K, options?: Record<string, unknown>) => void,
   reject: () => void,
   args: A,
   handle?: T
