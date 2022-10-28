@@ -1614,7 +1614,7 @@ export interface IBeeConfig {
   onSaveRow?: (jsonfile: unknown, html: string) => void
   onError?: (error: BeePluginError) => void
   onAutoSave?: (json: string) => void
-  onSaveAsTemplate?: (json: Record<string, unknown>) => void
+  onSaveAsTemplate?: (json: string) => void
   onSend?: (html: string) => void
   onChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
   onWarning?: (error: BeePluginError) => void
