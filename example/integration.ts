@@ -1,11 +1,13 @@
 import Bee from '../src/index'
 import { 
+  ContentDefaults,
   IBeeConfig, IMergeContent, IMergeTag, ISpecialLink, 
   LoadWorkspaceOptions, StageDisplayOptions, StageModeOptions 
 } from '../src/types/bee';
 declare let saveAs: any;
 
 const BEE_TEMPLATE_URL = 'https://rsrc.getbee.io/api/templates/m-bee'
+//const BEE_BLANK_TEMPLATE_URL = 'http://storage.googleapis.com/pre-bee-app-integration-23fc44e0713f/blank.json'
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
 const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
 
@@ -85,6 +87,12 @@ function getParameterByName(name) {
   return val;
 }
 
+const contentDefaults: ContentDefaults = {
+  general: {
+    contentAreaWidth: '666px'
+  }
+}
+
 const beeConfig :IBeeConfig = {
   uid: 'test1-clientside',
   container: 'bee-plugin-container',
@@ -98,6 +106,7 @@ const beeConfig :IBeeConfig = {
   mergeTags,
   mergeContents,
   contentDialog,
+  contentDefaults,
   customAssetsOptions: {
     pendo: { // sample pendo integration
       variables: {
@@ -113,7 +122,7 @@ const beeConfig :IBeeConfig = {
   },
   onSave: (_, htmlFile) => save('newsletter-template.html', htmlFile),
   onLoad: () => console.warn('*** [integration] loading a new template... '),
-  onSaveAsTemplate: (json: Record<string, unknown>) => void save('newsletter-template.json', json),
+  onSaveAsTemplate: (json) => void save('newsletter-template.json', json),
   onAutoSave: (jsonFile) => {
     console.log(`${new Date().toISOString()} autosaving...,`, jsonFile)
     window.localStorage.setItem('newsletter.autosave', jsonFile)

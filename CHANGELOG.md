@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.0...v1.9.1) (2022-10-28)
+
+
+### Bug Fixes
+
+* changed to script onSaveAsTemplate json type, updated FileSaved cdn url ([6a40575](https://github.com/BEE-Plugin/Bee-plugin-official/commit/6a405759c3aecbb70a1d5b1bf0ffa651fa124b43))
+
 ## [1.9.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.3...v1.9.0) (2022-09-19)
 
 ## [1.9.0-alpha.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.3-beta.0...v1.9.0-alpha.0) (2022-09-01)
