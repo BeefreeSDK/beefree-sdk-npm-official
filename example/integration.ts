@@ -6,8 +6,8 @@ import {
 } from '../src/types/bee';
 declare let saveAs: any;
 
-// const BEE_TEMPLATE_URL = 'https://rsrc.getbee.io/api/templates/m-bee'
-const BEE_BLANK_TEMPLATE_URL = 'http://storage.googleapis.com/pre-bee-app-integration-23fc44e0713f/blank.json'
+const BEE_TEMPLATE_URL = 'https://rsrc.getbee.io/api/templates/m-bee'
+//const BEE_BLANK_TEMPLATE_URL = 'http://storage.googleapis.com/pre-bee-app-integration-23fc44e0713f/blank.json'
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
 const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
 
@@ -202,7 +202,7 @@ const addEvents = () => {
 
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
 beeTest.getToken(process.env.PLUGIN_CLIENT_ID!, process.env.PLUGIN_CLIENT_SECRET!, conf)
-  .then(() => fetch(new Request(BEE_BLANK_TEMPLATE_URL, { method: 'GET' })))
+  .then(() => fetch(new Request(BEE_TEMPLATE_URL, { method: 'GET' })))
   .then(res => res.json())
   .then(template => {
     const sessionId = getParameterByName('sessionId')
