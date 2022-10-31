@@ -65,7 +65,7 @@
     "rimraf": "^3.0.0",
     "rollup": "^2.68.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-typescript2": "^0.33.0",
+    "rollup-plugin-typescript2": "^0.34.1",
     "standard-version": "^9.5.0",
     "ts-jest": "^29.0.3",
     "ts-loader": "^9.4.1",
