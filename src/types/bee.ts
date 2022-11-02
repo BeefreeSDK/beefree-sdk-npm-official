@@ -634,6 +634,25 @@ export interface IPluginRowContainer {
   displayCondition?: IPluginDisplayCondition
 }
 
+export type RowsConfiguration = {
+  emptyRows?: boolean
+  defaultRows?: boolean
+  externalContentURLs?: CustomRowConfiguration[]
+}
+
+export type CustomRowBehaviour = {
+  canEdit?: boolean
+  canDelete?: boolean
+}
+
+export type CustomRowConfiguration = {
+  name?: string
+  value?: string
+  handle?: string
+  isLocal?: boolean
+  behaviour?: CustomRowBehaviour
+}
+
 export const RowLayoutType = {
   ONE_COLUMNS_EMPTY: 'one-column-empty',
   TWO_COLUMNS_EMPTY: 'two-columns-empty',
@@ -1602,20 +1621,20 @@ export interface IBeeConfig {
       handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
     }
   },
-  rowsConfiguration?: Record<string, unknown>
+  rowsConfiguration?: RowsConfiguration
   hooks?: BeePluginConfigurationsHooks
-  onLoad?: () => void
+  onLoad?: (json: IEntityContentJson) => void
   onPreview?: (opened: boolean) => void
   onTogglePreview?: (toggled: boolean) => void
   onSessionStarted?: (sessionInfo: IPluginSessionInfo) => void
   onSessionChange?: (sessionInfo: IPluginSessionInfo) => void
   onReady?: (args: Record<string, unknown>) => void
-  onSave?: (jsonFile: unknown, htmlFile: unknown) => void
-  onSaveRow?: (jsonfile: unknown, html: string) => void
+  onSave?: (pageJson: string, pageHtml: string) => void
+  onSaveRow?: (rowJson: string, rowHtml: string, pageJson: string) => void
   onError?: (error: BeePluginError) => void
-  onAutoSave?: (json: string) => void
-  onSaveAsTemplate?: (json: string) => void
-  onSend?: (html: string) => void
+  onAutoSave?: (pageJson: string) => void
+  onSaveAsTemplate?: (pageJson: string, templateVersion: number) => void
+  onSend?: (pageHtml: string) => void
   onChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
   onWarning?: (error: BeePluginError) => void
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void 
