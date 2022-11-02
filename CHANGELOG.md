@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0-fix-types-rows.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.2...v1.10.0-fix-types-rows.0) (2022-11-02)
+
+
+### Features
+
+* commit for minor increase ([83cd633](https://github.com/BEE-Plugin/Bee-plugin-official/commit/83cd633c3c421a6b87e5f440f1c81e7a6b9e2d06))
+
 ### [1.9.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.2-build-outdated-dependencies-update.0...v1.9.2) (2022-11-02)
 
 ### [1.9.2-build-outdated-dependencies-update.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.1...v1.9.2-build-outdated-dependencies-update.0) (2022-10-31)
