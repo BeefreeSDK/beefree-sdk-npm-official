@@ -195,7 +195,7 @@ const addEvents = () => {
   window.document.getElementById('trigger-loadConfig')?.addEventListener('click', () => beeTest.loadConfig({
     rowsConfiguration: {
       emptyRows: true,
-      defaultRows: true,
+      defaultRows: true
     }
   }), false)
 }
