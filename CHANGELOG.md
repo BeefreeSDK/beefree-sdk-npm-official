@@ -15,6 +15,25 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * added synced parameter to plugin row ([efde0c2](https://github.com/BEE-Plugin/Bee-plugin-official/commit/efde0c21723f9f44d7952d01378c6e79b4d9ed3b))
+## [1.10.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-fix-types-rows.0...v1.10.0) (2022-11-02)
+
+## [1.10.0-fix-types-rows.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.2...v1.10.0-fix-types-rows.0) (2022-11-02)
+
+
+### Features
+
+* commit for minor increase ([83cd633](https://github.com/BEE-Plugin/Bee-plugin-official/commit/83cd633c3c421a6b87e5f440f1c81e7a6b9e2d06))
+
+### [1.9.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.2-build-outdated-dependencies-update.0...v1.9.2) (2022-11-02)
+
+### [1.9.2-build-outdated-dependencies-update.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.1...v1.9.2-build-outdated-dependencies-update.0) (2022-10-31)
+
+### [1.9.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.0...v1.9.1) (2022-10-28)
+
+
+### Bug Fixes
+
+* changed to script onSaveAsTemplate json type, updated FileSaved cdn url ([6a40575](https://github.com/BEE-Plugin/Bee-plugin-official/commit/6a405759c3aecbb70a1d5b1bf0ffa651fa124b43))
 
 ## [1.9.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.8.3...v1.9.0) (2022-09-19)
 
