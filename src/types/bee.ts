@@ -1591,7 +1591,7 @@ export interface IBeeConfig {
     },
     saveRow?: {
       label?: string
-      handler: BeePluginContentDialogHandler<IPluginRow>
+      handler: BeePluginContentDialogHandler<Record<string,unknown>, undefined, IPluginRow>
     }
     specialLinks?: {
       label: string
