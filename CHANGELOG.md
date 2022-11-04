@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0-feat-master-rows.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.2...v1.10.0-feat-master-rows.3) (2022-11-04)
+
+
+### Bug Fixes
+
+* fixed contentDialog.saveRow type ([b5bdc52](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b5bdc526a3880543fbed4b17c362deb170796c6c))
+
 ## [1.10.0-feat-master-rows.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0...v1.10.0-feat-master-rows.2) (2022-11-03)
 
 
