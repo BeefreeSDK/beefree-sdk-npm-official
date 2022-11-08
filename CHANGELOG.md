@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0-feat-master-rows.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.3...v1.10.0-feat-master-rows.4) (2022-11-08)
+
+
+### Bug Fixes
+
+* added editSyncedRow type ([25dedbc](https://github.com/BEE-Plugin/Bee-plugin-official/commit/25dedbc3977064d1c265a380e62600910a063373))
+
 ## [1.10.0-feat-master-rows.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.2...v1.10.0-feat-master-rows.3) (2022-11-04)
 
 
