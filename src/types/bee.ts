@@ -1593,6 +1593,11 @@ export interface IBeeConfig {
       label?: string
       handler: BeePluginContentDialogHandler<Record<string,unknown>, undefined, IPluginRow>
     }
+    editSyncedRow?: {
+      label?: string
+      description?: string
+      handler: BeePluginContentDialogHandler<boolean, undefined, IPluginRow>
+    }
     specialLinks?: {
       label: string
       handler: BeePluginContentDialogHandler<ISpecialLink>
