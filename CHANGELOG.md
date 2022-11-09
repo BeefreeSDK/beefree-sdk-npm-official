@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0-feat-add-comments-types.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0...v1.11.0-feat-add-comments-types.0) (2022-11-09)
+
+
+### Features
+
+* adds new types for comments ([37efde9](https://github.com/BEE-Plugin/Bee-plugin-official/commit/37efde98701661648b443106f1d0188990a04843))
+
 ## [1.10.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-fix-types-rows.0...v1.10.0) (2022-11-02)
 
 ## [1.10.0-fix-types-rows.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.2...v1.10.0-fix-types-rows.0) (2022-11-02)
