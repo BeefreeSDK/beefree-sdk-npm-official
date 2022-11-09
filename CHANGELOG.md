@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0-feat-comments-improvements-types.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0...v1.11.0-feat-comments-improvements-types.0) (2022-11-09)
+
+
+### Features
+
+* adds thread reopened type ([a926250](https://github.com/BEE-Plugin/Bee-plugin-official/commit/a926250f0b27d5649b67f1eba82679b7af95d292))
+* adds types for comments and notification ([f80412e](https://github.com/BEE-Plugin/Bee-plugin-official/commit/f80412e20ac15ab923934cd278f8d7d69e5f498c))
+
 ## [1.10.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-fix-types-rows.0...v1.10.0) (2022-11-02)
 
 ## [1.10.0-fix-types-rows.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.2...v1.10.0-fix-types-rows.0) (2022-11-02)
