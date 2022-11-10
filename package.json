@@ -1,6 +1,6 @@
 {
   "name": "@mailupinc/bee-plugin",
-  "version": "1.10.0-feat-master-rows.5",
+  "version": "1.10.0-feat-master-rows.6",
   "description": "wrapper of bee-plugin",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
