@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0-feat-master-rows.5](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.4...v1.10.0-feat-master-rows.5) (2022-11-10)
+
+
+### Bug Fixes
+
+* added autoScrollTo config property ([9763efa](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9763efa2ddf81e8a764690d85f846631607fb18a))
+
 ## [1.10.0-feat-master-rows.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.3...v1.10.0-feat-master-rows.4) (2022-11-08)
 
 
