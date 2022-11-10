@@ -1585,6 +1585,7 @@ export interface IBeeConfig {
   autosave?: number,
   customHeaders?: BeePluginCustomHeader[]
   saveRows?: boolean,
+  autoScrollTo: string,
   contentDialog?: {
     engage?: {
       handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, undefined, EngageHandle>
