@@ -15,7 +15,8 @@ const beeActions = {
   RELOAD: 'reload',
   LOAD_WORKSPACE: 'loadWorkspace',
   LOAD_STAGE_MODE: 'loadStageMode',
-  LOAD_CONFIG: 'loadConfig'
+  LOAD_CONFIG: 'loadConfig',
+  EXEC: 'exec'
 }
 
 export default beeActions

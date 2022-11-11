@@ -35,6 +35,23 @@ export interface ILoadStageMode {
   display: StageDisplayOptions
 }
 
+/**
+ * These are experimental types
+ * DO NOT use in production
+ * */
+
+export type ExecSelectRowParam = {
+  selected: {
+    selectedRow: number
+  }
+}
+export interface IExecParams  {
+  cmd: 'select' | 'deselect',
+  params: ExecSelectRowParam  
+}
+
+/*****************************************/
+
 export type ILoadConfig = ILoadableProps
 
 export enum LoadWorkspaceOptions {

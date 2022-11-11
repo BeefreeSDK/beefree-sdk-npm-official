@@ -21,6 +21,7 @@ describe("BeePlugin", () => {
         expect(typeof beeInstance.loadStageMode).toBe("function")
         expect(typeof beeInstance.loadWorkspace).toBe("function")
         expect(typeof beeInstance.loadConfig).toBe("function")
+        expect(typeof beeInstance.exec).toBe("function")
     })
 
     test('should call getToken', async () => {

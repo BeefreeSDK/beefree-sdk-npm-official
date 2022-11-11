@@ -93,6 +93,8 @@ const contentDefaults: ContentDefaults = {
   }
 }
 
+const beeTest = new Bee()
+
 const beeConfig :IBeeConfig = {
   uid: 'test1-clientside',
   container: 'bee-plugin-container',
@@ -140,7 +142,7 @@ const beeConfig :IBeeConfig = {
   onSessionChange: (sessionInfo) => console.warn('*** [integration] --> (onSessionChange) ', sessionInfo),
 }
 
-const beeTest = new Bee()
+
 
 const loadTemplate = (e, method) => {
   const templateFile = e.target.files[0]
@@ -187,6 +189,8 @@ const addEvents = () => {
   window.document.getElementById('trigger-showComment')?.addEventListener('click', () => beeTest.showComment('sample-uuid'), false)
 
   window.document.getElementById('trigger-loadWorkspace')?.addEventListener('click', () => beeTest.loadWorkspace(LoadWorkspaceOptions.MIXED), false)
+
+  window.document.getElementById('trigger-exec')?.addEventListener('click', () => beeTest.exec({ cmd: 'select', params: { selected: { selectedRow: 50 }}}), false)
 
   window.document.getElementById('trigger-loadStageMode')?.addEventListener(
     'click', () => beeTest.loadStageMode({ mode: StageModeOptions.DESKTOP, display: StageDisplayOptions.BLUR }
