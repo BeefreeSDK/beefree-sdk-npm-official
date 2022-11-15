@@ -819,6 +819,9 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     columnTabs: AdvancedSettingsShowLocked
     hideOnMobile: AdvancedSettingsShowLocked
     rowLayout: AdvancedSettingsShowLocked
+    toolbar: {
+      editSyncedRow: AdvancedSettingsShowLocked
+    }
   },
   settings: {
     title: AdvancedSettingsShowLocked
