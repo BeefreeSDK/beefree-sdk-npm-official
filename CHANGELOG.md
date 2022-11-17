@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0-feat-master-rows.8](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.7...v1.10.0-feat-master-rows.8) (2022-11-17)
+
+
+### Bug Fixes
+
+* added notPermittedDescription for edit synced row setting block ([2821479](https://github.com/BEE-Plugin/Bee-plugin-official/commit/282147901751606d2ccad977d1d623df64d01308))
+
 ## [1.10.0-feat-master-rows.7](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.6...v1.10.0-feat-master-rows.7) (2022-11-15)
 
 
