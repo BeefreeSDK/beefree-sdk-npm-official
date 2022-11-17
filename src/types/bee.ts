@@ -1600,6 +1600,7 @@ export interface IBeeConfig {
     editSyncedRow?: {
       label?: string
       description?: string
+      notPermittedDescription?: string
       handler: BeePluginContentDialogHandler<boolean, undefined, IPluginRow>
     }
     specialLinks?: {
