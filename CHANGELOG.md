@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0-feat-master-rows.9](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.8...v1.10.0-feat-master-rows.9) (2022-11-18)
+
+
+### Bug Fixes
+
+* added canDeleteSyncedRows flag ([e84991f](https://github.com/BEE-Plugin/Bee-plugin-official/commit/e84991f9f7761be5882e01608fb3352572c4effe))
+
 ## [1.10.0-feat-master-rows.8](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.7...v1.10.0-feat-master-rows.8) (2022-11-17)
 
 
