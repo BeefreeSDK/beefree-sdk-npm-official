@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.0...v1.11.1-experimental-exec-method.0) (2022-12-12)
+
+### [1.10.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.0-feat-add-comments-types.0...v1.10.1-experimental-exec-method.0) (2022-11-11)
 
 ## [1.11.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.0-feat-add-comments-types.0...v1.11.0) (2022-11-23)
 
