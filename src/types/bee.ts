@@ -574,9 +574,9 @@ export interface IPluginModuleSpacer {
   }
 }
 
-export type IPluginModule = 
-  IPluginModuleHeading | IPluginModuleParagraph | IPluginModuleButton | 
-  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | 
+export type IPluginModule =
+  IPluginModuleHeading | IPluginModuleParagraph | IPluginModuleButton |
+  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm |
   IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer
 
 export interface IPluginColumn {
@@ -740,14 +740,18 @@ export enum OnCommentChangeEnum {
   NEWCOMMENT = 'NEW_COMMENT',
   DELETECOMMENT = 'COMMENT_DELETED',
   CHANGECOMMENT = 'COMMENT_EDITED',
+  THREADRESOLVED = 'COMMENT_THREAD_RESOLVED',
+  THREADREOPENED = 'COMMENT_THREAD_REOPENED'
+}
+
+export type IAuthor = {
+  userHandle: string
+  username: string
+  userColor: string
 }
 
 export type BeePluginCommentPayload = {
-  author: {
-    userHandle: string
-    username: string
-    userColor: string
-  }
+  author: IAuthor
   content: string
   elementId: string
   mentions: string[]
@@ -767,6 +771,9 @@ export type BeePluginOnCommentChangePayload = {
 export type BeePluginOnCommentPayload = {
   change: BeePluginOnCommentChangePayload
   comments: unknown
+  threadUsers: {
+    contributors: IAuthor[]
+  }
 }
 
 export interface IMergeTag {
@@ -862,7 +869,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
       behaviors: AdvancedSettingsBehaviours
       properties: {
         fontWeight: AdvancedSettingsShowLocked
-        fontSize: AdvancedSettingsShowLocked 
+        fontSize: AdvancedSettingsShowLocked
         title: AdvancedSettingsShowLocked
         fontFamily: AdvancedSettingsShowLocked
         textColor: AdvancedSettingsShowLocked
@@ -1003,7 +1010,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
       behaviors: AdvancedSettingsBehaviours
       properties: {
         width: AdvancedSettingsShowLocked
-        textAlign: AdvancedSettingsShowLocked 
+        textAlign: AdvancedSettingsShowLocked
         fontFamily: AdvancedSettingsShowLocked
         fontSize: AdvancedSettingsShowLocked
         padding: AdvancedSettingsShowLocked
@@ -1041,11 +1048,11 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
       properties: {
         fontFamily: AdvancedSettingsShowLocked
         fontSize: AdvancedSettingsShowLocked
-        textColor: AdvancedSettingsShowLocked 
-        align: AdvancedSettingsShowLocked 
-        letterSpacing: AdvancedSettingsShowLocked 
-        iconSize: AdvancedSettingsShowLocked 
-        itemsSpacing: AdvancedSettingsShowLocked 
+        textColor: AdvancedSettingsShowLocked
+        align: AdvancedSettingsShowLocked
+        letterSpacing: AdvancedSettingsShowLocked
+        iconSize: AdvancedSettingsShowLocked
+        itemsSpacing: AdvancedSettingsShowLocked
         iconSpacing: AdvancedSettingsShowLocked
         padding: AdvancedSettingsShowLocked
         hideOnMobile: AdvancedSettingsShowLocked
@@ -1276,7 +1283,7 @@ export type ContentDefaultsImage = Partial<{
     paddingLeft: string
     paddingRight: string
     paddingTop: string
-    align: string   
+    align: string
     hideContentOnMobile: boolean
   }>
 }>
@@ -1654,8 +1661,8 @@ export interface IBeeConfig {
   onSend?: (pageHtml: string) => void
   onChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
   onWarning?: (error: BeePluginError) => void
-  onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void 
+  onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
 }
 
-export type { KebabCSSProperties } 
+export type { KebabCSSProperties }
