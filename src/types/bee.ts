@@ -644,6 +644,7 @@ export type CustomRowBehaviour = {
   canEdit?: boolean
   canDelete?: boolean
   canDeleteSyncedRows?: boolean
+  canEditSyncedRows?: boolean
 }
 
 export type CustomRowConfiguration = {
