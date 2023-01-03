@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0-feat-master-rows.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.12.0-feat-master-rows.0...v1.12.0-feat-master-rows.1) (2023-01-03)
+
 ## [1.12.0-feat-master-rows.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.0...v1.12.0-feat-master-rows.0) (2022-12-12)
 
 ## [1.10.0-feat-master-rows.9](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.8...v1.10.0-feat-master-rows.9) (2022-11-18)
