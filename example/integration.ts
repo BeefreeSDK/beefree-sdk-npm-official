@@ -2,7 +2,7 @@ import Bee from '../src/index'
 import { 
   ContentDefaults,
   IBeeConfig, IMergeContent, IMergeTag, ISpecialLink, 
-  LoadWorkspaceOptions, StageDisplayOptions, StageModeOptions 
+  LoadWorkspaceOptions, ModuleDescriptorOrderNames, StageDisplayOptions, StageModeOptions 
 } from '../src/types/bee';
 declare let saveAs: any;
 
@@ -107,6 +107,15 @@ const beeConfig :IBeeConfig = {
   mergeContents,
   contentDialog,
   contentDefaults,
+  defaultModulesOrder: [ 
+    'Button',
+    'Html',
+    'Icons',
+    ModuleDescriptorOrderNames.VIDEO,
+    ModuleDescriptorOrderNames.HTML,
+    ModuleDescriptorOrderNames.IMAGE,
+    'Stickers'
+  ],
   customAssetsOptions: {
     pendo: { // sample pendo integration
       variables: {

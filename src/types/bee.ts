@@ -184,6 +184,48 @@ export const ModuleDescriptorNames = {
   LIST: 'list'
 } as const
 
+export const ModuleDescriptorOrderNames = {
+  DIVIDER: 'Divider',
+  TEXT: 'Text',
+  IMAGE: 'Image',
+  BUTTON: 'Button',
+  HTML: 'Html',
+  SOCIAL: 'Social',
+  VIDEO: 'Video',
+  ADDON: 'Addon',
+  FORM: 'Form',
+  MERGE_CONTENT: 'MergeContent',
+  CAROUSEL: 'Carousel',
+  MENU: 'Menu',
+  ICONS: 'Icons',
+  HEADING: 'Heading',
+  SPACER: 'Spacer',
+  PARAGRAPH: 'Paragraph',
+  LIST: 'List'
+} as const
+
+
+
+export enum ModuleBo {
+  DIVIDER='divider',
+  TEXT='text',
+  IMAGE='image',
+  BUTTON='button',
+  HTML='html',
+  SOCIAL='social',
+  VIDEO='video',
+  ADDON='addon',
+  FORM='form',
+  MERGE_CONTENT='mergeContent',
+  CAROUSEL='carousel',
+  MENU='menu',
+  ICONS='icons',
+  HEADING='heading',
+  SPACER='spacer',
+  PARAGRAPH='paragraph',
+  LIST='list'
+}
+
 export interface IPluginModuleHeading {
   type: typeof ModuleTypes.HEADING
   locked?: boolean
@@ -1586,6 +1628,7 @@ export interface IBeeConfig {
   role?: BeePluginRoles,
   defaultColors?: string[]
   contentDefaults?: ContentDefaults
+  defaultModulesOrder?: ValueOf<typeof ModuleDescriptorOrderNames> | string[]
   customCss?: string
   workspace?: BeePluginWorkspace
   autosave?: number,
