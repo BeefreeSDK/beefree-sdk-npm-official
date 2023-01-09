@@ -192,7 +192,6 @@ export const ModuleDescriptorOrderNames = {
   HTML: 'Html',
   SOCIAL: 'Social',
   VIDEO: 'Video',
-  ADDON: 'Addon',
   FORM: 'Form',
   MERGE_CONTENT: 'MergeContent',
   CAROUSEL: 'Carousel',
@@ -203,28 +202,6 @@ export const ModuleDescriptorOrderNames = {
   PARAGRAPH: 'Paragraph',
   LIST: 'List'
 } as const
-
-
-
-export enum ModuleBo {
-  DIVIDER='divider',
-  TEXT='text',
-  IMAGE='image',
-  BUTTON='button',
-  HTML='html',
-  SOCIAL='social',
-  VIDEO='video',
-  ADDON='addon',
-  FORM='form',
-  MERGE_CONTENT='mergeContent',
-  CAROUSEL='carousel',
-  MENU='menu',
-  ICONS='icons',
-  HEADING='heading',
-  SPACER='spacer',
-  PARAGRAPH='paragraph',
-  LIST='list'
-}
 
 export interface IPluginModuleHeading {
   type: typeof ModuleTypes.HEADING
