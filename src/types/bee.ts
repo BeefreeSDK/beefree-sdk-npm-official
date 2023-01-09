@@ -184,6 +184,25 @@ export const ModuleDescriptorNames = {
   LIST: 'list'
 } as const
 
+export const ModuleDescriptorOrderNames = {
+  DIVIDER: 'Divider',
+  TEXT: 'Text',
+  IMAGE: 'Image',
+  BUTTON: 'Button',
+  HTML: 'Html',
+  SOCIAL: 'Social',
+  VIDEO: 'Video',
+  FORM: 'Form',
+  MERGE_CONTENT: 'MergeContent',
+  CAROUSEL: 'Carousel',
+  MENU: 'Menu',
+  ICONS: 'Icons',
+  HEADING: 'Heading',
+  SPACER: 'Spacer',
+  PARAGRAPH: 'Paragraph',
+  LIST: 'List'
+} as const
+
 export interface IPluginModuleHeading {
   type: typeof ModuleTypes.HEADING
   locked?: boolean
@@ -1586,6 +1605,7 @@ export interface IBeeConfig {
   role?: BeePluginRoles,
   defaultColors?: string[]
   contentDefaults?: ContentDefaults
+  defaultModulesOrder?: ValueOf<typeof ModuleDescriptorOrderNames> | string[]
   customCss?: string
   workspace?: BeePluginWorkspace
   autosave?: number,
