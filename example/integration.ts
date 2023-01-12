@@ -107,6 +107,44 @@ const beeConfig :IBeeConfig = {
   mergeContents,
   contentDialog,
   contentDefaults,
+  modulesGroups: [
+    {
+      label: 'Text',
+      collapsable: true,
+      collapsedOnLoad: false,
+      modulesNames: [
+        ModuleDescriptorOrderNames.HEADING,
+        ModuleDescriptorOrderNames.PARAGRAPH,
+        ModuleDescriptorOrderNames.LIST
+      ]
+    },
+    {
+      label: 'UI',
+      collapsable: true,
+      collapsedOnLoad: false,
+      modulesNames: [
+        ModuleDescriptorOrderNames.IMAGE,
+        ModuleDescriptorOrderNames.BUTTON,
+        ModuleDescriptorOrderNames.DIVIDER,
+        ModuleDescriptorOrderNames.SPACER,
+        ModuleDescriptorOrderNames.VIDEO,
+        ModuleDescriptorOrderNames.ICONS,
+        ModuleDescriptorOrderNames.HTML,
+        ModuleDescriptorOrderNames.MENU,
+        ModuleDescriptorOrderNames.SOCIAL,
+      ]
+    },
+    {
+      label: 'Others',
+      collapsable: true,
+      collapsedOnLoad: false,
+      modulesNames: [
+       'Dynamics Contents',
+       'Gifs',
+       'Stickers',
+      ]
+    }
+  ],
   defaultModulesOrder: [ 
     'Button',
     'Html',
