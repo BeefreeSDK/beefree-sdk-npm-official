@@ -207,7 +207,7 @@ export interface IModulesGroups {
   label: string,
   collapsable: boolean
   collapsedOnLoad: boolean
-  modulesNames: ValueOf<typeof ModuleDescriptorOrderNames> | string[]
+  modulesNames: ValueOf<typeof ModuleDescriptorOrderNames>[] | string[]
 }
 
 export interface IPluginModuleHeading {
@@ -1612,7 +1612,7 @@ export interface IBeeConfig {
   role?: BeePluginRoles,
   defaultColors?: string[]
   contentDefaults?: ContentDefaults
-  defaultModulesOrder?: ValueOf<typeof ModuleDescriptorOrderNames> | string[]
+  defaultModulesOrder?: ValueOf<typeof ModuleDescriptorOrderNames>[] | string[]
   modulesGroups?: IModulesGroups[]
   customCss?: string
   workspace?: BeePluginWorkspace
