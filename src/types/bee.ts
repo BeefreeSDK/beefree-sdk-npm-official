@@ -203,6 +203,13 @@ export const ModuleDescriptorOrderNames = {
   LIST: 'List'
 } as const
 
+export interface IModulesGroups {
+  label: string,
+  collapsable: boolean
+  collapsedOnLoad: boolean
+  modulesNames: ValueOf<typeof ModuleDescriptorOrderNames>[] | string[]
+}
+
 export interface IPluginModuleHeading {
   type: typeof ModuleTypes.HEADING
   locked?: boolean
@@ -1605,7 +1612,8 @@ export interface IBeeConfig {
   role?: BeePluginRoles,
   defaultColors?: string[]
   contentDefaults?: ContentDefaults
-  defaultModulesOrder?: ValueOf<typeof ModuleDescriptorOrderNames> | string[]
+  defaultModulesOrder?: ValueOf<typeof ModuleDescriptorOrderNames>[] | string[]
+  modulesGroups?: IModulesGroups[]
   customCss?: string
   workspace?: BeePluginWorkspace
   autosave?: number,
