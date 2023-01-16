@@ -2,79 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [1.12.0-feat-master-rows.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.12.0-feat-master-rows.0...v1.12.0-feat-master-rows.1) (2023-01-03)
+### [1.11.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.1...v1.11.2) (2023-01-12)
 
-## [1.12.0-feat-master-rows.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.0...v1.12.0-feat-master-rows.0) (2022-12-12)
-
-## [1.10.0-feat-master-rows.9](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.8...v1.10.0-feat-master-rows.9) (2022-11-18)
-
-
-### Bug Fixes
-
-* added canDeleteSyncedRows flag ([e84991f](https://github.com/BEE-Plugin/Bee-plugin-official/commit/e84991f9f7761be5882e01608fb3352572c4effe))
-
-## [1.10.0-feat-master-rows.8](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.7...v1.10.0-feat-master-rows.8) (2022-11-17)
-
-
-### Bug Fixes
-
-* added notPermittedDescription for edit synced row setting block ([2821479](https://github.com/BEE-Plugin/Bee-plugin-official/commit/282147901751606d2ccad977d1d623df64d01308))
-
-## [1.10.0-feat-master-rows.7](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.6...v1.10.0-feat-master-rows.7) (2022-11-15)
-
-
-### Bug Fixes
-
-* added advanced permissions to edit synced row ([46c2937](https://github.com/BEE-Plugin/Bee-plugin-official/commit/46c29374452ffaba6b804c17c1cf384596468a04))
-
-## [1.10.0-feat-master-rows.6](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.5...v1.10.0-feat-master-rows.6) (2022-11-10)
-
-
-### Bug Fixes
-
-* added undefined to autoScrollTo ([1a0379a](https://github.com/BEE-Plugin/Bee-plugin-official/commit/1a0379a1172cb860f97661352bf50dbc1b1ddb99))
-
-## [1.10.0-feat-master-rows.5](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.0-feat-add-comments-types.0...v1.10.0-feat-master-rows.5) (2022-11-10)
-
-
-### Bug Fixes
-
-* added autoScrollTo config property ([9763efa](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9763efa2ddf81e8a764690d85f846631607fb18a))
-
-## [1.10.0-feat-master-rows.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.3...v1.10.0-feat-master-rows.4) (2022-11-08)
-
-
-### Bug Fixes
-
-* added editSyncedRow type ([25dedbc](https://github.com/BEE-Plugin/Bee-plugin-official/commit/25dedbc3977064d1c265a380e62600910a063373))
-
-## [1.10.0-feat-master-rows.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.2...v1.10.0-feat-master-rows.3) (2022-11-04)
-
-
-### Bug Fixes
-
-* fixed contentDialog.saveRow type ([b5bdc52](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b5bdc526a3880543fbed4b17c362deb170796c6c))
-
-## [1.10.0-feat-master-rows.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0...v1.10.0-feat-master-rows.2) (2022-11-03)
-
-
-### Bug Fixes
-
-* merged master into feat/master-rows ([f968e89](https://github.com/BEE-Plugin/Bee-plugin-official/commit/f968e89ac423cdea63908063b517aacced7ae17a))
-
-## [1.10.0-feat-master-rows.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.0...v1.10.0-feat-master-rows.1) (2022-10-27)
-
-
-### Bug Fixes
-
-* updated resolve signature for BeePluginContentDialogHandler ([6ae946d](https://github.com/BEE-Plugin/Bee-plugin-official/commit/6ae946dda9bacc27b8d36ab29f0d9a25d76872c9))
-
-## [1.10.0-feat-master-rows.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.9.0...v1.10.0-feat-master-rows.0) (2022-10-26)
-
-
-### Features
-
-* added synced parameter to plugin row ([efde0c2](https://github.com/BEE-Plugin/Bee-plugin-official/commit/efde0c21723f9f44d7952d01378c6e79b4d9ed3b))
+### [1.11.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.0...v1.11.1) (2023-01-09)
 
 ## [1.11.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.0-feat-add-comments-types.0...v1.11.0) (2022-11-23)
 
