@@ -4,11 +4,11 @@ import * as E from 'fp-ts/lib/Either'
 import {
   IBeeConfig, IEntityContentJson,
   IBeeLoader, IBeeOptions, ILoadConfig, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions 
-} from './types/bee'
+} from '@mailupinc/bee-plugin-types'
 import beeActions from './utils/Constants'
 import { fetchToken } from './services/api'
 import { eitherCanExecuteAction, eitherCheckJoinParams, eitherCheckStartParams } from './utils/utils'
-import * as beeTypes from './types/bee'
+import * as beeTypes from '@mailupinc/bee-plugin-types'
 
 //this is the global variable injected from BeePlugin.js 
 declare let BeePlugin: any;

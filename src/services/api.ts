@@ -1,4 +1,4 @@
-import { IFetchTemplate, IFetchTokenPayload } from '../types/api'
+import { IFetchTokenPayload } from '@mailupinc/bee-plugin-types'
 import axios from './axios'
 
 export const fetchToken = ({ authUrl, clientId, clientSecret }:IFetchTokenPayload) => {
@@ -10,4 +10,4 @@ export const fetchToken = ({ authUrl, clientId, clientSecret }:IFetchTokenPayloa
   return axios.post(authUrl, payload)
 }
 
-export const fetchTemplate = ({ templateUrl }: IFetchTemplate) => axios.get(templateUrl)
+export const fetchTemplate = ({ templateUrl }: { templateUrl: string }) => axios.get(templateUrl)

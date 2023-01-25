@@ -882,6 +882,20 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
+"@mailupinc/bee-plugin-types@^0.0.24":
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/@mailupinc/bee-plugin-types/-/bee-plugin-types-0.0.24.tgz#645a50e593731032fb3d5d64b66263244807e956"
+  integrity sha512-vc2sayGnaG4B6dE5FJ13ya5md2imJHdsb3IPggbcskH9Du6GIMUxKAZ54th4urN0qGYMfCoo9zQfvhuh/ZGnig==
+  dependencies:
+    "@mailupinc/bee-types-utils" "^0.0.24"
+
+"@mailupinc/bee-types-utils@^0.0.24":
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/@mailupinc/bee-types-utils/-/bee-types-utils-0.0.24.tgz#f12b91ba3f7d5cdf4cd91e65de75983663a57ea6"
+  integrity sha512-omDeUAXM6DVnVk2AGEO3wrguWHbvFvflTxlHpE6h/5V6JR3x6UFht/cBlnVLbMJxpshrDKfH9ePAzYaU9ojCow==
+  dependencies:
+    csstype "^3.0.8"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -2462,7 +2476,7 @@ cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-csstype@^3.1.1:
+csstype@^3.0.8, csstype@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
   integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
