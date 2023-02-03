@@ -23,7 +23,7 @@ You can embed it into your application!
 Visit our developer documentation [https://docs.beefree.io/]
 
 
-## How to use it 
+## How to use it
 
 - go to the developer portal [https://developers.beefree.io/signup](https://developers.beefree.io/signup)
 - sign up with the free plan
