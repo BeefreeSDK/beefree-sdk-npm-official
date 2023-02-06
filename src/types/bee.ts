@@ -669,6 +669,8 @@ export type RowsConfiguration = {
 export type CustomRowBehaviour = {
   canEdit?: boolean
   canDelete?: boolean
+  canDeleteSyncedRows?: boolean
+  canEditSyncedRows?: boolean
 }
 
 export type CustomRowConfiguration = {
@@ -703,6 +705,7 @@ export interface IPluginRow {
   metadata?: Record<string, unknown>
   type: ValueOf<typeof RowLayoutType>
   uuid: string
+  synced?: boolean
 }
 
 export interface IInvitedMention {
@@ -730,7 +733,7 @@ export enum EngageHandle {
 }
 
 export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
-  resolve: (data: K) => void,
+  resolve: (data: K, options?: Record<string, unknown>) => void,
   reject: () => void,
   args: A,
   handle?: T
@@ -851,6 +854,9 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     columnTabs: AdvancedSettingsShowLocked
     hideOnMobile: AdvancedSettingsShowLocked
     rowLayout: AdvancedSettingsShowLocked
+    toolbar: {
+      editSyncedRow: AdvancedSettingsShowLocked
+    }
   },
   settings: {
     title: AdvancedSettingsShowLocked
@@ -1619,13 +1625,20 @@ export interface IBeeConfig {
   autosave?: number,
   customHeaders?: BeePluginCustomHeader[]
   saveRows?: boolean,
+  autoScrollTo?: string,
   contentDialog?: {
     engage?: {
       handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, undefined, EngageHandle>
     },
     saveRow?: {
       label?: string
-      handler: BeePluginContentDialogHandler<IPluginRow>
+      handler: BeePluginContentDialogHandler<Record<string,unknown>, undefined, IPluginRow>
+    }
+    editSyncedRow?: {
+      label?: string
+      description?: string
+      notPermittedDescription?: string
+      handler: BeePluginContentDialogHandler<boolean, undefined, IPluginRow>
     }
     specialLinks?: {
       label: string
