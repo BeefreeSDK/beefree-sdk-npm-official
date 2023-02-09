@@ -45,7 +45,8 @@ const {
   RELOAD,
   LOAD_WORKSPACE,
   LOAD_STAGE_MODE,
-  LOAD_CONFIG
+  LOAD_CONFIG,
+  LOAD_ROWS
 } = beeActions
 
 class Bee {
@@ -138,6 +139,8 @@ class Bee {
   }
 
   load = (template: Record<string, unknown>) => this.executeAction(LOAD, template)
+
+  loadRows = () => this.executeAction(LOAD_ROWS)
 
   save = () => this.executeAction(SAVE)
 
