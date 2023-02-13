@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.0.0...v2.0.1) (2023-02-13)
+
+
+### Bug Fixes
+
+* added loadRows method ([c6b3b83](https://github.com/BEE-Plugin/Bee-plugin-official/commit/c6b3b83d534d53aa48e77aecdd8f172d9f6ca7ed))
+
 ## [2.0.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.2...v2.0.0) (2023-02-06)
 
 
