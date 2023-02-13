@@ -1619,6 +1619,14 @@ export interface IAddOnResponseHTML {
     html: string
   }
 }
+export interface IAddOnResponseMixed {
+  type: 'mixed',
+  value: Record<string, string>[] //todo define the specific type for this part
+}
+export interface IAddOnResponseRowAddOn {
+  type: 'rowAddon',
+  value: Record<string, string> //todo define the specific type for this part
+}
 
 export type BeeContentDialogs = {
   engage?: {
@@ -1636,7 +1644,7 @@ export type BeeContentDialogs = {
   }
   addOn?: {
     label: string
-    handler: BeePluginContentDialogHandler<IAddOnResponseImage | IAddOnResponseHTML>
+    handler: BeePluginContentDialogHandler<IAddOnResponseImage | IAddOnResponseHTML | IAddOnResponseMixed | IAddOnResponseRowAddOn>
   }
   specialLinks?: {
     label: string
