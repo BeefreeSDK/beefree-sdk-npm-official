@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0-chore-missing-types.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.0-chore-missing-types.0...v2.1.0-chore-missing-types.1) (2023-02-13)
+
+
+### Bug Fixes
+
+* added mixed and rowAddon types for addon contentDialog ([b368581](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b368581efa3dfed4080dd05f6d0fbf27367fb9e2))
+
 ## [2.1.0-chore-missing-types.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.0.1...v2.1.0-chore-missing-types.0) (2023-02-13)
 
 
