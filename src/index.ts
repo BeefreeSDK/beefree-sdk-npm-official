@@ -3,7 +3,8 @@ import { pipe } from 'fp-ts/lib/function'
 import * as E from 'fp-ts/lib/Either'
 import {
   IBeeConfig, IEntityContentJson,
-  IBeeLoader, IBeeOptions, ILoadConfig, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions 
+  IBeeLoader, IBeeOptions, ILoadConfig, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions,
+  IUpdateToken
 } from './types/bee'
 import beeActions from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -40,13 +41,15 @@ const {
   TOGGLE_STRUCTURE,
   TOGGLE_COMMENTS,
   TOGGLE_PREVIEW,
+  TOGGLE_PICKER,
   TOGGLE_MERGETAGS_PREVIEW,
   SHOW_COMMENT,
   RELOAD,
   LOAD_WORKSPACE,
   LOAD_STAGE_MODE,
   LOAD_CONFIG,
-  LOAD_ROWS
+  LOAD_ROWS,
+  UPDATE_TOKEN
 } = beeActions
 
 class Bee {
@@ -167,6 +170,10 @@ class Bee {
   loadStageMode = (args: ILoadStageMode) => this.executeAction(LOAD_STAGE_MODE, args)
 
   loadConfig = (args: ILoadConfig) => this.executeAction(LOAD_CONFIG, args)
+
+  updateToken = (updateTokenArgs: IUpdateToken) => this.executeAction(UPDATE_TOKEN, updateTokenArgs)
+
+  picker = () => this.executeAction(TOGGLE_PICKER)
 }
 
 

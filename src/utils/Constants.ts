@@ -8,6 +8,7 @@ const beeActions = {
   SAVE_AS_TEMPLATE: 'saveAsTemplate',
   TOGGLE_STRUCTURE: 'toggleStructure',
   TOGGLE_COMMENTS: 'toggleComments',
+  TOGGLE_PICKER: 'picker',
   TOGGLE_PREVIEW: 'togglePreview',
   TOGGLE_MERGETAGS_PREVIEW: 'toggleMergeTagsPreview',
   SHOW_COMMENT: 'showComment',
@@ -16,7 +17,8 @@ const beeActions = {
   LOAD_WORKSPACE: 'loadWorkspace',
   LOAD_STAGE_MODE: 'loadStageMode',
   LOAD_CONFIG: 'loadConfig',
-  LOAD_ROWS: 'loadRows'
+  LOAD_ROWS: 'loadRows',
+  UPDATE_TOKEN: 'updateToken'
 }
 
 export default beeActions
