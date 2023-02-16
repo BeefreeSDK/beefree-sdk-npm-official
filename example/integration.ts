@@ -248,8 +248,6 @@ const addEvents = () => {
 
   window.document.getElementById('trigger-preview')?.addEventListener('click', () => beeTest.togglePreview(), false)
 
-  window.document.getElementById('trigger-togglePicker')?.addEventListener('click', () => beeTest.picker(), false)
-
   window.document.getElementById('trigger-toggleComments')?.addEventListener('click', () => beeTest.toggleComments(), false)
 
   window.document.getElementById('trigger-togglePreview')?.addEventListener('click', () => beeTest.togglePreview(), false)

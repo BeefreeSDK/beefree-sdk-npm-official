@@ -8,7 +8,6 @@ const beeActions = {
   SAVE_AS_TEMPLATE: 'saveAsTemplate',
   TOGGLE_STRUCTURE: 'toggleStructure',
   TOGGLE_COMMENTS: 'toggleComments',
-  TOGGLE_PICKER: 'picker',
   TOGGLE_PREVIEW: 'togglePreview',
   TOGGLE_MERGETAGS_PREVIEW: 'toggleMergeTagsPreview',
   SHOW_COMMENT: 'showComment',

@@ -41,7 +41,6 @@ const {
   TOGGLE_STRUCTURE,
   TOGGLE_COMMENTS,
   TOGGLE_PREVIEW,
-  TOGGLE_PICKER,
   TOGGLE_MERGETAGS_PREVIEW,
   SHOW_COMMENT,
   RELOAD,
@@ -173,7 +172,6 @@ class Bee {
 
   updateToken = (updateTokenArgs: IUpdateToken) => this.executeAction(UPDATE_TOKEN, updateTokenArgs)
 
-  picker = () => this.executeAction(TOGGLE_PICKER)
 }
 
 
