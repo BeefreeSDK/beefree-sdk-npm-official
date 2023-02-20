@@ -1594,6 +1594,88 @@ export type ContentDefaults = Partial<{
   general: ContentDefaultsGeneral
 }>
 
+export enum TokenStatus {
+  OK = 'ok',
+  REFRESHING= 'refreshing'
+}
+export interface IUpdateToken {
+  access_token: string
+  v2: boolean
+  status: TokenStatus
+}
+
+export interface IAddOnResponseImage {
+  type: 'image',
+  value: {
+    alt: string,
+    href: string,
+    src: string,
+    dynamicSrc: string
+  }
+}
+export interface IAddOnResponseHTML {
+  type: 'html',
+  value: {
+    html: string
+  }
+}
+export interface IAddOnResponseMixed {
+  type: 'mixed',
+  value: Record<string, string>[] //todo define the specific type for this part
+}
+export interface IAddOnResponseRowAddOn {
+  type: 'rowAddon',
+  value: Record<string, string> //todo define the specific type for this part
+}
+
+export type BeeContentDialogs = {
+  engage?: {
+    handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, undefined, EngageHandle>
+  },
+  saveRow?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<Record<string, unknown>, undefined, IPluginRow>
+  }
+  editSyncedRow?: {
+    label?: string
+    description?: string
+    notPermittedDescription?: string
+    handler: BeePluginContentDialogHandler<boolean, undefined, IPluginRow>
+  }
+  addOn?: {
+    label: string
+    handler: BeePluginContentDialogHandler<IAddOnResponseImage | IAddOnResponseHTML | IAddOnResponseMixed | IAddOnResponseRowAddOn>
+  }
+  specialLinks?: {
+    label: string
+    handler: BeePluginContentDialogHandler<ISpecialLink>
+  }
+  mergeTags?: {
+    label: string
+    handler: BeePluginContentDialogHandler<IMergeTag>
+  }
+  manageForm?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<IPluginForm>
+  },
+  filePicker?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<IPluginFilePicker>
+  },
+  getMention?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<IInvitedMention[], undefined, string>
+  }
+  onDeleteRow?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
+  }
+  onEditRow?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
+  }
+}
+
 export interface IBeeConfig {
   uid: string
   container: string
@@ -1626,49 +1708,7 @@ export interface IBeeConfig {
   customHeaders?: BeePluginCustomHeader[]
   saveRows?: boolean,
   autoScrollTo?: string,
-  contentDialog?: {
-    engage?: {
-      handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, undefined, EngageHandle>
-    },
-    saveRow?: {
-      label?: string
-      handler: BeePluginContentDialogHandler<Record<string,unknown>, undefined, IPluginRow>
-    }
-    editSyncedRow?: {
-      label?: string
-      description?: string
-      notPermittedDescription?: string
-      handler: BeePluginContentDialogHandler<boolean, undefined, IPluginRow>
-    }
-    specialLinks?: {
-      label: string
-      handler: BeePluginContentDialogHandler<ISpecialLink>
-    }
-    mergeTags?: {
-      label: string
-      handler: BeePluginContentDialogHandler<IMergeTag>
-    }
-    manageForm?: {
-      label?: string
-      handler: BeePluginContentDialogHandler<IPluginForm>
-    },
-    filePicker?: {
-      label?: string
-      handler: BeePluginContentDialogHandler<IPluginFilePicker>
-    },
-    getMention?: {
-      label?: string
-      handler: BeePluginContentDialogHandler<IInvitedMention[], undefined, string>
-    }
-    onDeleteRow?: {
-      label?: string
-      handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
-    }
-    onEditRow?: {
-      label?: string
-      handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
-    }
-  },
+  contentDialog?: BeeContentDialogs,
   rowsConfiguration?: RowsConfiguration
   hooks?: BeePluginConfigurationsHooks
   onLoad?: (json: IEntityContentJson) => void
