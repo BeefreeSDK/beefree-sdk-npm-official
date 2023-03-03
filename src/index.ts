@@ -4,7 +4,7 @@ import * as E from 'fp-ts/lib/Either'
 import {
   IBeeConfig, IEntityContentJson,
   IBeeLoader, IBeeOptions, ILoadConfig, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions,
-  IExecParams
+  IExecParams, IUpdateToken
 } from './types/bee'
 import beeActions from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -47,7 +47,9 @@ const {
   LOAD_WORKSPACE,
   LOAD_STAGE_MODE,
   LOAD_CONFIG,
-  EXEC
+  EXEC,
+  LOAD_ROWS,
+  UPDATE_TOKEN
 } = beeActions
 
 class Bee {
@@ -141,6 +143,8 @@ class Bee {
 
   load = (template: Record<string, unknown>) => this.executeAction(LOAD, template)
 
+  loadRows = () => this.executeAction(LOAD_ROWS)
+
   save = () => this.executeAction(SAVE)
 
   saveAsTemplate = () => this.executeAction(SAVE_AS_TEMPLATE)
@@ -169,7 +173,10 @@ class Bee {
 
   /** EXPERIMENTAL DO NOT use it in production */
   exec = (args: IExecParams) => this.executeAction(EXEC, { cmd: args.cmd, ...args.params})
-} 
+
+  updateToken = (updateTokenArgs: IUpdateToken) => this.executeAction(UPDATE_TOKEN, updateTokenArgs)
+
+}
 
 
 export default Bee

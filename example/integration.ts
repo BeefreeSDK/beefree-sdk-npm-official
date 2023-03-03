@@ -1,10 +1,14 @@
 import Bee from '../src/index'
 import { 
+  BeeContentDialogs,
   ContentDefaults,
+  IAddOnResponseImage,
   IBeeConfig, IMergeContent, IMergeTag, ISpecialLink, 
-  LoadWorkspaceOptions, StageDisplayOptions, StageModeOptions 
+  LoadWorkspaceOptions, ModuleDescriptorOrderNames, StageDisplayOptions, StageModeOptions, TokenStatus 
 } from '../src/types/bee';
 declare let saveAs: any;
+
+let accessToken = ''
 
 const BEE_TEMPLATE_URL = 'https://rsrc.getbee.io/api/templates/m-bee'
 //const BEE_BLANK_TEMPLATE_URL = 'http://storage.googleapis.com/pre-bee-app-integration-23fc44e0713f/blank.json'
@@ -52,7 +56,20 @@ const handleMergeTags = (resolve) => {
   return resolve(mockedMergeTg)
 }
 
-const contentDialog = {
+const handleImageAddOnResponse = (resolve) => {
+  const mockedAddOnResponse: IAddOnResponseImage = { 
+    type: 'image',
+    value: {
+      alt: 'Lorem Ipsum',
+      dynamicSrc: '{{sample}}',
+      href: 'https://picsum.photos/id/237/200/300',
+      src: 'https://picsum.photos/id/237/200/300'
+    }
+  } 
+  return resolve(mockedAddOnResponse)
+}
+
+const contentDialogs: BeeContentDialogs = {
   filePicker: {
     label: 'Picker',
     handler: userInput('Enter image path:', {
@@ -66,6 +83,10 @@ const contentDialog = {
   mergeTags: {
     label: 'Merge Tags',
     handler: handleMergeTags   
+  },
+  addOn: {
+    label: 'Add On',
+    handler: handleImageAddOnResponse
   }
 }
 
@@ -107,8 +128,55 @@ const beeConfig :IBeeConfig = {
   specialLinks,
   mergeTags,
   mergeContents,
-  contentDialog,
+  contentDialog: contentDialogs,
   contentDefaults,
+  modulesGroups: [
+    {
+      label: 'Text',
+      collapsable: true,
+      collapsedOnLoad: false,
+      modulesNames: [
+        ModuleDescriptorOrderNames.HEADING,
+        ModuleDescriptorOrderNames.PARAGRAPH,
+        ModuleDescriptorOrderNames.LIST
+      ]
+    },
+    {
+      label: 'UI',
+      collapsable: true,
+      collapsedOnLoad: false,
+      modulesNames: [
+        ModuleDescriptorOrderNames.IMAGE,
+        ModuleDescriptorOrderNames.BUTTON,
+        ModuleDescriptorOrderNames.DIVIDER,
+        ModuleDescriptorOrderNames.SPACER,
+        ModuleDescriptorOrderNames.VIDEO,
+        ModuleDescriptorOrderNames.ICONS,
+        ModuleDescriptorOrderNames.HTML,
+        ModuleDescriptorOrderNames.MENU,
+        ModuleDescriptorOrderNames.SOCIAL,
+      ]
+    },
+    {
+      label: 'Others',
+      collapsable: true,
+      collapsedOnLoad: false,
+      modulesNames: [
+       'Dynamics Contents',
+       'Gifs',
+       'Stickers',
+      ]
+    }
+  ],
+  defaultModulesOrder: [ 
+    'Button',
+    'Html',
+    'Icons',
+    ModuleDescriptorOrderNames.VIDEO,
+    ModuleDescriptorOrderNames.HTML,
+    ModuleDescriptorOrderNames.IMAGE,
+    'Stickers'
+  ],
   customAssetsOptions: {
     pendo: { // sample pendo integration
       variables: {
@@ -188,6 +256,12 @@ const addEvents = () => {
 
   window.document.getElementById('trigger-showComment')?.addEventListener('click', () => beeTest.showComment('sample-uuid'), false)
 
+  window.document.getElementById('trigger-updateToken')?.addEventListener('click', () => beeTest.updateToken({
+    access_token: accessToken,
+    status: TokenStatus.REFRESHING,
+    v2: true
+  }), false)
+
   window.document.getElementById('trigger-loadWorkspace')?.addEventListener('click', () => beeTest.loadWorkspace(LoadWorkspaceOptions.MIXED), false)
 
   window.document.getElementById('trigger-exec')?.addEventListener('click', () => beeTest.exec({ cmd: 'select', params: { selected: { selectedRow: 50 }}}), false)
@@ -206,7 +280,10 @@ const addEvents = () => {
 
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
 beeTest.getToken(process.env.PLUGIN_CLIENT_ID!, process.env.PLUGIN_CLIENT_SECRET!, conf)
-  .then(() => fetch(new Request(BEE_TEMPLATE_URL, { method: 'GET' })))
+  .then((res) => { 
+    accessToken = res.access_token
+    return fetch(new Request(BEE_TEMPLATE_URL, { method: 'GET' }))
+  })
   .then(res => res.json())
   .then(template => {
     const sessionId = getParameterByName('sessionId')
