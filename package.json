@@ -1,6 +1,6 @@
 {
   "name": "@mailupinc/bee-plugin",
-  "version": "2.1.0",
+  "version": "2.1.1-experimental-exec-method.0",
   "description": "wrapper of bee-plugin",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

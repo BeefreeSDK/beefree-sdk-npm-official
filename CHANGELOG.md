@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.0...v2.1.1-experimental-exec-method.0) (2023-03-03)
+
+### [1.11.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.12.0-feat-master-rows.0...v1.11.1-experimental-exec-method.0) (2022-12-12)
+
+### [1.10.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.6...v1.10.1-experimental-exec-method.0) (2022-11-11)
 
 ## [2.1.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.0-chore-missing-types.1...v2.1.0) (2023-02-20)
 
