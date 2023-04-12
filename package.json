@@ -31,7 +31,7 @@
     "release:alpha": "yarn prerelease && standard-version --prerelease alpha && yarn postrelease",
     "release:beta": "yarn prerelease && standard-version --prerelease beta && yarn postrelease",
     "release:unstable": "yarn prerelease && standard-version --prerelease $(git branch --show-current | sed 's/\\//-/g') && yarn postrelease"
-  },
+  },  
   "repository": "git+https://github.com/BEE-Plugin/Bee-plugin-official.git",
   "keywords": [
     "editor",
@@ -53,8 +53,8 @@
     "@rollup/plugin-url": "^8.0.1",
     "@types/jest": "^29.5.0",
     "@types/node": "^18.11.8",
-    "@typescript-eslint/eslint-plugin": "^5.41.0",
-    "@typescript-eslint/parser": "^5.41.0",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
     "dotenv": "^16.0.3",
     "eslint": "^8.38.0",
     "eslint-plugin-import": "^2.27.5",
@@ -62,7 +62,7 @@
     "husky": "8.0.3",
     "jest": "^29.5.0",
     "lint-staged": "13.0.3",
-    "rimraf": "^3.0.0",
+    "rimraf": "^5.0.0",
     "rollup": "^2.68.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.34.1",
