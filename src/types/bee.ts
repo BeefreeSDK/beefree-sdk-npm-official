@@ -1675,6 +1675,10 @@ export type BeeContentDialogs = {
   onEditRow?: {
     label?: string
     handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
+  },
+  externalContentURLs?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<CustomRowConfiguration>
   }
 }
 
