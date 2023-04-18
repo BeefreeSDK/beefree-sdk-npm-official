@@ -136,6 +136,20 @@ export type BeePluginError = {
   data?: BeePluginErrorData
 }
 
+export type BeePluginInfo = {
+  code: BeePluginErrorCodes
+  message: string
+  detail: {
+    handle: OnInfoDetailHandle.AI_INTEGRATION
+    promptId: string
+    usage: {
+      completion_tokens: number
+      prompt_tokens: number
+      total_tokens: number
+    }
+  }
+}
+
 type KebabCSSProperties = KebabKeys<CSS.Properties>
 
 export type BeePluginErrorData = {
@@ -732,6 +746,10 @@ export enum EngageHandle {
   MDM = 'mdm',
 }
 
+export enum OnInfoDetailHandle {
+  AI_INTEGRATION = 'ai-integration'
+}
+
 export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
   resolve: (data: K, options?: Record<string, unknown>) => void,
   reject: () => void,
@@ -859,6 +877,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
       save: AdvancedSettingsShowLocked
       editSyncedRow: AdvancedSettingsShowLocked
     }
+    verticalAlign: AdvancedSettingsShowLocked
   },
   settings: {
     title: AdvancedSettingsShowLocked
@@ -899,6 +918,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
+        aiIntegration: AdvancedSettingsShowLocked
       }
     }
     viwed: {
@@ -951,6 +971,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         fontFamily: AdvancedSettingsShowLocked
         letterSpacing: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
+        aiIntegration: AdvancedSettingsShowLocked
       }
     }
     image: {
@@ -1095,6 +1116,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
+        aiIntegration: AdvancedSettingsShowLocked
       },
     },
     list: {
@@ -1119,8 +1141,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
-
-
+        aiIntegration: AdvancedSettingsShowLocked
       },
     },
     menu: {
@@ -1728,6 +1749,7 @@ export interface IBeeConfig {
   onChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
   onWarning?: (error: BeePluginError) => void
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
+  onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
 }
 
