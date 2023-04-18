@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.3-chore-dependencies.0...v2.1.3) (2023-04-13)
+
+### [2.1.3-chore-dependencies.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.2...v2.1.3-chore-dependencies.0) (2023-04-12)
+
+### [2.1.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.2-fix-108-external-content-urls.0...v2.1.2) (2023-04-12)
+
+### [2.1.2-fix-108-external-content-urls.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.1...v2.1.2-fix-108-external-content-urls.0) (2023-04-12)
+
+
+### Bug Fixes
+
+* added missing contentDialog externalContentURLs ([31db83c](https://github.com/BEE-Plugin/Bee-plugin-official/commit/31db83c46c05c6ef6462f9277ca10e47886ff4d4))
+
 ### [2.1.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.0...v2.1.1) (2023-03-23)
 
 ### [2.1.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.0...v2.1.1) (2023-03-23)
