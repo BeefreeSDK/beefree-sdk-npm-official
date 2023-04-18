@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0-type-ai-integration.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.3...v2.2.0-type-ai-integration.0) (2023-04-18)
+
+
+### Features
+
+* adds types for ai integration and adds verticalAlign ([7cb82de](https://github.com/BEE-Plugin/Bee-plugin-official/commit/7cb82dea641fec48080f1b9b8ceb9d5400ecf1a1))
+
 ### [2.1.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.3-chore-dependencies.0...v2.1.3) (2023-04-13)
 
 ### [2.1.3-chore-dependencies.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.2...v2.1.3-chore-dependencies.0) (2023-04-12)
