@@ -4,9 +4,9 @@ import * as E from 'fp-ts/lib/Either'
 import {
   IBeeConfig, IEntityContentJson,
   IBeeLoader, IBeeOptions, ILoadConfig, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions,
-  IUpdateToken
+  IToken
 } from './types/bee'
-import beeActions from './utils/Constants'
+import beeActions, { mockedEmptyToken } from './utils/Constants'
 import { fetchToken } from './services/api'
 import { eitherCanExecuteAction, eitherCheckJoinParams, eitherCheckStartParams } from './utils/utils'
 import * as beeTypes from './types/bee'
@@ -52,16 +52,16 @@ const {
 } = beeActions
 
 class Bee {
-  token: string
+  token: IToken
   bee: any // todo delete
   instance: any
 
   constructor(
-    token?: string, urlConfig: IUrlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
+    token?: IToken, urlConfig: IUrlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
   ) {
     beeLoaderUrl = urlConfig
     this.bee = (call) => load(() => call())
-    this.token = token || ''
+    this.token = token || mockedEmptyToken
     this.instance = null   
   }
 
@@ -71,7 +71,7 @@ class Bee {
     urlConfig:IUrlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
   ) => {
     beeLoaderUrl = urlConfig;
-    if (this.token) {
+    if (this.token && this.token.access_token) {
       throw new Error('Toker already declared')
     }
 
@@ -170,7 +170,7 @@ class Bee {
 
   loadConfig = (args: ILoadConfig) => this.executeAction(LOAD_CONFIG, args)
 
-  updateToken = (updateTokenArgs: IUpdateToken) => this.executeAction(UPDATE_TOKEN, updateTokenArgs)
+  updateToken = (updateTokenArgs: IToken) => this.executeAction(UPDATE_TOKEN, updateTokenArgs)
 
 }
 
