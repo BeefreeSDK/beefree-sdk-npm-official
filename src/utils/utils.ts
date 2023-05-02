@@ -1,6 +1,6 @@
 import * as E from 'fp-ts/lib/Either'
 import { pipe } from 'fp-ts/lib/function'
-import { IBeeConfig, IEntityContentJson } from '../types/bee'
+import { IBeeConfig, IEntityContentJson } from '@mailupinc/bee-plugin-types'
 import beeActions from './Constants'
 
 const eitherHasConfig = (config: IBeeConfig) => !config ? E.left(new Error('Config is missing')) : E.right(config)

@@ -3,7 +3,7 @@ import {
   ContentDefaults,
   IBeeConfig, IMergeContent, IMergeTag, ISpecialLink, 
   LoadWorkspaceOptions, StageDisplayOptions, StageModeOptions 
-} from '../src/types/bee';
+} from '@mailupinc/bee-plugin-types';
 declare let saveAs: any;
 
 const BEE_TEMPLATE_URL = 'https://rsrc.getbee.io/api/templates/m-bee'
