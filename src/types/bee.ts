@@ -666,7 +666,7 @@ export type RowsConfiguration = {
   externalContentURLs?: CustomRowConfiguration[]
 }
 
-export type CustomRowBehaviour = {
+export type CustomRowBehaviors = {
   canEdit?: boolean
   canDelete?: boolean
   canDeleteSyncedRows?: boolean
@@ -678,7 +678,7 @@ export type CustomRowConfiguration = {
   value?: string
   handle?: string
   isLocal?: boolean
-  behaviour?: CustomRowBehaviour
+  behaviors?: CustomRowBehaviors
 }
 
 export const RowLayoutType = {
@@ -1683,7 +1683,7 @@ export type BeeContentDialogs = {
 }
 
 export interface IBeeConfig {
-  uid: string
+  uid?: string
   container: string
   trackChanges?: boolean
   preventClose?: boolean
