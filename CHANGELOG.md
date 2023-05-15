@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.5-fix-bugfixing.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.4...v2.1.5-fix-bugfixing.0) (2023-05-15)
+
+
+### Bug Fixes
+
+* fixed typo on CustomRowConfiguration, uid is optional, load and reload parameters type ([744d725](https://github.com/BEE-Plugin/Bee-plugin-official/commit/744d7252354a16519ddd0255daf0396e6c237e66))
+
 ### [2.1.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.4-fix-109-token-interface.0...v2.1.4) (2023-04-19)
 
 ### [2.1.4-fix-109-token-interface.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.3...v2.1.4-fix-109-token-interface.0) (2023-04-13)
