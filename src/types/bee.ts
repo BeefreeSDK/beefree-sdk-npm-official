@@ -1621,7 +1621,7 @@ export enum TokenStatus {
   OK = 'ok',
   REFRESHING= 'refreshing'
 }
-export interface IUpdateToken {
+export interface IToken {
   access_token: string
   v2: boolean
   status: TokenStatus
