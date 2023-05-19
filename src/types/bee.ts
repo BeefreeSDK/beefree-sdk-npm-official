@@ -126,7 +126,10 @@ export enum BeePluginErrorCodes {
   RENDER_CHECK_FORM_ERROR = 4603,
   RENDER_VALIDATION_ERROR = 4604,
   RENDER_VIDEO_FORMAT_NOT_SUPPORTED_ERROR = 4605,
-  POST_PROCESSING_FINAL_PAGE_ERROR = 4700
+  POST_PROCESSING_FINAL_PAGE_ERROR = 4700,
+  //SESSION TOKEN ERRORS
+  EXPIRED_TOKEN_CANNOT_REFRESHED = 5101,
+  EXPIRED_TOKEN_MUST_REFRESHED = 5102,
 }
 
 export type BeePluginError = {
@@ -666,7 +669,7 @@ export type RowsConfiguration = {
   externalContentURLs?: CustomRowConfiguration[]
 }
 
-export type CustomRowBehaviour = {
+export type CustomRowBehaviors = {
   canEdit?: boolean
   canDelete?: boolean
   canDeleteSyncedRows?: boolean
@@ -678,7 +681,7 @@ export type CustomRowConfiguration = {
   value?: string
   handle?: string
   isLocal?: boolean
-  behaviour?: CustomRowBehaviour
+  behaviors?: CustomRowBehaviors
 }
 
 export const RowLayoutType = {
@@ -1683,7 +1686,7 @@ export type BeeContentDialogs = {
 }
 
 export interface IBeeConfig {
-  uid: string
+  uid?: string
   container: string
   trackChanges?: boolean
   preventClose?: boolean
