@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.5](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5-fix-bugfixing.1...v2.1.5) (2023-05-19)
+
 ### [2.1.5-fix-bugfixing.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5-fix-bugfixing.0...v2.1.5-fix-bugfixing.1) (2023-05-15)
 
 ### [2.1.5-fix-bugfixing.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.4...v2.1.5-fix-bugfixing.0) (2023-05-15)
