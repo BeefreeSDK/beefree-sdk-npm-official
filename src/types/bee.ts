@@ -1173,6 +1173,17 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
   }
 }>
 
+export type AiAddon = {
+  id: 'ai-integration'
+  settings: {
+    tokensAvailable: number | undefined
+    tokensUsed: number | undefined
+    tokenLabel: string | undefined
+    isPromptDisabled: boolean | undefined
+    isSuggestionsDisabled: boolean | undefined
+  }
+}
+
 export enum WorkspaceStage {
   desktop = 'desktop',
   mobile = 'mobile',
