@@ -1173,14 +1173,14 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
   }
 }>
 
-export type AiAddon = {
+export type IAiAddon = {
   id: 'ai-integration'
-  settings: {
-    tokensAvailable: number | undefined
-    tokensUsed: number | undefined
-    tokenLabel: string | undefined
-    isPromptDisabled: boolean | undefined
-    isSuggestionsDisabled: boolean | undefined
+  settings?: {
+    tokensAvailable?: number
+    tokensUsed?: number
+    tokenLabel?: string
+    isPromptDisabled?: boolean
+    isSuggestionsDisabled?: boolean
   }
 }
 
