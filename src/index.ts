@@ -84,13 +84,13 @@ class Bee {
 
   start = (
     config: IBeeConfig,
-    template: IEntityContentJson,
+    template: IEntityContentJson | object, //user can pass an empty object in some specific cases
     bucketDir?: string, 
     options?: IBeeOptions
   ) => {
     const { bee, token } = this    
     return pipe(
-      eitherCheckStartParams(config, template, token),
+      eitherCheckStartParams(config, token),
       E.fold(
         ({ message }) => new Promise(reject => reject(message)),
         () => new Promise(resolve => {
