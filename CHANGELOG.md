@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0-type-ai-integration.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.6...v2.2.0-type-ai-integration.0) (2023-06-15)
+
+## [2.2.0-type-ai-integration.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5...v2.2.0-type-ai-integration.3) (2023-05-24)
+
+
+### Features
+
+* adds ai addon types ([76e3824](https://github.com/BEE-Plugin/Bee-plugin-official/commit/76e38246b0b46bf16721a9b337666cea3c2d1be6))
+
+
+### Bug Fixes
+
+* type for ai addon ([a6b2519](https://github.com/BEE-Plugin/Bee-plugin-official/commit/a6b25199f32b833f4fb4851941537f8276f54699))
+
+## [2.2.0-type-ai-integration.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5-fix-bugfixing.1...v2.2.0-type-ai-integration.2) (2023-05-18)
+
+## [2.2.0-type-ai-integration.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.4-fix-109-token-interface.0...v2.2.0-type-ai-integration.0) (2023-04-18)
+
+
+### Features
+
+* adds types for ai integration and adds verticalAlign ([7cb82de](https://github.com/BEE-Plugin/Bee-plugin-official/commit/7cb82dea641fec48080f1b9b8ceb9d5400ecf1a1))
+
 ### [2.1.6](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.6-chore-start-method-parameters.0...v2.1.6) (2023-06-14)
 
 
