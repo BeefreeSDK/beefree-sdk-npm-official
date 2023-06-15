@@ -2,7 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [2.2.0-type-ai-integration.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.2.0-type-ai-integration.2...v2.2.0-type-ai-integration.3) (2023-05-24)
+### [2.1.6](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.6-chore-start-method-parameters.0...v2.1.6) (2023-06-14)
+
+
+### Bug Fixes
+
+* increased Node version for nvmrc ([c4f6fe3](https://github.com/BEE-Plugin/Bee-plugin-official/commit/c4f6fe34cc468b64326dba224689e2c86cd1bd45))
+
+### [2.1.6-chore-start-method-parameters.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5...v2.1.6-chore-start-method-parameters.0) (2023-06-14)
+
+### [2.1.5](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5-fix-bugfixing.1...v2.1.5) (2023-05-19)
 
 
 ### Features
