@@ -84,7 +84,7 @@ class Bee {
 
   start = (
     config: IBeeConfig,
-    template: IEntityContentJson | object, //user can pass an empty object in some specific cases
+    template?: IEntityContentJson | object, //user can pass an empty object in some specific cases
     bucketDir?: string, 
     options?: IBeeOptions
   ) => {
