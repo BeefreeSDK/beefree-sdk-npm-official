@@ -4,7 +4,6 @@
   "description": "wrapper of bee-plugin",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
   "files": [
     "dist"
   ],
