@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.7-fix-start-method-template-optonal.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.6...v2.1.7-fix-start-method-template-optonal.0) (2023-06-16)
+
+
+### Bug Fixes
+
+* template is optional calling start method ([b683121](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b683121c5786d7f57507e63a127294e597085521))
+
 ### [2.1.6](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.6-chore-start-method-parameters.0...v2.1.6) (2023-06-14)
 
 
