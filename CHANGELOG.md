@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.2.0-type-ai-integration.4...v2.2.0) (2023-06-20)
+
 ## [2.2.0-type-ai-integration.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.6...v2.2.0-type-ai-integration.4) (2023-06-15)
 
 ## [2.2.0-type-ai-integration.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5...v2.2.0-type-ai-integration.3) (2023-05-24)
