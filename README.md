@@ -11,7 +11,7 @@
 <!-- [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star] -->
 
-A simple module to use the [BEE editor](http://beefree.io)
+A simple module to use the [Beefree SDK](http://developers.beefree.io)
 
 ## Why Beefree SDK?
 Choose a reliable, easy-to-integrate multi-content type digital platform you can build on. Beefree SDK is more than an embeddable visual builder with a great drag-and-drop user experience. It’s a reliable, highly customizable email, landing page & popup builder.
