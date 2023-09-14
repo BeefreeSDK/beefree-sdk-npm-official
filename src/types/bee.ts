@@ -15,6 +15,15 @@ export interface IBeeOptions {
   shared?: boolean
 }
 
+interface TemplateLanguage {
+  label: string,
+  value: string
+}
+
+export interface BeeSaveOptions {
+  language?: string
+}
+
 export interface IGetTokenPayload {
   clientId: string,
   clientSecret: string
@@ -1724,6 +1733,8 @@ export interface IBeeConfig {
   preventClose?: boolean
   enable_display_conditions?: boolean
   language?: string
+  templateLanguage?: TemplateLanguage
+  templateLanguages?: TemplateLanguage[]
   mergeTags?: IMergeTag[]
   mergeContents?: IMergeContent[]
   specialLinks?: ISpecialLink[]
@@ -1758,7 +1769,7 @@ export interface IBeeConfig {
   onSessionStarted?: (sessionInfo: IPluginSessionInfo) => void
   onSessionChange?: (sessionInfo: IPluginSessionInfo) => void
   onReady?: (args: Record<string, unknown>) => void
-  onSave?: (pageJson: string, pageHtml: string) => void
+  onSave?: (pageJson: string, pageHtml: string, ampHtml: string | null, templateVersion: number, language: string | null) => void
   onSaveRow?: (rowJson: string, rowHtml: string, pageJson: string) => void
   onError?: (error: BeePluginError) => void
   onAutoSave?: (pageJson: string) => void

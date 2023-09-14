@@ -3,8 +3,9 @@ import { pipe } from 'fp-ts/lib/function'
 import * as E from 'fp-ts/lib/Either'
 import {
   IBeeConfig, IEntityContentJson,
-  IBeeLoader, IBeeOptions, ILoadConfig, ILoadStageMode, IUrlConfig, LoadWorkspaceOptions,
-  IToken
+  IBeeLoader, IBeeOptions, ILoadConfig,
+  ILoadStageMode, IUrlConfig, LoadWorkspaceOptions,
+  IToken, BeeSaveOptions
 } from './types/bee'
 import beeActions, { mockedEmptyToken } from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -144,7 +145,7 @@ class Bee {
 
   loadRows = () => this.executeAction(LOAD_ROWS)
 
-  save = () => this.executeAction(SAVE)
+  save = (options?: BeeSaveOptions) => this.executeAction(SAVE, options)
 
   saveAsTemplate = () => this.executeAction(SAVE_AS_TEMPLATE)
 
