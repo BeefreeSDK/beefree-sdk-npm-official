@@ -113,6 +113,6 @@ jobs:
       run: yarn build     
 
     - name: Publish package
-      run: npm publish --production
+      run: npm publish --production --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
