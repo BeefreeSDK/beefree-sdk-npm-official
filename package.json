@@ -1,5 +1,5 @@
 {
-  "name": "@mailupinc/bee-plugin",
+  "name": "@beefree.io/sdk",
   "version": "2.3.0",
   "description": "wrapper of bee-plugin",
   "main": "dist/index.js",
