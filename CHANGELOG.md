@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.4.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.3.0...v2.4.0) (2023-10-31)
+
+
+### Features
+
+* renamed organization and package name ([019e761](https://github.com/BEE-Plugin/Bee-plugin-official/commit/019e7614bb65b07f59ab4d239210f151354b81f0))
+
 ## [2.3.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.2.0...v2.3.0) (2023-09-14)
 
 
