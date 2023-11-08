@@ -1,23 +1,21 @@
 import * as E from 'fp-ts/lib/Either'
 import { pipe } from 'fp-ts/lib/function'
-import { IBeeConfig, IEntityContentJson } from '../types/bee'
+import { IBeeConfig, IToken } from '../types/bee'
 import beeActions from './Constants'
 
 const eitherHasConfig = (config: IBeeConfig) => !config ? E.left(new Error('Config is missing')) : E.right(config)
 const eitherHasSessionId = (sessionId: string) => !sessionId ? E.left(new Error('SessionId is missing')) : E.right(sessionId)
-const eitherHasToken = (token: string) => !token ? E.left(new Error('Token NOT declared, call getToken or pass token on new BEE')) : E.right(token)
-const eitherHasTemplate = (template: IEntityContentJson) => !template ? E.left(new Error('template is missing')) : E.right(template)
+const eitherHasToken = (token: IToken) => !token || !token.access_token ? E.left(new Error('Malformed or undefined token, call getToken() or pass your token on new BEE')) : E.right(token)
 
-export const eitherCheckJoinParams = (config: IBeeConfig, sessionId: string, token: string) => pipe(
+export const eitherCheckJoinParams = (config: IBeeConfig, sessionId: string, token: IToken) => pipe(
     eitherHasSessionId(sessionId),
     E.chain(() => eitherHasConfig(config)),
     E.chain(() => eitherHasToken(token))
 )
 
-export const eitherCheckStartParams = (config: IBeeConfig, template: IEntityContentJson, token: string) => pipe(
+export const eitherCheckStartParams = (config: IBeeConfig, token: IToken) => pipe(
     eitherHasConfig(config),
     E.chain(() => eitherHasToken(token)),
-    E.chain(() => eitherHasTemplate(template))
 )
 
 const eitherBeeInstanceExist = (instance: any) => !instance ? E.left(new Error('Bee is not started')) : E.right(instance)

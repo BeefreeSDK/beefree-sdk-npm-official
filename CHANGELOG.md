@@ -2,16 +2,141 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [2.1.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.0...v2.1.1-experimental-exec-method.0) (2023-03-03)
+### [2.4.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.0...v2.4.1) (2023-10-31)
 
-### [1.11.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.12.0-feat-master-rows.0...v1.11.1-experimental-exec-method.0) (2022-12-12)
+## [2.4.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.3.0...v2.4.0) (2023-10-31)
 
-### [1.10.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.6...v1.10.1-experimental-exec-method.0) (2022-11-11)
+
+### Features
+
+* renamed organization and package name ([019e761](https://github.com/BEE-Plugin/Bee-plugin-official/commit/019e7614bb65b07f59ab4d239210f151354b81f0))
+
+## [2.3.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.2.0...v2.3.0) (2023-09-14)
+
+
+### Features
+
+* **multilanguage:** multilanguage params ([d310c6c](https://github.com/BEE-Plugin/Bee-plugin-official/commit/d310c6c4785e17588ca77f7bef921057fb3c8628))
+
+## [2.2.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.2.0-type-ai-integration.4...v2.2.0) (2023-06-20)
+
+## [2.2.0-type-ai-integration.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.6...v2.2.0-type-ai-integration.4) (2023-06-15)
+
+## [2.2.0-type-ai-integration.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5...v2.2.0-type-ai-integration.3) (2023-05-24)
+
+
+### Features
+
+* adds ai addon types ([76e3824](https://github.com/BEE-Plugin/Bee-plugin-official/commit/76e38246b0b46bf16721a9b337666cea3c2d1be6))
+
+
+### Bug Fixes
+
+* type for ai addon ([a6b2519](https://github.com/BEE-Plugin/Bee-plugin-official/commit/a6b25199f32b833f4fb4851941537f8276f54699))
+
+## [2.2.0-type-ai-integration.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5-fix-bugfixing.1...v2.2.0-type-ai-integration.2) (2023-05-18)
+
+## [2.2.0-type-ai-integration.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.4-fix-109-token-interface.0...v2.2.0-type-ai-integration.0) (2023-04-18)
+
+
+### Features
+
+* adds types for ai integration and adds verticalAlign ([7cb82de](https://github.com/BEE-Plugin/Bee-plugin-official/commit/7cb82dea641fec48080f1b9b8ceb9d5400ecf1a1))
+
+## [2.2.0-type-ai-integration.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.6...v2.2.0-type-ai-integration.0) (2023-06-15)
+
+## [2.2.0-type-ai-integration.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5...v2.2.0-type-ai-integration.3) (2023-05-24)
+
+
+### Features
+
+* adds ai addon types ([76e3824](https://github.com/BEE-Plugin/Bee-plugin-official/commit/76e38246b0b46bf16721a9b337666cea3c2d1be6))
+
+
+### Bug Fixes
+
+* type for ai addon ([a6b2519](https://github.com/BEE-Plugin/Bee-plugin-official/commit/a6b25199f32b833f4fb4851941537f8276f54699))
+
+## [2.2.0-type-ai-integration.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5-fix-bugfixing.1...v2.2.0-type-ai-integration.2) (2023-05-18)
+
+## [2.2.0-type-ai-integration.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.4-fix-109-token-interface.0...v2.2.0-type-ai-integration.0) (2023-04-18)
+
+
+### Features
+
+* adds types for ai integration and adds verticalAlign ([7cb82de](https://github.com/BEE-Plugin/Bee-plugin-official/commit/7cb82dea641fec48080f1b9b8ceb9d5400ecf1a1))
+
+### [2.1.6](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.6-chore-start-method-parameters.0...v2.1.6) (2023-06-14)
+
+
+### Bug Fixes
+
+* increased Node version for nvmrc ([c4f6fe3](https://github.com/BEE-Plugin/Bee-plugin-official/commit/c4f6fe34cc468b64326dba224689e2c86cd1bd45))
+
+### [2.1.6-chore-start-method-parameters.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5...v2.1.6-chore-start-method-parameters.0) (2023-06-14)
+
+### [2.1.5](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.5-fix-bugfixing.1...v2.1.5) (2023-05-19)
+
+
+### Features
+
+* adds ai addon types ([76e3824](https://github.com/BEE-Plugin/Bee-plugin-official/commit/76e38246b0b46bf16721a9b337666cea3c2d1be6))
+
+
+### Bug Fixes
+
+* type for ai addon ([a6b2519](https://github.com/BEE-Plugin/Bee-plugin-official/commit/a6b25199f32b833f4fb4851941537f8276f54699))
+
+## [2.2.0-type-ai-integration.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.4...v2.2.0-type-ai-integration.2) (2023-05-18)
+
+## [2.2.0-type-ai-integration.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.4-fix-109-token-interface.0...v2.2.0-type-ai-integration.0) (2023-04-18)
+
+
+### Features
+
+* adds types for ai integration and adds verticalAlign ([7cb82de](https://github.com/BEE-Plugin/Bee-plugin-official/commit/7cb82dea641fec48080f1b9b8ceb9d5400ecf1a1))
+
+## [2.2.0-type-ai-integration.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.4...v2.2.0-type-ai-integration.0) (2023-05-18)
+
+## [2.2.0-type-ai-integration.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.4-fix-109-token-interface.0...v2.2.0-type-ai-integration.0) (2023-04-18)
+
+
+### Features
+
+* adds types for ai integration and adds verticalAlign ([7cb82de](https://github.com/BEE-Plugin/Bee-plugin-official/commit/7cb82dea641fec48080f1b9b8ceb9d5400ecf1a1))
+
+### [2.1.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.4-fix-109-token-interface.0...v2.1.4) (2023-04-19)
+
+### [2.1.4-fix-109-token-interface.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.3...v2.1.4-fix-109-token-interface.0) (2023-04-13)
+
+
+### Bug Fixes
+
+* fixed bad type for token property ([bb89863](https://github.com/BEE-Plugin/Bee-plugin-official/commit/bb8986326f1ebc6d90ac9b724ac3bca93dc97138))
+
+### [2.1.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.3-chore-dependencies.0...v2.1.3) (2023-04-13)
+
+### [2.1.3-chore-dependencies.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.2...v2.1.3-chore-dependencies.0) (2023-04-12)
+
+### [2.1.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.2-fix-108-external-content-urls.0...v2.1.2) (2023-04-12)
+
+### [2.1.2-fix-108-external-content-urls.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.1...v2.1.2-fix-108-external-content-urls.0) (2023-04-12)
+
+
+### Bug Fixes
+
+* added missing contentDialog externalContentURLs ([31db83c](https://github.com/BEE-Plugin/Bee-plugin-official/commit/31db83c46c05c6ef6462f9277ca10e47886ff4d4))
+
+### [2.1.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.0...v2.1.1) (2023-03-23)
+
+### [2.1.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.0...v2.1.1) (2023-03-23)
 
 ## [2.1.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.0-chore-missing-types.1...v2.1.0) (2023-02-20)
 
 ## [2.1.0-chore-missing-types.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.0-chore-missing-types.0...v2.1.0-chore-missing-types.1) (2023-02-13)
 
+
+### [2.1.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.1.0...v2.1.1-experimental-exec-method.0) (2023-03-03)
 
 ### Bug Fixes
 
@@ -44,9 +169,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.12.0-feat-master-rows.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.0...v1.12.0-feat-master-rows.0) (2022-12-12)
 
+### [1.11.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.12.0-feat-master-rows.0...v1.11.1-experimental-exec-method.0) (2022-12-12)
+
 ## [1.10.0-feat-master-rows.9](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.8...v1.10.0-feat-master-rows.9) (2022-11-18)
 
-
+### [1.10.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.10.0-feat-master-rows.6...v1.10.1-experimental-exec-method.0) (2022-11-11)
 ### [1.11.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.0...v1.11.1-experimental-exec-method.0) (2022-12-12)
 
 ### [1.10.1-experimental-exec-method.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v1.11.0-feat-add-comments-types.0...v1.10.1-experimental-exec-method.0) (2022-11-11)

@@ -15,6 +15,15 @@ export interface IBeeOptions {
   shared?: boolean
 }
 
+interface TemplateLanguage {
+  label: string,
+  value: string
+}
+
+export interface BeeSaveOptions {
+  language?: string
+}
+
 export interface IGetTokenPayload {
   clientId: string,
   clientSecret: string
@@ -143,7 +152,10 @@ export enum BeePluginErrorCodes {
   RENDER_CHECK_FORM_ERROR = 4603,
   RENDER_VALIDATION_ERROR = 4604,
   RENDER_VIDEO_FORMAT_NOT_SUPPORTED_ERROR = 4605,
-  POST_PROCESSING_FINAL_PAGE_ERROR = 4700
+  POST_PROCESSING_FINAL_PAGE_ERROR = 4700,
+  //SESSION TOKEN ERRORS
+  EXPIRED_TOKEN_CANNOT_REFRESHED = 5101,
+  EXPIRED_TOKEN_MUST_REFRESHED = 5102,
 }
 
 export type BeePluginError = {
@@ -151,6 +163,20 @@ export type BeePluginError = {
   detail?: string
   message: string
   data?: BeePluginErrorData
+}
+
+export type BeePluginInfo = {
+  code: BeePluginErrorCodes
+  message: string
+  detail: {
+    handle: OnInfoDetailHandle.AI_INTEGRATION
+    promptId: string
+    usage: {
+      completion_tokens: number
+      prompt_tokens: number
+      total_tokens: number
+    }
+  }
 }
 
 type KebabCSSProperties = KebabKeys<CSS.Properties>
@@ -683,7 +709,7 @@ export type RowsConfiguration = {
   externalContentURLs?: CustomRowConfiguration[]
 }
 
-export type CustomRowBehaviour = {
+export type CustomRowBehaviors = {
   canEdit?: boolean
   canDelete?: boolean
   canDeleteSyncedRows?: boolean
@@ -695,7 +721,7 @@ export type CustomRowConfiguration = {
   value?: string
   handle?: string
   isLocal?: boolean
-  behaviour?: CustomRowBehaviour
+  behaviors?: CustomRowBehaviors
 }
 
 export const RowLayoutType = {
@@ -747,6 +773,10 @@ export interface IPluginFilePicker {
 
 export enum EngageHandle {
   MDM = 'mdm',
+}
+
+export enum OnInfoDetailHandle {
+  AI_INTEGRATION = 'ai-integration'
 }
 
 export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
@@ -872,8 +902,11 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     hideOnMobile: AdvancedSettingsShowLocked
     rowLayout: AdvancedSettingsShowLocked
     toolbar: {
+      close: AdvancedSettingsShowLocked
+      save: AdvancedSettingsShowLocked
       editSyncedRow: AdvancedSettingsShowLocked
     }
+    verticalAlign: AdvancedSettingsShowLocked
   },
   settings: {
     title: AdvancedSettingsShowLocked
@@ -914,6 +947,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
+        aiIntegration: AdvancedSettingsShowLocked
       }
     }
     viwed: {
@@ -966,6 +1000,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         fontFamily: AdvancedSettingsShowLocked
         letterSpacing: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
+        aiIntegration: AdvancedSettingsShowLocked
       }
     }
     image: {
@@ -1110,6 +1145,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
+        aiIntegration: AdvancedSettingsShowLocked
       },
     },
     list: {
@@ -1134,8 +1170,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
-
-
+        aiIntegration: AdvancedSettingsShowLocked
       },
     },
     menu: {
@@ -1166,6 +1201,17 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     }
   }
 }>
+
+export type IAiAddon = {
+  id: 'ai-integration'
+  settings?: {
+    tokensAvailable?: number
+    tokensUsed?: number
+    tokenLabel?: string
+    isPromptDisabled?: boolean
+    isSuggestionsDisabled?: boolean
+  }
+}
 
 export enum WorkspaceStage {
   desktop = 'desktop',
@@ -1615,7 +1661,7 @@ export enum TokenStatus {
   OK = 'ok',
   REFRESHING= 'refreshing'
 }
-export interface IUpdateToken {
+export interface IToken {
   access_token: string
   v2: boolean
   status: TokenStatus
@@ -1690,16 +1736,22 @@ export type BeeContentDialogs = {
   onEditRow?: {
     label?: string
     handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
+  },
+  externalContentURLs?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<CustomRowConfiguration>
   }
 }
 
 export interface IBeeConfig {
-  uid: string
+  uid?: string
   container: string
   trackChanges?: boolean
   preventClose?: boolean
   enable_display_conditions?: boolean
   language?: string
+  templateLanguage?: TemplateLanguage
+  templateLanguages?: TemplateLanguage[]
   mergeTags?: IMergeTag[]
   mergeContents?: IMergeContent[]
   specialLinks?: ISpecialLink[]
@@ -1734,7 +1786,7 @@ export interface IBeeConfig {
   onSessionStarted?: (sessionInfo: IPluginSessionInfo) => void
   onSessionChange?: (sessionInfo: IPluginSessionInfo) => void
   onReady?: (args: Record<string, unknown>) => void
-  onSave?: (pageJson: string, pageHtml: string) => void
+  onSave?: (pageJson: string, pageHtml: string, ampHtml: string | null, templateVersion: number, language: string | null) => void
   onSaveRow?: (rowJson: string, rowHtml: string, pageJson: string) => void
   onError?: (error: BeePluginError) => void
   onAutoSave?: (pageJson: string) => void
@@ -1743,6 +1795,7 @@ export interface IBeeConfig {
   onChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
   onWarning?: (error: BeePluginError) => void
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
+  onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
 }
 

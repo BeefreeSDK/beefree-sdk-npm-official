@@ -1,3 +1,5 @@
+import { IToken, TokenStatus } from "../types/bee"
+
 const beeActions = {
   CREATE: 'create',
   START: 'start',
@@ -19,6 +21,10 @@ const beeActions = {
   EXEC: 'exec',
   LOAD_ROWS: 'loadRows',
   UPDATE_TOKEN: 'updateToken'
+}
+
+export const mockedEmptyToken : IToken = {
+  access_token: '', status: TokenStatus.OK, v2: true
 }
 
 export default beeActions
