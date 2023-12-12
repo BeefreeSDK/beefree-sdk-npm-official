@@ -812,7 +812,7 @@ export type BeePluginOnCommentChangePayload = {
 
 export type BeePluginOnCommentPayload = {
   change: BeePluginOnCommentChangePayload
-  comments: unknown
+  comments: BeePluginCommentPayload[]
   threadUsers: {
     contributors: IAuthor[]
   }
@@ -1726,6 +1726,18 @@ export type BeeContentDialogs = {
   }
 }
 
+export type BeePluginFont = {
+  name: string
+  fontFamily: string
+  url?: string
+  fontWeight: Record<number, string>
+}
+
+export type BeePluginEditorFonts = {
+  showDefaultFonts: boolean
+  customFonts: BeePluginFont[]
+}
+
 export interface IBeeConfig {
   uid?: string
   container: string
@@ -1747,7 +1759,7 @@ export interface IBeeConfig {
   defaultForm?: unknown
   loadingSpinnerTheme?: string
   loadingSpinnerDisableOnSave?: boolean
-  editorFonts?: unknown
+  editorFonts?: BeePluginEditorFonts
   roleHash?: string
   role?: BeePluginRoles,
   defaultColors?: string[]
@@ -1763,6 +1775,10 @@ export interface IBeeConfig {
   contentDialog?: BeeContentDialogs,
   rowsConfiguration?: RowsConfiguration
   hooks?: BeePluginConfigurationsHooks
+  defaultTab?: 'content' | 'rows' | 'settings'
+  titleDefaultStyles?: TitleDefaultStyles
+  disableColorHistory?: boolean
+  disableBaseColors?: boolean
   onLoad?: (json: IEntityContentJson) => void
   onPreview?: (opened: boolean) => void
   onTogglePreview?: (toggled: boolean) => void
@@ -1774,6 +1790,7 @@ export interface IBeeConfig {
   onError?: (error: BeePluginError) => void
   onAutoSave?: (pageJson: string) => void
   onSaveAsTemplate?: (pageJson: string, templateVersion: number) => void
+  onStart?: () => void
   onSend?: (pageHtml: string) => void
   onChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
   onWarning?: (error: BeePluginError) => void
