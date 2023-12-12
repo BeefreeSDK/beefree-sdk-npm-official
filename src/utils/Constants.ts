@@ -23,7 +23,7 @@ const beeActions = {
 }
 
 export const mockedEmptyToken : IToken = {
-  access_token: '', status: TokenStatus.OK, v2: true
+  access_token: '', status: TokenStatus.OK, v2: true, coediting_session_id: null, shared: false
 }
 
 export default beeActions
