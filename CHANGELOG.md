@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.4.2-feat-editor-redesign.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.2-feat-editor-redesign.1...v2.4.2-feat-editor-redesign.2) (2023-12-12)
+
+
+### Bug Fixes
+
+* added missing types to IToken interface ([3eea488](https://github.com/BEE-Plugin/Bee-plugin-official/commit/3eea488c390876815e842512b7ef2c6263050589))
+* added missing types to IToken interface ([3dd32b8](https://github.com/BEE-Plugin/Bee-plugin-official/commit/3dd32b886cd216a5094c3ea50d8a93d55fb00fdc))
+
 ### [2.4.2-feat-editor-redesign.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.2-feat-editor-redesign.0...v2.4.2-feat-editor-redesign.1) (2023-12-12)
 
 
