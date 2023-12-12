@@ -1648,6 +1648,8 @@ export interface IToken {
   access_token: string
   v2: boolean
   status: TokenStatus
+  shared: boolean
+  coediting_session_id: string
 }
 
 export interface IAddOnResponseImage {
