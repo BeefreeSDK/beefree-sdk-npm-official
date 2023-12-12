@@ -812,7 +812,9 @@ export type BeePluginOnCommentChangePayload = {
 
 export type BeePluginOnCommentPayload = {
   change: BeePluginOnCommentChangePayload
-  comments: BeePluginCommentPayload[]
+  comments: {
+    [key: string]: BeePluginCommentPayload
+  }
   threadUsers: {
     contributors: IAuthor[]
   }
