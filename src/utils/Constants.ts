@@ -19,7 +19,8 @@ const beeActions = {
   LOAD_STAGE_MODE: 'loadStageMode',
   LOAD_CONFIG: 'loadConfig',
   LOAD_ROWS: 'loadRows',
-  UPDATE_TOKEN: 'updateToken'
+  UPDATE_TOKEN: 'updateToken',
+  GET_CONFIG: 'getConfig'
 }
 
 export const mockedEmptyToken : IToken = {

@@ -15,7 +15,7 @@ import * as beeTypes from './types/bee'
 //this is the global variable injected from BeePlugin.js 
 declare let BeePlugin: any;
 
-const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
+const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/v2/BeePlugin.js'
 
 const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
 
@@ -49,7 +49,8 @@ const {
   LOAD_STAGE_MODE,
   LOAD_CONFIG,
   LOAD_ROWS,
-  UPDATE_TOKEN
+  UPDATE_TOKEN,
+  GET_CONFIG
 } = beeActions
 
 class Bee {
@@ -141,6 +142,14 @@ class Bee {
     )
   }
 
+  executeGetConfigAction = () :IBeeConfig => {
+    const { instance } = this
+
+    return instance[GET_CONFIG]()
+  }
+
+  
+
   load = (template: IEntityContentJson) => this.executeAction(LOAD, template)
 
   loadRows = () => this.executeAction(LOAD_ROWS)
@@ -173,6 +182,7 @@ class Bee {
 
   updateToken = (updateTokenArgs: IToken) => this.executeAction(UPDATE_TOKEN, updateTokenArgs)
 
+  getConfig = () => this.executeGetConfigAction()
 }
 
 
