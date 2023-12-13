@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.4.2-feat-editor-redesign.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.2-feat-editor-redesign.2...v2.4.2-feat-editor-redesign.3) (2023-12-13)
+
 ### [2.4.2-feat-editor-redesign.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.2-feat-editor-redesign.1...v2.4.2-feat-editor-redesign.2) (2023-12-12)
 
 
