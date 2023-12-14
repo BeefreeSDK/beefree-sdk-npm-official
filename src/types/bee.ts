@@ -818,6 +818,7 @@ export type BeePluginOnCommentPayload = {
   threadUsers: {
     contributors: IAuthor[]
   }
+  collaboration?: boolean
 }
 
 export interface IMergeTag {
