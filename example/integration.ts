@@ -272,6 +272,11 @@ const addEvents = () => {
       defaultRows: true
     }
   }), false)
+
+  window.document.getElementById('trigger-getConfig')?.addEventListener('click', () => {
+    const config = beeTest.getConfig()
+    console.log('config --> ', config)
+  }, false)
 }
 
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
