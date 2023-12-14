@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0-feat-editor-redesign.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.0...v2.5.0-feat-editor-redesign.1) (2023-12-14)
+
+
+### Bug Fixes
+
+* added collaboration flag to avoid notification when onComment is received from coeditor ([820dd79](https://github.com/BEE-Plugin/Bee-plugin-official/commit/820dd796dd76f1fb08908677c088c5135ba5e29e))
+* update vscode settings.json ([283f8e0](https://github.com/BEE-Plugin/Bee-plugin-official/commit/283f8e05a2697019dc90d8a6fa03eb72da6e2710))
+
 ## [2.5.0-feat-editor-redesign.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.2-feat-editor-redesign.3...v2.5.0-feat-editor-redesign.0) (2023-12-14)
 
 
