@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0-feat-editor-redesign.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.2-feat-editor-redesign.3...v2.5.0-feat-editor-redesign.0) (2023-12-14)
+
+
+### Features
+
+* use loader v2, exposed getConfig method ([#133](https://github.com/BEE-Plugin/Bee-plugin-official/issues/133)) ([51f32e0](https://github.com/BEE-Plugin/Bee-plugin-official/commit/51f32e05da307def0ce5a7c5fd30053ea96f0504))
+
 ### [2.4.2-feat-editor-redesign.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.2-feat-editor-redesign.2...v2.4.2-feat-editor-redesign.3) (2023-12-13)
 
 ### [2.4.2-feat-editor-redesign.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.2-feat-editor-redesign.1...v2.4.2-feat-editor-redesign.2) (2023-12-12)
