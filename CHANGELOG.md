@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0-feat-editor-redesign.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.2...v2.5.0-feat-editor-redesign.3) (2023-12-18)
+
+
+### Bug Fixes
+
+* getMention content dialog fix ([9d8943c](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9d8943c75b9c3ceeea9dd927c4b63e7d373d535a))
+
 ## [2.5.0-feat-editor-redesign.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.1...v2.5.0-feat-editor-redesign.2) (2023-12-14)
 
 
