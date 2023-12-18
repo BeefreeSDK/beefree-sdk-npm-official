@@ -1716,7 +1716,7 @@ export type BeeContentDialogs = {
   },
   getMention?: {
     label?: string
-    handler: BeePluginContentDialogHandler<IInvitedMention[], undefined, string>
+    handler: BeePluginContentDialogHandler<IInvitedMention, undefined, string>
   }
   onDeleteRow?: {
     label?: string
