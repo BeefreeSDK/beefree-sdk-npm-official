@@ -723,15 +723,23 @@ export const RowLayoutType = {
 } as const
 
 export interface IPluginRow {
-  // TOFIX name: string
   columns: IPluginColumn[]
   container: IPluginRowContainer
   content: IPluginContent
-  locked?: boolean
-  metadata?: Record<string, unknown>
   type: ValueOf<typeof RowLayoutType>
   uuid: string
+  locked?: boolean
   synced?: boolean
+  metadata?: Record<string, unknown>
+  empty?: boolean
+  name?: string
+}
+
+export interface IPluginEditDeleteRow {
+  handle: string
+  label: string
+  row: Partial<IPluginRow>
+  value: string
 }
 
 export interface IInvitedMention {
@@ -1720,11 +1728,11 @@ export type BeeContentDialogs = {
   }
   onDeleteRow?: {
     label?: string
-    handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
+    handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, IPluginEditDeleteRow>
   }
   onEditRow?: {
     label?: string
-    handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
+    handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, IPluginEditDeleteRow>
   },
   externalContentURLs?: {
     label?: string
