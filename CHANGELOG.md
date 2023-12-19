@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0-feat-editor-redesign.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.3...v2.5.0-feat-editor-redesign.4) (2023-12-19)
+
+
+### Bug Fixes
+
+* added missing types interface ([4cad239](https://github.com/BEE-Plugin/Bee-plugin-official/commit/4cad239bde396539b8540aad852bd578bf42a4ac))
+
 ## [2.5.0-feat-editor-redesign.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.2...v2.5.0-feat-editor-redesign.3) (2023-12-18)
 
 
