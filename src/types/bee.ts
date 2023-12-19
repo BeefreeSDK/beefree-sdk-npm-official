@@ -1752,21 +1752,25 @@ export type BeePluginEditorFonts = {
   customFonts: BeePluginFont[]
 }
 
-interface FormField {
+export interface FormField {
   type: string;
   label: string;
   canBeRemovedFromLayout: boolean;
   removeFromLayout?: boolean;
   attributes: {
-    required?: boolean;
     name: string;
-    value?: string; // You might want to specify the value type here
+    required?: boolean;
+    value?: string;
   };
   options?: {
     label: string;
     value: string;
     type: string;
   }[];
+}
+
+export interface DefaultForm {
+  structure: FormStructure
 }
 
 export interface FormStructure {
@@ -1826,7 +1830,7 @@ export interface IBeeConfig {
   commenting?: boolean
   customAssetsOptions?: Record<string, unknown>
   advancedPermissions?: BeePluginAdvancedPermission
-  defaultForm?: FormStructure
+  defaultForm?: DefaultForm
   loadingSpinnerTheme?: string
   loadingSpinnerDisableOnSave?: boolean
   editorFonts?: BeePluginEditorFonts
