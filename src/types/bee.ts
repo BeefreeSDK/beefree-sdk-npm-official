@@ -1763,11 +1763,11 @@ export interface AddOnPartner {
 export interface AddOnOpenAI {
   id: 'ai-integration'
   settings: {
-    tokensAvailable: number
-    tokensUsed: number
-    tokenLabel: string
     isPromptDisabled: boolean
-    isSuggestionsDisabled: boolean
+    tokensAvailable?: number
+    tokensUsed?: number
+    tokenLabel?: string
+    isSuggestionsDisabled?: boolean
   }
 }
 
