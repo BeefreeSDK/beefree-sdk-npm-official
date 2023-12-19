@@ -44,6 +44,10 @@ export interface ILoadStageMode {
   display: StageDisplayOptions
 }
 
+export interface ISwitchLanguageTemplate {
+  language: string
+}
+
 export type ILoadConfig = ILoadableProps
 
 export enum LoadWorkspaceOptions {
