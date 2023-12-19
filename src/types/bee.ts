@@ -1752,6 +1752,14 @@ export type BeePluginEditorFonts = {
   customFonts: BeePluginFont[]
 }
 
+export interface AddOns {
+  enabled: boolean
+  id: string
+  label?: string
+  ctaLabel?: string
+  placeholder?: string
+}
+
 export interface IBeeConfig {
   uid?: string
   container: string
@@ -1811,6 +1819,7 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
+  addOns?: AddOns[]
 }
 
 export type { KebabCSSProperties }
