@@ -1752,6 +1752,41 @@ export type BeePluginEditorFonts = {
   customFonts: BeePluginFont[]
 }
 
+interface FormField {
+  type: string;
+  label: string;
+  canBeRemovedFromLayout: boolean;
+  removeFromLayout?: boolean;
+  attributes: {
+    required?: boolean;
+    name: string;
+    value?: string; // You might want to specify the value type here
+  };
+  options?: {
+    label: string;
+    value: string;
+    type: string;
+  }[];
+}
+
+export interface FormStructure {
+  fields: {
+    [key: string]: FormField;
+  };
+  layout: string[][];
+  attributes: {
+    'accept-charset': string;
+    action: string;
+    autocomplete: string;
+    enctype: string;
+    method: string;
+    novalidate: boolean;
+    target: string;
+  };
+  title: string;
+  description: string;
+}
+
 export interface AddOnPartner {
   id: string
   enabled: boolean
@@ -1791,7 +1826,7 @@ export interface IBeeConfig {
   commenting?: boolean
   customAssetsOptions?: Record<string, unknown>
   advancedPermissions?: BeePluginAdvancedPermission
-  defaultForm?: unknown
+  defaultForm?: FormStructure
   loadingSpinnerTheme?: string
   loadingSpinnerDisableOnSave?: boolean
   editorFonts?: BeePluginEditorFonts
