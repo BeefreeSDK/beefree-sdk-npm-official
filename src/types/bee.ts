@@ -782,7 +782,7 @@ export type BeePluginConfigurationsHooks = {
     handler: BeePluginContentDialogHandler<IInvitedMention[], undefined, string>
   },
   getRows?: {
-    handler: BeePluginContentDialogHandler<IPluginRow[]>
+    handler: BeePluginContentDialogHandler<IPluginRow[], undefined, {handle: string; value: string}>
   }
 }
 
