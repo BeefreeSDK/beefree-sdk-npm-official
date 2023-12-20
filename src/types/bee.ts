@@ -1792,7 +1792,7 @@ export interface FormStructure {
 }
 
 export interface AddOnPartner {
-  id: string
+id: string
   enabled: boolean
   label?: string
   ctaLabel?: string
@@ -1811,6 +1811,10 @@ export interface AddOnOpenAI {
 }
 
 export type AddOn = AddOnPartner | AddOnOpenAI
+
+export interface Translations {
+  [key: string]: string | Translations;
+}
 
 export interface IBeeConfig {
   uid?: string
@@ -1872,6 +1876,7 @@ export interface IBeeConfig {
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
   addOns?: AddOn[]
+  translations?: Translations
 }
 
 export type { KebabCSSProperties }
