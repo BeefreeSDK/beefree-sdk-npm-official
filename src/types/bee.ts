@@ -44,7 +44,7 @@ export interface ILoadStageMode {
   display: StageDisplayOptions
 }
 
-export interface ISwitchLanguageTemplate {
+export interface ISwitchTemplateLanguage {
   language: string
 }
 

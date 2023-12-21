@@ -5,7 +5,7 @@ import {
   IBeeConfig, IEntityContentJson,
   IBeeLoader, IBeeOptions, ILoadConfig,
   ILoadStageMode, IUrlConfig, LoadWorkspaceOptions,
-  ISwitchLanguageTemplate,
+  ISwitchTemplateLanguage,
   IToken, BeeSaveOptions
 } from './types/bee'
 import beeActions, { mockedEmptyToken } from './utils/Constants'
@@ -175,7 +175,7 @@ class Bee {
 
   updateToken = (updateTokenArgs: IToken) => this.executeAction(UPDATE_TOKEN, updateTokenArgs)
 
-  switchTemplateLanguage = (language: ISwitchLanguageTemplate) => this.executeAction(SWITCH_TEMPLATE_LANGUAGE, language)
+  switchTemplateLanguage = (language: ISwitchTemplateLanguage) => this.executeAction(SWITCH_TEMPLATE_LANGUAGE, language)
 
 }
 
