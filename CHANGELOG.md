@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0-feat-editor-redesign.11](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.10...v2.5.0-feat-editor-redesign.11) (2024-01-02)
+
+
+### Bug Fixes
+
+* **advancedPermission:** add property advancedPermission.rows.contentBorder ([0b3c5af](https://github.com/BEE-Plugin/Bee-plugin-official/commit/0b3c5af1a150248515b894a9401155ece4e29288))
+
 ## [2.5.0-feat-editor-redesign.10](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.9...v2.5.0-feat-editor-redesign.10) (2024-01-02)
 
 
