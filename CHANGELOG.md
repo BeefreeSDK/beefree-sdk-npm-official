@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0-feat-editor-redesign.12](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.11...v2.5.0-feat-editor-redesign.12) (2024-01-02)
+
+
+### Bug Fixes
+
+* **advancedPermission:** add missing property verticalAlign ([9c613cc](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9c613cc0b37166647cb4d91178917a6abd581e66))
+
 ## [2.5.0-feat-editor-redesign.11](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.10...v2.5.0-feat-editor-redesign.11) (2024-01-02)
 
 

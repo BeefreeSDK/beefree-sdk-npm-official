@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "2.5.0-feat-editor-redesign.11",
+  "version": "2.5.0-feat-editor-redesign.12",
   "description": "wrapper of bee-plugin",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
