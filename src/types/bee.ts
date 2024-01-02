@@ -1816,6 +1816,10 @@ export interface Translations {
   [key: string]: string | Translations;
 }
 
+
+export interface TextEditor {
+  onChangeDelay: number
+}
 export interface IBeeConfig {
   uid?: string
   container: string
@@ -1877,6 +1881,7 @@ export interface IBeeConfig {
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
   addOns?: AddOn[]
   translations?: Translations
+  textEditor?: TextEditor
 }
 
 export type { KebabCSSProperties }
