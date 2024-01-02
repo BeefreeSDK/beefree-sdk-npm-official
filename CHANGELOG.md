@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0-feat-editor-redesign.10](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.9...v2.5.0-feat-editor-redesign.10) (2024-01-02)
+
+
+### Bug Fixes
+
+* **model:** add missing property textEditor.onChangeDelay ([dae1194](https://github.com/BEE-Plugin/Bee-plugin-official/commit/dae11941293755957e4c4e335bb13fde41add319))
+
 ## [2.5.0-feat-editor-redesign.9](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.8...v2.5.0-feat-editor-redesign.9) (2023-12-20)
 
 
