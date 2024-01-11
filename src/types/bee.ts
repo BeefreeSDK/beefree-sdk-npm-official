@@ -723,15 +723,23 @@ export const RowLayoutType = {
 } as const
 
 export interface IPluginRow {
-  // TOFIX name: string
   columns: IPluginColumn[]
   container: IPluginRowContainer
   content: IPluginContent
-  locked?: boolean
-  metadata?: Record<string, unknown>
   type: ValueOf<typeof RowLayoutType>
   uuid: string
+  locked?: boolean
   synced?: boolean
+  metadata?: Record<string, unknown>
+  empty?: boolean
+  name?: string
+}
+
+export interface IPluginEditDeleteRow {
+  handle: string
+  label: string
+  row: Partial<IPluginRow>
+  value: string
 }
 
 export interface IInvitedMention {
@@ -774,7 +782,7 @@ export type BeePluginConfigurationsHooks = {
     handler: BeePluginContentDialogHandler<IInvitedMention[], undefined, string>
   },
   getRows?: {
-    handler: BeePluginContentDialogHandler<IPluginRow[]>
+    handler: BeePluginContentDialogHandler<IPluginRow[], undefined, {handle: string; value: string}>
   }
 }
 
@@ -812,10 +820,13 @@ export type BeePluginOnCommentChangePayload = {
 
 export type BeePluginOnCommentPayload = {
   change: BeePluginOnCommentChangePayload
-  comments: unknown
+  comments: {
+    [key: string]: BeePluginCommentPayload
+  }
   threadUsers: {
     contributors: IAuthor[]
   }
+  collaboration?: boolean
 }
 
 export interface IMergeTag {
@@ -884,6 +895,8 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     columnTabs: AdvancedSettingsShowLocked
     hideOnMobile: AdvancedSettingsShowLocked
     rowLayout: AdvancedSettingsShowLocked
+    contentBorder: AdvancedSettingsShowLocked
+    roundedCorners: AdvancedSettingsShowLocked
     toolbar: {
       close: AdvancedSettingsShowLocked
       save: AdvancedSettingsShowLocked
@@ -1644,10 +1657,13 @@ export enum TokenStatus {
   OK = 'ok',
   REFRESHING= 'refreshing'
 }
+
 export interface IToken {
   access_token: string
   v2: boolean
   status: TokenStatus
+  shared: boolean
+  coediting_session_id: string | null
 }
 
 export interface IAddOnResponseImage {
@@ -1710,15 +1726,15 @@ export type BeeContentDialogs = {
   },
   getMention?: {
     label?: string
-    handler: BeePluginContentDialogHandler<IInvitedMention[], undefined, string>
+    handler: BeePluginContentDialogHandler<IInvitedMention, undefined, string>
   }
   onDeleteRow?: {
     label?: string
-    handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
+    handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, IPluginEditDeleteRow>
   }
   onEditRow?: {
     label?: string
-    handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, unknown>
+    handler: BeePluginContentDialogHandler<IRefreshSavedRow, undefined, IPluginEditDeleteRow>
   },
   externalContentURLs?: {
     label?: string
@@ -1726,6 +1742,86 @@ export type BeeContentDialogs = {
   }
 }
 
+export type BeePluginFont = {
+  name: string
+  fontFamily: string
+  url?: string
+  fontWeight: Record<number, string>
+}
+
+export type BeePluginEditorFonts = {
+  showDefaultFonts: boolean
+  customFonts: BeePluginFont[]
+}
+
+export interface FormField {
+  type: string;
+  label: string;
+  canBeRemovedFromLayout: boolean;
+  removeFromLayout?: boolean;
+  attributes: {
+    name: string;
+    required?: boolean;
+    value?: string;
+  };
+  options?: {
+    label: string;
+    value: string;
+    type: string;
+  }[];
+}
+
+export interface DefaultForm {
+  structure: FormStructure
+}
+
+export interface FormStructure {
+  fields: {
+    [key: string]: FormField;
+  };
+  layout: string[][];
+  attributes: {
+    'accept-charset': string;
+    action: string;
+    autocomplete: string;
+    enctype: string;
+    method: string;
+    novalidate: boolean;
+    target: string;
+  };
+  title: string;
+  description: string;
+}
+
+export interface AddOnPartner {
+id: string
+  enabled: boolean
+  label?: string
+  ctaLabel?: string
+  placeholder?: string
+}
+
+export interface AddOnOpenAI {
+  id: 'ai-integration'
+  settings: {
+    isPromptDisabled: boolean
+    tokensAvailable?: number
+    tokensUsed?: number
+    tokenLabel?: string
+    isSuggestionsDisabled?: boolean
+  }
+}
+
+export type AddOn = AddOnPartner | AddOnOpenAI
+
+export interface Translations {
+  [key: string]: string | Translations;
+}
+
+
+export interface TextEditor {
+  onChangeDelay: number
+}
 export interface IBeeConfig {
   uid?: string
   container: string
@@ -1744,10 +1840,10 @@ export interface IBeeConfig {
   commenting?: boolean
   customAssetsOptions?: Record<string, unknown>
   advancedPermissions?: BeePluginAdvancedPermission
-  defaultForm?: unknown
+  defaultForm?: DefaultForm
   loadingSpinnerTheme?: string
   loadingSpinnerDisableOnSave?: boolean
-  editorFonts?: unknown
+  editorFonts?: BeePluginEditorFonts
   roleHash?: string
   role?: BeePluginRoles,
   defaultColors?: string[]
@@ -1763,6 +1859,10 @@ export interface IBeeConfig {
   contentDialog?: BeeContentDialogs,
   rowsConfiguration?: RowsConfiguration
   hooks?: BeePluginConfigurationsHooks
+  defaultTab?: 'content' | 'rows' | 'settings'
+  titleDefaultStyles?: TitleDefaultStyles
+  disableColorHistory?: boolean
+  disableBaseColors?: boolean
   onLoad?: (json: IEntityContentJson) => void
   onPreview?: (opened: boolean) => void
   onTogglePreview?: (toggled: boolean) => void
@@ -1774,12 +1874,16 @@ export interface IBeeConfig {
   onError?: (error: BeePluginError) => void
   onAutoSave?: (pageJson: string) => void
   onSaveAsTemplate?: (pageJson: string, templateVersion: number) => void
+  onStart?: () => void
   onSend?: (pageHtml: string) => void
   onChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
   onWarning?: (error: BeePluginError) => void
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
+  addOns?: AddOn[]
+  translations?: Translations
+  textEditor?: TextEditor
 }
 
 export type { KebabCSSProperties }

@@ -2,6 +2,125 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0-feat-editor-redesign.12](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.11...v2.5.0-feat-editor-redesign.12) (2024-01-02)
+
+
+### Bug Fixes
+
+* **advancedPermission:** add missing property verticalAlign ([9c613cc](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9c613cc0b37166647cb4d91178917a6abd581e66))
+
+## [2.5.0-feat-editor-redesign.11](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.10...v2.5.0-feat-editor-redesign.11) (2024-01-02)
+
+
+### Bug Fixes
+
+* **advancedPermission:** add property advancedPermission.rows.contentBorder ([0b3c5af](https://github.com/BEE-Plugin/Bee-plugin-official/commit/0b3c5af1a150248515b894a9401155ece4e29288))
+
+## [2.5.0-feat-editor-redesign.10](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.9...v2.5.0-feat-editor-redesign.10) (2024-01-02)
+
+
+### Bug Fixes
+
+* **model:** add missing property textEditor.onChangeDelay ([dae1194](https://github.com/BEE-Plugin/Bee-plugin-official/commit/dae11941293755957e4c4e335bb13fde41add319))
+
+## [2.5.0-feat-editor-redesign.9](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.8...v2.5.0-feat-editor-redesign.9) (2023-12-20)
+
+
+### Bug Fixes
+
+* added missing types interface ([e7ad82a](https://github.com/BEE-Plugin/Bee-plugin-official/commit/e7ad82ae18c18863432b4cbb0bd9f9d8534d704d))
+
+## [2.5.0-feat-editor-redesign.8](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.7...v2.5.0-feat-editor-redesign.8) (2023-12-20)
+
+
+### Bug Fixes
+
+* add translations to bee config ([35f060d](https://github.com/BEE-Plugin/Bee-plugin-official/commit/35f060d7ccb83ed318ddd5ea190bf6671bf7e12b))
+
+## [2.5.0-feat-editor-redesign.7](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.6...v2.5.0-feat-editor-redesign.7) (2023-12-19)
+
+
+### Bug Fixes
+
+* default form type ([e0ed265](https://github.com/BEE-Plugin/Bee-plugin-official/commit/e0ed26590482df1acfb04d6f1297e8db4c429955))
+
+## [2.5.0-feat-editor-redesign.6](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.5...v2.5.0-feat-editor-redesign.6) (2023-12-19)
+
+
+### Bug Fixes
+
+* added missing types interface ([fbf30f7](https://github.com/BEE-Plugin/Bee-plugin-official/commit/fbf30f72c21692254dc532cb822d040932ba8e93))
+
+## [2.5.0-feat-editor-redesign.5](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.4...v2.5.0-feat-editor-redesign.5) (2023-12-19)
+
+
+### Bug Fixes
+
+* add defaultForm type ([4c1fa94](https://github.com/BEE-Plugin/Bee-plugin-official/commit/4c1fa9450a3b60bfdc9d1aaafcb3e9104ad48246))
+* added missing types interface ([7c5d065](https://github.com/BEE-Plugin/Bee-plugin-official/commit/7c5d065b9da44d21a9ffd7fe47a6fdd213233c6c))
+* fix merge conflicts ([76558f1](https://github.com/BEE-Plugin/Bee-plugin-official/commit/76558f1cacd172a67ba7e3ca9f19bbae20dae240))
+* fix merge conflicts 2 ([3676ca8](https://github.com/BEE-Plugin/Bee-plugin-official/commit/3676ca83617ada4a8ad9d303a88f375c49358199))
+
+## [2.5.0-feat-editor-redesign.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.3...v2.5.0-feat-editor-redesign.4) (2023-12-19)
+
+
+### Bug Fixes
+
+* added missing types interface ([4cad239](https://github.com/BEE-Plugin/Bee-plugin-official/commit/4cad239bde396539b8540aad852bd578bf42a4ac))
+
+## [2.5.0-feat-editor-redesign.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.2...v2.5.0-feat-editor-redesign.3) (2023-12-18)
+
+
+### Bug Fixes
+
+* getMention content dialog fix ([9d8943c](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9d8943c75b9c3ceeea9dd927c4b63e7d373d535a))
+
+## [2.5.0-feat-editor-redesign.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.1...v2.5.0-feat-editor-redesign.2) (2023-12-14)
+
+
+### Bug Fixes
+
+* added missing types interface ([9924f97](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9924f97a090a39e58aa9bea87f1d18e0a68ab5d3))
+
+## [2.5.0-feat-editor-redesign.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.0...v2.5.0-feat-editor-redesign.1) (2023-12-14)
+
+
+### Bug Fixes
+
+* added collaboration flag to avoid notification when onComment is received from coeditor ([820dd79](https://github.com/BEE-Plugin/Bee-plugin-official/commit/820dd796dd76f1fb08908677c088c5135ba5e29e))
+* update vscode settings.json ([283f8e0](https://github.com/BEE-Plugin/Bee-plugin-official/commit/283f8e05a2697019dc90d8a6fa03eb72da6e2710))
+
+## [2.5.0-feat-editor-redesign.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.2-feat-editor-redesign.3...v2.5.0-feat-editor-redesign.0) (2023-12-14)
+
+
+### Features
+
+* use loader v2, exposed getConfig method ([#133](https://github.com/BEE-Plugin/Bee-plugin-official/issues/133)) ([51f32e0](https://github.com/BEE-Plugin/Bee-plugin-official/commit/51f32e05da307def0ce5a7c5fd30053ea96f0504))
+
+### [2.4.2-feat-editor-redesign.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.2-feat-editor-redesign.2...v2.4.2-feat-editor-redesign.3) (2023-12-13)
+
+### [2.4.2-feat-editor-redesign.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.2-feat-editor-redesign.1...v2.4.2-feat-editor-redesign.2) (2023-12-12)
+
+
+### Bug Fixes
+
+* added missing types to IToken interface ([3eea488](https://github.com/BEE-Plugin/Bee-plugin-official/commit/3eea488c390876815e842512b7ef2c6263050589))
+* added missing types to IToken interface ([3dd32b8](https://github.com/BEE-Plugin/Bee-plugin-official/commit/3dd32b886cd216a5094c3ea50d8a93d55fb00fdc))
+
+### [2.4.2-feat-editor-redesign.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.2-feat-editor-redesign.0...v2.4.2-feat-editor-redesign.1) (2023-12-12)
+
+
+### Bug Fixes
+
+* update comments type ([e8d51e0](https://github.com/BEE-Plugin/Bee-plugin-official/commit/e8d51e04a84632044828447d4c55e3725323d313))
+
+### [2.4.2-feat-editor-redesign.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.1...v2.4.2-feat-editor-redesign.0) (2023-12-12)
+
+
+### Bug Fixes
+
+* add missing types to editor config interface ([79a21ae](https://github.com/BEE-Plugin/Bee-plugin-official/commit/79a21aee82226eeb0aec9af53f75b88e867a3ce5))
+
 ### [2.4.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.0...v2.4.1) (2023-10-31)
 
 ## [2.4.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.3.0...v2.4.0) (2023-10-31)

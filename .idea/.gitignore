@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+/conventionalCommit.xml
+/git_toolbox_prj.xml
+/watcherTasks.xml
+*.iws
+
+# Editor-based HTTP Client requests
+/httpRequests/
