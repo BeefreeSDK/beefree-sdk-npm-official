@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.1...v3.0.0) (2024-01-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* this is a breaking change commit
+
+### Features
+
+* several updates to types and migrate to loader v 2.0 ([6e58c1a](https://github.com/BEE-Plugin/Bee-plugin-official/commit/6e58c1a4c7be0a048e0411c92df01879c63ec52f))
+
 ## [2.5.0-feat-editor-redesign.12](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.5.0-feat-editor-redesign.11...v2.5.0-feat-editor-redesign.12) (2024-01-02)
 
 
