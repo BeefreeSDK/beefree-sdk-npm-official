@@ -5,7 +5,7 @@ import {
   IBeeConfig, IEntityContentJson,
   IBeeLoader, IBeeOptions, ILoadConfig,
   ILoadStageMode, IUrlConfig, LoadWorkspaceOptions,
-  IToken, BeeSaveOptions
+  IToken, BeeSaveOptions, ILanguage
 } from './types/bee'
 import beeActions, { mockedEmptyToken } from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -50,7 +50,9 @@ const {
   LOAD_CONFIG,
   LOAD_ROWS,
   UPDATE_TOKEN,
-  GET_CONFIG
+  GET_CONFIG,
+  SWITCH_TEMPLATE_LANGUAGE,
+  SWITCH_PREVIEW,
 } = beeActions
 
 class Bee {
@@ -183,6 +185,11 @@ class Bee {
   updateToken = (updateTokenArgs: IToken) => this.executeAction(UPDATE_TOKEN, updateTokenArgs)
 
   getConfig = () => this.executeGetConfigAction()
+
+  switchTemplateLanguage = (args: ILanguage) => this.executeAction(SWITCH_TEMPLATE_LANGUAGE, args)
+
+  switchPreview = (args: ILanguage) => this.executeAction(SWITCH_PREVIEW, args)
+
 }
 
 
