@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0-feat-multi-language.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.0.0...v3.1.0-feat-multi-language.0) (2024-01-26)
+
+
+### Features
+
+* add some actions for multi-language ([b392f89](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b392f896693443a99f56c512ac7e033dd1e19203))
+
+
+### Bug Fixes
+
+* add back prerelease script ([210be93](https://github.com/BEE-Plugin/Bee-plugin-official/commit/210be93bc6bb01234d56ea06c7f57bddbc0170f3))
+
 ## [3.0.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.1...v3.0.0) (2024-01-11)
 
 
