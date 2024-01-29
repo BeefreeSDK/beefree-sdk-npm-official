@@ -4,12 +4,8 @@
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![NPM](https://nodei.co/npm/@mailupinc/bee-plugin.png?compact=true)](https://npmjs.org/package/@mailupinc/bee-plugin)
+[![NPM](https://nodei.co/npm/@beefree.io/sdk.png?compact=true)](https://npmjs.org/package/@beefree.io/sdk)
 
-
-
-<!-- [![Watch on GitHub][github-watch-badge]][github-watch]
-[![Star on GitHub][github-star-badge]][github-star] -->
 
 A simple module to use the [Beefree SDK](http://developers.beefree.io)
 
@@ -53,11 +49,11 @@ It's free to use on ['https://beefree.io'](https://beefree.io): you don't even n
 > You can either install it with [npm](https://nodejs.org) or [yarn](https://yarnpkg.com).
 
 ```sh
-npm install --save @mailupinc/bee-plugin
+npm install --save @beefree.io/sdk
 ```
 or
 ```sh
-yarn add @mailupinc/bee-plugin
+yarn add @beefree.io/sdk
 ```
 
 ## Initialize the builder
@@ -69,7 +65,7 @@ It's not really raccomended to do it client side but it's possible with the modu
 Pass your credential on `getToken` method and start the plugin in the returning promise. Example below:
 
 ```js
-import BeePlugin as BeefreeSDK from '@mailupinc/bee-plugin'
+import BeefreeSDK from '@beefree.io/sdk'
 
 //Put your credentials in the .env file
 const clientId = process.env.CLIENT_ID
@@ -89,7 +85,7 @@ beeTest.getToken(clientId, clientSecret)
 
 ```js
 
-import BeePlugin as BeefreeSDK from '@mailupinc/bee-plugin'
+import BeefreeSDK from '@beefree.io/sdk'
 
 const authConf = {...}
 const beeConfig = {...}
@@ -201,6 +197,11 @@ This call the Beefree SDK `loadStageMode` method, which accepts an object parame
 ### loadConfig(ClientConfig)
 This calls the Beefree SDK `loadConfig` method, which reloads the JSON configuration used to initialize the builder.
 
+### updateToken(updateTokenArgs)
+This calls the Beefree SDK `updateToken` method, and permits the refresh of the access token.
+
+### getConfig()
+This calls the Beefree SDK `getConfig` method and returns the clientConfig used by the SDK. 
 
 [node]: https://nodejs.org/en/
 [npm]:  https://www.npmjs.com/
