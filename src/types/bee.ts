@@ -1870,7 +1870,7 @@ export interface IBeeConfig {
   addOns?: AddOn[]
   translations?: Translations
   textEditor?: TextEditor
-  onTemplateLanguageChange: (lang: { label: string, value: string, isMain: boolean }) => void
+  onTemplateLanguageChange?: (lang: { label: string, value: string, isMain: boolean }) => void
   onLoad?: (json: IEntityContentJson) => void
   onPreview?: (opened: boolean) => void
   onTogglePreview?: (toggled: boolean) => void
