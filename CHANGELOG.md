@@ -27,6 +27,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * add back prerelease script ([210be93](https://github.com/BEE-Plugin/Bee-plugin-official/commit/210be93bc6bb01234d56ea06c7f57bddbc0170f3))
+### [3.0.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.0.0...v3.0.1) (2024-01-29)
 
 ## [3.0.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v2.4.1...v3.0.0) (2024-01-11)
 
