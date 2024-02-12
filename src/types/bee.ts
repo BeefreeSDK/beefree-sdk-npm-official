@@ -46,6 +46,10 @@ export interface ILoadStageMode {
 
 export type ILoadConfig = ILoadableProps
 
+export interface ILanguage {
+  language?: string
+}
+
 export enum LoadWorkspaceOptions {
   DEFAULT = 'default',
   MIXED = 'mixed',
@@ -1863,6 +1867,10 @@ export interface IBeeConfig {
   titleDefaultStyles?: TitleDefaultStyles
   disableColorHistory?: boolean
   disableBaseColors?: boolean
+  addOns?: AddOn[]
+  translations?: Translations
+  textEditor?: TextEditor
+  onTemplateLanguageChange?: (lang: { label: string, value: string, isMain: boolean }) => void
   onLoad?: (json: IEntityContentJson) => void
   onPreview?: (opened: boolean) => void
   onTogglePreview?: (toggled: boolean) => void
@@ -1881,9 +1889,6 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
-  addOns?: AddOn[]
-  translations?: Translations
-  textEditor?: TextEditor
 }
 
 export type { KebabCSSProperties }

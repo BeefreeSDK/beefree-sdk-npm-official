@@ -20,7 +20,9 @@ const beeActions = {
   LOAD_CONFIG: 'loadConfig',
   LOAD_ROWS: 'loadRows',
   UPDATE_TOKEN: 'updateToken',
-  GET_CONFIG: 'getConfig'
+  GET_CONFIG: 'getConfig',
+  SWITCH_TEMPLATE_LANGUAGE: 'switchTemplateLanguage',
+  SWITCH_PREVIEW: 'switchPreview'
 }
 
 export const mockedEmptyToken : IToken = {

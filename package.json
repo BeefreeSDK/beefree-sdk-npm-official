@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "3.0.1",
+  "version": "3.1.0-feat-multi-language.2",
   "description": "wrapper of bee-plugin",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -25,6 +25,7 @@
     "build": "yarn lint && yarn clean && rollup -c && tsc",
     "prepare": "husky install",
     "lint": "eslint ./src --ext ts",
+    "prerelease": "git pull",
     "release": "standard-version",
     "postrelease": "git push --follow-tags --no-verify",
     "release:alpha": "yarn prerelease && standard-version --prerelease alpha && yarn postrelease",
