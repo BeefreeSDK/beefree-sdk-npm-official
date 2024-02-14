@@ -160,7 +160,7 @@ class Bee {
 
   saveAsTemplate = () => this.executeAction(SAVE_AS_TEMPLATE)
 
-  send = (args: ILanguage) => this.executeAction(SEND, args)
+  send = (args?: ILanguage) => this.executeAction(SEND, args)
   
   preview = () => this.executeAction(PREVIEW)
   
