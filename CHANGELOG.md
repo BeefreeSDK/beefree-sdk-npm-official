@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. See [standa
 * solve conflict merge master into feat/multi-language ([b683f44](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b683f44e6654b81b9ca4fe58d5bd5b7c8851ea7c))
 
 ### [3.0.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0-feat-multi-language.1...v3.0.1) (2024-01-29)
+## [3.1.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.0.1...v3.1.0) (2024-02-12)
 
 ## [3.1.0-feat-multi-language.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0-feat-multi-language.1...v3.1.0-feat-multi-language.2) (2024-02-08)
 
