@@ -257,7 +257,9 @@ const addEvents = () => {
   window.document.getElementById('trigger-updateToken')?.addEventListener('click', () => beeTest.updateToken({
     access_token: accessToken,
     status: TokenStatus.REFRESHING,
-    v2: true
+    v2: true,
+    shared: false,
+    coediting_session_id: null
   }), false)
 
   window.document.getElementById('trigger-loadWorkspace')?.addEventListener('click', () => beeTest.loadWorkspace(LoadWorkspaceOptions.MIXED), false)
