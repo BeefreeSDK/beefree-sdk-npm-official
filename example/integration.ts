@@ -1,10 +1,10 @@
 import Bee from '../src/index'
-import { 
+import {
   BeeContentDialogs,
   ContentDefaults,
   IAddOnResponseImage,
-  IBeeConfig, IMergeContent, IMergeTag, ISpecialLink, 
-  LoadWorkspaceOptions, ModuleDescriptorOrderNames, StageDisplayOptions, StageModeOptions, TokenStatus 
+  IBeeConfig, IMergeContent, IMergeTag, ISpecialLink,
+  LoadWorkspaceOptions, ModuleDescriptorOrderNames, StageDisplayOptions, StageModeOptions, TokenStatus
 } from '../src/types/bee';
 declare let saveAs: any;
 
@@ -47,17 +47,17 @@ const userInput = (message: string, sample) => function handler(resolve, reject)
 }
 
 const handleSpecialLinks = (resolve) => {
-  const mockedSpecialLinks: ISpecialLink = { id: 1, label: 'Sample special links', link: 'http://sample.com', type: 'test'} 
+  const mockedSpecialLinks: ISpecialLink = { id: 1, label: 'Sample special links', link: 'http://sample.com', type: 'test'}
   return resolve(mockedSpecialLinks)
 }
 
 const handleMergeTags = (resolve) => {
-  const mockedMergeTg: IMergeTag = { name: 'Sample merge tag', value:'Lorem Ipsum'} 
+  const mockedMergeTg: IMergeTag = { name: 'Sample merge tag', value:'Lorem Ipsum'}
   return resolve(mockedMergeTg)
 }
 
 const handleImageAddOnResponse = (resolve) => {
-  const mockedAddOnResponse: IAddOnResponseImage = { 
+  const mockedAddOnResponse: IAddOnResponseImage = {
     type: 'image',
     value: {
       alt: 'Lorem Ipsum',
@@ -65,7 +65,7 @@ const handleImageAddOnResponse = (resolve) => {
       href: 'https://picsum.photos/id/237/200/300',
       src: 'https://picsum.photos/id/237/200/300'
     }
-  } 
+  }
   return resolve(mockedAddOnResponse)
 }
 
@@ -82,7 +82,7 @@ const contentDialogs: BeeContentDialogs = {
   },
   mergeTags: {
     label: 'Merge Tags',
-    handler: handleMergeTags   
+    handler: handleMergeTags
   },
   addOn: {
     label: 'Add On',
@@ -166,7 +166,7 @@ const beeConfig :IBeeConfig = {
       ]
     }
   ],
-  defaultModulesOrder: [ 
+  defaultModulesOrder: [
     'Button',
     'Html',
     'Icons',
@@ -178,8 +178,8 @@ const beeConfig :IBeeConfig = {
   customAssetsOptions: {
     pendo: { // sample pendo integration
       variables: {
-        pendo_visitor_id: 123, 
-        pendo_visitor_email: '', 
+        pendo_visitor_id: 123,
+        pendo_visitor_email: '',
         pendo_visitor_role: 'admin',
         pendo_visitor_customer_id: 123,
         pendo_account_id: 122,
@@ -220,7 +220,7 @@ const loadTemplate = (e, method) => {
       beeTest.load(template)
     } else {
       beeTest.reload(template)
-    }    
+    }
   }
 
   const loadTemplate = document.getElementById('load-template') as HTMLInputElement
@@ -265,7 +265,7 @@ const addEvents = () => {
   window.document.getElementById('trigger-loadStageMode')?.addEventListener(
     'click', () => beeTest.loadStageMode({ mode: StageModeOptions.DESKTOP, display: StageDisplayOptions.BLUR }
   ), false)
-  
+
   window.document.getElementById('trigger-loadConfig')?.addEventListener('click', () => beeTest.loadConfig({
     rowsConfiguration: {
       emptyRows: true,
@@ -281,7 +281,7 @@ const addEvents = () => {
 
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
 beeTest.getToken(process.env.PLUGIN_CLIENT_ID!, process.env.PLUGIN_CLIENT_SECRET!, conf)
-  .then((res) => { 
+  .then((res) => {
     accessToken = res.access_token
     return fetch(new Request(BEE_TEMPLATE_URL, { method: 'GET' }))
   })

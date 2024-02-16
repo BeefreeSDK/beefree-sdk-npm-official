@@ -11,8 +11,9 @@ import beeActions, { mockedEmptyToken } from './utils/Constants'
 import { fetchToken } from './services/api'
 import { eitherCanExecuteAction, eitherCheckJoinParams, eitherCheckStartParams } from './utils/utils'
 import * as beeTypes from './types/bee'
+import { LoadConfigAccumulator } from "./utils/LoadConfigAccumulator";
 
-//this is the global variable injected from BeePlugin.js 
+//this is the global variable injected from BeePlugin.js
 declare let BeePlugin: any;
 
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/v2/BeePlugin.js'
@@ -33,12 +34,12 @@ const load = (bee) => {
   })
 }
 
-const { 
-  LOAD, 
-  SAVE, 
-  SEND, 
-  PREVIEW, 
-  SAVE_AS_TEMPLATE, 
+const {
+  LOAD,
+  SAVE,
+  SEND,
+  PREVIEW,
+  SAVE_AS_TEMPLATE,
   TOGGLE_STRUCTURE,
   TOGGLE_COMMENTS,
   TOGGLE_PREVIEW,
@@ -47,7 +48,6 @@ const {
   RELOAD,
   LOAD_WORKSPACE,
   LOAD_STAGE_MODE,
-  LOAD_CONFIG,
   LOAD_ROWS,
   UPDATE_TOKEN,
   GET_CONFIG,
@@ -59,6 +59,7 @@ class Bee {
   token: IToken
   bee: any // todo delete
   instance: any
+  loadConfigAccumulator: LoadConfigAccumulator
 
   constructor(
     token?: IToken, urlConfig: IUrlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
@@ -66,12 +67,13 @@ class Bee {
     beeLoaderUrl = urlConfig
     this.bee = (call) => load(() => call())
     this.token = token || mockedEmptyToken
-    this.instance = null   
+    this.instance = null
+    this.loadConfigAccumulator = new LoadConfigAccumulator(250);
   }
 
   getToken = (
-    clientId: string, 
-    clientSecret: string, 
+    clientId: string,
+    clientSecret: string,
     urlConfig:IUrlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
   ) => {
     beeLoaderUrl = urlConfig;
@@ -89,10 +91,10 @@ class Bee {
   start = (
     config: IBeeConfig,
     template: IEntityContentJson | object, //user can pass an empty object in some specific cases
-    bucketDir?: string, 
+    bucketDir?: string,
     options?: IBeeOptions
   ) => {
-    const { bee, token } = this    
+    const { bee, token } = this
     return pipe(
       eitherCheckStartParams(config, token),
       E.fold(
@@ -103,6 +105,7 @@ class Bee {
             { ...config, startOrigin: '[npm] @mailupinc/bee-plugin' },
             instance => {
               this.instance = instance
+              this.loadConfigAccumulator.setLoadConfigMethod(this.instance.loadConfig)
               instance.start(template, options)
               resolve(instance)
             }, bucketDir
@@ -114,7 +117,7 @@ class Bee {
 
   join = (
     config: IBeeConfig,
-    sessionId: string, 
+    sessionId: string,
     bucketDir?: string,
   ) => {
     const { bee, token } = this
@@ -125,6 +128,7 @@ class Bee {
         () => new Promise(resolve => {
           bee(() => BeePlugin.create(token, config, instance => {
             this.instance = instance
+            this.loadConfigAccumulator.setLoadConfigMethod(this.instance.loadConfig)
             instance.join(sessionId)
             resolve(instance)
           }, bucketDir))
@@ -150,7 +154,7 @@ class Bee {
     return instance[GET_CONFIG]()
   }
 
-  
+
 
   load = (template: IEntityContentJson) => this.executeAction(LOAD, template)
 
@@ -161,10 +165,10 @@ class Bee {
   saveAsTemplate = () => this.executeAction(SAVE_AS_TEMPLATE)
 
   send = () => this.executeAction(SEND)
-  
+
   preview = () => this.executeAction(PREVIEW)
-  
-  toggleStructure = () => this.executeAction(TOGGLE_STRUCTURE)  
+
+  toggleStructure = () => this.executeAction(TOGGLE_STRUCTURE)
 
   togglePreview = () => this.executeAction(TOGGLE_PREVIEW)
 
@@ -172,7 +176,7 @@ class Bee {
 
   toggleMergeTagsPreview = () => this.executeAction(TOGGLE_MERGETAGS_PREVIEW)
 
-  showComment = (comment) => this.executeAction(SHOW_COMMENT, comment) 
+  showComment = (comment) => this.executeAction(SHOW_COMMENT, comment)
 
   reload = (template: IEntityContentJson, options?: IBeeOptions) => this.executeAction(RELOAD, template, options)
 
@@ -180,7 +184,7 @@ class Bee {
 
   loadStageMode = (args: ILoadStageMode) => this.executeAction(LOAD_STAGE_MODE, args)
 
-  loadConfig = (args: ILoadConfig) => this.executeAction(LOAD_CONFIG, args)
+  loadConfig = (args: ILoadConfig) => this.loadConfigAccumulator.updateConfig(args)
 
   updateToken = (updateTokenArgs: IToken) => this.executeAction(UPDATE_TOKEN, updateTokenArgs)
 
