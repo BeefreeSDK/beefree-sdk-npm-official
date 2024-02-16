@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0-feat-load-config-accumulator.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0...v3.2.0-feat-load-config-accumulator.0) (2024-02-16)
+
+
+### Features
+
+* added load config accumulator ([0296258](https://github.com/BEE-Plugin/Bee-plugin-official/commit/0296258322cf6cb715db26c8cb75ea3f8069c7d5))
+
 ## [3.1.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.0.1...v3.1.0) (2024-02-12)
 
 ## [3.1.0-feat-multi-language.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0-feat-multi-language.1...v3.1.0-feat-multi-language.2) (2024-02-08)
