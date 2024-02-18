@@ -2,6 +2,67 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0-feat-load-config-accumulator.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.2.0-feat-load-config-accumulator.0...v3.2.0-feat-load-config-accumulator.1) (2024-02-18)
+
+
+### Bug Fixes
+
+* types ([9706957](https://github.com/BEE-Plugin/Bee-plugin-official/commit/970695745a2d5533e7094d6b2510ab138df1ea82))
+
+### [3.1.1-feat-multi-language.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.1-feat-multi-language.0...v3.1.1-feat-multi-language.1) (2024-02-14)
+
+
+### Bug Fixes
+
+* config parameter for send must be optional ([9370ba3](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9370ba3a9a69f7c76a1cae72d084b299a2f414bf))
+
+### [3.1.1-feat-multi-language.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0-feat-multi-language.4...v3.1.1-feat-multi-language.0) (2024-02-14)
+
+
+### Bug Fixes
+
+* merge master into feat/multi-language ([c6538ce](https://github.com/BEE-Plugin/Bee-plugin-official/commit/c6538ce9cbecca6f79c478df193ee0ed0f7fbc8f))
+
+## [3.1.0-feat-multi-language.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0...v3.1.0-feat-multi-language.4) (2024-02-14)
+
+
+### Features
+
+* send is now multilanguage ([36c8a73](https://github.com/BEE-Plugin/Bee-plugin-official/commit/36c8a7322d5102e4606c62b0c209e33f08da9832))
+
+## [3.1.0-feat-multi-language.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0-feat-multi-language.2...v3.1.0-feat-multi-language.3) (2024-02-12)
+
+
+### Bug Fixes
+
+* solve conflict merge master into feat/multi-language ([b683f44](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b683f44e6654b81b9ca4fe58d5bd5b7c8851ea7c))
+
+## [3.1.0-feat-multi-language.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.0.1...v3.1.0-feat-multi-language.2) (2024-02-08)
+
+
+### Bug Fixes
+
+* switchTemplate accepts undefined as language parameter ([c1c9462](https://github.com/BEE-Plugin/Bee-plugin-official/commit/c1c94620e27a7d1202057885a59271a0ba579b68))
+
+## [3.1.0-feat-multi-language.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0-feat-multi-language.0...v3.1.0-feat-multi-language.1) (2024-01-29)
+
+
+### Bug Fixes
+
+* type onTemplateLanguageChange set to optional ([e6cec56](https://github.com/BEE-Plugin/Bee-plugin-official/commit/e6cec564be8103936b592d295b733136d602efe7))
+
+## [3.1.0-feat-multi-language.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.0.0...v3.1.0-feat-multi-language.0) (2024-01-26)
+
+
+### Features
+
+* add some actions for multi-language ([b392f89](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b392f896693443a99f56c512ac7e033dd1e19203))
+
+
+### Bug Fixes
+
+* add back prerelease script ([210be93](https://github.com/BEE-Plugin/Bee-plugin-official/commit/210be93bc6bb01234d56ea06c7f57bddbc0170f3))
+
 ## [3.2.0-feat-load-config-accumulator.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0...v3.2.0-feat-load-config-accumulator.0) (2024-02-16)
 ### [3.1.1-feat-multi-language.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.1-feat-multi-language.0...v3.1.1-feat-multi-language.1) (2024-02-14)
 
