@@ -164,8 +164,8 @@ class Bee {
 
   saveAsTemplate = () => this.executeAction(SAVE_AS_TEMPLATE)
 
-  send = () => this.executeAction(SEND)
-
+  send = (args?: ILanguage) => this.executeAction(SEND, args)
+  
   preview = () => this.executeAction(PREVIEW)
 
   toggleStructure = () => this.executeAction(TOGGLE_STRUCTURE)
