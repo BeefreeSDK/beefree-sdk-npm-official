@@ -160,7 +160,7 @@ class Bee {
 
   saveAsTemplate = () => this.executeAction(SAVE_AS_TEMPLATE)
 
-  send = (args: Partial<ILanguage>) => this.executeAction(SEND, args)
+  send = (args?: Partial<ILanguage>) => this.executeAction(SEND, args)
   
   preview = () => this.executeAction(PREVIEW)
   
@@ -188,7 +188,7 @@ class Bee {
 
   switchTemplateLanguage = (args: ILanguage) => this.executeAction(SWITCH_TEMPLATE_LANGUAGE, args)
 
-  switchPreview = (args: Partial<ILanguage>) => this.executeAction(SWITCH_PREVIEW, args)
+  switchPreview = (args?: Partial<ILanguage>) => this.executeAction(SWITCH_PREVIEW, args)
 
 }
 
