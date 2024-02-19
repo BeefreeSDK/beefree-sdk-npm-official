@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.1-feat-multi-language.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.1-feat-multi-language.1...v3.1.1-feat-multi-language.2) (2024-02-19)
+
+
+### Bug Fixes
+
+* language is mandatory on switchTemplateLanguage ([4fbcbe3](https://github.com/BEE-Plugin/Bee-plugin-official/commit/4fbcbe32aef4b3978f838212b19c74ba0d31c21c))
+
 ### [3.1.1-feat-multi-language.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.1-feat-multi-language.0...v3.1.1-feat-multi-language.1) (2024-02-14)
 
 
