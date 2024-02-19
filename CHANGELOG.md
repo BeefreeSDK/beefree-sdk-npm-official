@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.1-feat-multi-language.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.1-feat-multi-language.3...v3.1.1-feat-multi-language.4) (2024-02-19)
+
+
+### Bug Fixes
+
+* send and switchPreview if language is passed needs to be valid, not undefined ([be9fe29](https://github.com/BEE-Plugin/Bee-plugin-official/commit/be9fe29a134855599682ca9e386780a4910d6ed3))
+
+### [3.1.1-feat-multi-language.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.1-feat-multi-language.2...v3.1.1-feat-multi-language.3) (2024-02-19)
+
+
+### Bug Fixes
+
+* payload is optional for send api ([da5e45b](https://github.com/BEE-Plugin/Bee-plugin-official/commit/da5e45b3a06d78340e68940b84c7575387c51930))
+
+### [3.1.1-feat-multi-language.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.1-feat-multi-language.1...v3.1.1-feat-multi-language.2) (2024-02-19)
+
+
+### Bug Fixes
+
+* language is mandatory on switchTemplateLanguage ([4fbcbe3](https://github.com/BEE-Plugin/Bee-plugin-official/commit/4fbcbe32aef4b3978f838212b19c74ba0d31c21c))
+
+### [3.1.1-feat-multi-language.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.1-feat-multi-language.0...v3.1.1-feat-multi-language.1) (2024-02-14)
+
+
+### Bug Fixes
+
+* config parameter for send must be optional ([9370ba3](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9370ba3a9a69f7c76a1cae72d084b299a2f414bf))
+
+### [3.1.1-feat-multi-language.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0-feat-multi-language.4...v3.1.1-feat-multi-language.0) (2024-02-14)
+
+
+### Bug Fixes
+
+* merge master into feat/multi-language ([c6538ce](https://github.com/BEE-Plugin/Bee-plugin-official/commit/c6538ce9cbecca6f79c478df193ee0ed0f7fbc8f))
+
+## [3.1.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0-feat-multi-language.3...v3.1.0) (2024-02-12)
+
+## [3.1.0-feat-multi-language.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0-feat-multi-language.3...v3.1.0-feat-multi-language.4) (2024-02-14)
+
+
+### Features
+
+* send is now multilanguage ([36c8a73](https://github.com/BEE-Plugin/Bee-plugin-official/commit/36c8a7322d5102e4606c62b0c209e33f08da9832))
+
+## [3.1.0-feat-multi-language.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0-feat-multi-language.2...v3.1.0-feat-multi-language.3) (2024-02-12)
+
+
+### Bug Fixes
+
+* solve conflict merge master into feat/multi-language ([b683f44](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b683f44e6654b81b9ca4fe58d5bd5b7c8851ea7c))
+
+### [3.0.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0-feat-multi-language.1...v3.0.1) (2024-01-29)
 ## [3.1.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.0.1...v3.1.0) (2024-02-12)
 
 ## [3.1.0-feat-multi-language.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0-feat-multi-language.1...v3.1.0-feat-multi-language.2) (2024-02-08)
