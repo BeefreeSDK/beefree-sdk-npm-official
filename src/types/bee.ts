@@ -47,7 +47,7 @@ export interface ILoadStageMode {
 export type ILoadConfig = ILoadableProps
 
 export interface ILanguage {
-  language?: string
+  language: string
 }
 
 export enum LoadWorkspaceOptions {
