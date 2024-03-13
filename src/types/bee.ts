@@ -1196,6 +1196,27 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     },
     table: {
       behaviors: AdvancedSettingsBehaviours
+      properties: {
+        columns: AdvancedSettingsShowLocked
+        rows: AdvancedSettingsShowLocked
+        backgroundColor: AdvancedSettingsShowLocked
+        border: AdvancedSettingsShowLocked
+        textColor: AdvancedSettingsShowLocked
+        linkColor: AdvancedSettingsShowLocked
+        fontFamily: AdvancedSettingsShowLocked
+        fontWeight: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
+        textAlign: AdvancedSettingsShowLocked
+        lineHeight: AdvancedSettingsShowLocked
+        letterSpacing: AdvancedSettingsShowLocked
+        direction: AdvancedSettingsShowLocked
+        padding: AdvancedSettingsShowLocked
+        hideOnMobile: AdvancedSettingsShowLocked
+        hideOnAmp: AdvancedSettingsShowLocked
+        id: AdvancedSettingsShowLocked
+        alternateRowBackgroundColor: AdvancedSettingsShowLocked
+        headers: AdvancedSettingsShowLocked
+      }
     }
     addon: {
       [uuid: string]: {
