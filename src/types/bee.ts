@@ -1191,7 +1191,6 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
-
       }
     },
     table: {
