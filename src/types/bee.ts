@@ -1223,6 +1223,9 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         id: AdvancedSettingsShowLocked
 
       }
+    },
+    table: {
+      behaviors: AdvancedSettingsBehaviours
     }
     addon: {
       [uuid: string]: {
