@@ -814,18 +814,48 @@ export type BeePluginCommentPayload = {
   timestamp: string
 }
 
-export type BeePluginOnCommentChangePayload = {
-  type: OnCommentChangeEnum
+export type BeePluginUpdatePayload = {
+  content: string
+  mentions: string[]
+}
+
+export type BeePluginOnCommentChangePayloadWithComment = {
+  type: OnCommentChangeEnum.NEWCOMMENT | OnCommentChangeEnum.THREADRESOLVED | OnCommentChangeEnum.THREADREOPENED
   payload: {
     commentId: string
     comment: BeePluginCommentPayload
   }
 }
 
+export type BeePluginOnCommentChangePayloadForWithUpdate = {
+  type: OnCommentChangeEnum.CHANGECOMMENT
+  payload: {
+    commentId: string
+    update: BeePluginUpdatePayload
+  }
+}
+
+export type BeePluginOnCommentChangePayloadForWithDeletedComment = {
+  type: OnCommentChangeEnum.DELETECOMMENT
+  payload: {
+    commentId: string
+    deletedComment: BeePluginCommentPayload
+    deletedResponses: {
+      [commentId: string]: BeePluginCommentPayload
+    }
+  }
+}
+
+export type BeePluginOnCommentChangePayload = (
+  BeePluginOnCommentChangePayloadWithComment 
+  | BeePluginOnCommentChangePayloadForWithUpdate
+  | BeePluginOnCommentChangePayloadForWithDeletedComment
+)
+
 export type BeePluginOnCommentPayload = {
   change: BeePluginOnCommentChangePayload
   comments: {
-    [key: string]: BeePluginCommentPayload
+    [commentId: string]: BeePluginCommentPayload
   }
   threadUsers: {
     contributors: IAuthor[]
