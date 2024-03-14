@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.2-fix-commenting.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.1...v3.1.2-fix-commenting.0) (2024-03-14)
+
+
+### Bug Fixes
+
+* commenting type and update nvmrc ([b8efd45](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b8efd457a2a95afca9ced3d2419ea437811804da))
+
 ### [3.1.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.0...v3.1.1) (2024-02-19)
 
 ### [3.1.1-feat-multi-language.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.1.1-feat-multi-language.3...v3.1.1-feat-multi-language.4) (2024-02-19)
