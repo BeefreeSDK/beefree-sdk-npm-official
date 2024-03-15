@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.1.1-feat-media-library.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.1.0...v4.1.1-feat-media-library.0) (2024-03-15)
+
+
+### Bug Fixes
+
+* template parameter in the start method is optional ([bb3329d](https://github.com/BEE-Plugin/Bee-plugin-official/commit/bb3329daa250ef502c6d84c9b66803bcf1852a80))
+
 ## [4.1.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.1.0-feat-table-block.0...v4.1.0) (2024-03-15)
 
 ## [4.1.0-feat-table-block.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.0.0...v4.1.0-feat-table-block.0) (2024-03-15)
