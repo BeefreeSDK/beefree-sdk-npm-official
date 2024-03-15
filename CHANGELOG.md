@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0-feat-table-block.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.0.0...v4.1.0-feat-table-block.0) (2024-03-15)
+
+
+### Features
+
+* added table block in the advanced permissions settings ([3815dce](https://github.com/BEE-Plugin/Bee-plugin-official/commit/3815dce82f3d0008b6d315fa0231998db0ef13d7))
+* added table block in the advanced permissions settings ([161b984](https://github.com/BEE-Plugin/Bee-plugin-official/commit/161b98426c60196c3896cff0927b6bf3bda58f33))
+* added table block in the advanced permissions settings ([419b517](https://github.com/BEE-Plugin/Bee-plugin-official/commit/419b517aad557d14a0b8722717848529976db401))
+
 ## [3.2.0-feat-table-block.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v3.2.0-feat-table-block.0...v3.2.0-feat-table-block.1) (2024-03-14)
 
 
