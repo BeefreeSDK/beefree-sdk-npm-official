@@ -12,7 +12,7 @@ import { fetchToken } from './services/api'
 import { eitherCanExecuteAction, eitherCheckJoinParams, eitherCheckStartParams } from './utils/utils'
 import * as beeTypes from './types/bee'
 
-//this is the global variable injected from BeePlugin.js 
+//this is the global variable injected from BeePlugin.js
 declare let BeePlugin: any;
 
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/v2/BeePlugin.js'
@@ -33,12 +33,12 @@ const load = (bee) => {
   })
 }
 
-const { 
-  LOAD, 
-  SAVE, 
-  SEND, 
-  PREVIEW, 
-  SAVE_AS_TEMPLATE, 
+const {
+  LOAD,
+  SAVE,
+  SEND,
+  PREVIEW,
+  SAVE_AS_TEMPLATE,
   TOGGLE_STRUCTURE,
   TOGGLE_COMMENTS,
   TOGGLE_PREVIEW,
@@ -66,12 +66,12 @@ class Bee {
     beeLoaderUrl = urlConfig
     this.bee = (call) => load(() => call())
     this.token = token || mockedEmptyToken
-    this.instance = null   
+    this.instance = null
   }
 
   getToken = (
-    clientId: string, 
-    clientSecret: string, 
+    clientId: string,
+    clientSecret: string,
     urlConfig:IUrlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
   ) => {
     beeLoaderUrl = urlConfig;
@@ -88,11 +88,11 @@ class Bee {
 
   start = (
     config: IBeeConfig,
-    template: IEntityContentJson | object, //user can pass an empty object in some specific cases
-    bucketDir?: string, 
+    template: IEntityContentJson | object = {}, //user can use an empty object in some specific cases
+    bucketDir?: string,
     options?: IBeeOptions
   ) => {
-    const { bee, token } = this    
+    const { bee, token } = this
     return pipe(
       eitherCheckStartParams(config, token),
       E.fold(
@@ -114,7 +114,7 @@ class Bee {
 
   join = (
     config: IBeeConfig,
-    sessionId: string, 
+    sessionId: string,
     bucketDir?: string,
   ) => {
     const { bee, token } = this
@@ -150,7 +150,7 @@ class Bee {
     return instance[GET_CONFIG]()
   }
 
-  
+
 
   load = (template: IEntityContentJson) => this.executeAction(LOAD, template)
 
@@ -161,10 +161,10 @@ class Bee {
   saveAsTemplate = () => this.executeAction(SAVE_AS_TEMPLATE)
 
   send = (args?: ILanguage) => this.executeAction(SEND, args)
-  
+
   preview = () => this.executeAction(PREVIEW)
-  
-  toggleStructure = () => this.executeAction(TOGGLE_STRUCTURE)  
+
+  toggleStructure = () => this.executeAction(TOGGLE_STRUCTURE)
 
   togglePreview = () => this.executeAction(TOGGLE_PREVIEW)
 
@@ -172,7 +172,7 @@ class Bee {
 
   toggleMergeTagsPreview = () => this.executeAction(TOGGLE_MERGETAGS_PREVIEW)
 
-  showComment = (comment) => this.executeAction(SHOW_COMMENT, comment) 
+  showComment = (comment) => this.executeAction(SHOW_COMMENT, comment)
 
   reload = (template: IEntityContentJson, options?: IBeeOptions) => this.executeAction(RELOAD, template, options)
 
