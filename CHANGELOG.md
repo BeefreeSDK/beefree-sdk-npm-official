@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.2.0-feat-media-library.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.1.1-feat-media-library.0...v4.2.0-feat-media-library.0) (2024-03-15)
+
+
+### Features
+
+* added startFileManager method ([b44dea8](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b44dea8d8bbb3ee35de94b208ad86788d3cf3e63))
+
+
+### Bug Fixes
+
+* integration example ([b37c630](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b37c630d8ec820339f86499d9653695b2bf52e56))
+
 ### [4.1.1-feat-media-library.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.1.0...v4.1.1-feat-media-library.0) (2024-03-15)
 
 
