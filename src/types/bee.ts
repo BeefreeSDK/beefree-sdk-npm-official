@@ -847,7 +847,7 @@ export type BeePluginOnCommentChangePayloadForWithDeletedComment = {
 }
 
 export type BeePluginOnCommentChangePayload = (
-  BeePluginOnCommentChangePayloadWithComment 
+  BeePluginOnCommentChangePayloadWithComment
   | BeePluginOnCommentChangePayloadForWithUpdate
   | BeePluginOnCommentChangePayloadForWithDeletedComment
 )
@@ -1942,6 +1942,11 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
+}
+
+export interface IBeeConfigFileManager {
+  onFilePickerInsert: (data: unknown) => void
+  onFilePickerCancel: () => void
 }
 
 export type { KebabCSSProperties }

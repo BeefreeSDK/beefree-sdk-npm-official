@@ -5,7 +5,7 @@ import {
   IBeeConfig, IEntityContentJson,
   IBeeLoader, IBeeOptions, ILoadConfig,
   ILoadStageMode, IUrlConfig, LoadWorkspaceOptions,
-  IToken, BeeSaveOptions, ILanguage
+  IToken, BeeSaveOptions, ILanguage, IBeeConfigFileManager
 } from './types/bee'
 import beeActions, { mockedEmptyToken } from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -88,7 +88,7 @@ class Bee {
 
   start = (
     config: IBeeConfig,
-    template: IEntityContentJson | object = {}, //user can use an empty object in some specific cases
+    template: IEntityContentJson | object, //user can pass an empty object in some specific cases
     bucketDir?: string,
     options?: IBeeOptions
   ) => {
@@ -104,6 +104,31 @@ class Bee {
             instance => {
               this.instance = instance
               instance.start(template, options)
+              resolve(instance)
+            }, bucketDir
+          ))
+        })
+      )
+    )
+  }
+
+  startFileManager = (
+    config: IBeeConfigFileManager,
+    bucketDir?: string,
+    options?: IBeeOptions
+  ) => {
+    const { bee, token } = this
+    return pipe(
+      eitherCheckStartParams(config, token),
+      E.fold(
+        ({ message }) => new Promise(reject => reject(message)),
+        () => new Promise(resolve => {
+          bee(() => BeePlugin.create(
+            token,
+            { ...config, startOrigin: '[npm] @mailupinc/bee-plugin' },
+            instance => {
+              this.instance = instance
+              instance.start(options)
               resolve(instance)
             }, bucketDir
           ))

@@ -1,9 +1,9 @@
 import * as E from 'fp-ts/lib/Either'
 import { pipe } from 'fp-ts/lib/function'
-import { IBeeConfig, IToken } from '../types/bee'
+import {IBeeConfig, IBeeConfigFileManager, IToken} from '../types/bee'
 import beeActions from './Constants'
 
-const eitherHasConfig = (config: IBeeConfig) => !config ? E.left(new Error('Config is missing')) : E.right(config)
+const eitherHasConfig = (config: IBeeConfig | IBeeConfigFileManager) => !config ? E.left(new Error('Config is missing')) : E.right(config)
 const eitherHasSessionId = (sessionId: string) => !sessionId ? E.left(new Error('SessionId is missing')) : E.right(sessionId)
 const eitherHasToken = (token: IToken) => !token || !token.access_token ? E.left(new Error('Malformed or undefined token, call getToken() or pass your token on new BEE')) : E.right(token)
 
@@ -13,7 +13,7 @@ export const eitherCheckJoinParams = (config: IBeeConfig, sessionId: string, tok
     E.chain(() => eitherHasToken(token))
 )
 
-export const eitherCheckStartParams = (config: IBeeConfig, token: IToken) => pipe(
+export const eitherCheckStartParams = (config: IBeeConfig | IBeeConfigFileManager, token: IToken) => pipe(
     eitherHasConfig(config),
     E.chain(() => eitherHasToken(token)),
 )
