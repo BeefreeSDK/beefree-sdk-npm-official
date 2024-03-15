@@ -1880,8 +1880,8 @@ export interface TextEditor {
   onChangeDelay: number
 }
 export interface IBeeConfig {
-  uid?: string
   container: string
+  uid?: string
   trackChanges?: boolean
   preventClose?: boolean
   enable_display_conditions?: boolean
@@ -1945,8 +1945,10 @@ export interface IBeeConfig {
 }
 
 export interface IBeeConfigFileManager {
-  onFilePickerInsert: (data: unknown) => void
-  onFilePickerCancel: () => void
+  container: string
+  uid?: string
+  onFilePickerInsert?: (data: unknown) => void
+  onFilePickerCancel?: () => void
 }
 
 export type { KebabCSSProperties }
