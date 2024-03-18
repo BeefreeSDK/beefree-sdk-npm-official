@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.2.0-feat-media-library.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.2.0-feat-media-library.1...v4.2.0-feat-media-library.2) (2024-03-18)
+
+
+### Features
+
+* added custom css to file manager config ([2ddb754](https://github.com/BEE-Plugin/Bee-plugin-official/commit/2ddb7545674b617cc10e957e55fa43496fcf4705))
+
 ## [4.2.0-feat-media-library.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.2.0-feat-media-library.0...v4.2.0-feat-media-library.1) (2024-03-15)
 
 
