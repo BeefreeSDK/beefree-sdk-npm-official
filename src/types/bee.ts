@@ -1947,6 +1947,7 @@ export interface IBeeConfig {
 export interface IBeeConfigFileManager {
   container: string
   uid?: string
+  customCss?: string
   onFilePickerInsert?: (data: unknown) => void
   onFilePickerCancel?: () => void
 }
