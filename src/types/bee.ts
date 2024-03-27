@@ -847,7 +847,7 @@ export type BeePluginOnCommentChangePayloadForWithDeletedComment = {
 }
 
 export type BeePluginOnCommentChangePayload = (
-  BeePluginOnCommentChangePayloadWithComment 
+  BeePluginOnCommentChangePayloadWithComment
   | BeePluginOnCommentChangePayloadForWithUpdate
   | BeePluginOnCommentChangePayloadForWithDeletedComment
 )
@@ -1880,8 +1880,8 @@ export interface TextEditor {
   onChangeDelay: number
 }
 export interface IBeeConfig {
-  uid?: string
   container: string
+  uid?: string
   trackChanges?: boolean
   preventClose?: boolean
   enable_display_conditions?: boolean
@@ -1942,6 +1942,14 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
+}
+
+export interface IBeeConfigFileManager {
+  container: string
+  uid?: string
+  customCss?: string
+  onFilePickerInsert?: (data: unknown) => void
+  onFilePickerCancel?: () => void
 }
 
 export type { KebabCSSProperties }
