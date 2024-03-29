@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.2.0-feat-media-library.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.2.0-feat-media-library.1...v4.2.0-feat-media-library.2) (2024-03-18)
+
+
+### Features
+
+* added custom css to file manager config ([2ddb754](https://github.com/BEE-Plugin/Bee-plugin-official/commit/2ddb7545674b617cc10e957e55fa43496fcf4705))
+
+## [4.2.0-feat-media-library.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.2.0-feat-media-library.0...v4.2.0-feat-media-library.1) (2024-03-15)
+
+
+### Bug Fixes
+
+* fixed startFileManager interface ([32ed372](https://github.com/BEE-Plugin/Bee-plugin-official/commit/32ed37276e6e116af9803c4a9d77b551161df75e))
+
+## [4.2.0-feat-media-library.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.1.1-feat-media-library.0...v4.2.0-feat-media-library.0) (2024-03-15)
+
+
+### Features
+
+* added startFileManager method ([b44dea8](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b44dea8d8bbb3ee35de94b208ad86788d3cf3e63))
+
+
+### Bug Fixes
+
+* integration example ([b37c630](https://github.com/BEE-Plugin/Bee-plugin-official/commit/b37c630d8ec820339f86499d9653695b2bf52e56))
+
+### [4.1.1-feat-media-library.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.1.0...v4.1.1-feat-media-library.0) (2024-03-15)
+
+
+### Bug Fixes
+
+* template parameter in the start method is optional ([bb3329d](https://github.com/BEE-Plugin/Bee-plugin-official/commit/bb3329daa250ef502c6d84c9b66803bcf1852a80))
+
 ## [4.1.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.1.0-feat-table-block.0...v4.1.0) (2024-03-15)
 
 ## [4.1.0-feat-table-block.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.0.0...v4.1.0-feat-table-block.0) (2024-03-15)
