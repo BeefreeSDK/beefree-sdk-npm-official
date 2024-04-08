@@ -1899,6 +1899,7 @@ export interface IBeeConfig {
   advancedPermissions?: BeePluginAdvancedPermission
   defaultForm?: DefaultForm
   loadingSpinnerTheme?: string
+  loadingSpinnerDisableOnDialog?: boolean;
   loadingSpinnerDisableOnSave?: boolean
   editorFonts?: BeePluginEditorFonts
   roleHash?: string
