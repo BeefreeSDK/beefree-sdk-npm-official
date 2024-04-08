@@ -711,6 +711,11 @@ export type CustomRowConfiguration = {
   behaviors?: CustomRowBehaviors
 }
 
+export type MergeContents = {
+  name: string
+  value: string
+}
+
 export const RowLayoutType = {
   ONE_COLUMNS_EMPTY: 'one-column-empty',
   TWO_COLUMNS_EMPTY: 'two-columns-empty',
@@ -1796,6 +1801,10 @@ export type BeeContentDialogs = {
   externalContentURLs?: {
     label?: string
     handler: BeePluginContentDialogHandler<CustomRowConfiguration>
+  },
+  mergeContents?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<MergeContents>
   }
 }
 
