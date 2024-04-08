@@ -711,7 +711,7 @@ export type CustomRowConfiguration = {
   behaviors?: CustomRowBehaviors
 }
 
-export type MergeContents = {
+export type MergeContentsHandler = {
   name: string
   value: string
 }
@@ -1804,7 +1804,7 @@ export type BeeContentDialogs = {
   },
   mergeContents?: {
     label?: string
-    handler: BeePluginContentDialogHandler<MergeContents>
+    handler: BeePluginContentDialogHandler<MergeContentsHandler>
   }
 }
 
