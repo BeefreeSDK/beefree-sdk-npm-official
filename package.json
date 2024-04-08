@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "wrapper of bee-plugin",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
