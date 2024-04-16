@@ -716,6 +716,14 @@ export type MergeContentsHandler = {
   value: string
 }
 
+export type RowDisplayConditionsHandler = {
+  after: string
+  before: string
+  type: string
+  label: string
+  description: string
+}
+
 export const RowLayoutType = {
   ONE_COLUMNS_EMPTY: 'one-column-empty',
   TWO_COLUMNS_EMPTY: 'two-columns-empty',
@@ -1805,6 +1813,10 @@ export type BeeContentDialogs = {
   mergeContents?: {
     label?: string
     handler: BeePluginContentDialogHandler<MergeContentsHandler>
+  }
+  rowDisplayConditions?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<RowDisplayConditionsHandler>
   }
 }
 

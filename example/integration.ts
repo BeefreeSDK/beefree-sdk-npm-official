@@ -4,7 +4,7 @@ import {
   ContentDefaults,
   IAddOnResponseImage,
   IBeeConfig, IMergeContent, IMergeTag, ISpecialLink,
-  LoadWorkspaceOptions, ModuleDescriptorOrderNames, StageDisplayOptions, StageModeOptions, TokenStatus
+  LoadWorkspaceOptions, ModuleDescriptorOrderNames, RowDisplayConditionsHandler, StageDisplayOptions, StageModeOptions, TokenStatus
 } from '../src/types/bee';
 declare let saveAs: any;
 
@@ -68,6 +68,16 @@ const handleImageAddOnResponse = (resolve) => {
   }
   return resolve(mockedAddOnResponse)
 }
+const handleRowDisplayConditionsResponse = (resolve) => {
+  const mockedRowDisplayConditions: RowDisplayConditionsHandler = {
+    after: 'sample-after',
+    before: 'sample-before',
+    description: 'sample-description',
+    label: 'sample-label',
+    type: 'sample-type',
+  }
+  return resolve(mockedRowDisplayConditions)
+}
 
 const contentDialogs: BeeContentDialogs = {
   filePicker: {
@@ -87,6 +97,10 @@ const contentDialogs: BeeContentDialogs = {
   addOn: {
     label: 'Add On',
     handler: handleImageAddOnResponse
+  },
+  rowDisplayConditions: {
+    label: 'Row Display Conditions',
+    handler: handleRowDisplayConditionsResponse
   }
 }
 
