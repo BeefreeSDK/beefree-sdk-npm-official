@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "4.2.3",
+  "version": "4.3.0-feat-new-rows-props.0",
   "description": "wrapper of bee-plugin",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
