@@ -950,6 +950,8 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
       editSyncedRow: AdvancedSettingsShowLocked
     }
     verticalAlign: AdvancedSettingsShowLocked
+    columnsSpacing: AdvancedSettingsShowLocked
+    columnsBorderRadius: AdvancedSettingsShowLocked
   },
   settings: {
     title: AdvancedSettingsShowLocked

@@ -5,6 +5,7 @@
 /git_toolbox_prj.xml
 /watcherTasks.xml
 *.iws
+material_theme_project_new.xml
 
 # Editor-based HTTP Client requests
 /httpRequests/
