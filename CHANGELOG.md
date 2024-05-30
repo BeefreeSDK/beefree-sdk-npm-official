@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.1-feat-branded-rows.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.0...v4.3.1-feat-branded-rows.0) (2024-05-30)
+
+
+### Bug Fixes
+
+* add maxRowsDisplayed to RowsConfiguration type ([946f5af](https://github.com/BEE-Plugin/Bee-plugin-official/commit/946f5afa143e409a02b7a8061859107fb612496d))
+
 ## [4.3.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.0-feat-new-rows-props.0...v4.3.0) (2024-04-30)
 
 ## [4.3.0-feat-new-rows-props.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.2.3...v4.3.0-feat-new-rows-props.0) (2024-04-30)
