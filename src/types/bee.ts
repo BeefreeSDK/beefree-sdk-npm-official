@@ -694,6 +694,7 @@ export type RowsConfiguration = {
   emptyRows?: boolean
   defaultRows?: boolean
   externalContentURLs?: CustomRowConfiguration[]
+  maxRowsDisplayed?: number
 }
 
 export type CustomRowBehaviors = {
