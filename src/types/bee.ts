@@ -1439,6 +1439,9 @@ export interface IEntityContentJson {
     }
     title: string
   }
+  comments: {
+    [commentId: string]: BeePluginCommentPayload
+  }
 }
 
 export type BeePluginMessageEditDetailPatch = {
