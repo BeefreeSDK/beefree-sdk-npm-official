@@ -88,6 +88,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 * add maxRowsDisplayed to RowsConfiguration type ([946f5af](https://github.com/BEE-Plugin/Bee-plugin-official/commit/946f5afa143e409a02b7a8061859107fb612496d))
 
+### [4.3.1-fix-types.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.0...v4.3.1-fix-types.0) (2024-06-11)
+
+
+### Bug Fixes
+
+* added comments to IEntityContentJson interface ([4b514bd](https://github.com/BEE-Plugin/Bee-plugin-official/commit/4b514bdf8670f8f1ffc654872a7c07c69efb6a19))
+
 ## [4.3.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.0-feat-new-rows-props.0...v4.3.0) (2024-04-30)
 
 ## [4.3.0-feat-new-rows-props.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.2.3...v4.3.0-feat-new-rows-props.0) (2024-04-30)
