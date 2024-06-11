@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.1-fix-types.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.0...v4.3.1-fix-types.0) (2024-06-11)
+
+
+### Bug Fixes
+
+* added comments to IEntityContentJson interface ([4b514bd](https://github.com/BEE-Plugin/Bee-plugin-official/commit/4b514bdf8670f8f1ffc654872a7c07c69efb6a19))
+
 ## [4.3.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.0-feat-new-rows-props.0...v4.3.0) (2024-04-30)
 
 ## [4.3.0-feat-new-rows-props.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.2.3...v4.3.0-feat-new-rows-props.0) (2024-04-30)
