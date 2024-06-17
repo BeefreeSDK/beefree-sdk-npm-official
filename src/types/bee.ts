@@ -1539,6 +1539,44 @@ export type ContentDefaultsDivider = Partial<{
   }>
 }>
 
+export type ContentDefaultsTable = Partial<{
+    rows: {
+      cells: { 
+        html: string 
+      }[],
+    }[],
+    headers: [{
+      cells: { 
+        html: string 
+      }[]
+    }],
+    styles: {
+      color: string,
+      fontFamily: string,
+      fontWeight: string,
+      fontSize: string,
+      textAlign: string,
+      lineHeight: string,
+      letterSpacing: string,
+      direction: string,
+      linkColor: string,
+      backgroundColor: string,
+      border: string,
+      alternateRowBackgroundColor: string,
+      headersFontSize: string,
+      headersFontWeight: string,
+      headersTextAlign: string,
+      headersBackgroundColor: string,
+      headersColor: string,
+    },
+    blockOptions: {
+      paddingBottom: string,
+      paddingLeft: string,
+      paddingRight: string,
+      paddingTop: string,
+    }
+  }>
+
 export type ContentDefaultsSocial = Partial<{
   icons: IPluginModuleSocialIcon[]
   blockOptions: Partial<{
@@ -1782,6 +1820,7 @@ export type ContentDefaults = Partial<{
   icons: ContentDefaultsIcons
   list: ContentDefaultsList
   general: ContentDefaultsGeneral
+  table: ContentDefaultsTable
 }>
 
 export enum TokenStatus {
