@@ -191,7 +191,8 @@ export const ModuleTypes = {
   HEADING: 'mailup-bee-newsletter-modules-heading',
   SPACER: 'mailup-bee-newsletter-modules-spacer',
   PARAGRAPH: 'mailup-bee-newsletter-modules-paragraph',
-  LIST: 'mailup-bee-newsletter-modules-list'
+  LIST: 'mailup-bee-newsletter-modules-list',
+  TABLE: 'mailup-bee-newsletter-modules-table',
 } as const
 
 export const ModuleDescriptorNames = {
@@ -596,6 +597,63 @@ export interface IPluginModuleMenu {
   }
 }
 
+export interface IPluginModuleTable {
+  type: typeof ModuleTypes.TABLE
+  uuid: string
+  computedStyle: {
+    hideContentOnAmp: boolean,
+    hideContentOnHtml: false,
+    hideContentOnDesktop: false,
+    hideContentOnMobile: false
+  }
+  style: {
+    'padding-top': string
+    'padding-right': string
+    'padding-bottom': string
+    'padding-left': string
+  },
+  descriptor: {
+    id?: string
+    table: {
+      content: {
+        headers: {
+          cells: {
+            html: string
+          }[]
+        }[],
+        rows: {
+          cells: {
+            html: string
+          }[]
+        }[]
+      },
+      style: {
+        color: string
+        'font-size': string
+        'font-family': string
+        'font-weight': string
+        'line-height': string
+        'text-align': string
+        direction: string
+        'letter-spacing': string
+        'background-color': string
+        'border-top': string
+        'border-right': string
+        'border-bottom': string
+        'border-left': string
+      },
+      computedStyle: {
+        linkColor: string
+        headersFontSize: string
+        headersFontWeight: string
+        headersTextAlign: string
+        headersBackgroundColor: string
+        headersColor: string
+      }
+    }
+  }
+}
+
 export interface IPluginModuleSpacer {
   type: typeof ModuleTypes.SPACER
   locked?: boolean
@@ -616,7 +674,7 @@ export interface IPluginModuleSpacer {
 export type IPluginModule =
   IPluginModuleHeading | IPluginModuleParagraph | IPluginModuleButton |
   IPluginModuleList | IPluginModuleDivider | IPluginModuleForm |
-  IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer
+  IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer | IPluginModuleTable
 
 export interface IPluginColumn {
   'grid-columns': number
