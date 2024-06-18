@@ -609,6 +609,18 @@ export interface IPluginModuleTable {
       'padding-left': string
     },
     table: {
+      content: {
+        headers: {
+          cells: {
+            html: string
+          }[]
+        }[],
+        rows: {
+          cells: {
+            html: string
+          }[]
+        }[]
+      },
       style: {
         color: string
         'font-size': string
@@ -1522,16 +1534,6 @@ export type ContentDefaultsDivider = Partial<{
 }>
 
 export type ContentDefaultsTable = Partial<{
-    rows: {
-      cells: { 
-        html: string 
-      }[],
-    }[],
-    headers: [{
-      cells: { 
-        html: string 
-      }[]
-    }],
     styles: {
       color: string,
       fontFamily: string,
