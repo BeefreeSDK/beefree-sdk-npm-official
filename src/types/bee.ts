@@ -600,33 +600,15 @@ export interface IPluginModuleMenu {
 export interface IPluginModuleTable {
   type: typeof ModuleTypes.TABLE
   uuid: string
-  computedStyle: {
-    hideContentOnAmp: boolean,
-    hideContentOnHtml: false,
-    hideContentOnDesktop: false,
-    hideContentOnMobile: false
-  }
-  style: {
-    'padding-top': string
-    'padding-right': string
-    'padding-bottom': string
-    'padding-left': string
-  },
   descriptor: {
     id?: string
+    style: {
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    },
     table: {
-      content: {
-        headers: {
-          cells: {
-            html: string
-          }[]
-        }[],
-        rows: {
-          cells: {
-            html: string
-          }[]
-        }[]
-      },
       style: {
         color: string
         'font-size': string
