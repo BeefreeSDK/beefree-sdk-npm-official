@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.1-feat-branded-rows.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.2...v4.3.1-feat-branded-rows.3) (2024-06-18)
+
+
+### Bug Fixes
+
+* table module types ([85a412f](https://github.com/BEE-Plugin/Bee-plugin-official/commit/85a412fad85e5797ac53e638cc50a8c08be10de6))
+
 ### [4.3.1-feat-branded-rows.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.1...v4.3.1-feat-branded-rows.2) (2024-06-17)
 
 
