@@ -1549,7 +1549,6 @@ export type ContentDefaultsTable = Partial<{
       borderLeft: string,
       borderRight: string,
       borderTop: string,
-      border: string,
       alternateRowBackgroundColor: string,
       headersFontSize: string,
       headersFontWeight: string,
