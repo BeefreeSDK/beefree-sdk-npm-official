@@ -637,6 +637,7 @@ export interface IPluginModuleTable {
         'border-left': string
       },
       computedStyle: {
+        alternateRowBackgroundColor: string
         linkColor: string
         headersFontSize: string
         headersFontWeight: string
