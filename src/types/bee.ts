@@ -712,7 +712,7 @@ export type IPluginModuleIcons = {
 
 export type IPluginModule =
   IPluginModuleHeading | IPluginModuleParagraph | IPluginModuleButton |
-  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | IPluginModuleIcons
+  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | IPluginModuleIcons | 
   IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer | IPluginModuleTable
 
 export interface IPluginColumn {
