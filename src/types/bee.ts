@@ -1212,6 +1212,8 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     icons: {
       behaviors: AdvancedSettingsBehaviours
       properties: {
+        icons: AdvancedSettingsShowLocked;
+        fontWeight: AdvancedSettingsShowLocked;
         fontFamily: AdvancedSettingsShowLocked
         fontSize: AdvancedSettingsShowLocked
         textColor: AdvancedSettingsShowLocked
