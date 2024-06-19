@@ -763,6 +763,7 @@ export interface IInvitedMention {
   username: string
   value: string
   uid: string | number
+  userColor?: string
 }
 
 export interface IPluginForm {
