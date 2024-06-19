@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.1-feat-branded-rows.9](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.8...v4.3.1-feat-branded-rows.9) (2024-06-19)
+
+
+### Bug Fixes
+
+* advanced permissions for icons ([fd555e3](https://github.com/BEE-Plugin/Bee-plugin-official/commit/fd555e348effeb309a228a617e26abdc547b1397))
+
 ### [4.3.1-feat-branded-rows.8](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.7...v4.3.1-feat-branded-rows.8) (2024-06-18)
 
 
