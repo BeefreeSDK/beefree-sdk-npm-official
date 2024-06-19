@@ -88,6 +88,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 * add maxRowsDisplayed to RowsConfiguration type ([946f5af](https://github.com/BEE-Plugin/Bee-plugin-official/commit/946f5afa143e409a02b7a8061859107fb612496d))
 
+### [4.3.1-fix-types.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-fix-types.0...v4.3.1-fix-types.1) (2024-06-19)
+
+
+### Bug Fixes
+
+* updated types ([c5ae956](https://github.com/BEE-Plugin/Bee-plugin-official/commit/c5ae956d669aa2e85495b803ea5a937d4c221e58))
+
 ### [4.3.1-fix-types.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.0...v4.3.1-fix-types.0) (2024-06-11)
 
 
