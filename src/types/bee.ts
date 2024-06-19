@@ -666,9 +666,53 @@ export interface IPluginModuleSpacer {
   }
 }
 
+export type IPluginModuleIcons = {
+  descriptor: {
+    computedStyle: {
+      hideContentOnDesktop: boolean
+      hideContentOnMobile: boolean
+      iconHeight: string
+      iconSpacing: {
+        'padding-bottom': string
+        'padding-left': string
+        'padding-right': string
+        'padding-top': string
+      }
+      itemsSpacing: string
+    }
+    id: 'iconsList'
+    iconsList: {
+      icons: {
+        height: string
+        href: string
+        id: string
+        image: string
+        target: string
+        text: string
+        textPosition: string
+        width: string
+      }[]
+    }
+    style: {
+      color: string
+      'font-family': string
+      'font-size': string
+      'font-weight': string
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+      'text-align': string
+    }
+  }
+  locked: boolean
+  type: string
+  uuid: string
+}
+
 export type IPluginModule =
   IPluginModuleHeading | IPluginModuleParagraph | IPluginModuleButton |
-  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm |
+  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | IPluginModuleIcons
   IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer | IPluginModuleTable
 
 export interface IPluginColumn {
@@ -1671,11 +1715,22 @@ export type ContentDefaultsForm = Partial<{
 }>
 
 export type ContentDefaultsIcons = Partial<{
-  items: unknown
+  items: {
+    image: string
+    textPosition: string
+    text: string
+    alt: string
+    title: string
+    href: string
+    target: string
+    width: string
+    height: string
+  }[]
   styles: Partial<{
     color: string
     fontSize: string
     fontFamily: string
+    fontWeight: string
   }>
   blockOptions: Partial<{
     align: string
@@ -1693,6 +1748,14 @@ export type ContentDefaultsIcons = Partial<{
     paddingLeft: string
     paddingRight: string
     paddingTop: string
+  }>
+  mobileStyles: Partial<{
+    textAlign: string
+    fontSize: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
   }>
 }>
 
