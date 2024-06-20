@@ -191,7 +191,8 @@ export const ModuleTypes = {
   HEADING: 'mailup-bee-newsletter-modules-heading',
   SPACER: 'mailup-bee-newsletter-modules-spacer',
   PARAGRAPH: 'mailup-bee-newsletter-modules-paragraph',
-  LIST: 'mailup-bee-newsletter-modules-list'
+  LIST: 'mailup-bee-newsletter-modules-list',
+  TABLE: 'mailup-bee-newsletter-modules-table',
 } as const
 
 export const ModuleDescriptorNames = {
@@ -596,6 +597,58 @@ export interface IPluginModuleMenu {
   }
 }
 
+export interface IPluginModuleTable {
+  type: typeof ModuleTypes.TABLE
+  uuid: string
+  descriptor: {
+    id?: string
+    style: {
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    },
+    table: {
+      content: {
+        headers: {
+          cells: {
+            html: string
+          }[]
+        }[],
+        rows: {
+          cells: {
+            html: string
+          }[]
+        }[]
+      },
+      style: {
+        color: string
+        'font-size': string
+        'font-family': string
+        'font-weight': string
+        'line-height': string
+        'text-align': string
+        direction: string
+        'letter-spacing': string
+        'background-color': string
+        'border-top': string
+        'border-right': string
+        'border-bottom': string
+        'border-left': string
+      },
+      computedStyle: {
+        alternateRowBackgroundColor: string
+        linkColor: string
+        headersFontSize: string
+        headersFontWeight: string
+        headersTextAlign: string
+        headersBackgroundColor: string
+        headersColor: string
+      }
+    }
+  }
+}
+
 export interface IPluginModuleSpacer {
   type: typeof ModuleTypes.SPACER
   locked?: boolean
@@ -613,10 +666,54 @@ export interface IPluginModuleSpacer {
   }
 }
 
+export type IPluginModuleIcons = {
+  descriptor: {
+    computedStyle: {
+      hideContentOnDesktop: boolean
+      hideContentOnMobile: boolean
+      iconHeight: string
+      iconSpacing: {
+        'padding-bottom': string
+        'padding-left': string
+        'padding-right': string
+        'padding-top': string
+      }
+      itemsSpacing: string
+    }
+    id: 'iconsList'
+    iconsList: {
+      icons: {
+        height: string
+        href: string
+        id: string
+        image: string
+        target: string
+        text: string
+        textPosition: string
+        width: string
+      }[]
+    }
+    style: {
+      color: string
+      'font-family': string
+      'font-size': string
+      'font-weight': string
+      'padding-bottom': string
+      'padding-left': string
+      'padding-right': string
+      'padding-top': string
+      'text-align': string
+    }
+  }
+  locked: boolean
+  type: string
+  uuid: string
+}
+
 export type IPluginModule =
   IPluginModuleHeading | IPluginModuleParagraph | IPluginModuleButton |
-  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm |
-  IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer
+  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | IPluginModuleIcons | 
+  IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer | IPluginModuleTable
 
 export interface IPluginColumn {
   'grid-columns': number
@@ -694,6 +791,7 @@ export type RowsConfiguration = {
   emptyRows?: boolean
   defaultRows?: boolean
   externalContentURLs?: CustomRowConfiguration[]
+  maxRowsDisplayed?: number
 }
 
 export type CustomRowBehaviors = {
@@ -1158,6 +1256,8 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     icons: {
       behaviors: AdvancedSettingsBehaviours
       properties: {
+        icons: AdvancedSettingsShowLocked
+        fontWeight: AdvancedSettingsShowLocked
         fontFamily: AdvancedSettingsShowLocked
         fontSize: AdvancedSettingsShowLocked
         textColor: AdvancedSettingsShowLocked
@@ -1480,6 +1580,34 @@ export type ContentDefaultsDivider = Partial<{
   }>
 }>
 
+export type ContentDefaultsTable = Partial<{
+    styles: {
+      color: string,
+      fontFamily: string,
+      fontWeight: string,
+      fontSize: string,
+      textAlign: string,
+      lineHeight: string,
+      letterSpacing: string,
+      direction: string,
+      linkColor: string,
+      backgroundColor: string,
+      border: string,
+      alternateRowBackgroundColor: string,
+      headersFontSize: string,
+      headersFontWeight: string,
+      headersTextAlign: string,
+      headersBackgroundColor: string,
+      headersColor: string,
+    },
+    blockOptions: {
+      paddingBottom: string,
+      paddingLeft: string,
+      paddingRight: string,
+      paddingTop: string,
+    }
+  }>
+
 export type ContentDefaultsSocial = Partial<{
   icons: IPluginModuleSocialIcon[]
   blockOptions: Partial<{
@@ -1587,11 +1715,22 @@ export type ContentDefaultsForm = Partial<{
 }>
 
 export type ContentDefaultsIcons = Partial<{
-  items: unknown
+  items: {
+    image: string
+    textPosition: string
+    text: string
+    alt: string
+    title: string
+    href: string
+    target: string
+    width: string
+    height: string
+  }[]
   styles: Partial<{
     color: string
     fontSize: string
     fontFamily: string
+    fontWeight: string
   }>
   blockOptions: Partial<{
     align: string
@@ -1609,6 +1748,14 @@ export type ContentDefaultsIcons = Partial<{
     paddingLeft: string
     paddingRight: string
     paddingTop: string
+  }>
+  mobileStyles: Partial<{
+    textAlign: string
+    fontSize: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
   }>
 }>
 
@@ -1723,6 +1870,7 @@ export type ContentDefaults = Partial<{
   icons: ContentDefaultsIcons
   list: ContentDefaultsList
   general: ContentDefaultsGeneral
+  table: ContentDefaultsTable
 }>
 
 export enum TokenStatus {

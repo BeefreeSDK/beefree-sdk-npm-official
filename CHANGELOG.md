@@ -2,6 +2,90 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.1-feat-branded-rows.11](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.10...v4.3.1-feat-branded-rows.11) (2024-06-19)
+
+
+### Bug Fixes
+
+* module icons type and icons content defaults part2 ([4664036](https://github.com/BEE-Plugin/Bee-plugin-official/commit/4664036c3a2beeecfd0a276ba187d62364eacc31))
+
+### [4.3.1-feat-branded-rows.10](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.9...v4.3.1-feat-branded-rows.10) (2024-06-19)
+
+
+### Bug Fixes
+
+* module icons type and icons content defaults ([835ea66](https://github.com/BEE-Plugin/Bee-plugin-official/commit/835ea66e44b255b79e0514e1582d662439d24902))
+
+### [4.3.1-feat-branded-rows.9](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.8...v4.3.1-feat-branded-rows.9) (2024-06-19)
+
+
+### Bug Fixes
+
+* advanced permissions for icons ([fd555e3](https://github.com/BEE-Plugin/Bee-plugin-official/commit/fd555e348effeb309a228a617e26abdc547b1397))
+
+### [4.3.1-feat-branded-rows.8](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.7...v4.3.1-feat-branded-rows.8) (2024-06-18)
+
+
+### Bug Fixes
+
+* table module types ([1d1a04a](https://github.com/BEE-Plugin/Bee-plugin-official/commit/1d1a04a9d74f2cdaa7820f2aec8b388d7e22de75))
+
+### [4.3.1-feat-branded-rows.7](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.6...v4.3.1-feat-branded-rows.7) (2024-06-18)
+
+
+### Bug Fixes
+
+* table module types ([f00c353](https://github.com/BEE-Plugin/Bee-plugin-official/commit/f00c3534069b7a7077b3b58e65d9b748b53cd168))
+
+### [4.3.1-feat-branded-rows.6](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.5...v4.3.1-feat-branded-rows.6) (2024-06-18)
+
+
+### Bug Fixes
+
+* table module types ([1512c1a](https://github.com/BEE-Plugin/Bee-plugin-official/commit/1512c1ab564e8115f1b9788ccdd778a70873ca1f))
+
+### [4.3.1-feat-branded-rows.5](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.4...v4.3.1-feat-branded-rows.5) (2024-06-18)
+
+
+### Bug Fixes
+
+* table module types ([2ad2c68](https://github.com/BEE-Plugin/Bee-plugin-official/commit/2ad2c68a40504f31a9eca3ebeed983b3ade0a98f))
+
+### [4.3.1-feat-branded-rows.4](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.3...v4.3.1-feat-branded-rows.4) (2024-06-18)
+
+
+### Bug Fixes
+
+* table module types ([efc47be](https://github.com/BEE-Plugin/Bee-plugin-official/commit/efc47bed61a91313a70426aff3a99f5613efccca))
+
+### [4.3.1-feat-branded-rows.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.2...v4.3.1-feat-branded-rows.3) (2024-06-18)
+
+
+### Bug Fixes
+
+* table module types ([85a412f](https://github.com/BEE-Plugin/Bee-plugin-official/commit/85a412fad85e5797ac53e638cc50a8c08be10de6))
+
+### [4.3.1-feat-branded-rows.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.1...v4.3.1-feat-branded-rows.2) (2024-06-17)
+
+
+### Bug Fixes
+
+* add table content default types ([00e11b9](https://github.com/BEE-Plugin/Bee-plugin-official/commit/00e11b9052f1936aea376ba6ad3aeeec9c23a768))
+
+### [4.3.1-feat-branded-rows.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-feat-branded-rows.0...v4.3.1-feat-branded-rows.1) (2024-06-17)
+
+
+### Bug Fixes
+
+* add table plugin module type ([c15edcc](https://github.com/BEE-Plugin/Bee-plugin-official/commit/c15edccbdd5b2dc6978f31862485b978eb1a0cad))
+
+### [4.3.1-feat-branded-rows.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.0...v4.3.1-feat-branded-rows.0) (2024-05-30)
+
+
+### Bug Fixes
+
+* add maxRowsDisplayed to RowsConfiguration type ([946f5af](https://github.com/BEE-Plugin/Bee-plugin-official/commit/946f5afa143e409a02b7a8061859107fb612496d))
+
 ## [4.3.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.0-feat-new-rows-props.0...v4.3.0) (2024-04-30)
 
 ## [4.3.0-feat-new-rows-props.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.2.3...v4.3.0-feat-new-rows-props.0) (2024-04-30)
