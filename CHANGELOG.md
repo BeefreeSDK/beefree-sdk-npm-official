@@ -88,6 +88,28 @@ All notable changes to this project will be documented in this file. See [standa
 
 * add maxRowsDisplayed to RowsConfiguration type ([946f5af](https://github.com/BEE-Plugin/Bee-plugin-official/commit/946f5afa143e409a02b7a8061859107fb612496d))
 
+### [4.3.1-fix-types.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-fix-types.1...v4.3.1-fix-types.2) (2024-06-19)
+
+
+### Bug Fixes
+
+* updated types ([9b60b97](https://github.com/BEE-Plugin/Bee-plugin-official/commit/9b60b97b8822500548c7180b2cf3210533271836))
+* updated types ([787b6af](https://github.com/BEE-Plugin/Bee-plugin-official/commit/787b6afeba16610cf1552f940cf08b02ff6edb1b))
+
+### [4.3.1-fix-types.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1-fix-types.0...v4.3.1-fix-types.1) (2024-06-19)
+
+
+### Bug Fixes
+
+* updated types ([c5ae956](https://github.com/BEE-Plugin/Bee-plugin-official/commit/c5ae956d669aa2e85495b803ea5a937d4c221e58))
+
+### [4.3.1-fix-types.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.0...v4.3.1-fix-types.0) (2024-06-11)
+
+
+### Bug Fixes
+
+* added comments to IEntityContentJson interface ([4b514bd](https://github.com/BEE-Plugin/Bee-plugin-official/commit/4b514bdf8670f8f1ffc654872a7c07c69efb6a19))
+
 ## [4.3.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.0-feat-new-rows-props.0...v4.3.0) (2024-04-30)
 
 ## [4.3.0-feat-new-rows-props.0](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.2.3...v4.3.0-feat-new-rows-props.0) (2024-04-30)

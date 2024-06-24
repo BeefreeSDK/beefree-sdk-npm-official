@@ -861,6 +861,7 @@ export interface IInvitedMention {
   username: string
   value: string
   uid: string | number
+  userColor?: string
 }
 
 export interface IPluginForm {
@@ -1439,6 +1440,9 @@ export interface IEntityContentJson {
     }
     title: string
   }
+  comments: {
+    [commentId: string]: BeePluginCommentPayload
+  }
 }
 
 export type BeePluginMessageEditDetailPatch = {
@@ -1974,7 +1978,7 @@ export type BeePluginFont = {
   name: string
   fontFamily: string
   url?: string
-  fontWeight: Record<number, string>
+  fontWeight?: Record<number, string>
 }
 
 export type BeePluginEditorFonts = {
@@ -2114,6 +2118,12 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
+  commentingFiltersOff?: boolean
+  logLevel?: number
+  titleDefaultConfig?: {
+    bold: boolean
+  }
+  forceSanitizeHTML?: boolean
 }
 
 export interface IBeeConfigFileManager {
