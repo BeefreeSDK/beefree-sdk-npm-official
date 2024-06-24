@@ -1978,7 +1978,7 @@ export type BeePluginFont = {
   name: string
   fontFamily: string
   url?: string
-  fontWeight: Record<number, string>
+  fontWeight?: Record<number, string>
 }
 
 export type BeePluginEditorFonts = {
