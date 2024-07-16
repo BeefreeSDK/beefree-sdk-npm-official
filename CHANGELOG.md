@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.2...v4.3.3) (2024-07-16)
+
+
+### Bug Fixes
+
+* fixed readme typo and wrong link ([d104c4a](https://github.com/BEE-Plugin/Bee-plugin-official/commit/d104c4aeacad6536e4a864ed730d9847c0cc806e))
+
 ### [4.3.2](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.1...v4.3.2) (2024-06-24)
 
 ### [4.3.1](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.0...v4.3.1) (2024-06-20)
