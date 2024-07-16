@@ -58,11 +58,11 @@ yarn add @beefree.io/sdk
 
 ## Initialize the builder
 ### Get token(clientId, clientSecret)
-> You need to be authorized to start using the editor: beefree help documentation portal [has a nice post](http://help.beefree.io/hc/en-us/articles/202991192-Initializing-the-plugin) explaining how to do it
+> You need to be authorized to start using the editor: beefree help documentation portal [has a nice post](https://docs.beefree.io/beefree-sdk/readme/installation) explaining how to do it
 
-It's not really raccomended to do it client side but it's possible with the module, just call getToken.
+It's not really recommended to do it client side but it's possible with the module, just call getToken.
 
-Pass your credential on `getToken` method and start the plugin in the returning promise. Example below:
+Pass your credential on `getToken` method and start the SDK in the returning promise. Example below:
 
 ```js
 import BeefreeSDK from '@beefree.io/sdk'
