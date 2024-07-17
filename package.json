@@ -1,7 +1,7 @@
 {
   "name": "@beefree.io/sdk",
   "version": "4.3.3",
-  "description": "wrapper of bee-plugin",
+  "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -32,7 +32,7 @@
     "release:beta": "yarn prerelease && standard-version --prerelease beta && yarn postrelease",
     "release:unstable": "yarn prerelease && standard-version --prerelease $(git branch --show-current | sed 's/\\//-/g') && yarn postrelease"
   },
-  "repository": "git+https://github.com/BEE-Plugin/Bee-plugin-official.git",
+  "repository": "git+https://github.com/BeefreeSDK/beefree-sdk-npm-official",
   "keywords": [
     "editor",
     "email",
