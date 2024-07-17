@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.3...v4.3.4) (2024-07-17)
+
+
+### Bug Fixes
+
+* changed github repo links ([24a4484](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/24a4484313209d7b60b33f7c1519c0a4cd3bb514))
+
 ### [4.3.3](https://github.com/BEE-Plugin/Bee-plugin-official/compare/v4.3.2...v4.3.3) (2024-07-16)
 
 
