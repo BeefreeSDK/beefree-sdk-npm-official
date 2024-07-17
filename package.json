@@ -42,9 +42,9 @@
   "author": "BeeFree.io",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/BEE-Plugin/Bee-plugin-official"
+    "url": "https://github.com/BeefreeSDK/beefree-sdk-npm-official/issues"
   },
-  "homepage": "https://github.com/BEE-Plugin/Bee-plugin-official#readme",
+  "homepage": "https://github.com/BeefreeSDK/beefree-sdk-npm-official#readme",
   "devDependencies": {
     "@commitlint/config-conventional": "^17.4.4",
     "@rollup/plugin-commonjs": "^24.1.0",
