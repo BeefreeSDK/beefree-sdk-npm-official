@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "4.3.5",
+  "version": "4.3.6-fix-update-axios.0",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
