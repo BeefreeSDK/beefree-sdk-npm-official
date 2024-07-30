@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.6-fix-update-axios.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.5...v4.3.6-fix-update-axios.0) (2024-07-25)
+
+
+### Bug Fixes
+
+* updated axios ([4e0713b](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/4e0713bcb35c671a8ce28c3e43118b7a04c556ce))
+
 ### [4.3.5](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.4...v4.3.5) (2024-07-17)
 
 
