@@ -712,7 +712,7 @@ export type IPluginModuleIcons = {
 
 export type IPluginModule =
   IPluginModuleHeading | IPluginModuleParagraph | IPluginModuleButton |
-  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | IPluginModuleIcons | 
+  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | IPluginModuleIcons |
   IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer | IPluginModuleTable
 
 export interface IPluginColumn {
@@ -1051,6 +1051,11 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     verticalAlign: AdvancedSettingsShowLocked
     columnsSpacing: AdvancedSettingsShowLocked
     columnsBorderRadius: AdvancedSettingsShowLocked
+    addon: {
+      [uuid: string]: {
+        behaviors: AdvancedSettingsBehaviours
+      }
+    }
   },
   settings: {
     title: AdvancedSettingsShowLocked
