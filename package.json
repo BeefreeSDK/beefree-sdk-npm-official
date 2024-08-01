@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "4.3.6",
+  "version": "4.3.7-feat-ai-alt-text.0",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
