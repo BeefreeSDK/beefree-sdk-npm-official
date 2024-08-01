@@ -156,8 +156,9 @@ export type BeePluginInfo = {
   code: BeePluginErrorCodes
   message: string
   detail: {
-    handle: OnInfoDetailHandle.AI_INTEGRATION
+    handle: OnInfoDetailHandle
     promptId: string
+    consumedImages: boolean
     usage: {
       completion_tokens: number
       prompt_tokens: number
@@ -712,7 +713,7 @@ export type IPluginModuleIcons = {
 
 export type IPluginModule =
   IPluginModuleHeading | IPluginModuleParagraph | IPluginModuleButton |
-  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | IPluginModuleIcons | 
+  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | IPluginModuleIcons |
   IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer | IPluginModuleTable
 
 export interface IPluginColumn {
@@ -883,7 +884,8 @@ export enum EngageHandle {
 }
 
 export enum OnInfoDetailHandle {
-  AI_INTEGRATION = 'ai-integration'
+  AI_INTEGRATION = 'ai-integration',
+  AI_ALT_TEXT = 'ai-alt-text'
 }
 
 export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
@@ -1971,6 +1973,10 @@ export type BeeContentDialogs = {
   rowDisplayConditions?: {
     label?: string
     handler: BeePluginContentDialogHandler<RowDisplayConditionsHandler>
+  },
+  upsell?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<undefined>
   }
 }
 
@@ -2044,7 +2050,17 @@ export interface AddOnOpenAI {
   }
 }
 
-export type AddOn = AddOnPartner | AddOnOpenAI
+export interface AddOnAltTextAI {
+  id: "ai-alt-text",
+  settings: {
+    imagesAvailable?: number,
+    imagesUsed?: number,
+    isIconDisabled?: boolean,
+    isUpsellEnabled?: boolean,
+  }
+}
+
+export type AddOn = AddOnPartner | AddOnOpenAI | AddOnAltTextAI
 
 export interface Translations {
   [key: string]: string | Translations;
