@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.7-fix-beered-724.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.6...v4.3.7-fix-beered-724.0) (2024-08-01)
+
+
+### Bug Fixes
+
+* **beered-274:** added rows addon ([a36c1d5](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/a36c1d5ce119c4b66a14e5d323dde76bdeb87d2b))
+
 ### [4.3.6](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.5...v4.3.6) (2024-07-30)
 
 ### [4.3.6-fix-update-axios.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.5...v4.3.6-fix-update-axios.0) (2024-07-25)
