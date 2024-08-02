@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.7](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.6...v4.3.7) (2024-08-02)
+
 ### [4.3.7-fix-beered-724.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.6...v4.3.7-fix-beered-724.0) (2024-08-01)
 
 
