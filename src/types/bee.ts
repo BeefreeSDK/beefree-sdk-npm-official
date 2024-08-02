@@ -158,7 +158,7 @@ export type BeePluginInfo = {
   detail: {
     handle: OnInfoDetailHandle
     promptId: string
-    consumedImages: boolean
+    consumedImages: number
     usage: {
       completion_tokens: number
       prompt_tokens: number
