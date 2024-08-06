@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-feat-ai-alt-text.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7...v5.0.0-feat-ai-alt-text.0) (2024-08-06)
+
+## [5.0.0-feat-ai-alt-text.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7-feat-ai-alt-text.0...v5.0.0-feat-ai-alt-text.0) (2024-08-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* type for consumed images
+
+### Bug Fixes
+
+* type for consumed images ([687d403](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/687d403ac3733c47a081813346f2f7fff832501e))
+
+### [4.3.7-feat-ai-alt-text.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.6...v4.3.7-feat-ai-alt-text.0) (2024-08-01)
+
 ### [4.3.7](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.6...v4.3.7) (2024-08-02)
 
 ### [4.3.7-fix-beered-724.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.6...v4.3.7-fix-beered-724.0) (2024-08-01)
