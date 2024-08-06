@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-feat-ai-alt-text.3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v5.0.0-feat-ai-alt-text.2...v5.0.0-feat-ai-alt-text.3) (2024-08-06)
+
+
+### Bug Fixes
+
+* adds parameters to callback upsell ([014b86d](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/014b86d32656dddb42e2e1d8485088b4d1b16db4))
+
 ## [5.0.0-feat-ai-alt-text.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7...v5.0.0-feat-ai-alt-text.2) (2024-08-06)
 
 ## [5.0.0-feat-ai-alt-text.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7-feat-ai-alt-text.0...v5.0.0-feat-ai-alt-text.0) (2024-08-02)
