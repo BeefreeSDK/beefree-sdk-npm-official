@@ -1053,6 +1053,11 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     verticalAlign: AdvancedSettingsShowLocked
     columnsSpacing: AdvancedSettingsShowLocked
     columnsBorderRadius: AdvancedSettingsShowLocked
+    addon: {
+      [uuid: string]: {
+        behaviors: AdvancedSettingsBehaviours
+      }
+    }
   },
   settings: {
     title: AdvancedSettingsShowLocked
