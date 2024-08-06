@@ -888,6 +888,11 @@ export enum OnInfoDetailHandle {
   AI_ALT_TEXT = 'ai-alt-text'
 }
 
+export enum IContentDialogUpsellHandle {
+  AI_INTEGRATION = 'ai-integration',
+  AI_ALT_TEXT = 'ai-alt-text'
+}
+
 export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
   resolve: (data: K, options?: Record<string, unknown>) => void,
   reject: () => void,
@@ -1981,7 +1986,7 @@ export type BeeContentDialogs = {
   },
   upsell?: {
     label?: string
-    handler: BeePluginContentDialogHandler<undefined>
+    handler: BeePluginContentDialogHandler<Record<string, unknown>, undefined, { handle: IContentDialogUpsellHandle }>
   }
 }
 
