@@ -2067,6 +2067,7 @@ export interface AddOnAltTextAI {
     imagesUsed?: number,
     isIconDisabled?: boolean,
     isUpsellEnabled?: boolean,
+    upsellTrigger?: number
   }
 }
 
