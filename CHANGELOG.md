@@ -2,6 +2,50 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-feat-ai-alt-text.4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v5.0.0-feat-ai-alt-text.3...v5.0.0-feat-ai-alt-text.4) (2024-08-08)
+
+
+### Bug Fixes
+
+* adds upsellTrigger ([1105d83](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/1105d8350881da2a3a151f7ad373eaae403f66ed))
+
+## [5.0.0-feat-ai-alt-text.3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v5.0.0-feat-ai-alt-text.2...v5.0.0-feat-ai-alt-text.3) (2024-08-06)
+
+
+### Bug Fixes
+
+* adds parameters to callback upsell ([014b86d](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/014b86d32656dddb42e2e1d8485088b4d1b16db4))
+
+## [5.0.0-feat-ai-alt-text.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7...v5.0.0-feat-ai-alt-text.2) (2024-08-06)
+
+## [5.0.0-feat-ai-alt-text.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7-feat-ai-alt-text.0...v5.0.0-feat-ai-alt-text.0) (2024-08-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* type for consumed images
+
+### Bug Fixes
+
+* type for consumed images ([687d403](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/687d403ac3733c47a081813346f2f7fff832501e))
+
+### [4.3.7-feat-ai-alt-text.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.6...v4.3.7-feat-ai-alt-text.0) (2024-08-01)
+
+## [5.0.0-feat-ai-alt-text.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7...v5.0.0-feat-ai-alt-text.0) (2024-08-06)
+
+## [5.0.0-feat-ai-alt-text.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7-feat-ai-alt-text.0...v5.0.0-feat-ai-alt-text.0) (2024-08-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* type for consumed images
+
+### Bug Fixes
+
+* type for consumed images ([687d403](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/687d403ac3733c47a081813346f2f7fff832501e))
+
+### [4.3.7-feat-ai-alt-text.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.6...v4.3.7-feat-ai-alt-text.0) (2024-08-01)
+
 ### [4.3.7](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.6...v4.3.7) (2024-08-02)
 
 ### [4.3.7-fix-beered-724.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.6...v4.3.7-fix-beered-724.0) (2024-08-01)
