@@ -102,6 +102,14 @@ const contentDialogs: BeeContentDialogs = {
   rowDisplayConditions: {
     label: 'Row Display Conditions',
     handler: handleRowDisplayConditionsResponse
+  },
+  customAttribute: {
+    label: 'Custom Attributes',
+    handler: userInput('Enter custom attributes:', {
+      key: 'data-',
+      value: 'sample',
+      target: 'link'
+    })
   }
 }
 
@@ -349,4 +357,4 @@ beeTest.getToken(process.env.PLUGIN_CLIENT_ID!, process.env.PLUGIN_CLIENT_SECRET
         .then(instance => console.log('promise resolve return instance', instance))
     }
     addEvents()
-  }).catch((error) => console.error('error during iniziatialization --> ', error))
+  }).catch((error) => console.error('error during iniziatialization ', error))
