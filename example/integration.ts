@@ -2,6 +2,7 @@ import Bee from '../src/index'
 import {
   BeeContentDialogs,
   ContentDefaults,
+  CustomAttributes,
   IAddOnResponseImage,
   IBeeConfig, IMergeContent, IMergeTag, ISpecialLink,
   LoadWorkspaceOptions, ModuleDescriptorOrderNames, RowDisplayConditionsHandler, StageDisplayOptions, StageModeOptions, TokenStatus
@@ -128,6 +129,41 @@ const contentDefaults: ContentDefaults = {
   }
 }
 
+const customAttributes: CustomAttributes = {
+  enableOpenFields: true,
+  attributes: [ 
+    {
+      key: "data-country",
+      value: ['us', 'italy', 'france', 'germany'],
+      target: "link"
+    },
+    {
+      key: "Deeplink",
+      value: true,
+      target: "link"
+    },
+    {
+      key: "data-segment",
+      value: ['travel', 'luxury'],
+      target: "link"
+    },
+    {
+      key: "data-descriptor",
+      value: "",
+      target: "link"
+    },
+    {
+      key: "data-campaign",
+      value: ['ua001', 'ua002'],
+      target: "link"
+    },
+    {
+      key: "class",
+      target: "tag"
+    }
+  ]
+}
+
 const beeConfig :IBeeConfig = {
   uid: 'test1-clientside',
   container: 'bee-plugin-container',
@@ -137,6 +173,7 @@ const beeConfig :IBeeConfig = {
   userHandle: getParameterByName('userHandle') || '2468',
   autosave: 15,
   language: 'en-US',
+  customAttributes,
   specialLinks,
   mergeTags,
   mergeContents,
