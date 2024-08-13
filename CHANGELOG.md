@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v5.0.0-feat-ai-alt-text.5...v5.0.0) (2024-08-13)
+
 ## [5.0.0-feat-ai-alt-text.5](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.4.1...v5.0.0-feat-ai-alt-text.5) (2024-08-13)
 
 
