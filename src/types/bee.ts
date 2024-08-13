@@ -1030,6 +1030,19 @@ export type AdvancedSettingsTextEditor = {
   fontSizes: string
 }
 
+export type CustomAttribute = {
+  key: string
+  name?: string
+  value?: string | boolean | null | string[]
+  target: string
+  required?: boolean
+}
+
+export type CustomAttributes = {
+  attributes?: CustomAttribute[]
+  enableOpenFields?: boolean
+}
+
 export type BeePluginAdvancedPermission = RecursivePartial<{
   workspace: {
     stageToggle: BeePluginAdvancedPermissionStageToggle
@@ -1459,6 +1472,113 @@ export interface IEntityContentJson {
   }
 }
 
+export const ContentCodes = {
+  TEXT_BLOCK: '01',
+  IMAGE_BLOCK: '02',
+  BUTTON_BLOCK: '03',
+  DIVIDER_BLOCK: '04',
+  SOCIAL_BLOCK: '05',
+  DYNAMIC_CONTENT_BLOCK: '06',
+  HTML_BLOCK: '07',
+  VIDEO_BLOCK: '08',
+  FORM: '09',
+  ICONS: '10',
+  MENU: '11',
+  ROW: '14',
+  MESSAGE: '16',
+  SPACER: '18',
+  PARAGRAPH: '22',
+  LIST: '23',
+  TABLE: '26',
+} as const;
+
+export const ActionCodes = {
+  DROPPED: '00',
+  DRAGGED: '01',
+  DELETED: '02',
+  DUPLICATED: '03',
+  CHANGED: '04',
+  OPENED: '05',
+  CLOSED: '06',
+  LOCKED: '07',
+  SAVED: '08',
+  RESTORED: '09',
+  CONTENT_AREA_BACKGROUND_COLOR: '10',
+  DO_NOT_STACK_ON_MOBILE: '11',
+  ROW_BACKGROUND_IMAGE: '12',
+  BACKGROUND_CENTER: '13',
+  BACKGROUND_REPEAT: '14',
+  BACKGROUND_FULL_WIDTH: '15',
+  ROW_DISPLAY_CONDITION: '16',
+  REVERSE_STACK_ORDER_ON_MOBILE: '17',
+  TEXT_COLOR: '20',
+  LINK_COLOR: '21',
+  TEXT_EDITED: '23',
+  LINE_HEIGHT: '24',
+  CONTENT_AREA_WIDTH: '25',
+  BACKGROUND_COLOR: '27',
+  DEFAULT_FONT: '28',
+  PADDING_ALL_SIDES: '30',
+  PADDING_LEFT: '31',
+  PADDING_RIGHT: '32',
+  PADDING_TOP: '33',
+  PADDING_BOTTOM: '34',
+  HIDE_ON_MOBILE: '40',
+  VIDEO_URL: '41',
+  PLAY_ICON_TYPE: '42',
+  PLAY_ICON_COLOR: '43',
+  PLAY_ICON_SIZE: '44',
+  ALIGN: '50',
+  AUTOMATIC_IMAGE_RESIZING: '51',
+  FULL_WIDTH_ON_MOBILE: '52',
+  IMAGE_WIDTH: '53',
+  ALTERNATE_TEXT: '60',
+  DYNAMIC_IMAGE_SRC: '61',
+  DYNAMIC_IMAGE_TOGGLE: '62',
+  CHANGE_IMAGE: '63',
+  IMAGE_LINK: '64',
+  BUTTON_ALIGN: '70',
+  BUTTON_LINK_TYPE: '71',
+  BUTTON_WIDTH: '72',
+  BUTTON_AUTO_WIDTH: '73',
+  BUTTON_BACKGROUND_COLOR: '74',
+  BORDER_RADIUS: '75',
+  HTML_EDITED: '80',
+  BORDER_ALL_SIDES: '81',
+  BORDER_LEFT: '82',
+  BORDER_RIGHT: '83',
+  BORDER_TOP: '84',
+  BORDER_BOTTOM: '85',
+  DIVIDER_LINE_TOGGLE: '90',
+  DIVIDER_WIDTH: '91',
+  DIVIDER_HEIGHT: '92',
+  DIVIDER_ALIGN: '93',
+  ICON_NAME: '95',
+  ICON_ALTERNATE_TEXT: '96',
+  ICON_URL: '97',
+  ICON_SPACING: '98',
+  ICON_ALIGN: '99',
+  BACKGROUND_VIDEO: '128',
+  PARAGRAPH_SPACING: '129',
+  FONT_WEIGHT: '130',
+  LIST_TYPE: '131',
+  START_LIST: '132',
+  LIST_SPACING: '133',
+  LIST_INDENT: '134',
+  LIST_STYLE_POSITION: '135',
+} as const;
+
+type EventCodeKeys = `${keyof typeof ContentCodes}_${keyof typeof ActionCodes}`;
+
+export const EventCodes: Record<EventCodeKeys, string> = Object.fromEntries(
+  Object.entries(ContentCodes).flatMap(([contentKey, contentCode]) =>
+    Object.entries(ActionCodes).map(([actionKey, actionCode]) => [
+      `${contentKey}_${actionKey}`,
+      `${contentCode}${actionCode}`,
+    ])
+  )
+) as Record<EventCodeKeys, string>;
+
 export type BeePluginMessageEditDetailPatch = {
   op: string
   path: string
@@ -1466,7 +1586,7 @@ export type BeePluginMessageEditDetailPatch = {
 }
 
 export type BeePluginMessageEditDetail = {
-  code: unknown
+  code: ValueOf<typeof EventCodes>
   value: string
   description: string
   patches: BeePluginMessageEditDetailPatch[]
@@ -1990,6 +2110,10 @@ export type BeeContentDialogs = {
     label?: string
     handler: BeePluginContentDialogHandler<IUpsellConfiguration, undefined, { handle: IContentDialogUpsellHandle }>
   }
+  customAttribute?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<CustomAttribute>
+  }
 }
 
 export type BeePluginFont = {
@@ -2128,6 +2252,7 @@ export interface IBeeConfig {
   addOns?: AddOn[]
   translations?: Translations
   textEditor?: TextEditor
+  customAttributes?: CustomAttributes
   onTemplateLanguageChange?: (lang: { label: string, value: string, isMain: boolean }) => void
   onLoad?: (json: IEntityContentJson) => void
   onPreview?: (opened: boolean) => void
