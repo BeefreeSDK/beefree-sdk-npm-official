@@ -1021,6 +1021,19 @@ export type AdvancedSettingsTextEditor = {
   fontSizes: string
 }
 
+export type CustomAttribute = {
+  key: string
+  name?: string
+  value?: string | boolean | null | string[]
+  target: string
+  required?: boolean
+}
+
+export type CustomAttributes = {
+  attributes?: CustomAttribute[]
+  enableOpenFields?: boolean
+}
+
 export type BeePluginAdvancedPermission = RecursivePartial<{
   workspace: {
     stageToggle: BeePluginAdvancedPermissionStageToggle
@@ -2084,6 +2097,10 @@ export type BeeContentDialogs = {
     label?: string
     handler: BeePluginContentDialogHandler<RowDisplayConditionsHandler>
   }
+  customAttribute?: {
+    label?: string
+    handler: BeePluginContentDialogHandler<CustomAttribute>
+  }
 }
 
 export type BeePluginFont = {
@@ -2211,6 +2228,7 @@ export interface IBeeConfig {
   addOns?: AddOn[]
   translations?: Translations
   textEditor?: TextEditor
+  customAttributes?: CustomAttributes
   onTemplateLanguageChange?: (lang: { label: string, value: string, isMain: boolean }) => void
   onLoad?: (json: IEntityContentJson) => void
   onPreview?: (opened: boolean) => void

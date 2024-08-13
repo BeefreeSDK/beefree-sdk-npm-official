@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * add event type of response argument in onChange event ([7fe7e62](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/7fe7e625abbf309be109fd86be1cc879d6edd4db))
+## [4.4.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7...v4.4.0) (2024-08-12)
+
+
+### Features
+
+* added contenDialog sample ([886c4c9](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/886c4c9e66b4d31c4161340465bbc034b6bddf3a))
 
 ### [4.3.7](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.6...v4.3.7) (2024-08-02)
 
