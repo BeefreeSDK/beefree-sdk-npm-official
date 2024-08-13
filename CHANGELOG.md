@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.8-fix-serverToServerAutoSave.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7...v4.3.8-fix-serverToServerAutoSave.0) (2024-08-12)
+
+
+### Bug Fixes
+
+* add event type of response argument in onChange event ([7fe7e62](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/7fe7e625abbf309be109fd86be1cc879d6edd4db))
 ## [4.4.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7...v4.4.0) (2024-08-12)
 
 
