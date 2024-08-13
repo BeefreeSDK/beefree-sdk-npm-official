@@ -823,6 +823,8 @@ export type RowDisplayConditionsHandler = {
   description: string
 }
 
+export type IUpsellConfiguration = Partial<IBeeConfig>
+
 export const RowLayoutType = {
   ONE_COLUMNS_EMPTY: 'one-column-empty',
   TWO_COLUMNS_EMPTY: 'two-columns-empty',
@@ -1986,7 +1988,7 @@ export type BeeContentDialogs = {
   },
   upsell?: {
     label?: string
-    handler: BeePluginContentDialogHandler<Record<string, unknown>, undefined, { handle: IContentDialogUpsellHandle }>
+    handler: BeePluginContentDialogHandler<IUpsellConfiguration, undefined, { handle: IContentDialogUpsellHandle }>
   }
 }
 
