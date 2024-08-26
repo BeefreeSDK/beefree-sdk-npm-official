@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.4.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.4.0...v4.4.1) (2024-08-13)
+
 ### [4.3.8-fix-serverToServerAutoSave.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7...v4.3.8-fix-serverToServerAutoSave.0) (2024-08-12)
 
 
