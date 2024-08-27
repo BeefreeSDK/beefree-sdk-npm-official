@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "6.0.0-fix-serverToServerAutoSave.0",
+  "version": "6.0.0",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

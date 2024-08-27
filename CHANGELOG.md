@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v5.0.0...v6.0.0) (2024-08-27)
+
 ## [6.0.0-fix-serverToServerAutoSave.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.4.2-fix-serverToServerAutoSave.0...v6.0.0-fix-serverToServerAutoSave.0) (2024-08-26)
 
 ## [5.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v5.0.0-feat-ai-alt-text.5...v5.0.0) (2024-08-13)
