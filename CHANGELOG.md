@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0-fix-serverToServerAutoSave.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.4.2-fix-serverToServerAutoSave.0...v6.0.0-fix-serverToServerAutoSave.0) (2024-08-26)
+
 ## [5.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v5.0.0-feat-ai-alt-text.5...v5.0.0) (2024-08-13)
 
 ## [5.0.0-feat-ai-alt-text.5](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.4.1...v5.0.0-feat-ai-alt-text.5) (2024-08-13)
@@ -16,6 +18,49 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
+* adds upsellTrigger ([1105d83](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/1105d8350881da2a3a151f7ad373eaae403f66ed))
+
+## [5.0.0-feat-ai-alt-text.3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v5.0.0-feat-ai-alt-text.2...v5.0.0-feat-ai-alt-text.3) (2024-08-06)
+
+
+### Bug Fixes
+
+* adds parameters to callback upsell ([014b86d](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/014b86d32656dddb42e2e1d8485088b4d1b16db4))
+
+## [5.0.0-feat-ai-alt-text.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7...v5.0.0-feat-ai-alt-text.2) (2024-08-06)
+
+## [5.0.0-feat-ai-alt-text.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7-feat-ai-alt-text.0...v5.0.0-feat-ai-alt-text.0) (2024-08-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* type for consumed images
+
+### Bug Fixes
+
+* type for consumed images ([687d403](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/687d403ac3733c47a081813346f2f7fff832501e))
+
+### [4.3.7-feat-ai-alt-text.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.6...v4.3.7-feat-ai-alt-text.0) (2024-08-01)
+
+### [4.4.2-fix-serverToServerAutoSave.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.4.1...v4.4.2-fix-serverToServerAutoSave.0) (2024-08-26)
+## [5.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v5.0.0-feat-ai-alt-text.5...v5.0.0) (2024-08-13)
+
+## [5.0.0-feat-ai-alt-text.5](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.4.1...v5.0.0-feat-ai-alt-text.5) (2024-08-13)
+
+
+### Bug Fixes
+
+* add error type forr webhook call failed ([3365366](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/3365366459c88b8f094b66ff9dc44869ccdcfab4))
+
+### [4.3.8-fix-serverToServerAutoSave.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.3.7...v4.3.8-fix-serverToServerAutoSave.0) (2024-08-12)
+* resolve type ([cdb86f3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/cdb86f3468818614f6eac4db09bfd98f7da3c081))
+
+## [5.0.0-feat-ai-alt-text.4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v5.0.0-feat-ai-alt-text.3...v5.0.0-feat-ai-alt-text.4) (2024-08-08)
+
+
+### Bug Fixes
+
+* add event type of response argument in onChange event ([7fe7e62](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/7fe7e625abbf309be109fd86be1cc879d6edd4db))
 * adds upsellTrigger ([1105d83](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/1105d8350881da2a3a151f7ad373eaae403f66ed))
 
 ## [5.0.0-feat-ai-alt-text.3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v5.0.0-feat-ai-alt-text.2...v5.0.0-feat-ai-alt-text.3) (2024-08-06)
