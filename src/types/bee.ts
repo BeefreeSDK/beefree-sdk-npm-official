@@ -1400,17 +1400,6 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
   }
 }>
 
-export type IAiAddon = {
-  id: 'ai-integration'
-  settings?: {
-    tokensAvailable?: number
-    tokensUsed?: number
-    tokenLabel?: string
-    isPromptDisabled?: boolean
-    isSuggestionsDisabled?: boolean
-  }
-}
-
 export enum WorkspaceStage {
   desktop = 'desktop',
   mobile = 'mobile',
@@ -2180,16 +2169,19 @@ id: string
 export interface AddOnOpenAI {
   id: 'ai-integration'
   settings: {
-    isPromptDisabled: boolean
     tokensAvailable?: number
     tokensUsed?: number
     tokenLabel?: string
+    isPromptDisabled?: boolean
     isSuggestionsDisabled?: boolean
+    isUpsellEnabled?: boolean
+    upsellTrigger?: number
+    metadataGeneration?: boolean
   }
 }
 
 export interface AddOnAltTextAI {
-  id: "ai-alt-text",
+  id: 'ai-alt-text',
   settings: {
     imagesAvailable?: number,
     imagesUsed?: number,
@@ -2199,7 +2191,19 @@ export interface AddOnAltTextAI {
   }
 }
 
-export type AddOn = AddOnPartner | AddOnOpenAI | AddOnAltTextAI
+export interface AddOnImageGenerationAI {
+  id: 'ai-image-generation',
+  settings: {
+    imagesAvailable?: number,
+    imagesUsed?: number,
+    isGenerationDisabled?: boolean
+    upsellTrigger?: number
+    isUpsellEnabled?: boolean,
+    folderName?: string,
+  }
+}
+
+export type AddOn = AddOnPartner | AddOnOpenAI | AddOnAltTextAI | AddOnImageGenerationAI
 
 export interface Translations {
   [key: string]: string | Translations;
