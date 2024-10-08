@@ -154,19 +154,33 @@ export type BeePluginError = {
   data?: BeePluginErrorData
 }
 
+export type AiIntegrationErrorDetail = {
+  handle: OnInfoDetailHandle.AI_INTEGRATION
+  promptId: string
+  consumedImages: number
+  usage: {
+    completion_tokens: number
+    prompt_tokens: number
+    total_tokens: number
+  }
+}
+
+export type AiAltTextErrorDetail = {
+  handle: OnInfoDetailHandle.AI_ALT_TEXT
+  uid: string
+  consumedImages: number
+}
+
+export type AiImageGenerationErrorDetail = {
+  handle: OnInfoDetailHandle.AI_IMAGE_GENERATION
+  uid: string
+  consumedImages: number
+}
+
 export type BeePluginInfo = {
   code: BeePluginErrorCodes
   message: string
-  detail: {
-    handle: OnInfoDetailHandle
-    promptId: string
-    consumedImages: number
-    usage: {
-      completion_tokens: number
-      prompt_tokens: number
-      total_tokens: number
-    }
-  }
+  detail: AiIntegrationErrorDetail | AiAltTextErrorDetail | AiImageGenerationErrorDetail
 }
 
 type KebabCSSProperties = KebabKeys<CSS.Properties>
