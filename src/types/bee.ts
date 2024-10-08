@@ -889,12 +889,8 @@ export enum EngageHandle {
 
 export enum OnInfoDetailHandle {
   AI_INTEGRATION = 'ai-integration',
-  AI_ALT_TEXT = 'ai-alt-text'
-}
-
-export enum IContentDialogUpsellHandle {
-  AI_INTEGRATION = 'ai-integration',
-  AI_ALT_TEXT = 'ai-alt-text'
+  AI_ALT_TEXT = 'ai-alt-text',
+  AI_IMAGE_GENERATION = 'ai-image-generation'
 }
 
 export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
@@ -2099,7 +2095,7 @@ export type BeeContentDialogs = {
   },
   upsell?: {
     label?: string
-    handler: BeePluginContentDialogHandler<IUpsellConfiguration, undefined, { handle: IContentDialogUpsellHandle }>
+    handler: BeePluginContentDialogHandler<IUpsellConfiguration, undefined, { handle: OnInfoDetailHandle }>
   }
   customAttribute?: {
     label?: string
