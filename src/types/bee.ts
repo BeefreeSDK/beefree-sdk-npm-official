@@ -154,14 +154,25 @@ export type BeePluginError = {
   data?: BeePluginErrorData
 }
 
+export enum OnInfoDetailHandle {
+  AI_INTEGRATION = 'ai-integration',
+  AI_ALT_TEXT = 'ai-alt-text',
+  AI_IMAGE_GENERATION = 'ai-image-generation'
+}
+
 export type AiIntegrationErrorDetail = {
   handle: OnInfoDetailHandle.AI_INTEGRATION
   promptId: string
-  consumedImages: number
   usage: {
-    completion_tokens: number
-    prompt_tokens: number
-    total_tokens: number
+    prompt_tokens: number,
+    completion_tokens: number,
+    total_tokens: number,
+    prompt_tokens_details: {
+      cached_tokens: number
+    },
+    completion_tokens_details: {
+      reasoning_tokens: number
+    }
   }
 }
 
@@ -899,12 +910,6 @@ export interface IPluginFilePicker {
 
 export enum EngageHandle {
   MDM = 'mdm',
-}
-
-export enum OnInfoDetailHandle {
-  AI_INTEGRATION = 'ai-integration',
-  AI_ALT_TEXT = 'ai-alt-text',
-  AI_IMAGE_GENERATION = 'ai-image-generation'
 }
 
 export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
