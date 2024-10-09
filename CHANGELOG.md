@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.1-fix-ai-types.3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v6.0.1-fix-ai-types.2...v6.0.1-fix-ai-types.3) (2024-10-09)
+
+
+### Bug Fixes
+
+* ai types ([868ab11](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/868ab11f62303e1e88c4abea95ba3e48e331b571))
+
 ### [6.0.1-fix-ai-types.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v6.0.1-fix-ai-types.1...v6.0.1-fix-ai-types.2) (2024-10-08)
 
 
