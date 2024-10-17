@@ -176,7 +176,6 @@ export type AiIntegrationErrorDetail = {
   }
 }
 
-
 export type AiAltTextErrorDetail = {
   handle: OnInfoDetailHandle.AI_ALT_TEXT
   uid: string
