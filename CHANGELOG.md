@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v6.0.0...v7.0.0) (2024-10-17)
+
 ## [7.0.0-fix-ai-types.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v6.0.1-fix-ai-types.3...v7.0.0-fix-ai-types.0) (2024-10-17)
 
 
