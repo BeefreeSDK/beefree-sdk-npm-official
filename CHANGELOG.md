@@ -2,6 +2,47 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.0-fix-ai-types.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v6.0.1-fix-ai-types.3...v7.0.0-fix-ai-types.0) (2024-10-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* ai types
+* ai types
+
+### Features
+
+* ai types ([6b0f72f](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/6b0f72fb0cdede1af6c6ee4bc5cb1ad1eec0f782))
+* ai types ([f0e7d5e](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/f0e7d5ef6fa3dbf386e08a42b8704b09f437ae20))
+
+### [6.0.1-fix-ai-types.3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v6.0.1-fix-ai-types.2...v6.0.1-fix-ai-types.3) (2024-10-09)
+
+
+### Bug Fixes
+
+* ai types ([868ab11](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/868ab11f62303e1e88c4abea95ba3e48e331b571))
+
+### [6.0.1-fix-ai-types.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v6.0.1-fix-ai-types.1...v6.0.1-fix-ai-types.2) (2024-10-08)
+
+
+### Bug Fixes
+
+* ai types ([272a07f](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/272a07f55cd416c44f419a71a9439f0992af1e95))
+
+### [6.0.1-fix-ai-types.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v6.0.1-fix-ai-types.0...v6.0.1-fix-ai-types.1) (2024-10-08)
+
+
+### Bug Fixes
+
+* ai types ([d0a89c1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/d0a89c183f355881b4e252535c7d65042cf3f3fc))
+
+### [6.0.1-fix-ai-types.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v6.0.0...v6.0.1-fix-ai-types.0) (2024-09-12)
+
+
+### Bug Fixes
+
+* ai types ([8c8533e](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/8c8533e0d04b4a2e5a57d363eedd2d177890856c))
+
 ## [6.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v5.0.0...v6.0.0) (2024-08-27)
 
 ## [6.0.0-fix-serverToServerAutoSave.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v4.4.2-fix-serverToServerAutoSave.0...v6.0.0-fix-serverToServerAutoSave.0) (2024-08-26)

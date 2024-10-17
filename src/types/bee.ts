@@ -154,19 +154,44 @@ export type BeePluginError = {
   data?: BeePluginErrorData
 }
 
+export enum OnInfoDetailHandle {
+  AI_INTEGRATION = 'ai-integration',
+  AI_ALT_TEXT = 'ai-alt-text',
+  AI_IMAGE_GENERATION = 'ai-image-generation'
+}
+
+export type AiIntegrationErrorDetail = {
+  handle: OnInfoDetailHandle.AI_INTEGRATION
+  promptId: string
+  usage: {
+    prompt_tokens: number,
+    completion_tokens: number,
+    total_tokens: number,
+    prompt_tokens_details: {
+      cached_tokens: number
+    },
+    completion_tokens_details: {
+      reasoning_tokens: number
+    }
+  }
+}
+
+export type AiAltTextErrorDetail = {
+  handle: OnInfoDetailHandle.AI_ALT_TEXT
+  uid: string
+  consumedImages: number
+}
+
+export type AiImageGenerationErrorDetail = {
+  handle: OnInfoDetailHandle.AI_IMAGE_GENERATION
+  uid: string
+  consumedImages: number
+}
+
 export type BeePluginInfo = {
   code: BeePluginErrorCodes
   message: string
-  detail: {
-    handle: OnInfoDetailHandle
-    promptId: string
-    consumedImages: number
-    usage: {
-      completion_tokens: number
-      prompt_tokens: number
-      total_tokens: number
-    }
-  }
+  detail: AiIntegrationErrorDetail | AiAltTextErrorDetail | AiImageGenerationErrorDetail
 }
 
 type KebabCSSProperties = KebabKeys<CSS.Properties>
@@ -887,16 +912,6 @@ export enum EngageHandle {
   MDM = 'mdm',
 }
 
-export enum OnInfoDetailHandle {
-  AI_INTEGRATION = 'ai-integration',
-  AI_ALT_TEXT = 'ai-alt-text'
-}
-
-export enum IContentDialogUpsellHandle {
-  AI_INTEGRATION = 'ai-integration',
-  AI_ALT_TEXT = 'ai-alt-text'
-}
-
 export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
   resolve: (data: K, options?: Record<string, unknown>) => void,
   reject: () => void,
@@ -1399,17 +1414,6 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     }
   }
 }>
-
-export type IAiAddon = {
-  id: 'ai-integration'
-  settings?: {
-    tokensAvailable?: number
-    tokensUsed?: number
-    tokenLabel?: string
-    isPromptDisabled?: boolean
-    isSuggestionsDisabled?: boolean
-  }
-}
 
 export enum WorkspaceStage {
   desktop = 'desktop',
@@ -2110,7 +2114,7 @@ export type BeeContentDialogs = {
   },
   upsell?: {
     label?: string
-    handler: BeePluginContentDialogHandler<IUpsellConfiguration, undefined, { handle: IContentDialogUpsellHandle }>
+    handler: BeePluginContentDialogHandler<IUpsellConfiguration, undefined, { handle: OnInfoDetailHandle }>
   }
   customAttribute?: {
     label?: string
@@ -2180,16 +2184,19 @@ id: string
 export interface AddOnOpenAI {
   id: 'ai-integration'
   settings: {
-    isPromptDisabled: boolean
     tokensAvailable?: number
     tokensUsed?: number
     tokenLabel?: string
+    isPromptDisabled?: boolean
     isSuggestionsDisabled?: boolean
+    isUpsellEnabled?: boolean
+    upsellTrigger?: number
+    metadataGeneration?: boolean
   }
 }
 
 export interface AddOnAltTextAI {
-  id: "ai-alt-text",
+  id: 'ai-alt-text',
   settings: {
     imagesAvailable?: number,
     imagesUsed?: number,
@@ -2199,7 +2206,19 @@ export interface AddOnAltTextAI {
   }
 }
 
-export type AddOn = AddOnPartner | AddOnOpenAI | AddOnAltTextAI
+export interface AddOnImageGenerationAI {
+  id: 'ai-image-generation',
+  settings: {
+    imagesAvailable?: number,
+    imagesUsed?: number,
+    isGenerationDisabled?: boolean
+    upsellTrigger?: number
+    isUpsellEnabled?: boolean,
+    folderName?: string,
+  }
+}
+
+export type AddOn = AddOnPartner | AddOnOpenAI | AddOnAltTextAI | AddOnImageGenerationAI
 
 export interface Translations {
   [key: string]: string | Translations;
