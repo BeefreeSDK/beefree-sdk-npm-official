@@ -247,6 +247,16 @@ const beeConfig :IBeeConfig = {
       },
     },
   },
+  sidebarPosition: 'left',
+  rowDisplayConditions: [{
+    isActive: true,
+    after: '<test>',
+    before: '</test>',
+    className: 'myClassName',
+    description: 'lorem ipsum',
+    label: 'lorem ipsum',
+    name: 'Lorem ipsum'
+  }],
   onSave: (_, htmlFile) => save('newsletter-template.html', htmlFile),
   onLoad: () => console.warn('*** [integration] loading a new template... '),
   onSaveAsTemplate: (json) => void save('newsletter-template.json', json),

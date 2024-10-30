@@ -903,7 +903,6 @@ export interface IPluginForm {
     description: string
   }
 }
-
 export interface IPluginFilePicker {
   url: string
 }
@@ -2274,6 +2273,8 @@ export interface IBeeConfig {
   translations?: Translations
   textEditor?: TextEditor
   customAttributes?: CustomAttributes
+  sidebarPosition?: 'left' | 'right'
+  rowDisplayConditions?: Array<IPluginDisplayCondition>
   onTemplateLanguageChange?: (lang: { label: string, value: string, isMain: boolean }) => void
   onLoad?: (json: IEntityContentJson) => void
   onPreview?: (opened: boolean) => void
