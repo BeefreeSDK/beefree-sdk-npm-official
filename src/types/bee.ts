@@ -50,6 +50,21 @@ export interface ILanguage {
   language: string
 }
 
+export enum ExecCommands {
+  SELECT = 'select',
+  SCROLL = 'scroll',
+  HIGHLIGHT = 'highlight',
+}
+
+export interface IExecCommandOptions {
+  target?: {
+    uuid?: string
+    row?: number
+    column?: number
+    module?: number
+  }
+}
+
 export enum LoadWorkspaceOptions {
   DEFAULT = 'default',
   MIXED = 'mixed',
