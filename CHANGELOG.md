@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.1.0-feat-exec-command.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.0.1...v7.1.0-feat-exec-command.0) (2024-11-21)
+
+
+### Features
+
+* added new execCommand method ([bc0a751](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/bc0a7515134590cf78fca3e4a7bbf712c850eb81))
+
 ### [7.0.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.0.0...v7.0.1) (2024-10-30)
 
 ## [7.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v6.0.0...v7.0.0) (2024-10-17)
