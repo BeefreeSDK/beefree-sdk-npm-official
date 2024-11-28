@@ -172,7 +172,7 @@ class Bee {
 
   executeAction = (action: string, param = {}, options = {}) => {
     const { instance } = this
-    pipe(
+    return pipe(
       eitherCanExecuteAction(instance, action),
       E.fold(
         ({ message }) => { throw new Error(message) },
