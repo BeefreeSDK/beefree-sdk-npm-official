@@ -50,6 +50,13 @@ export interface ILanguage {
   language: string
 }
 
+export interface IExecCommandReturnValue {
+  status: 'success' | 'error'
+  data?: Record<string, unknown>
+}
+
+export type ExecCommand = Promise<IExecCommandReturnValue>
+
 export enum ExecCommands {
   SELECT = 'select',
   SCROLL = 'scroll',
@@ -1475,18 +1482,20 @@ export type EntityBody = {
   }
 }
 
-export interface IEntityContentJson {
-  page: {
-    body: EntityBody
-    description: string
-    rows: IPluginRow[]
-    template: {
-      name: string
-      type: string
-      version: string
-    }
-    title: string
+export interface IEntityJson {
+  body: EntityBody
+  description: string
+  rows: IPluginRow[]
+  template: {
+    name: string
+    type: string
+    version: string
   }
+  title: string
+}
+
+export interface IEntityContentJson {
+  page: IEntityJson
   comments: {
     [commentId: string]: BeePluginCommentPayload
   }
@@ -2291,7 +2300,7 @@ export interface IBeeConfig {
   sidebarPosition?: 'left' | 'right'
   rowDisplayConditions?: Array<IPluginDisplayCondition>
   onTemplateLanguageChange?: (lang: { label: string, value: string, isMain: boolean }) => void
-  onLoad?: (json: IEntityContentJson) => void
+  onLoad?: (json: IEntityJson) => void
   onPreview?: (opened: boolean) => void
   onTogglePreview?: (toggled: boolean) => void
   onSessionStarted?: (sessionInfo: IPluginSessionInfo) => void

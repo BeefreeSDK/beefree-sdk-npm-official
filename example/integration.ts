@@ -139,7 +139,7 @@ const contentDefaults: ContentDefaults = {
 
 const customAttributes: CustomAttributes = {
   enableOpenFields: true,
-  attributes: [ 
+  attributes: [
     {
       key: "data-country",
       value: ['us', 'italy', 'france', 'germany'],
@@ -258,7 +258,7 @@ const beeConfig :IBeeConfig = {
     name: 'Lorem ipsum'
   }],
   onSave: (_, htmlFile) => save('newsletter-template.html', htmlFile),
-  onLoad: () => console.warn('*** [integration] loading a new template... '),
+  onLoad: (json) => console.warn('*** [integration] loading a new template... ', json),
   onSaveAsTemplate: (json) => void save('newsletter-template.json', json),
   onAutoSave: (jsonFile) => {
     console.log(`${new Date().toISOString()} autosaving...,`, jsonFile)

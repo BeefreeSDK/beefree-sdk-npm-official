@@ -14,6 +14,7 @@ import {
   BeeSaveOptions,
   ILanguage,
   IBeeConfigFileManager,
+  ExecCommand,
   ExecCommands,
   IExecCommandOptions,
 } from './types/bee'
@@ -226,7 +227,7 @@ class Bee {
 
   switchPreview = (args?: ILanguage) => this.executeAction(SWITCH_PREVIEW, args)
 
-  execCommand = (command: ExecCommands, options?: IExecCommandOptions) => this.executeAction(EXEC_COMMAND, command, options)
+  execCommand = (command: ExecCommands, options?: IExecCommandOptions): ExecCommand => this.executeAction(EXEC_COMMAND, command, options)
 }
 
 
