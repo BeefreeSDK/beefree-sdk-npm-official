@@ -177,6 +177,7 @@ export enum BeePluginErrorCodes {
   FE_API_ENTITY_LOCKED = 7020,
   FE_API_ENTITY_NOT_FOUND = 7030,
   FE_API_ELEMENT_NOT_FOUND = 7040,
+  FE_API_FORBIDDEN_COMMAND = 7050,
 }
 
 export type BeePluginError = {
@@ -2324,6 +2325,7 @@ export interface IBeeConfig {
   onStart?: () => void
   onSend?: (pageHtml: string) => void
   onChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
+  onRemoteChange?: (json: string, detail: BeePluginMessageEditDetail, version: number) => void
   onWarning?: (error: BeePluginError) => void
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
