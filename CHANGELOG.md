@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.1.0-feat-exec-command.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.0-feat-exec-command.1...v7.1.0-feat-exec-command.2) (2024-12-17)
+
+
+### Features
+
+* added onRemoteChange callback and FE_API_FORBIDDEN_COMMAND error code ([0b90a2c](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/0b90a2c5a9caddf0afddcad19e4322aab1a2200b))
+
 ## [7.1.0-feat-exec-command.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.0.2...v7.1.0-feat-exec-command.1) (2024-11-28)
 
 
