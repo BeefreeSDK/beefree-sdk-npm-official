@@ -18,10 +18,10 @@ export const eitherCheckStartParams = (config: IBeeConfig | IBeeConfigFileManage
     E.chain(() => eitherHasToken(token)),
 )
 
-const eitherBeeInstanceExist = (instance: any) => !instance ? E.left(new Error('Bee is not started')) : E.right(instance)
+const eitherBeeInstanceExist = (instance: unknown) => !instance ? E.left(new Error('Bee is not started')) : E.right(instance)
 const eitherIsValidAction = (action: string) => !Object.keys(beeActions).some(x => beeActions[x] === action ) ? E.left(new Error(`${action} is not a correct method`)) : E.right(action)
 
-export const eitherCanExecuteAction = (instance: any, action: string) => pipe(
+export const eitherCanExecuteAction = (instance: unknown, action: string) => pipe(
     eitherBeeInstanceExist(instance),
     E.chain(() => eitherIsValidAction(action))
 )
