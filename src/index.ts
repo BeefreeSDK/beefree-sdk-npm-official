@@ -7,17 +7,13 @@ import {
   ILoadStageMode, IUrlConfig, LoadWorkspaceOptions,
   IToken, BeeSaveOptions, ILanguage, IBeeConfigFileManager
 } from './types/bee'
-import beeActions, { mockedEmptyToken } from './utils/Constants'
+import beeActions, { mockedEmptyToken, BEEJS_URL, API_AUTH_URL } from './utils/Constants'
 import { fetchToken } from './services/api'
 import { eitherCanExecuteAction, eitherCheckJoinParams, eitherCheckStartParams } from './utils/utils'
 import * as beeTypes from './types/bee'
 
-//this is the global variable injected from BeePlugin.js
+// this is the global variable injected from BeePlugin.js
 declare let BeePlugin: any;
-
-const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/v2/BeePlugin.js'
-
-const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
 
 let beeLoaderUrl: IBeeLoader = {
   beePluginUrl: '',
@@ -100,7 +96,11 @@ class Bee {
         () => new Promise(resolve => {
           bee(() => BeePlugin.create(
             token,
-            { ...config, startOrigin: '[npm] @mailupinc/bee-plugin' },
+            { 
+              ...config,
+              startOrigin: `[npm] ${process.env.NPM_PACKAGE_NAME}`,
+              startOriginVersion: process.env.NPM_PACKAGE_VERSION,
+            },
             instance => {
               this.instance = instance
               instance.start(template, options)
@@ -125,7 +125,11 @@ class Bee {
         () => new Promise(resolve => {
           bee(() => BeePlugin.create(
             token,
-            { ...config, startOrigin: '[npm] @mailupinc/bee-plugin' },
+            { 
+              ...config,
+              startOrigin: `[npm] ${process.env.NPM_PACKAGE_NAME}`,
+              startOriginVersion: process.env.NPM_PACKAGE_VERSION,
+            },
             instance => {
               this.instance = instance
               instance.start(options)

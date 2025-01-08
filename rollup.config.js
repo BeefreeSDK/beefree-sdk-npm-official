@@ -1,14 +1,17 @@
+import nodeExternals from 'rollup-plugin-node-externals'
 import commonjs from '@rollup/plugin-commonjs'
-import external from 'rollup-plugin-peer-deps-external'
 import resolve from '@rollup/plugin-node-resolve'
+import replace from '@rollup/plugin-replace'
+import terser from '@rollup/plugin-terser'
 import url from '@rollup/plugin-url'
 import json from '@rollup/plugin-json'
 import typescript from 'rollup-plugin-typescript2'
 import dotenv from 'dotenv'
-import pkg from './package.json'
+import pkg from './package.json' assert { type: 'json' }
 
 // import .env variables
 dotenv.config();
+
 export default {
   input: 'src/index.ts',
   output: [
@@ -16,18 +19,24 @@ export default {
       file: pkg.main,
       format: 'cjs',
       exports: 'named',
-      sourcemap: true,
+      sourcemap: false,
     },
     {
       file: pkg.module,
       format: 'es',
       exports: 'named',
-      sourcemap: true,
+      sourcemap: false,
     },
   ],
-  external: ['crypto'],
   plugins: [
-    external(),
+    nodeExternals(),
+    replace({
+      preventAssignment: true,
+      values: {
+        "process.env.NPM_PACKAGE_NAME": JSON.stringify(pkg.name),
+        "process.env.NPM_PACKAGE_VERSION": JSON.stringify(pkg.version),
+      },
+    }),
     url(),
     json(),
     resolve(
@@ -40,5 +49,7 @@ export default {
       clean: true,
     }),
     commonjs({}),
+   // terser(),
   ],
+  // external: ['axios', 'load-script', 'fp-ts/lib/function', 'fp-ts/lib/Either'],
 };
