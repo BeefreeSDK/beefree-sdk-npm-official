@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.1.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.0-feat-exec-command.2...v7.1.0) (2025-01-09)
+
 ## [7.1.0-feat-exec-command.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.0-feat-exec-command.1...v7.1.0-feat-exec-command.2) (2024-12-17)
 
 
