@@ -41,7 +41,7 @@ It uses the SDK sources from the `/src` folder.
 3. `npm install` or `yarn install` (if you have it installed) in the folder cloned
 4. rename the local `.env.sample` file to `.env`
 5. run `npm start` or `yarn start`
-6. Open `http://localhost:8081`.
+6. Open http://localhost:8081 in your favourite browser.
 7. Have fun!
 > This demo integration is primarily meant for development purpose on the sources if the Beefree SDK NPM package.
 
