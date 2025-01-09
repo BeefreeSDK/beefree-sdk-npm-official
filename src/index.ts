@@ -112,7 +112,7 @@ class Bee {
         () => new Promise(resolve => {
           bee(() => BeePlugin.create(
             token,
-            { ...config, startOrigin: '[npm] @mailupinc/bee-plugin' },
+            { ...config, startOrigin: '[npm] @beefree.io/sdk' },
             instance => {
               this.instance = instance
               instance.start(template, options)
