@@ -2,10 +2,21 @@ import loadScript from 'load-script'
 import { pipe } from 'fp-ts/lib/function'
 import * as E from 'fp-ts/lib/Either'
 import {
-  IBeeConfig, IEntityContentJson,
-  IBeeLoader, IBeeOptions, ILoadConfig,
-  ILoadStageMode, IUrlConfig, LoadWorkspaceOptions,
-  IToken, BeeSaveOptions, ILanguage, IBeeConfigFileManager
+  IBeeConfig,
+  IEntityContentJson,
+  IBeeLoader,
+  IBeeOptions,
+  ILoadConfig,
+  ILoadStageMode,
+  IUrlConfig,
+  LoadWorkspaceOptions,
+  IToken,
+  BeeSaveOptions,
+  ILanguage,
+  IBeeConfigFileManager,
+  ExecCommand,
+  ExecCommands,
+  IExecCommandOptions,
 } from './types/bee'
 import beeActions, { mockedEmptyToken, BEEJS_URL, API_AUTH_URL } from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -49,6 +60,7 @@ const {
   GET_CONFIG,
   SWITCH_TEMPLATE_LANGUAGE,
   SWITCH_PREVIEW,
+  EXEC_COMMAND,
 } = beeActions
 
 class Bee {
@@ -164,7 +176,7 @@ class Bee {
 
   executeAction = (action: string, param = {}, options = {}) => {
     const { instance } = this
-    pipe(
+    return pipe(
       eitherCanExecuteAction(instance, action),
       E.fold(
         ({ message }) => { throw new Error(message) },
@@ -219,6 +231,7 @@ class Bee {
 
   switchPreview = (args?: ILanguage) => this.executeAction(SWITCH_PREVIEW, args)
 
+  execCommand = (command: ExecCommands, options?: IExecCommandOptions): ExecCommand => this.executeAction(EXEC_COMMAND, command, options)
 }
 
 
