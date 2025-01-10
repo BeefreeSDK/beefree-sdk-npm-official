@@ -1,7 +1,6 @@
+import nodeExternals from 'rollup-plugin-node-externals'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
-import serve from 'rollup-plugin-serve'
-import livereload from 'rollup-plugin-livereload'
 import replace from '@rollup/plugin-replace'
 import terser from '@rollup/plugin-terser'
 import url from '@rollup/plugin-url'
@@ -11,45 +10,45 @@ import dotenv from 'dotenv'
 import pkg from './package.json' assert { type: 'json' }
 
 // import .env variables
-dotenv.config({ path: './.env' })
+dotenv.config();
 
 export default {
-  input: 'example/integration.ts',
+  input: 'src/index.ts',
   output: [
     {
-      file: 'dist/dist/bundle.js',
-      format: 'iife',
+      file: pkg.main,
+      format: 'cjs',
       exports: 'named',
-      sourcemap: true,
+      sourcemap: false,
+    },
+    {
+      file: pkg.module,
+      format: 'es',
+      exports: 'named',
+      sourcemap: false,
     },
   ],
   plugins: [
+    nodeExternals(),
     replace({
       preventAssignment: true,
       values: {
-        "process.env.PLUGIN_CLIENT_ID": JSON.stringify(process.env.PLUGIN_CLIENT_ID),
-        "process.env.PLUGIN_CLIENT_SECRET": JSON.stringify(process.env.PLUGIN_CLIENT_SECRET),
         "process.env.NPM_PACKAGE_NAME": JSON.stringify(pkg.name),
         "process.env.NPM_PACKAGE_VERSION": JSON.stringify(pkg.version),
       },
     }),
     url(),
     json(),
-    resolve({
-      preferBuiltins: true,
-      browser: true,
-    }),
+    resolve(
+      {
+        preferBuiltins: true,
+        browser: true,
+      },
+    ),
     typescript({
       clean: true,
     }),
     commonjs({}),
-    serve({
-      open: true,
-      port: 8081,
-      contentBase: ['example', 'dist'],
-    }),
-    livereload({
-      watch: ['dist', 'example'],
-    }),
+    terser(),
   ],
-};
+}
