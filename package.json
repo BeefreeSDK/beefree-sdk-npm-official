@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "description": "wrapper of BeefreeSDK",
   "type": "module",
   "main": "dist/index.js",
