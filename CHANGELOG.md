@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.2-chore-row-type-selected.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.1...v7.1.2-chore-row-type-selected.0) (2025-01-15)
+
+
+### Bug Fixes
+
+* adds selected row type property ([0577520](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/0577520be2f87f79776564012dc855f0f3c2a1bb))
+
 ### [7.1.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.0...v7.1.1) (2025-01-09)
 
 ## [7.1.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.0-feat-exec-command.2...v7.1.0) (2025-01-09)
