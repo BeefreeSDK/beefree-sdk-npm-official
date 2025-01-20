@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.2-chore-row-type-selected.0...v7.1.2) (2025-01-20)
+
 ### [7.1.2-chore-row-type-selected.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.1...v7.1.2-chore-row-type-selected.0) (2025-01-15)
 
 
