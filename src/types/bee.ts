@@ -853,6 +853,7 @@ export type RowsConfiguration = {
   defaultRows?: boolean
   externalContentURLs?: CustomRowConfiguration[]
   maxRowsDisplayed?: number
+  selectedRowType?: string
 }
 
 export type CustomRowBehaviors = {
