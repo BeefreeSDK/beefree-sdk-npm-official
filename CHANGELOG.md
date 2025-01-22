@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.3-beepro-7058.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.3-beepro-7058.0...v7.1.3-beepro-7058.1) (2025-01-22)
+
+
+### Bug Fixes
+
+* **BEEPRO-7058:** add hover style property for button module ([cc4d783](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/cc4d7834c1349dd71eb38dd8ad4b6537f1359de6))
+
 ### [7.1.3-beepro-7058.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.2...v7.1.3-beepro-7058.0) (2025-01-22)
 
 
