@@ -1222,6 +1222,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         letterSpacing: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
         aiIntegration: AdvancedSettingsShowLocked
+        hoverStyles: AdvancedSettingsShowLocked
       }
     }
     image: {
@@ -1743,6 +1744,14 @@ export type ContentDefaultsButton = Partial<{
     paddingTop: string
     align: string
     hideContentOnMobile: boolean
+  }>
+  hoverStyles: Partial<{
+    backgroundColor: string
+    color: string
+    borderRight: string
+    borderLeft: string
+    borderBottom: string
+    borderTop: string
   }>
 }>
 
