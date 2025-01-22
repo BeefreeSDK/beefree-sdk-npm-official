@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.3-beepro-7058.1...v7.1.3) (2025-01-22)
+
 ### [7.1.3-beepro-7058.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.3-beepro-7058.0...v7.1.3-beepro-7058.1) (2025-01-22)
 
 
