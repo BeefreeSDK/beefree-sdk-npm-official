@@ -393,6 +393,14 @@ export interface IPluginModuleButton {
       hideContentOnMobile: boolean
       width: number
     }
+    hoverStyle: {
+      "background-color": string,
+      "color": string,
+      "border-top": string,
+      "border-right": string,
+      "border-bottom": string,
+      "border-left": string
+    }
     button: {
       href: string
       label: string
