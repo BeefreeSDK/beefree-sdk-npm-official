@@ -10,9 +10,9 @@
 A simple module to use the [Beefree SDK](http://developers.beefree.io)
 
 ## Why Beefree SDK?
-Choose a reliable, easy-to-integrate multi-content type digital platform you can build on. Beefree SDK is more than an embeddable visual builder with a great drag-and-drop user experience. It’s a reliable, highly customizable email, landing page & popup builder.
+Choose a reliable, easy-to-integrate multi-content type digital platform you can build on. **Beefree SDK** is more than an embeddable visual builder with a great drag-and-drop user experience. It’s a reliable, highly customizable email, landing page & popup builder.
 
-Go from proof-of-concept to production in days, not months. Beefree SDK can be highly customized in how it looks, what it does, and how it interacts with your application. Deliver your business exactly what it needs with a small development effort.
+Go from proof-of-concept to production in days, not months. **Beefree SDK** can be highly customized in how it looks, what it does, and how it interacts with your application. Deliver your business exactly what it needs with a small development effort.
 
 You can embed it into your application!
 
@@ -22,7 +22,7 @@ Visit our developer documentation [https://docs.beefree.io/]
 ## How to use it
 
 - go to the developer portal [https://developers.beefree.io/signup](https://developers.beefree.io/signup)
-- sign up for the free plan
+- sign up for the Free plan
 - create your application
 - get the clientId and the clientSecret
 
@@ -32,15 +32,18 @@ It's free to use on ['https://beefree.io'](https://beefree.io): you don't even n
 
 
 ## Do you want to try out an integration locally?
+This project comes with an example integration to run the SDK builder locally.  
+It uses the SDK sources from the `/src` folder.
 
 1. Install Nodejs (also npm, which should come with nodejs already) or Yarn.
-2. clone this repository
-3. `npm install` or `yarn install`(if you have it installed) in the folder cloned
-4. rename the local `.env.sample` file into `.env`
+2. clone this repository:
+   - `git clone https://github.com/BeefreeSDK/beefree-sdk-npm-official.git`
+3. `npm install` or `yarn install` (if you have it installed) in the folder cloned
+4. rename the local `.env.sample` file to `.env`
 5. run `npm start` or `yarn start`
-6. Open `http://localhost:8080`.
+6. Open http://localhost:8081 in your favourite browser.
 7. Have fun!
-
+> This demo integration is primarily meant for development purpose on the sources if the Beefree SDK NPM package.
 
 ## How to use this module for your own
 
@@ -58,7 +61,7 @@ yarn add @beefree.io/sdk
 
 ## Initialize the builder
 ### Get token(clientId, clientSecret)
-> You need to be authorized to start using the editor: beefree help documentation portal [has a nice post](https://docs.beefree.io/beefree-sdk/readme/installation) explaining how to do it
+> You need to be authorized to start using the editor: Beefree help documentation portal [has a nice post](https://docs.beefree.io/beefree-sdk/readme/installation) explaining how to do it
 
 It's not really recommended to do it client side but it's possible with the module, just call getToken.
 
@@ -67,7 +70,7 @@ Pass your credential on `getToken` method and start the SDK in the returning pro
 ```js
 import BeefreeSDK from '@beefree.io/sdk'
 
-//Put your credentials in the .env file
+// Put your credentials in the .env file
 const clientId = process.env.CLIENT_ID
 const clientSecret = process.env.CLIENT_SECRET
 const beeConfig = {...}

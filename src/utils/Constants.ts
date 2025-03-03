@@ -30,4 +30,8 @@ export const mockedEmptyToken : IToken = {
   access_token: '', status: TokenStatus.OK, v2: true, coediting_session_id: null, shared: false
 }
 
+export const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/v2/BeePlugin.js'
+
+export const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
+
 export default beeActions
