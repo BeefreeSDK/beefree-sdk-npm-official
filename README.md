@@ -101,7 +101,7 @@ builder.start(beeConfig, template)
 ```
 
 ## Configuring the editor (beeConfig)
-> It requires a configuration for using the editor, beefree help documentation portal [has a nice post](http://help.beefree.io/hc/en-us/articles/202991192-Initializing-the-plugin) explaining how to do it
+> It requires a configuration for using the editor, beefree help documentation portal [has a nice post](https://docs.beefree.io/beefree-sdk/getting-started/readme/installation/configuration-parameters) explaining how to do it
 
 Here is an example of the configuration; just read the official documentation for an extended version.
 
