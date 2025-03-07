@@ -27,7 +27,7 @@ jobs:
       name: build
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x, 18.x, 20.x, 22.x]
     steps:
       - uses: actions/checkout@v4.2.2
       - name: Use Node Version ${{ matrix.node-version }}
@@ -86,11 +86,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4.2.2
 
-    - name: Use Node Version 14.x
+    - name: Use Node Version 20.x
       uses: actions/setup-node@v1
       with:
         registry-url: 'https://registry.npmjs.org'
-        node-version: '14.x'
+        node-version: '20.x'
         scope: '@mailupinc'
 
     - name: Get yarn cache directory path
