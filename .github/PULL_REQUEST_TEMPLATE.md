@@ -11,10 +11,10 @@ If it fixes an open issue, please link to the issue here.
 ## Usage examples
 
 ```js
-import BeePLugin from '@mailupinc/bee-plugin'
+import BeefreeSDK from '@beefree.io/sdk'
 
-const beePlugin = new BeePlugin()
-beePlugin.getToken()
+const sdk = new BeefreeSDK()
+sdk.getToken()
 ```
 ## How Has This Been Tested?
 
