@@ -27,9 +27,9 @@ jobs:
       name: build
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [18.x, 20.x, 22.x]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4.2.2
       - name: Use Node Version ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -41,7 +41,7 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4.2.2
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -49,7 +49,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4.2.2
         name: Cache node_modules
         id: cache-node-modules
         with:
@@ -58,7 +58,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4.2.2
         name: Cache Jest cache
         id: cache-jest-cache
         with:
@@ -68,7 +68,7 @@ jobs:
       - name: Install Dependencies
         run: yarn --frozen-lockfile
         if: steps.cache-yarn-cache.outputs.cache-hit != 'true' || steps.cache-node-modules.outputs.cache-hit != 'true'
-      
+
       - name: Unit tests
         run: yarn test --all --cacheDirectory .jest-cache --coverage --watchAll false
       - uses: vebr/jest-lcov-reporter@v0.2.1
@@ -84,20 +84,20 @@ jobs:
     if: contains(github.ref, 'tag')
     needs: build
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4.2.2
 
-    - name: Use Node Version 14.x
+    - name: Use Node Version 20.x
       uses: actions/setup-node@v1
       with:
         registry-url: 'https://registry.npmjs.org'
-        node-version: '14.x'
+        node-version: '20.x'
         scope: '@mailupinc'
 
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
 
-    - uses: actions/cache@v3
+    - uses: actions/cache@v4.2.2
       id: yarn-cache
       with:
         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
