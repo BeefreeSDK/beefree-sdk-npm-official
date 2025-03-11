@@ -70,12 +70,7 @@ jobs:
         if: steps.cache-yarn-cache.outputs.cache-hit != 'true' || steps.cache-node-modules.outputs.cache-hit != 'true'
 
       - name: Unit tests
-        run: yarn test --all --cacheDirectory .jest-cache --coverage --watchAll false
-      - uses: vebr/jest-lcov-reporter@v0.2.1
-        # Print comment only on 1 build and PR
-        if: matrix.node-version == '14.x' && github.event_name == 'pull_request'
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn test --all --cacheDirectory .jest-cache --watchAll false
 
   release:
     runs-on: ubuntu-latest
