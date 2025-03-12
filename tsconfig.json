@@ -34,7 +34,6 @@
     "node_modules",
     "build",
     "dist",
-    "rollup.config.mjs",
     "**/*.test.ts"
   ]
 }
