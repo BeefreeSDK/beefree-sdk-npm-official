@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0-build-version-8-rc.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.4...v8.0.0-build-version-8-rc.0) (2025-03-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for node 14.x, add support for node 20.x and 22.x
+
+### ci
+
+* drop support for node 14.x, add support for node 20.x and 22.x ([6a81ff6](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/6a81ff6e590cc0b9b970773be5cf553a5c11c812))
+
 ### [7.1.4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.4-chore-content-area-padding-advanced-permissions.0...v7.1.4) (2025-01-27)
 
 ### [7.1.4-chore-content-area-padding-advanced-permissions.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.3...v7.1.4-chore-content-area-padding-advanced-permissions.0) (2025-01-27)
