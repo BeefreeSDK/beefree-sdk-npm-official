@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0-build-version-8-rc.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.0...v8.0.0-build-version-8-rc.1) (2025-03-24)
+
+
+### Features
+
+* added sperimental advance preview property ([d1fbac4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/d1fbac4e15a1c87846056b37e8db57441d5d2599))
+* **rollup:** build ESM and CJS with external dependencies ([9190768](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/919076886fa424c3534b6cb62cd5a4600dbb3ac0))
+* upgrade Rollup and grab name and version from package.json ([7130341](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/713034114b6653baf43b0d9a033a2f9b4e18f7bb))
+
+
+### Bug Fixes
+
+* use ESM syntax for import in fileTransform ([8da6154](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/8da6154d36a1b3e44855f5e4cc1cbbc38d1e8124))
+
 ## [8.0.0-build-version-8-rc.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.4...v8.0.0-build-version-8-rc.0) (2025-03-11)
 
 
