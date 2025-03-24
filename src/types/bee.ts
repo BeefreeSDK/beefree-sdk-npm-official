@@ -2234,6 +2234,11 @@ id: string
   placeholder?: string
 }
 
+export type AdvancedPreview = {
+  showTitle: boolean
+  showCloseBox: boolean
+}
+
 export interface AddOnOpenAI {
   id: 'ai-integration'
   settings: {
@@ -2329,6 +2334,7 @@ export interface IBeeConfig {
   customAttributes?: CustomAttributes
   sidebarPosition?: 'left' | 'right'
   rowDisplayConditions?: Array<IPluginDisplayCondition>
+  advancedPreview?: AdvancedPreview
   onTemplateLanguageChange?: (lang: { label: string, value: string, isMain: boolean }) => void
   onLoad?: (json: IEntityJson) => void
   onPreview?: (opened: boolean) => void
