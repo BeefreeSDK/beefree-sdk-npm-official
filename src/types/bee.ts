@@ -2235,6 +2235,7 @@ id: string
 }
 
 export type AdvancedPreview = {
+  enabled: boolean
   showTitle: boolean
   showCloseBox: boolean
 }
