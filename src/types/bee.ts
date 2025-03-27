@@ -2235,12 +2235,12 @@ id: string
 }
 
 type BaseDevicePresetSizes = {
-  desktop?: { width: number; height: number }
+  computer?: { width: number; height: number }
   tablet?: { width: number; height: number }
-  mobile?: { width: number; height: number }
+  phone?: { width: number; height: number }
 }
 
-type DevicePresetSizes = RequireAtLeastOne<BaseDevicePresetSizes>
+export type DevicePresetSizes = RequireAtLeastOne<BaseDevicePresetSizes>
 
 export type AdvancedPreview = {
   enabled: boolean
