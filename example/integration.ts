@@ -257,6 +257,21 @@ const beeConfig :IBeeConfig = {
     label: 'lorem ipsum',
     name: 'Lorem ipsum'
   }],
+  advancedPreview: {
+    enabled: true,
+    showCloseBox: true,
+    showTitle: true,
+    devicePresetSizes: {
+      desktop: {
+        width: 1024,
+        height: 768
+      },
+      mobile: {
+        width: 375,
+        height: 667
+      }
+    }
+  },
   onSave: (_, htmlFile) => save('newsletter-template.html', htmlFile),
   onLoad: (json) => console.warn('*** [integration] loading a new template... ', json),
   onSaveAsTemplate: (json) => void save('newsletter-template.json', json),

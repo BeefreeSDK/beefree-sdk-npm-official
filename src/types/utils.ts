@@ -17,3 +17,7 @@ export type RecursivePartial<T> = {
 export type RecursiveRequired<T> = Required<{
   [P in keyof T]: T[P] extends Record<string, unknown> | undefined ? RecursiveRequired<Required<T[P]>> : T[P];
 }>;
+
+// Require at least one key to be present
+export type RequireAtLeastOne<T, K extends keyof T = keyof T> =
+  { [P in K]: Required<Pick<T, P>> & Partial<Omit<T, P>> }[K]

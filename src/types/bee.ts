@@ -1,5 +1,5 @@
 import * as CSS from 'csstype'
-import { KebabKeys, RecursivePartial, ValueOf } from './utils'
+import { KebabKeys, RecursivePartial, RequireAtLeastOne, ValueOf } from './utils'
 
 export interface IBeeLoader {
   beePluginUrl: string,
@@ -2234,10 +2234,19 @@ id: string
   placeholder?: string
 }
 
+type BaseDevicePresetSizes = {
+  desktop?: { width: number; height: number }
+  tablet?: { width: number; height: number }
+  mobile?: { width: number; height: number }
+}
+
+type DevicePresetSizes = RequireAtLeastOne<BaseDevicePresetSizes>
+
 export type AdvancedPreview = {
   enabled: boolean
   showTitle: boolean
   showCloseBox: boolean
+  devicePresetSizes?: DevicePresetSizes
 }
 
 export interface AddOnOpenAI {
