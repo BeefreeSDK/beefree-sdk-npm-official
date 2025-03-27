@@ -262,11 +262,11 @@ const beeConfig :IBeeConfig = {
     showCloseBox: true,
     showTitle: true,
     devicePresetSizes: {
-      desktop: {
+      computer: {
         width: 1024,
         height: 768
       },
-      mobile: {
+      phone: {
         width: 375,
         height: 667
       }
