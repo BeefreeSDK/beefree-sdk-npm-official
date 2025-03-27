@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0-build-version-8-rc.3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.2...v8.0.0-build-version-8-rc.3) (2025-03-27)
+
+
+### Features
+
+* added devide preset sizes in advanced preview ([e17b675](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/e17b675d849220da61a76ff8a1606aacede99631))
+
 ## [8.0.0-build-version-8-rc.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.1...v8.0.0-build-version-8-rc.2) (2025-03-25)
 
 ## [8.0.0-build-version-8-rc.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.0...v8.0.0-build-version-8-rc.1) (2025-03-24)
