@@ -1102,6 +1102,43 @@ export type CustomAttributes = {
 }
 
 export type BeePluginAdvancedPermission = RecursivePartial<{
+  components: {
+    filePicker: {
+      canApplyEffects: boolean,
+      canChangeImage: boolean,
+      canChangeVideo: boolean,
+      canCreateFolder: boolean,
+      canDeleteFile: boolean,
+      canDeleteFolder: boolean,
+      canImportFile: boolean,
+      canSearchFreePhotos: boolean,
+      canSearchFreeVideos: boolean,
+      canUpload: boolean,
+      maxUploadFileSize: number
+    }
+    linkTypes: {
+      webAddress: {
+        show: boolean
+      },
+      emailAddress: {
+        show: boolean
+      },
+      telephone: {
+        show: boolean
+      },
+      text: {
+        show: boolean
+      },
+      anchor: {
+        show: boolean
+      }
+    }
+    advancedPreview: {
+      showTitle: boolean
+      showCloseBox: boolean
+      devicePresetSizes?: DevicePresetSizes
+    }
+  }
   workspace: {
     stageToggle: BeePluginAdvancedPermissionStageToggle
   }
@@ -2242,13 +2279,6 @@ type BaseDevicePresetSizes = {
 
 export type DevicePresetSizes = RequireAtLeastOne<BaseDevicePresetSizes>
 
-export type AdvancedPreview = {
-  enabled: boolean
-  showTitle: boolean
-  showCloseBox: boolean
-  devicePresetSizes?: DevicePresetSizes
-}
-
 export interface AddOnOpenAI {
   id: 'ai-integration'
   settings: {
@@ -2344,7 +2374,7 @@ export interface IBeeConfig {
   customAttributes?: CustomAttributes
   sidebarPosition?: 'left' | 'right'
   rowDisplayConditions?: Array<IPluginDisplayCondition>
-  advancedPreview?: AdvancedPreview
+  enabledAdvancedPreview?: boolean
   onTemplateLanguageChange?: (lang: { label: string, value: string, isMain: boolean }) => void
   onLoad?: (json: IEntityJson) => void
   onPreview?: (opened: boolean) => void
