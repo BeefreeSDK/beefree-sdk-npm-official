@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0-build-version-8-rc.4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.3...v8.0.0-build-version-8-rc.4) (2025-03-28)
+
+
+### Features
+
+* added components props in advanced permissions ([7bc0ceb](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/7bc0ceb1b57dceaa8d85b55e7530483ca6062409))
+
 ## [8.0.0-build-version-8-rc.3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.2...v8.0.0-build-version-8-rc.3) (2025-03-27)
 
 
