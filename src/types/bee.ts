@@ -1103,7 +1103,13 @@ export type CustomAttributes = {
 
 export type BeePluginAdvancedPermission = RecursivePartial<{
   components: {
-    filePicker: {
+    colorPicker?: {
+      canViewColorInput: boolean,
+      canViewSliders: boolean,
+      canSetAlpha: boolean,
+      canViewSwatches: boolean,
+    },
+    filePicker?: {
       canApplyEffects: boolean,
       canChangeImage: boolean,
       canChangeVideo: boolean,
@@ -1116,7 +1122,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
       canUpload: boolean,
       maxUploadFileSize: number
     }
-    linkTypes: {
+    linkTypes?: {
       webAddress: {
         show: boolean
       },
@@ -1133,7 +1139,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         show: boolean
       }
     }
-    advancedPreview: {
+    advancedPreview?: {
       showTitle: boolean
       showCloseBox: boolean
       devicePresetSizes?: DevicePresetSizes
