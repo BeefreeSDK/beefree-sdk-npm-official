@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0-build-version-8-rc.5](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.4...v8.0.0-build-version-8-rc.5) (2025-04-02)
+
+
+### Features
+
+* added colorPicker type into advanced permissions compèonents ([994567e](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/994567ee4b88a8c740bdce4ebc9cf1ac3ff47c08))
+
 ## [8.0.0-build-version-8-rc.4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.3...v8.0.0-build-version-8-rc.4) (2025-03-28)
 
 
