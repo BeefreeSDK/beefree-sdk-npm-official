@@ -25,7 +25,7 @@
     "clean": "rimraf dist",
     "prebuild": "yarn lint && yarn clean",
     "prestart": "yarn lint && yarn clean",
-    "build": "rollup -c",
+    "build": "rollup -c && yarn tsc",
     "prepare": "husky install",
     "lint": "eslint ./src --ext ts",
     "prerelease": "git pull",
