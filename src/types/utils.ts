@@ -21,3 +21,5 @@ export type RecursiveRequired<T> = Required<{
 // Require at least one key to be present
 export type RequireAtLeastOne<T, K extends keyof T = keyof T> =
   { [P in K]: Required<Pick<T, P>> & Partial<Omit<T, P>> }[K]
+
+export type valueof<T> = T[keyof T]

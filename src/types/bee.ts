@@ -1,5 +1,5 @@
 import * as CSS from 'csstype'
-import { KebabKeys, RecursivePartial, RequireAtLeastOne, ValueOf } from './utils'
+import { KebabKeys, RecursivePartial, RequireAtLeastOne, valueof, ValueOf } from './utils'
 
 export interface IBeeLoader {
   beePluginUrl: string,
@@ -2328,10 +2328,37 @@ export interface Translations {
   [key: string]: string | Translations;
 }
 
-
 export interface TextEditor {
   onChangeDelay: number
 }
+
+export const PREVIEW_CONTROL = {
+  DARK_MODE: 'dark',
+  AMP: 'amp',
+  LANGUAGE: 'language',
+  DEVICE: 'device',
+  SIZE: 'size',
+  DISPLAY_CONDITIONS: 'DISPLAY_CONDITIONS',
+} as const
+
+export type Size = {
+  width: number
+  height: number
+}
+
+export type ValueType<T extends valueof<typeof PREVIEW_CONTROL>> =
+  T extends 'dark' ? string :
+  T extends 'amp' ? string :
+  T extends 'language' ? TemplateLanguage :
+  T extends 'device' ? string :
+  T extends 'size' ? Size :
+  unknown
+
+
+export type onChangePreviewControl = <
+  T extends valueof<typeof PREVIEW_CONTROL>,
+>(control: T, value: ValueType<T>) => void
+
 export interface IBeeConfig {
   container: string
   uid?: string
@@ -2401,6 +2428,7 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
+  onPreviewChange?: (preview: boolean) => void
   commentingFiltersOff?: boolean
   logLevel?: number
   titleDefaultConfig?: {
