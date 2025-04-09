@@ -2281,6 +2281,9 @@ export interface Translations {
 export interface TextEditor {
   onChangeDelay: number
 }
+
+export type ViewTypes = 'fileManager' | 'editor' | 'preview' | 'imageEditor'
+
 export interface IBeeConfig {
   container: string
   uid?: string
@@ -2349,6 +2352,7 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
+  onViewChange?: (view: ViewTypes) => void
   commentingFiltersOff?: boolean
   logLevel?: number
   titleDefaultConfig?: {
