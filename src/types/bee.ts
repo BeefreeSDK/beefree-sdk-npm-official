@@ -2428,7 +2428,7 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
-  onPreviewChange?: (preview: boolean) => void
+  onPreviewChange?: (preview: onChangePreviewControl) => void
   commentingFiltersOff?: boolean
   logLevel?: number
   titleDefaultConfig?: {
