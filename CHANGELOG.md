@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0-build-version-8-rc.8](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.7...v8.0.0-build-version-8-rc.8) (2025-04-09)
+
+
+### Bug Fixes
+
+* wrong type argument on onPreviewChange ([0e409da](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/0e409daa0a588e916af1028132c063d5a8f26a9b))
+
 ## [8.0.0-build-version-8-rc.7](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.6...v8.0.0-build-version-8-rc.7) (2025-04-09)
 
 
