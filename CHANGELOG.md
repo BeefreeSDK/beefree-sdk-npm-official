@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.5-feat-canva.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.4...v7.1.5-feat-canva.0) (2025-04-09)
+
+
+### Bug Fixes
+
+* **BEEI-617:** add onViewChange type ([b232d7b](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/b232d7bdc9bec5d663c923a1cbda49bf42728820))
+* fixed broken link in readme ([c572b76](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/c572b76fc8715a528e58f7f427f6125ccb4615cd))
+
 ### [7.1.4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.4-chore-content-area-padding-advanced-permissions.0...v7.1.4) (2025-01-27)
 
 ### [7.1.4-chore-content-area-padding-advanced-permissions.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.3...v7.1.4-chore-content-area-padding-advanced-permissions.0) (2025-01-27)
