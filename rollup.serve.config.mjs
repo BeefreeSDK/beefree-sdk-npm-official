@@ -3,7 +3,6 @@ import resolve from '@rollup/plugin-node-resolve'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import replace from '@rollup/plugin-replace'
-import terser from '@rollup/plugin-terser'
 import url from '@rollup/plugin-url'
 import json from '@rollup/plugin-json'
 import typescript from 'rollup-plugin-typescript2'
@@ -45,7 +44,7 @@ export default {
     commonjs({}),
     serve({
       open: true,
-      port: 8081,
+      port: 8181,
       contentBase: ['example', 'dist'],
     }),
     livereload({

@@ -2355,9 +2355,14 @@ export type ValueType<T extends valueof<typeof PREVIEW_CONTROL>> =
   unknown
 
 
-export type onChangePreviewControl = <
-  T extends valueof<typeof PREVIEW_CONTROL>,
->(control: T, value: ValueType<T>) => void
+export type onChangePreviewControlArgs<T extends valueof<typeof PREVIEW_CONTROL>> = {
+  control: T
+  value: ValueType<T>
+}
+
+export type onChangePreviewControl = <T extends valueof<typeof PREVIEW_CONTROL>>(
+  args: onChangePreviewControlArgs<T>
+) => void
 
 export interface IBeeConfig {
   container: string
@@ -2428,7 +2433,7 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
-  onPreviewChange?: (preview: onChangePreviewControl) => void
+  onPreviewChange?: (preview: onChangePreviewControlArgs<valueof<typeof PREVIEW_CONTROL>>) => void
   commentingFiltersOff?: boolean
   logLevel?: number
   titleDefaultConfig?: {
