@@ -2356,7 +2356,7 @@ export type ValueType<T extends valueof<typeof PREVIEW_CONTROL>> =
 
 
 export type onChangePreviewControlArgs<T extends valueof<typeof PREVIEW_CONTROL>> = {
-  control: T
+  type: T
   value: ValueType<T>
 }
 

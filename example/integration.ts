@@ -276,22 +276,22 @@ const beeConfig :IBeeConfig = {
     prompt('press ctrl+c to copy the session ID', sessionInfo.sessionId)
   },
   onPreviewChange: (args) => {
-    if(args.control === PREVIEW_CONTROL.LANGUAGE) {
+    if(args.type === PREVIEW_CONTROL.LANGUAGE) {
       console.warn('*** [integration] --> (onPreviewChange) language changed to ', args.value);
     }
-    if(args.control === PREVIEW_CONTROL.AMP) {
+    if (args.type === PREVIEW_CONTROL.AMP) {
       console.warn('*** [integration] --> (onPreviewChange) AMP mode changed to ', args.value);
     }
-    if(args.control === PREVIEW_CONTROL.DARK_MODE) {
+    if (args.type === PREVIEW_CONTROL.DARK_MODE) {
       console.warn('*** [integration] --> (onPreviewChange) dark mode changed to ', args.value);
     }
-    if(args.control === PREVIEW_CONTROL.DEVICE) {
+    if (args.type === PREVIEW_CONTROL.DEVICE) {
       console.warn('*** [integration] --> (onPreviewChange) device changed to ', args.value);
     }
-    if(args.control === PREVIEW_CONTROL.DISPLAY_CONDITIONS) {
+    if (args.type === PREVIEW_CONTROL.DISPLAY_CONDITIONS) {
       console.warn('*** [integration] --> (onPreviewChange) display condition changed to ', args.value);
     }
-    if(args.control === PREVIEW_CONTROL.SIZE) {
+    if (args.type === PREVIEW_CONTROL.SIZE) {
       console.warn('*** [integration] --> (onPreviewChange) size changed to ', args.value);
     }
   },
