@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0-build-version-8-rc.11](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.10...v8.0.0-build-version-8-rc.11) (2025-04-16)
+
 ## [8.0.0-build-version-8-rc.10](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.9...v8.0.0-build-version-8-rc.10) (2025-04-11)
 
 
