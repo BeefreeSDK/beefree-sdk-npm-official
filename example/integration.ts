@@ -5,7 +5,7 @@ import {
   CustomAttributes,
   IAddOnResponseImage,
   IBeeConfig, IMergeContent, IMergeTag, ISpecialLink,
-  LoadWorkspaceOptions, ModuleDescriptorOrderNames, RowDisplayConditionsHandler, StageDisplayOptions, StageModeOptions, TokenStatus
+  LoadWorkspaceOptions, ModuleDescriptorOrderNames, PREVIEW_CONTROL, RowDisplayConditionsHandler, StageDisplayOptions, StageModeOptions, TokenStatus
 } from '../src/types/bee';
 declare let saveAs: any;
 
@@ -187,6 +187,7 @@ const beeConfig :IBeeConfig = {
   mergeContents,
   contentDialog: contentDialogs,
   contentDefaults,
+  enabledAdvancedPreview: true,
   modulesGroups: [
     {
       label: 'Text',
@@ -273,6 +274,26 @@ const beeConfig :IBeeConfig = {
   onSessionStarted: (sessionInfo) => {
     console.warn('*** [integration] --> (onSessionStarted) ', sessionInfo);
     prompt('press ctrl+c to copy the session ID', sessionInfo.sessionId)
+  },
+  onPreviewChange: (args) => {
+    if(args.type === PREVIEW_CONTROL.LANGUAGE) {
+      console.warn('*** [integration] --> (onPreviewChange) language changed to ', args.value);
+    }
+    if (args.type === PREVIEW_CONTROL.AMP) {
+      console.warn('*** [integration] --> (onPreviewChange) AMP mode changed to ', args.value);
+    }
+    if (args.type === PREVIEW_CONTROL.DARK_MODE) {
+      console.warn('*** [integration] --> (onPreviewChange) dark mode changed to ', args.value);
+    }
+    if (args.type === PREVIEW_CONTROL.DEVICE) {
+      console.warn('*** [integration] --> (onPreviewChange) device changed to ', args.value);
+    }
+    if (args.type === PREVIEW_CONTROL.DISPLAY_CONDITIONS) {
+      console.warn('*** [integration] --> (onPreviewChange) display condition changed to ', args.value);
+    }
+    if (args.type === PREVIEW_CONTROL.SIZE) {
+      console.warn('*** [integration] --> (onPreviewChange) size changed to ', args.value);
+    }
   },
   onSessionChange: (sessionInfo) => console.warn('*** [integration] --> (onSessionChange) ', sessionInfo),
 }

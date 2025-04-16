@@ -1,5 +1,5 @@
 import * as CSS from 'csstype'
-import { KebabKeys, RecursivePartial, ValueOf } from './utils'
+import { KebabKeys, RecursivePartial, RequireAtLeastOne, valueof, ValueOf } from './utils'
 
 export interface IBeeLoader {
   beePluginUrl: string,
@@ -15,9 +15,11 @@ export interface IBeeOptions {
   shared?: boolean
 }
 
-interface TemplateLanguage {
+export interface TemplateLanguage {
   label: string,
   value: string
+  twoCharsCode: string
+  isMain: boolean
 }
 
 export interface BeeSaveOptions {
@@ -1102,6 +1104,49 @@ export type CustomAttributes = {
 }
 
 export type BeePluginAdvancedPermission = RecursivePartial<{
+  components: {
+    colorPicker?: {
+      canViewColorInput: boolean,
+      canViewSliders: boolean,
+      canSetAlpha: boolean,
+      canViewSwatches: boolean,
+    },
+    filePicker?: {
+      canApplyEffects: boolean,
+      canChangeImage: boolean,
+      canChangeVideo: boolean,
+      canCreateFolder: boolean,
+      canDeleteFile: boolean,
+      canDeleteFolder: boolean,
+      canImportFile: boolean,
+      canSearchFreePhotos: boolean,
+      canSearchFreeVideos: boolean,
+      canUpload: boolean,
+      maxUploadFileSize: number
+    }
+    linkTypes?: {
+      webAddress: {
+        show: boolean
+      },
+      emailAddress: {
+        show: boolean
+      },
+      telephone: {
+        show: boolean
+      },
+      text: {
+        show: boolean
+      },
+      anchor: {
+        show: boolean
+      }
+    }
+    advancedPreview?: {
+      showTitle: boolean
+      showCloseBox: boolean
+      devicePresetSizes?: DevicePresetSizes
+    }
+  }
   workspace: {
     stageToggle: BeePluginAdvancedPermissionStageToggle
   }
@@ -2234,6 +2279,14 @@ id: string
   placeholder?: string
 }
 
+type BaseDevicePresetSizes = {
+  computer?: { width: number; height: number }
+  tablet?: { width: number; height: number }
+  phone?: { width: number; height: number }
+}
+
+export type DevicePresetSizes = RequireAtLeastOne<BaseDevicePresetSizes>
+
 export interface AddOnOpenAI {
   id: 'ai-integration'
   settings: {
@@ -2277,10 +2330,42 @@ export interface Translations {
   [key: string]: string | Translations;
 }
 
-
 export interface TextEditor {
   onChangeDelay: number
 }
+
+export const PREVIEW_CONTROL = {
+  DARK_MODE: 'dark',
+  AMP: 'amp',
+  LANGUAGE: 'language',
+  DEVICE: 'device',
+  SIZE: 'size',
+  DISPLAY_CONDITIONS: 'DISPLAY_CONDITIONS',
+} as const
+
+export type Size = {
+  width: number
+  height: number
+}
+
+export type ValueType<T extends valueof<typeof PREVIEW_CONTROL>> =
+  T extends 'dark' ? string :
+  T extends 'amp' ? string :
+  T extends 'language' ? TemplateLanguage :
+  T extends 'device' ? string :
+  T extends 'size' ? Size :
+  unknown
+
+
+export type onChangePreviewControlArgs<T extends valueof<typeof PREVIEW_CONTROL>> = {
+  type: T
+  value: ValueType<T>
+}
+
+export type onChangePreviewControl = <T extends valueof<typeof PREVIEW_CONTROL>>(
+  args: onChangePreviewControlArgs<T>
+) => void
+
 export interface IBeeConfig {
   container: string
   uid?: string
@@ -2329,6 +2414,7 @@ export interface IBeeConfig {
   customAttributes?: CustomAttributes
   sidebarPosition?: 'left' | 'right'
   rowDisplayConditions?: Array<IPluginDisplayCondition>
+  enabledAdvancedPreview?: boolean
   onTemplateLanguageChange?: (lang: { label: string, value: string, isMain: boolean }) => void
   onLoad?: (json: IEntityJson) => void
   onPreview?: (opened: boolean) => void
@@ -2349,6 +2435,7 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
+  onPreviewChange?: (preview: onChangePreviewControlArgs<valueof<typeof PREVIEW_CONTROL>>) => void
   commentingFiltersOff?: boolean
   logLevel?: number
   titleDefaultConfig?: {

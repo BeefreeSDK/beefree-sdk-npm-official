@@ -2,6 +2,81 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0-build-version-8-rc.11](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.10...v8.0.0-build-version-8-rc.11) (2025-04-16)
+
+## [8.0.0-build-version-8-rc.10](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.9...v8.0.0-build-version-8-rc.10) (2025-04-11)
+
+
+### Bug Fixes
+
+* fixed type ([bc95cb9](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/bc95cb97455a9043c24e86fa05bda7aa5a8af55f))
+
+## [8.0.0-build-version-8-rc.9](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.8...v8.0.0-build-version-8-rc.9) (2025-04-10)
+
+## [8.0.0-build-version-8-rc.8](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.7...v8.0.0-build-version-8-rc.8) (2025-04-09)
+
+
+### Bug Fixes
+
+* wrong type argument on onPreviewChange ([0e409da](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/0e409daa0a588e916af1028132c063d5a8f26a9b))
+
+## [8.0.0-build-version-8-rc.7](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.6...v8.0.0-build-version-8-rc.7) (2025-04-09)
+
+
+### Features
+
+* added onPreviewChange typing ([86b030d](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/86b030dd901b354b6ee0d23dec74151cdb138cf1))
+
+## [8.0.0-build-version-8-rc.6](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.5...v8.0.0-build-version-8-rc.6) (2025-04-02)
+
+## [8.0.0-build-version-8-rc.5](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.4...v8.0.0-build-version-8-rc.5) (2025-04-02)
+
+
+### Features
+
+* added colorPicker type into advanced permissions compèonents ([994567e](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/994567ee4b88a8c740bdce4ebc9cf1ac3ff47c08))
+
+## [8.0.0-build-version-8-rc.4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.3...v8.0.0-build-version-8-rc.4) (2025-03-28)
+
+
+### Features
+
+* added components props in advanced permissions ([7bc0ceb](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/7bc0ceb1b57dceaa8d85b55e7530483ca6062409))
+
+## [8.0.0-build-version-8-rc.3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.2...v8.0.0-build-version-8-rc.3) (2025-03-27)
+
+
+### Features
+
+* added devide preset sizes in advanced preview ([e17b675](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/e17b675d849220da61a76ff8a1606aacede99631))
+
+## [8.0.0-build-version-8-rc.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.1...v8.0.0-build-version-8-rc.2) (2025-03-25)
+
+## [8.0.0-build-version-8-rc.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.0...v8.0.0-build-version-8-rc.1) (2025-03-24)
+
+
+### Features
+
+* added sperimental advance preview property ([d1fbac4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/d1fbac4e15a1c87846056b37e8db57441d5d2599))
+* **rollup:** build ESM and CJS with external dependencies ([9190768](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/919076886fa424c3534b6cb62cd5a4600dbb3ac0))
+* upgrade Rollup and grab name and version from package.json ([7130341](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/713034114b6653baf43b0d9a033a2f9b4e18f7bb))
+
+
+### Bug Fixes
+
+* use ESM syntax for import in fileTransform ([8da6154](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/8da6154d36a1b3e44855f5e4cc1cbbc38d1e8124))
+
+## [8.0.0-build-version-8-rc.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.4...v8.0.0-build-version-8-rc.0) (2025-03-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for node 14.x, add support for node 20.x and 22.x
+
+### ci
+
+* drop support for node 14.x, add support for node 20.x and 22.x ([6a81ff6](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/6a81ff6e590cc0b9b970773be5cf553a5c11c812))
+
 ### [7.1.4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.4-chore-content-area-padding-advanced-permissions.0...v7.1.4) (2025-01-27)
 
 ### [7.1.4-chore-content-area-padding-advanced-permissions.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.3...v7.1.4-chore-content-area-padding-advanced-permissions.0) (2025-01-27)
