@@ -15,9 +15,11 @@ export interface IBeeOptions {
   shared?: boolean
 }
 
-interface TemplateLanguage {
+export interface TemplateLanguage {
   label: string,
   value: string
+  twoCharsCode: string
+  isMain: boolean
 }
 
 export interface BeeSaveOptions {
