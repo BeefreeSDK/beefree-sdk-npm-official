@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.0-feat-canva.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.0.0-feat-canva.0...v9.0.0-feat-canva.1) (2025-04-18)
+
+
+### Bug Fixes
+
+* add type to AddOnFileManager to add data-qa ([21a47a6](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/21a47a6f7ae1211806ab7d1cf349d1a64e29577c))
+
 ## [9.0.0-feat-canva.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.5-feat-canva.1...v9.0.0-feat-canva.0) (2025-04-18)
 
 ## [8.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.0.0-build-version-8-rc.11...v8.0.0) (2025-04-16)
