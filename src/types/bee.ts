@@ -2474,6 +2474,8 @@ export interface IBeeConfigFileManager {
   container: string
   uid?: string
   customCss?: string
+  addOns: AddOn[];
+  contentDialog?: BeeContentDialogs;
   onFilePickerInsert?: (data: unknown) => void
   onFilePickerCancel?: () => void
 }
