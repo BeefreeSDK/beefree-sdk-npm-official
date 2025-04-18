@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.0-feat-canva.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.0.0-feat-canva.1...v9.0.0-feat-canva.2) (2025-04-18)
+
+
+### Bug Fixes
+
+* update type for IBeeConfigFileManager ([08bd6f0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/08bd6f09e4a1d67b59c32cbfebbabf5cdf644847))
+
 ## [9.0.0-feat-canva.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.0.0-feat-canva.0...v9.0.0-feat-canva.1) (2025-04-18)
 
 
