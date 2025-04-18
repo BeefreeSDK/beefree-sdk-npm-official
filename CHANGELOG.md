@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.5-feat-canva.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.5-feat-canva.0...v7.1.5-feat-canva.1) (2025-04-18)
+
+
+### Bug Fixes
+
+* add types for filemanager addon ([dcb5a7d](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/dcb5a7d8d6b15441a1ca7ca9623858d77a5010a1))
+
 ### [7.1.5-feat-canva.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v7.1.4...v7.1.5-feat-canva.0) (2025-04-09)
 
 
