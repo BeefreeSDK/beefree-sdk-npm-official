@@ -2107,6 +2107,17 @@ export interface IAddOnResponseRowAddOn {
   value: Record<string, string> //todo define the specific type for this part
 }
 
+export interface IAddOnResponseFileManager {
+  type: 'filemanager'
+  value: {
+    filemanager: {
+      name: string
+      url: string
+      path: string
+    }
+  }
+}
+
 export type BeeContentDialogs = {
   engage?: {
     handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, undefined, EngageHandle>
@@ -2123,7 +2134,7 @@ export type BeeContentDialogs = {
   }
   addOn?: {
     label: string
-    handler: BeePluginContentDialogHandler<IAddOnResponseImage | IAddOnResponseHTML | IAddOnResponseMixed | IAddOnResponseRowAddOn>
+    handler: BeePluginContentDialogHandler<IAddOnResponseImage | IAddOnResponseHTML | IAddOnResponseMixed | IAddOnResponseRowAddOn | IAddOnResponseFileManager, undefined, {contentDialogId: string}>
   }
   specialLinks?: {
     label: string
@@ -2271,7 +2282,18 @@ export interface AddOnImageGenerationAI {
   }
 }
 
-export type AddOn = AddOnPartner | AddOnOpenAI | AddOnAltTextAI | AddOnImageGenerationAI
+export interface AddOnFileManager {
+  id: string,
+  ctaLabel?: string,
+  enabled: boolean,
+  settings: {
+    autoInsert?: true,
+    changeDirectory?: true,
+    buttonColor?: string,
+  },
+}
+
+export type AddOn = AddOnPartner | AddOnOpenAI | AddOnAltTextAI | AddOnImageGenerationAI | AddOnFileManager
 
 export interface Translations {
   [key: string]: string | Translations;
