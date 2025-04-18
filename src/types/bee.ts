@@ -2337,6 +2337,7 @@ export interface AddOnImageGenerationAI {
 
 export interface AddOnFileManager {
   id: string,
+  uid?: string,
   ctaLabel?: string,
   enabled: boolean,
   settings: {
