@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "9.0.0-feat-canva.2",
+  "version": "8.1.0-feat-canva.3",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
