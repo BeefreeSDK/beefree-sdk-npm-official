@@ -2339,11 +2339,12 @@ export interface AddOnFileManager {
   id: string,
   uid?: string,
   ctaLabel?: string,
+  ctaDataQA?: string,
+  ctaColor?: string,
   enabled: boolean,
   settings: {
     autoInsert?: true,
     changeDirectory?: true,
-    buttonColor?: string,
   },
 }
 
