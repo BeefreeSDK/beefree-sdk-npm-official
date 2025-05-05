@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.1.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.0-feat-canva.4...v8.1.0) (2025-05-05)
+
 ## [8.1.0-feat-canva.4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.0-feat-canva.3...v8.1.0-feat-canva.4) (2025-04-23)
 
 
