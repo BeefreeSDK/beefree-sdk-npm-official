@@ -2152,6 +2152,17 @@ export interface IAddOnResponseRowAddOn {
   value: Record<string, string> //todo define the specific type for this part
 }
 
+export interface IAddOnResponseFileManager {
+  type: 'filemanager'
+  value: {
+    filemanager: {
+      name: string
+      url: string
+      path: string
+    }
+  }
+}
+
 export type BeeContentDialogs = {
   engage?: {
     handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, undefined, EngageHandle>
@@ -2168,7 +2179,7 @@ export type BeeContentDialogs = {
   }
   addOn?: {
     label: string
-    handler: BeePluginContentDialogHandler<IAddOnResponseImage | IAddOnResponseHTML | IAddOnResponseMixed | IAddOnResponseRowAddOn>
+    handler: BeePluginContentDialogHandler<IAddOnResponseImage | IAddOnResponseHTML | IAddOnResponseMixed | IAddOnResponseRowAddOn | IAddOnResponseFileManager, undefined, {contentDialogId: string}>
   }
   specialLinks?: {
     label: string
@@ -2324,7 +2335,20 @@ export interface AddOnImageGenerationAI {
   }
 }
 
-export type AddOn = AddOnPartner | AddOnOpenAI | AddOnAltTextAI | AddOnImageGenerationAI
+export interface AddOnFileManager {
+  id: string,
+  uid?: string,
+  ctaLabel?: string,
+  ctaDataQA?: string,
+  ctaColor?: string,
+  enabled: boolean,
+  settings: {
+    autoInsert?: true,
+    changeDirectory?: true,
+  },
+}
+
+export type AddOn = AddOnPartner | AddOnOpenAI | AddOnAltTextAI | AddOnImageGenerationAI | AddOnFileManager
 
 export interface Translations {
   [key: string]: string | Translations;
@@ -2333,6 +2357,8 @@ export interface Translations {
 export interface TextEditor {
   onChangeDelay: number
 }
+
+export type ViewTypes = 'fileManager' | 'editor' | 'preview' | 'imageEditor'
 
 export const PREVIEW_CONTROL = {
   DARK_MODE: 'dark',
@@ -2435,6 +2461,7 @@ export interface IBeeConfig {
   onComment?: (commentPayload: BeePluginOnCommentPayload, json: string) => void
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
+  onViewChange?: (view: ViewTypes) => void
   onPreviewChange?: (preview: onChangePreviewControlArgs<valueof<typeof PREVIEW_CONTROL>>) => void
   commentingFiltersOff?: boolean
   logLevel?: number
@@ -2448,6 +2475,8 @@ export interface IBeeConfigFileManager {
   container: string
   uid?: string
   customCss?: string
+  addOns: AddOn[];
+  contentDialog?: BeeContentDialogs;
   onFilePickerInsert?: (data: unknown) => void
   onFilePickerCancel?: () => void
 }
