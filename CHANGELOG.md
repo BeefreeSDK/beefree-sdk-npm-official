@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.1.1-auth-checker.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.1-auth-checker.0...v8.1.1-auth-checker.1) (2025-06-05)
+
+
+### Bug Fixes
+
+* getTemplateJson returns promise ([5415367](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/54153672d1fed19f9104cb0f24d3d36a9eda73d9))
+
 ### [8.1.1-auth-checker.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.0...v8.1.1-auth-checker.0) (2025-06-05)
 
 
