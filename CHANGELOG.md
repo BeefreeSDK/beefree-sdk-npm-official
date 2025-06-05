@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.1.1-auth-checker.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.0...v8.1.1-auth-checker.0) (2025-06-05)
+
+
+### Bug Fixes
+
+* add getTemplateJson ([16da4d8](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/16da4d83e9f85b8ec4e527690b10079c4bf4a398))
+
 ## [8.1.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.0-feat-canva.4...v8.1.0) (2025-05-05)
 
 ## [8.1.0-feat-canva.4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.0-feat-canva.3...v8.1.0-feat-canva.4) (2025-04-23)

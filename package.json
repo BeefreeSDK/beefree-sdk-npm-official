@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "8.1.0",
+  "version": "8.1.1-auth-checker.0",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
