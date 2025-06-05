@@ -1568,6 +1568,13 @@ export interface IEntityContentJson {
   }
 }
 
+export interface ITemplateJson {
+  data: {
+    json: IEntityContentJson
+    version: number
+  }
+}
+
 export const ContentCodes = {
   TEXT_BLOCK: '01',
   IMAGE_BLOCK: '02',
