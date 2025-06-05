@@ -235,7 +235,7 @@ class Bee {
 
   execCommand = (command: ExecCommands, options?: IExecCommandOptions): ExecCommand => this.executeAction(EXEC_COMMAND, command, options)
 
-  getTemplateJson = (): ITemplateJson => {
+  getTemplateJson = (): Promise<ITemplateJson> => {
     return this.executeAction(GET_TEMPLATE_JSON, {})
   }
 }
