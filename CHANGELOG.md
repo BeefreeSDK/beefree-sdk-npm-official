@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.1.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.1-auth-checker.1...v8.1.1) (2025-06-19)
+
 ### [8.1.1-auth-checker.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.1-auth-checker.0...v8.1.1-auth-checker.1) (2025-06-05)
 
 
