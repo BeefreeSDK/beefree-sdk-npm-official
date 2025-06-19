@@ -17,6 +17,7 @@ import {
   ExecCommand,
   ExecCommands,
   IExecCommandOptions,
+  ITemplateJson,
 } from './types/bee'
 import beeActions, { mockedEmptyToken, BEEJS_URL, API_AUTH_URL } from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -61,6 +62,7 @@ const {
   SWITCH_TEMPLATE_LANGUAGE,
   SWITCH_PREVIEW,
   EXEC_COMMAND,
+  GET_TEMPLATE_JSON,
 } = beeActions
 
 class Bee {
@@ -108,7 +110,7 @@ class Bee {
         () => new Promise(resolve => {
           bee(() => BeePlugin.create(
             token,
-            { 
+            {
               ...config,
               startOrigin: `[npm] ${process.env.NPM_PACKAGE_NAME}`,
               startOriginVersion: process.env.NPM_PACKAGE_VERSION,
@@ -137,7 +139,7 @@ class Bee {
         () => new Promise(resolve => {
           bee(() => BeePlugin.create(
             token,
-            { 
+            {
               ...config,
               startOrigin: `[npm] ${process.env.NPM_PACKAGE_NAME}`,
               startOriginVersion: process.env.NPM_PACKAGE_VERSION,
@@ -232,6 +234,10 @@ class Bee {
   switchPreview = (args?: ILanguage) => this.executeAction(SWITCH_PREVIEW, args)
 
   execCommand = (command: ExecCommands, options?: IExecCommandOptions): ExecCommand => this.executeAction(EXEC_COMMAND, command, options)
+
+  getTemplateJson = (): Promise<ITemplateJson> => {
+    return this.executeAction(GET_TEMPLATE_JSON, {})
+  }
 }
 
 

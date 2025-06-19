@@ -24,6 +24,7 @@ const beeActions = {
   SWITCH_TEMPLATE_LANGUAGE: 'switchTemplateLanguage',
   SWITCH_PREVIEW: 'switchPreview',
   EXEC_COMMAND: 'execCommand',
+  GET_TEMPLATE_JSON: 'getTemplateJson',
 }
 
 export const mockedEmptyToken : IToken = {
