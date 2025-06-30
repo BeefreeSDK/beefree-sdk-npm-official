@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "8.1.1",
+  "version": "9.0.0",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -50,12 +50,12 @@
   "homepage": "https://github.com/BeefreeSDK/beefree-sdk-npm-official#readme",
   "devDependencies": {
     "@commitlint/config-conventional": "^17.4.4",
-    "@rollup/plugin-commonjs": "^24.1.0",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-replace": "^6.0.2",
     "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-url": "^8.0.1",
+    "@rollup/plugin-url": "^8.0.2",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.10.5",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
@@ -76,11 +76,11 @@
     "ts-node": "^10.9.2",
     "typescript": "~5.0.4",
     "rimraf": "^5.0.10",
-    "rollup": "^4.35.0",
+    "rollup": "^4.44.1",
     "yalc": "^1.0.0-pre.53"
   },
   "dependencies": {
-    "axios": "^1.7.9",
+    "axios": "^1.10.0",
     "fp-ts": "^2.13.1",
     "load-script": "^2.0.0"
   }

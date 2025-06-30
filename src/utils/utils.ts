@@ -5,7 +5,7 @@ import beeActions from './Constants'
 
 const eitherHasConfig = (config: IBeeConfig | IBeeConfigFileManager) => !config ? E.left(new Error('Config is missing')) : E.right(config)
 const eitherHasSessionId = (sessionId: string) => !sessionId ? E.left(new Error('SessionId is missing')) : E.right(sessionId)
-const eitherHasToken = (token: IToken) => !token || !token.access_token ? E.left(new Error('Malformed or undefined token, call getToken() or pass your token on new BEE')) : E.right(token)
+const eitherHasToken = (token: IToken) => !token || !token.access_token ? E.left(new Error('Malformed or undefined token, call _unsafeGetToken() or pass your token on new BEE')) : E.right(token)
 
 export const eitherCheckJoinParams = (config: IBeeConfig, sessionId: string, token: IToken) => pipe(
     eitherHasSessionId(sessionId),

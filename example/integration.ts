@@ -14,7 +14,7 @@ let accessToken = ''
 const BEE_TEMPLATE_URL = 'https://rsrc.getbee.io/api/templates/m-bee'
 //const BEE_BLANK_TEMPLATE_URL = 'http://storage.googleapis.com/pre-bee-app-integration-23fc44e0713f/blank.json'
 const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/BeePlugin.js'
-const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
+const API_AUTH_URL = 'https://auth.getbee.io/loginV2'
 
 const specialLinks: ISpecialLink[] = [{
   type: 'unsubscribe',
@@ -173,7 +173,6 @@ const customAttributes: CustomAttributes = {
 }
 
 const beeConfig :IBeeConfig = {
-  uid: 'test1-clientside',
   container: 'bee-plugin-container',
   username: getParameterByName('username') || 'Test User',
   userColor: `#${getParameterByName('userColor') || '00aba5'}`,
@@ -372,7 +371,8 @@ const addEvents = () => {
 }
 
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
-beeTest.getToken(process.env.PLUGIN_CLIENT_ID!, process.env.PLUGIN_CLIENT_SECRET!, conf)
+
+beeTest._unsafeGetToken(process.env.PLUGIN_CLIENT_ID!, process.env.PLUGIN_CLIENT_SECRET!, 'demo_uid', conf)
   .then((res) => {
     accessToken = res.access_token
     return fetch(new Request(BEE_TEMPLATE_URL, { method: 'GET' }))

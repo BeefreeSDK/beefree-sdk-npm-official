@@ -79,9 +79,10 @@ class Bee {
     this.instance = null
   }
 
-  getToken = (
+  _unsafeGetToken = (
     clientId: string,
     clientSecret: string,
+    uid: string,
     urlConfig:IUrlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
   ) => {
     beeLoaderUrl = urlConfig;
@@ -89,7 +90,7 @@ class Bee {
       throw new Error('Toker already declared')
     }
 
-    return fetchToken({ authUrl: urlConfig.authUrl, clientId, clientSecret })
+    return fetchToken({ authUrl: urlConfig.authUrl, clientId, clientSecret, uid })
       .then(res => {
         this.token = res.data
         return res.data
