@@ -372,7 +372,7 @@ const addEvents = () => {
 
 const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
 
-beeTest._unsafeGetToken(process.env.PLUGIN_CLIENT_ID!, process.env.PLUGIN_CLIENT_SECRET!, 'demo_uid', conf)
+beeTest.UNSAFE_getToken(process.env.PLUGIN_CLIENT_ID!, process.env.PLUGIN_CLIENT_SECRET!, 'demo_uid', conf)
   .then((res) => {
     accessToken = res.access_token
     return fetch(new Request(BEE_TEMPLATE_URL, { method: 'GET' }))

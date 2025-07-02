@@ -79,7 +79,7 @@ class Bee {
     this.instance = null
   }
 
-  _unsafeGetToken = (
+  UNSAFE_getToken = (
     clientId: string,
     clientSecret: string,
     uid: string,

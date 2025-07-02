@@ -14,7 +14,7 @@ If it fixes an open issue, please link to the issue here.
 import BeefreeSDK from '@beefree.io/sdk'
 
 const sdk = new BeefreeSDK()
-sdk._unsafeGetToken()
+sdk.UNSAFE_getToken()
 ```
 ## How Has This Been Tested?
 

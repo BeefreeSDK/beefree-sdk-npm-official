@@ -64,11 +64,11 @@ yarn add @beefree.io/sdk
 > You need to be authorized to start using the editor: Beefree help documentation portal [has a nice post](https://docs.beefree.io/beefree-sdk/readme/installation) explaining how to do it
 
 ### Important Security Notice
-**As of v9.0.0, the `getToken` method has been renamed to `_unsafeGetToken`.**  
+**As of v9.0.0, the `getToken` method has been renamed to `UNSAFE_getToken`.**  
 This change makes it clear that this method is intended **only** for quick start tutorials, POCs, and local testing.  
 To protect your secret key, we strongly recommend implementing `getToken` on the **server-side** in all production environments.
 
-Pass your credential on `_unsafeGetToken` method and start the SDK in the returning promise. Example below:
+Pass your credential on `UNSAFE_getToken` method and start the SDK in the returning promise. Example below:
 
 ```js
 import BeefreeSDK from '@beefree.io/sdk'
@@ -81,7 +81,7 @@ const beeConfig = {...}
 const template = {...}
 const beeTest = new BeefreeSDK(token, authConfiguration)
 
-beeTest._unsafeGetToken(clientId, clientSecret)
+beeTest.UNSAFE_getToken(clientId, clientSecret)
   .then(() => beeTest.start(beeConfig, template))
 
 ```

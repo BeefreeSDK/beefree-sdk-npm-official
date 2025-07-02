@@ -15,7 +15,7 @@ describe("BeePlugin", () => {
     expect(typeof beeInstance.toggleMergeTagsPreview).toBe('function')
     expect(typeof beeInstance.togglePreview).toBe('function')
     expect(typeof beeInstance.toggleStructure).toBe('function')
-    expect(typeof beeInstance._unsafeGetToken).toBe('function')
+    expect(typeof beeInstance.UNSAFE_getToken).toBe('function')
     expect(typeof beeInstance.load).toBe('function')
     expect(typeof beeInstance.loadStageMode).toBe('function')
     expect(typeof beeInstance.loadWorkspace).toBe('function')
@@ -23,7 +23,7 @@ describe("BeePlugin", () => {
     expect(typeof beeInstance.execCommand).toBe('function')
   })
 
-  test('should call _unsafeGetToken', async () => {
-    await expect(beeInstance._unsafeGetToken('', '', '')).rejects.toThrowError(Error);
+  test('should call UNSAFE_getToken', async () => {
+    await expect(beeInstance.UNSAFE_getToken('', '', '')).rejects.toThrowError(Error);
   })
 })
