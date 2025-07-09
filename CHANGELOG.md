@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.2.0-feat-BEERED-1257-LoginV2.0...v9.0.0) (2025-07-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* **auth:** login v1 has been removed in favor of the new login v2 flow.
+`getToken` has been renamed to `UNSAFE_getToken` to discourage use in production.
+These changes align the SDK with the latest authentication standards and promote safer usage.
+
+### Features
+
+* **auth:** support login v2 and remove deprecated login v1 ([111ffeb](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/111ffeb77bd2e288a2121dfd9a235c8938356d01))
+
 ## [8.2.0-feat-BEERED-1257-LoginV2.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.1...v8.2.0-feat-BEERED-1257-LoginV2.0) (2025-07-09)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "8.2.0-feat-BEERED-1257-LoginV2.0",
+  "version": "9.0.0",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
