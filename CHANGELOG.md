@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.2.0-feat-BEERED-1257-LoginV2.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.1...v8.2.0-feat-BEERED-1257-LoginV2.0) (2025-07-09)
+
+
+### Features
+
+* **BEERED-1257:** add login v2 support ([00d04d6](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/00d04d6bcee8eb3433d7af7fdcc09ec0e513b1a0))
+* **BEERED-1257:** finalize names of unsafe methods ([e03c3e0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/e03c3e0057e03a724ec1d3389f37c3c2134259e3))
+* **BEERED-1257:** rebuild using yarn ([05d07f2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/05d07f29f5401107c184557857eec064bbbc27e4))
+* **BEERED-1257:** restored nvm version to 20 ([48b86c1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/48b86c1458a4990fa2657ca7fa514bda4cd67d56))
+
+
+### Bug Fixes
+
+* rollback manually changed version ([6334a97](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/6334a9764fb49a6450143f771d43f2ea8223ebda))
+
 ### [8.1.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.1-auth-checker.1...v8.1.1) (2025-06-19)
 
 ### [8.1.1-auth-checker.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.1.1-auth-checker.0...v8.1.1-auth-checker.1) (2025-06-05)
