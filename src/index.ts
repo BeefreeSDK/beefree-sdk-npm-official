@@ -79,17 +79,18 @@ class Bee {
     this.instance = null
   }
 
-  getToken = (
+  UNSAFE_getToken = (
     clientId: string,
     clientSecret: string,
+    uid: string,
     urlConfig:IUrlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
   ) => {
     beeLoaderUrl = urlConfig;
     if (this.token && this.token.access_token) {
-      throw new Error('Toker already declared')
+      throw new Error('Token already declared')
     }
 
-    return fetchToken({ authUrl: urlConfig.authUrl, clientId, clientSecret })
+    return fetchToken({ authUrl: urlConfig.authUrl, clientId, clientSecret, uid })
       .then(res => {
         this.token = res.data
         return res.data

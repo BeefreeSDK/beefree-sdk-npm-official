@@ -63,9 +63,12 @@ yarn add @beefree.io/sdk
 ### Get token(clientId, clientSecret)
 > You need to be authorized to start using the editor: Beefree help documentation portal [has a nice post](https://docs.beefree.io/beefree-sdk/readme/installation) explaining how to do it
 
-It's not really recommended to do it client side but it's possible with the module, just call getToken.
+### Important Security Notice
+**As of v9.0.0, the `getToken` method has been renamed to `UNSAFE_getToken`.**  
+This change makes it clear that this method is intended **only** for quick start tutorials, POCs, and local testing.  
+To protect your secret key, we strongly recommend implementing `getToken` on the **server-side** in all production environments.
 
-Pass your credential on `getToken` method and start the SDK in the returning promise. Example below:
+Pass your credential on `UNSAFE_getToken` method and start the SDK in the returning promise. Example below:
 
 ```js
 import BeefreeSDK from '@beefree.io/sdk'
@@ -78,7 +81,7 @@ const beeConfig = {...}
 const template = {...}
 const beeTest = new BeefreeSDK(token, authConfiguration)
 
-beeTest.getToken(clientId, clientSecret)
+beeTest.UNSAFE_getToken(clientId, clientSecret)
   .then(() => beeTest.start(beeConfig, template))
 
 ```
@@ -111,7 +114,6 @@ Here is an example of the configuration; just read the official documentation fo
 ```js
 
 const beeConfig = {
-  uid: 'test1-clientside', //needed for identify resources of the that user and billing stuff
   container: 'beefree-sdk-container', // Identifies the id of div element that contains the Beefree SDK builder
   language: 'en-US',
   onSave: (jsonFile, htmlFile) => {
