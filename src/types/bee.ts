@@ -73,6 +73,7 @@ export interface IExecCommandOptions {
     column?: number
     module?: number
     key?: string
+    selector?: string
   }
 }
 
