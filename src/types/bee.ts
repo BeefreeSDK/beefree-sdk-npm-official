@@ -63,6 +63,7 @@ export enum ExecCommands {
   SELECT = 'select',
   SCROLL = 'scroll',
   HIGHLIGHT = 'highlight',
+  FOCUS = 'focus',
 }
 
 export interface IExecCommandOptions {
@@ -71,6 +72,7 @@ export interface IExecCommandOptions {
     row?: number
     column?: number
     module?: number
+    key?: string
   }
 }
 
