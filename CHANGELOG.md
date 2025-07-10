@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.0.1-fix-focus.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.0.0...v9.0.1-fix-focus.0) (2025-07-10)
+
+
+### Bug Fixes
+
+* add focus command ([6b05c0f](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/6b05c0ffb70964a5ada70103afbf79ef6e1f4617))
+
 ## [9.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v8.2.0-feat-BEERED-1257-LoginV2.0...v9.0.0) (2025-07-09)
 
 
