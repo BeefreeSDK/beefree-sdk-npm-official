@@ -1,14 +1,9 @@
 import * as CSS from 'csstype'
 import { KebabKeys, RecursivePartial, RequireAtLeastOne, valueof, ValueOf } from './utils'
 
-export interface IBeeLoader {
-  beePluginUrl: string,
-  authUrl: string
-}
-
 export interface IUrlConfig {
-  authUrl: string,
-  beePluginUrl: string
+  beePluginUrl?: string
+  authUrl?: string,
 }
 
 export interface IBeeOptions {
