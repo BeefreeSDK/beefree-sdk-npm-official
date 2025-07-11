@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.0.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.0.1-fix-focus.1...v9.0.1) (2025-07-11)
+
 ### [9.0.1-fix-focus.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.0.1-fix-focus.0...v9.0.1-fix-focus.1) (2025-07-10)
 
 
