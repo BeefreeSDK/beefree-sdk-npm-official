@@ -297,7 +297,9 @@ const beeConfig :IBeeConfig = {
   onSessionChange: (sessionInfo) => console.warn('*** [integration] --> (onSessionChange) ', sessionInfo),
 }
 
-const beeTest = new Bee()
+const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
+
+const beeTest = new Bee(undefined, conf)
 
 const loadTemplate = (e, method) => {
   const templateFile = e.target.files[0]
@@ -369,8 +371,6 @@ const addEvents = () => {
     console.log('config --> ', config)
   }, false)
 }
-
-const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
 
 beeTest.UNSAFE_getToken(process.env.PLUGIN_CLIENT_ID!, process.env.PLUGIN_CLIENT_SECRET!, 'demo_uid', conf)
   .then((res) => {

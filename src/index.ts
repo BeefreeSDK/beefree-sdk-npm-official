@@ -4,7 +4,6 @@ import * as E from 'fp-ts/lib/Either'
 import {
   IBeeConfig,
   IEntityContentJson,
-  IBeeLoader,
   IBeeOptions,
   ILoadConfig,
   ILoadStageMode,
@@ -27,19 +26,7 @@ import * as beeTypes from './types/bee'
 // this is the global variable injected from BeePlugin.js
 declare let BeePlugin: any;
 
-let beeLoaderUrl: IBeeLoader = {
-  beePluginUrl: '',
-  authUrl: ''
-}
-
-const load = (bee) => {
-  loadScript(beeLoaderUrl.beePluginUrl, err => {
-    if (err) {
-      throw new Error('BeePlugin.js is not reachable')
-    }
-    return bee()
-  })
-}
+let beeLoaderUrl = ''
 
 const {
   LOAD,
@@ -67,30 +54,43 @@ const {
 
 class Bee {
   token: IToken
-  bee: any // todo delete
   instance: any
 
   constructor(
-    token?: IToken, urlConfig: IUrlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
+    token?: IToken,
+    urlConfig?: IUrlConfig
   ) {
-    beeLoaderUrl = urlConfig
-    this.bee = (call) => load(() => call())
+    beeLoaderUrl = urlConfig?.beePluginUrl ?? BEEJS_URL
     this.token = token || mockedEmptyToken
     this.instance = null
+  }
+
+  bee = (bee) => {
+    loadScript(beeLoaderUrl, err => {
+      if (err) {
+        throw new Error('BeePlugin.js is not reachable')
+      }
+      return bee()
+    })
   }
 
   UNSAFE_getToken = (
     clientId: string,
     clientSecret: string,
     uid: string,
-    urlConfig:IUrlConfig = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
+    urlConfig?: IUrlConfig
   ) => {
-    beeLoaderUrl = urlConfig;
+
+    const localUrlConfig = {
+      authUrl: urlConfig?.authUrl ?? API_AUTH_URL,
+      beePluginUrl: urlConfig?.beePluginUrl ?? BEEJS_URL,
+    }
+
     if (this.token && this.token.access_token) {
       throw new Error('Token already declared')
     }
 
-    return fetchToken({ authUrl: urlConfig.authUrl, clientId, clientSecret, uid })
+    return fetchToken({ authUrl: localUrlConfig.authUrl, clientId, clientSecret, uid })
       .then(res => {
         this.token = res.data
         return res.data
