@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * make url config optional ([c899b02](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/c899b02baefe9ccd88d7deee53cd99e1b03ccb31))
+## [9.1.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.1.0-feat-custom-assets-options-file-manager.0...v9.1.0) (2025-07-14)
+
+## [9.1.0-feat-custom-assets-options-file-manager.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.0.1...v9.1.0-feat-custom-assets-options-file-manager.0) (2025-07-14)
+
+
+### Features
+
+* add custom assets options to IBeeConfigFileManager ([9de3e91](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/9de3e912b83a7a72c8b61658c36d7b8937b4c3ac))
 
 ### [9.0.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.0.1-fix-focus.1...v9.0.1) (2025-07-11)
 

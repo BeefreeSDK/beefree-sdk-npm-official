@@ -2482,6 +2482,7 @@ export interface IBeeConfigFileManager {
   customCss?: string
   addOns: AddOn[];
   contentDialog?: BeeContentDialogs;
+  customAssetsOptions: Record<string, unknown>
   onFilePickerInsert?: (data: unknown) => void
   onFilePickerCancel?: () => void
 }
