@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.2.0-feature-BEE-10731-fe-api-sidebar-tab.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.0-feature-BEE-10731-fe-api-sidebar-tab.0...v9.2.0-feature-BEE-10731-fe-api-sidebar-tab.1) (2025-08-05)
+
 ## [9.2.0-feature-BEE-10731-fe-api-sidebar-tab.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.1.1...v9.2.0-feature-BEE-10731-fe-api-sidebar-tab.0) (2025-08-05)
 
 
