@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "9.2.0-feature-BEE-10731-fe-api-sidebar-tab.1",
+  "version": "9.2.0-feature-BEE-10731-fe-api-sidebar-tab.2",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
