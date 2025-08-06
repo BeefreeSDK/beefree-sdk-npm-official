@@ -2446,6 +2446,7 @@ export interface IBeeConfig {
   sidebarPosition?: 'left' | 'right'
   rowDisplayConditions?: Array<IPluginDisplayCondition>
   enabledAdvancedPreview?: boolean
+  titleMaxLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   onTemplateLanguageChange?: (lang: { label: string, value: string, isMain: boolean }) => void
   onLoad?: (json: IEntityJson) => void
   onPreview?: (opened: boolean) => void
