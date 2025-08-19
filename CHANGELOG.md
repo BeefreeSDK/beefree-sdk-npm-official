@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.1.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.1.1...v9.1.2) (2025-08-19)
+
 ### [9.1.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.1.1-fix-optional-url-config.0...v9.1.1) (2025-07-15)
 
 ### [9.1.1-fix-optional-url-config.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.1.0...v9.1.1-fix-optional-url-config.0) (2025-07-15)
