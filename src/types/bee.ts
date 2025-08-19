@@ -1478,6 +1478,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     },
     table: {
       behaviors: AdvancedSettingsBehaviours
+      textEditor: AdvancedSettingsTextEditor
       properties: {
         columns: AdvancedSettingsShowLocked
         rows: AdvancedSettingsShowLocked
