@@ -6,7 +6,7 @@ export const fetchToken = ({ authUrl, clientId, clientSecret, uid }:IFetchTokenP
     grant_type: 'password',
     client_id: clientId,
     client_secret: clientSecret,
-    uid
+    uid,
   }
   return axios.post(authUrl, payload)
 }

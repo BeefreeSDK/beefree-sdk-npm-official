@@ -33,6 +33,6 @@ export const mockedEmptyToken : IToken = {
 
 export const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/v2/BeePlugin.js'
 
-export const API_AUTH_URL = 'https://auth.getbee.io/apiauth'
+export const API_AUTH_URL = 'https://auth.getbee.io/loginV2'
 
 export default beeActions
