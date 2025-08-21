@@ -52,6 +52,12 @@ export interface IExecCommandReturnValue {
   data?: Record<string, unknown>
 }
 
+export enum SidebarTabs {
+  CONTENT = 'content',
+  SETTINGS = 'settings',
+  ROWS = 'rows',
+}
+
 export type ExecCommand = Promise<IExecCommandReturnValue>
 
 export enum ExecCommands {
@@ -59,6 +65,7 @@ export enum ExecCommands {
   SCROLL = 'scroll',
   HIGHLIGHT = 'highlight',
   FOCUS = 'focus',
+  TAB = 'tab',
 }
 
 export interface IExecCommandOptions {
@@ -69,7 +76,7 @@ export interface IExecCommandOptions {
     module?: number
     key?: string
     selector?: string
-  }
+  } | SidebarTabs
 }
 
 export enum LoadWorkspaceOptions {
