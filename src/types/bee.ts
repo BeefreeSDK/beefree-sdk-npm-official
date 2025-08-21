@@ -1742,11 +1742,11 @@ export type TitleDefaultStyle = Partial<{
 
 export type TitleDefaultStyles = {
   h1: TitleDefaultStyle
-  h2: TitleDefaultStyle
-  h3: TitleDefaultStyle
-  h4: TitleDefaultStyle
-  h5: TitleDefaultStyle
-  h6: TitleDefaultStyle
+  h2?: TitleDefaultStyle
+  h3?: TitleDefaultStyle
+  h4?: TitleDefaultStyle
+  h5?: TitleDefaultStyle
+  h6?: TitleDefaultStyle
 }
 
 // TOFIX: this module will probably be removed in the near future
