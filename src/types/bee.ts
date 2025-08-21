@@ -1740,11 +1740,9 @@ export type TitleDefaultStyle = Partial<{
   'letter-spacing': string
 }>
 
-export type TitleDefaultStyles = {
-  h1: TitleDefaultStyle
-  h2: TitleDefaultStyle
-  h3: TitleDefaultStyle
-}
+type TitleLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+
+export type TitleDefaultStyles = Partial<Record<TitleLevel, TitleDefaultStyle>>
 
 // TOFIX: this module will probably be removed in the near future
 export type ContentDefaultsText = {
@@ -2454,6 +2452,7 @@ export interface IBeeConfig {
   sidebarPosition?: 'left' | 'right'
   rowDisplayConditions?: Array<IPluginDisplayCondition>
   enabledAdvancedPreview?: boolean
+  titleMaxLevel?: TitleLevel
   onTemplateLanguageChange?: (lang: { label: string, value: string, isMain: boolean }) => void
   onLoad?: (json: IEntityJson) => void
   onPreview?: (opened: boolean) => void
