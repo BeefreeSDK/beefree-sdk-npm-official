@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.2.1-chore-title-max-level.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.1-chore-title-max-level.0...v9.2.1-chore-title-max-level.1) (2025-08-21)
+
+
+### Bug Fixes
+
+* make optional title default styles ([7bb29bc](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/7bb29bcd1a05f370457afe232a3a7f874536bc96))
+
 ### [9.2.1-chore-title-max-level.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.0...v9.2.1-chore-title-max-level.0) (2025-08-21)
 
 ### [9.1.2-chore-title-max-level.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.0-feature-BEE-10731-fe-api-sidebar-tab.2...v9.1.2-chore-title-max-level.0) (2025-08-06)
