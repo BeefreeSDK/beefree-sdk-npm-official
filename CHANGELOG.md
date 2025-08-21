@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.2.1-chore-title-max-level.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.1-chore-title-max-level.1...v9.2.1-chore-title-max-level.2) (2025-08-21)
+
+
+### Bug Fixes
+
+* improves types ([efded3a](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/efded3a6a00937f89335480a08bd5a8f9c7e5293))
+
 ### [9.2.1-chore-title-max-level.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.1-chore-title-max-level.0...v9.2.1-chore-title-max-level.1) (2025-08-21)
 
 
