@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "9.2.1",
+  "version": "9.3.0-feature-BEE-10795-color-picker-permissions-tinymce.0",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
