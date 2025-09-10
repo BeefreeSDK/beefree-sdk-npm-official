@@ -4,7 +4,3 @@ export interface IFetchTokenPayload {
   clientSecret: string
   uid: string
 }
-
-export interface IFetchTemplate {
-  templateUrl: string,
-}

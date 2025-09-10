@@ -24,6 +24,7 @@ describe("BeePlugin", () => {
   })
 
   test('should call UNSAFE_getToken', async () => {
-    await expect(beeInstance.UNSAFE_getToken('', '', '')).rejects.toThrowError(Error);
+    await expect(beeInstance.UNSAFE_getToken('', '', '')).rejects.toThrowErrorMatchingInlineSnapshot('"Invalid UID"');
+    await expect(beeInstance.UNSAFE_getToken('', '', 'test')).rejects.toThrowErrorMatchingInlineSnapshot('"Unable to authenticate with provided credentials."');
   })
 })

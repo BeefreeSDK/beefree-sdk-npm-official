@@ -91,9 +91,9 @@ class Bee {
     }
 
     return fetchToken({ authUrl: localUrlConfig.authUrl, clientId, clientSecret, uid })
-      .then(res => {
-        this.token = res.data
-        return res.data
+      .then(async (res) => {
+        this.token = await res.json()
+        return this.token
       })
   }
 

@@ -2,12 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [9.3.0-feature-BEE-10795-color-picker-permissions-tinymce.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.1...v9.3.0-feature-BEE-10795-color-picker-permissions-tinymce.0) (2025-09-09)
-
 
 ### Features
 
+## [9.3.0-feature-BEE-10795-color-picker-permissions-tinymce.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.1...v9.3.0-feature-BEE-10795-color-picker-permissions-tinymce.0) (2025-09-09)
+
 * added type property canChangeTextEditorColor to advanced permissions ([84f5a6b](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/84f5a6bc24a46feb77c7178f64f7e1221076c8a1))
+### [9.2.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.2-chore-BEE-10830-axios-removal.0...v9.2.2) (2025-09-10)
+
+### [9.2.2-chore-BEE-10830-axios-removal.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.1...v9.2.2-chore-BEE-10830-axios-removal.0) (2025-09-02)
 
 ### [9.2.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.1-chore-title-max-level.2...v9.2.1) (2025-08-21)
 
