@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.3.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.3.0-feature-BEE-10795-color-picker-permissions-tinymce.1...v9.3.0) (2025-09-11)
+
 ## [9.3.0-feature-BEE-10795-color-picker-permissions-tinymce.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.2...v9.3.0-feature-BEE-10795-color-picker-permissions-tinymce.1) (2025-09-10)
 
 ## [9.3.0-feature-BEE-10795-color-picker-permissions-tinymce.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.2.2-chore-BEE-10830-axios-removal.0...v9.3.0-feature-BEE-10795-color-picker-permissions-tinymce.0) (2025-09-09)
