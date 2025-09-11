@@ -1115,6 +1115,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
       canViewSliders: boolean,
       canSetAlpha: boolean,
       canViewSwatches: boolean,
+      canChangeTextEditorColor: boolean
     },
     filePicker?: {
       canApplyEffects: boolean,
