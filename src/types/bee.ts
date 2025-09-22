@@ -2175,6 +2175,8 @@ export interface IAddOnResponseFileManager {
   }
 }
 
+type IAddOnResponse = IAddOnResponseImage | IAddOnResponseHTML | IAddOnResponseMixed | IAddOnResponseRowAddOn | IAddOnResponseFileManager
+
 export type BeeContentDialogs = {
   engage?: {
     handler: BeePluginContentDialogHandler<Partial<IBeeConfig>, undefined, EngageHandle>
@@ -2191,7 +2193,7 @@ export type BeeContentDialogs = {
   }
   addOn?: {
     label: string
-    handler: BeePluginContentDialogHandler<IAddOnResponseImage | IAddOnResponseHTML | IAddOnResponseMixed | IAddOnResponseRowAddOn | IAddOnResponseFileManager, undefined, {contentDialogId: string}>
+    handler: BeePluginContentDialogHandler<IAddOnResponse, undefined, { contentDialogId: string, openOnDrop: boolean }>
   }
   specialLinks?: {
     label: string
@@ -2300,6 +2302,7 @@ id: string
   label?: string
   ctaLabel?: string
   placeholder?: string
+  openOnDrop?: boolean
 }
 
 type BaseDevicePresetSizes = {
