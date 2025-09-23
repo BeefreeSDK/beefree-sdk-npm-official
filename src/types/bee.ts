@@ -2193,7 +2193,7 @@ export type BeeContentDialogs = {
   }
   addOn?: {
     label: string
-    handler: BeePluginContentDialogHandler<IAddOnResponse, undefined, { contentDialogId: string, openOnDrop: boolean }>
+    handler: BeePluginContentDialogHandler<IAddOnResponse, undefined, { contentDialogId: string, hasOpenOnDrop: boolean }>
   }
   specialLinks?: {
     label: string
