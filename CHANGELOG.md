@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.3.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.3.1-chore-open-on-drop.1...v9.3.1) (2025-10-02)
+
 ### [9.3.1-chore-open-on-drop.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.3.1-chore-open-on-drop.0...v9.3.1-chore-open-on-drop.1) (2025-09-23)
 
 ### [9.3.1-chore-open-on-drop.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.3.0...v9.3.1-chore-open-on-drop.0) (2025-09-22)
