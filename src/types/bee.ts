@@ -1528,6 +1528,27 @@ export type IPluginSessionInfo = {
   sessionId: string
 }
 
+const SessionChangeType = {
+  USER_JOINED: 'USER_JOINED',
+  USER_LEFT: 'USER_LEFT',
+} as const
+
+type SessionUser = {
+  userColor: string
+  userId: string
+  username: string
+}
+
+export type IPluginSessionChangeInfo = {
+  change: {
+    type: ValueOf<typeof SessionChangeType>,
+    value: SessionUser
+  },
+  sessionData: {
+    users: Record<SessionUser['userId'], SessionUser>
+  }
+}
+
 export type FontElement = {
   fontFamily: string
   name: string
@@ -2462,7 +2483,7 @@ export interface IBeeConfig {
   onPreview?: (opened: boolean) => void
   onTogglePreview?: (toggled: boolean) => void
   onSessionStarted?: (sessionInfo: IPluginSessionInfo) => void
-  onSessionChange?: (sessionInfo: IPluginSessionInfo) => void
+  onSessionChange?: (sessionChangeInfo: IPluginSessionChangeInfo) => void
   onReady?: (args: Record<string, unknown>) => void
   onSave?: (pageJson: string, pageHtml: string, ampHtml: string | null, templateVersion: number, language: string | null) => void
   onSaveRow?: (rowJson: string, rowHtml: string, pageJson: string) => void
