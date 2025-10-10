@@ -1748,6 +1748,14 @@ export type ContentDefaultsTitle = Partial<{
     paddingBottom: string
     paddingLeft: string
   }>
+  mobileStyles: Partial<{
+    textAlign: string
+    fontSize: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
 }>
 
 export type TitleDefaultStyle = Partial<{
@@ -1784,6 +1792,12 @@ export type ContentDefaultsText = {
     paddingTop: string
     hideContentOnMobile: boolean
   }>
+  mobileStyles: Partial<{
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
 }
 
 export type ContentDefaultsImage = Partial<{
@@ -1798,6 +1812,13 @@ export type ContentDefaultsImage = Partial<{
     paddingTop: string
     align: string
     hideContentOnMobile: boolean
+  }>
+  mobileStyles: Partial<{
+    textAlign: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
   }>
 }>
 
@@ -1840,6 +1861,14 @@ export type ContentDefaultsButton = Partial<{
     borderBottom: string
     borderTop: string
   }>
+  mobileStyles: Partial<{
+    textAlign: string
+    fontSize: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
 }>
 
 export type ContentDefaultsDivider = Partial<{
@@ -1852,6 +1881,13 @@ export type ContentDefaultsDivider = Partial<{
     paddingRight: string
     paddingTop: string
     hideContentOnMobile: boolean
+  }>
+  mobileStyles: Partial<{
+    align: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
   }>
 }>
 
@@ -1899,6 +1935,13 @@ export type ContentDefaultsSocial = Partial<{
     // TOFIX: understand why they are not handled in the plugin
     // iconWidth: number
   }>
+  mobileStyles: Partial<{
+    textAlign: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
 }>
 
 export type ContentDefaultsDynamic = Partial<{
@@ -1919,6 +1962,12 @@ export type ContentDefaultsVideo = Partial<{
     paddingRight: string
     paddingTop: string
     hideContentOnMobile: boolean
+  }>
+  mobileStyles: Partial<{
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
   }>
 }>
 
@@ -1986,6 +2035,13 @@ export type ContentDefaultsForm = Partial<{
     backgroundColor: string
     hideContentOnMobile: boolean
     hideContentOnDesktop: boolean
+  }>
+  mobileStyles: Partial<{
+    fontSize: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
   }>
 }>
 
@@ -2065,6 +2121,14 @@ export type ContentDefaultsMenu = Partial<{
     paddingRight: string
     paddingTop: string
   }>
+  mobileStyles: Partial<{
+    textAlign: string
+    fontSize: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
 }>
 
 export type ContentDefaultsSpacer = Partial<{
@@ -2088,6 +2152,14 @@ export type ContentDefaultsParagraph = Partial<{
     paragraphSpacing: string
   }>
   blockOptions: Partial<{
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+  mobileStyles: Partial<{
+    textAlign: string
+    fontSize: string
     paddingTop: string
     paddingRight: string
     paddingBottom: string
@@ -2119,6 +2191,54 @@ export type ContentDefaultsList = Partial<{
     paddingBottom: string
     paddingLeft: string
   }>
+  mobileStyles: Partial<{
+    textAlign: string
+    fontSize: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+}>
+
+export type ContentDefaultsCarousel = Partial<{
+  blockOptions: {
+    paddingBottom: string,
+    paddingLeft: string,
+    paddingRight: string,
+    paddingTop: string,
+    hideContentOnMobile: boolean
+  }
+  mobileStyles: Partial<{
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+}>
+
+
+export type ContentDefaultsRow = Partial<{
+  styles: Partial<{
+    backgroundColor: string
+    columnsBackgroundColor: string
+    columnsBorderRadius: string
+    columnsPadding: string
+    columnsPaddingBottom: string
+    columnsPaddingLeft: string
+    columnsPaddingRight: string
+    columnsPaddingTop: string
+    columnsReverseStackOnMobile: boolean
+    columnsSpacing: string
+    columnsStackOnMobile: boolean
+    contentAreaBackgroundColor: string
+    padding: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    verticalAlign: string
+  }>
 }>
 
 export type ContentDefaultsGeneral = Partial<{
@@ -2146,6 +2266,8 @@ export type ContentDefaults = Partial<{
   list: ContentDefaultsList
   general: ContentDefaultsGeneral
   table: ContentDefaultsTable
+  carousel: ContentDefaultsCarousel
+  row: ContentDefaultsRow
 }>
 
 export enum TokenStatus {
