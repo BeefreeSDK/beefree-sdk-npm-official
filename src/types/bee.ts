@@ -13,8 +13,6 @@ export interface IBeeOptions {
 export interface TemplateLanguage {
   label: string,
   value: string
-  twoCharsCode: string
-  isMain: boolean
 }
 
 export interface BeeSaveOptions {
