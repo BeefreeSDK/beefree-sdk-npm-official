@@ -2559,6 +2559,7 @@ export interface IBeeConfig {
   language?: string
   templateLanguage?: TemplateLanguage
   templateLanguages?: TemplateLanguage[]
+  templateLanguageAutoTranslation?: boolean
   mergeTags?: IMergeTag[]
   mergeContents?: IMergeContent[]
   specialLinks?: ISpecialLink[]
