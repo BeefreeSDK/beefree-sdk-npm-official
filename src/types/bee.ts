@@ -1,5 +1,5 @@
 import * as CSS from 'csstype'
-import { KebabKeys, RecursivePartial, RequireAtLeastOne, valueof, ValueOf } from './utils'
+import { KebabKeys, RecursivePartial, RequireAtLeastOne, ValueOf } from './utils'
 
 export interface IUrlConfig {
   beePluginUrl?: string
@@ -673,6 +673,7 @@ export interface IPluginModuleMenu {
 
 export interface IPluginModuleTable {
   type: typeof ModuleTypes.TABLE
+  locked?: boolean
   uuid: string
   descriptor: {
     id?: string
@@ -740,8 +741,11 @@ export interface IPluginModuleSpacer {
   }
 }
 
-export type IPluginModuleIcons = {
+export interface IPluginModuleIcons {
+  type: typeof ModuleTypes.ICONS
+  locked?: boolean
   descriptor: {
+    id?: string
     computedStyle: {
       hideContentOnDesktop: boolean
       hideContentOnMobile: boolean
@@ -754,7 +758,6 @@ export type IPluginModuleIcons = {
       }
       itemsSpacing: string
     }
-    id: 'iconsList'
     iconsList: {
       icons: {
         height: string
@@ -779,15 +782,258 @@ export type IPluginModuleIcons = {
       'text-align': string
     }
   }
-  locked: boolean
-  type: string
   uuid: string
 }
 
+type ModuleVideoMode = (
+  {
+    mode: 'thumbnail'
+    thumbSrc: string
+    thumbRatio: string
+    iconType: number
+    iconColor1: string
+    iconColor2: string
+    iconSize: number
+    iconSrc: string
+    controls?: never
+    loop?: never
+  }
+  | {
+    mode: 'embedded'
+    controls: boolean
+    loop: boolean
+    thumbSrc?: never
+    thumbRatio?: never
+    iconType?: never
+    iconColor1?: never
+    iconColor2?: never
+    iconSize?: never
+    iconSrc?: never
+  }
+  | {
+    mode: 'custom'
+    controls: boolean
+    thumbSrc?: never
+    thumbRatio?: never
+    iconType?: never
+    iconColor1?: never
+    iconColor2?: never
+    iconSize?: never
+    iconSrc?: never
+    loop?: never
+  }
+  )
+
+
+export interface IPluginModuleVideo {
+  type: typeof ModuleTypes.VIDEO
+  locked?: boolean
+  descriptor: {
+    id?: string
+    video: {
+      src: string
+    } & ModuleVideoMode
+    style: {
+      width: string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }
+    computedStyle: {
+      class: string
+      width: string
+      hideContentOnMobile: boolean
+    }
+    mobileStyle?: {
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }
+  }
+}
+
+export interface IPluginModuleText {
+  type: typeof ModuleTypes.TEXT
+  locked?: boolean
+  descriptor: {
+    id?: string
+    text: {
+      html: string
+      style: {
+        color: string
+        'line-height': string
+        'font-family': string
+      }
+      computedStyle: {
+        linkColor: string
+      }
+    }
+    style: {
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }
+    computedStyle: {
+      hideContentOnMobile: boolean
+    }
+    mobileStyle: {
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }
+  }
+}
+
+export interface IPluginModuleMergeContent {
+  type: typeof ModuleTypes.MERGE_CONTENT
+  locked?: boolean
+  descriptor: {
+    id?: string
+    mergeContent: IMergeContent
+    style: {
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }
+    computedStyle: {
+      hideContentOnMobile: boolean
+    }
+  }
+}
+
+const LinkTarget = {
+  BLANK: '_blank',
+  SELF: '_self',
+  TOP: '_top',
+} as const
+
+export interface IPluginModuleImage {
+  type: typeof ModuleTypes.IMAGE
+  locked?: boolean
+  descriptor: {
+    id?: string
+    image: {
+      alt: string
+      title: string
+      src: string
+      href: string
+      target: ValueOf<typeof LinkTarget>
+    }
+    style: {
+      width: string
+      'border-radius': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }
+    computedStyle: {
+      class: string
+      width: string
+      hideContentOnMobile: boolean
+    }
+    mobileStyle: {
+      class: string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }
+  }
+}
+
+export interface IPluginModuleHtml {
+  type: typeof ModuleTypes.HTML
+  locked?: boolean
+  descriptor: {
+    id?: string
+    html: {
+      html: string
+    },
+    style: {
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    },
+    computedStyle: {
+      hideContentOnMobile: boolean
+      hideContentOnDesktop: boolean
+      hideContentOnAmp: boolean
+      hideContentOnHtml: boolean
+    },
+  }
+}
+
+export interface IPluginModuleEmpty {
+  type: typeof ModuleTypes.EMPTY
+  descriptor: Record<string, never>
+}
+
+interface CarouselSlide {
+  type: string
+  alt: string
+  src: string
+  href: string
+}
+
+export interface IPluginModuleCarousel {
+  type: typeof ModuleTypes.CAROUSEL
+  locked?: boolean
+  descriptor: {
+    id?: string
+    carousel: {
+      slides: CarouselSlide[],
+      autoplayInterval: number
+      dotNavigation: boolean
+      dotColor: string
+      autoPlay: boolean
+    },
+    style: {
+      width: string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    },
+    mobileStyle: {
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    },
+    computedStyle: {
+      hideContentOnMobile: boolean
+      hideContentOnAmp: boolean
+      height: number
+    }
+  }
+}
+
 export type IPluginModule =
-  IPluginModuleHeading | IPluginModuleParagraph | IPluginModuleButton |
-  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | IPluginModuleIcons |
-  IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer | IPluginModuleTable
+  IPluginModuleButton
+  | IPluginModuleCarousel
+  | IPluginModuleDivider
+  | IPluginModuleEmpty
+  | IPluginModuleForm
+  | IPluginModuleHeading
+  | IPluginModuleHtml
+  | IPluginModuleIcons
+  | IPluginModuleImage
+  | IPluginModuleList
+  | IPluginModuleMenu
+  | IPluginModuleMergeContent
+  | IPluginModuleParagraph
+  | IPluginModuleSocial
+  | IPluginModuleSpacer
+  | IPluginModuleTable
+  | IPluginModuleText
+  | IPluginModuleVideo
 
 export interface IPluginColumn {
   'grid-columns': number
@@ -2530,7 +2776,7 @@ export type Size = {
   height: number
 }
 
-export type ValueType<T extends valueof<typeof PREVIEW_CONTROL>> =
+export type ValueType<T extends ValueOf<typeof PREVIEW_CONTROL>> =
   T extends 'dark' ? string :
   T extends 'amp' ? string :
   T extends 'language' ? TemplateLanguage :
@@ -2539,12 +2785,12 @@ export type ValueType<T extends valueof<typeof PREVIEW_CONTROL>> =
   unknown
 
 
-export type onChangePreviewControlArgs<T extends valueof<typeof PREVIEW_CONTROL>> = {
+export type onChangePreviewControlArgs<T extends ValueOf<typeof PREVIEW_CONTROL>> = {
   type: T
   value: ValueType<T>
 }
 
-export type onChangePreviewControl = <T extends valueof<typeof PREVIEW_CONTROL>>(
+export type onChangePreviewControl = <T extends ValueOf<typeof PREVIEW_CONTROL>>(
   args: onChangePreviewControlArgs<T>
 ) => void
 
@@ -2620,7 +2866,7 @@ export interface IBeeConfig {
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
   onViewChange?: (view: ViewTypes) => void
-  onPreviewChange?: (preview: onChangePreviewControlArgs<valueof<typeof PREVIEW_CONTROL>>) => void
+  onPreviewChange?: (preview: onChangePreviewControlArgs<ValueOf<typeof PREVIEW_CONTROL>>) => void
   commentingFiltersOff?: boolean
   logLevel?: number
   titleDefaultConfig?: {
