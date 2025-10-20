@@ -197,9 +197,10 @@ export enum BeePluginErrorCodes {
 
 export type BeePluginError = {
   code?: BeePluginErrorCodes
-  detail?: string
-  message: string
   data?: BeePluginErrorData
+  detail?: string | Record<string, unknown>
+  message: string
+  name?: string
 }
 
 export enum OnInfoDetailHandle {
