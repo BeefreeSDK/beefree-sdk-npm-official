@@ -2684,12 +2684,9 @@ export interface FormStructure {
 }
 
 export interface AddOnPartner {
-id: string
-  enabled: boolean
   label?: string
   ctaLabel?: string
   placeholder?: string
-  openOnDrop?: boolean
 }
 
 type BaseDevicePresetSizes = {
@@ -2738,19 +2735,24 @@ export interface AddOnImageGenerationAI {
 }
 
 export interface AddOnFileManager {
-  id: string,
   uid?: string,
   ctaLabel?: string,
   ctaDataQA?: string,
   ctaColor?: string,
-  enabled: boolean,
   settings: {
     autoInsert?: true,
     changeDirectory?: true,
   },
 }
 
-export type AddOn = AddOnPartner | AddOnOpenAI | AddOnAltTextAI | AddOnImageGenerationAI | AddOnFileManager
+interface BaseAddon {
+  id: string,
+  editable?: boolean
+  enabled?: boolean
+  openOnDrop?: boolean
+}
+
+export type AddOn = BaseAddon | AddOnPartner | AddOnOpenAI | AddOnAltTextAI | AddOnImageGenerationAI | AddOnFileManager
 
 export interface Translations {
   [key: string]: string | Translations;
