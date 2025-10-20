@@ -1,5 +1,15 @@
 import * as CSS from 'csstype'
 import { KebabKeys, RecursivePartial, RequireAtLeastOne, ValueOf } from './utils'
+import {
+  FileManagerAddon,
+  SimpleButton,
+  SimpleColumn,
+  SimpleDivider,
+  SimpleHtml,
+  SimpleIcons,
+  SimpleImage, SimpleList, SimpleMenu, SimpleParagraph,
+  SimpleRow, SimpleTitle
+} from "./simpleSchemas";
 
 export interface IUrlConfig {
   beePluginUrl?: string
@@ -1209,7 +1219,7 @@ export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
   reject: () => void,
   args: A,
   handle?: T
-) => Promise<void>
+) => void | Promise<void>
 
 export type BeePluginConfigurationsHooks = {
   getMentions?: {
@@ -2527,42 +2537,72 @@ export interface IToken {
   coediting_session_id: string | null
 }
 
-export interface IAddOnResponseImage {
-  type: 'image',
-  value: {
-    alt: string,
-    href: string,
-    src: string,
-    dynamicSrc: string
-  }
+export type IAddOnResponseButton = {
+  type: SimpleButton['type']
+  value: SimpleButton
 }
-export interface IAddOnResponseHTML {
-  type: 'html',
-  value: {
-    html: string
-  }
+export type IAddOnResponseDivider = {
+  type: SimpleDivider['type']
+  value: SimpleDivider
 }
-export interface IAddOnResponseMixed {
+export type IAddOnResponseHTML = {
+  type: SimpleHtml['type']
+  value: SimpleHtml
+}
+export type IAddOnResponseIcons = {
+  type: SimpleIcons['type']
+  value: SimpleIcons
+}
+export type IAddOnResponseImage = {
+  type: SimpleImage['type']
+  value: SimpleImage
+}
+export type IAddOnResponseList = {
+  type: SimpleList['type']
+  value: SimpleList
+}
+export type IAddOnResponseMenu = {
+  type: SimpleMenu['type']
+  value: SimpleMenu
+}
+export type IAddOnResponseParagraph = {
+  type: SimpleParagraph['type']
+  value: SimpleParagraph
+}
+export type IAddOnResponseTitle = {
+  type: SimpleTitle['type']
+  value: SimpleTitle
+}
+
+export type SimpleModule = SimpleColumn['modules'][0]
+
+export type IAddOnResponseMixed = {
   type: 'mixed',
-  value: Record<string, string>[] //todo define the specific type for this part
+  value: SimpleModule[]
 }
-export interface IAddOnResponseRowAddOn {
+export type IAddOnResponseRowAddOn = {
   type: 'rowAddon',
-  value: Record<string, string> //todo define the specific type for this part
+  value: SimpleRow
 }
 
-export interface IAddOnResponseFileManager {
+export type IAddOnResponseFileManager = {
   type: 'filemanager'
-  value: {
-    filemanager: {
-      name: string
-      url: string
-      path: string
-    }
-  }
+  value: FileManagerAddon
 }
 
-type IAddOnResponse = IAddOnResponseImage | IAddOnResponseHTML | IAddOnResponseMixed | IAddOnResponseRowAddOn | IAddOnResponseFileManager
+type IAddOnResponse =
+  | IAddOnResponseButton
+  | IAddOnResponseDivider
+  | IAddOnResponseHTML
+  | IAddOnResponseIcons
+  | IAddOnResponseImage
+  | IAddOnResponseList
+  | IAddOnResponseMenu
+  | IAddOnResponseParagraph
+  | IAddOnResponseTitle
+  | IAddOnResponseMixed
+  | IAddOnResponseRowAddOn
+  | IAddOnResponseFileManager
 
 export type BeeContentDialogs = {
   engage?: {
@@ -2580,7 +2620,11 @@ export type BeeContentDialogs = {
   }
   addOn?: {
     label: string
-    handler: BeePluginContentDialogHandler<IAddOnResponse, undefined, { contentDialogId: string, hasOpenOnDrop: boolean }>
+    handler: BeePluginContentDialogHandler<IAddOnResponse, undefined, {
+      contentDialogId: string
+      hasOpenOnDrop: boolean
+      value: Record<string, unknown>
+    }>
   }
   specialLinks?: {
     label: string
@@ -2592,7 +2636,7 @@ export type BeeContentDialogs = {
   }
   manageForm?: {
     label?: string
-    handler: BeePluginContentDialogHandler<IPluginForm>
+    handler: BeePluginContentDialogHandler<IPluginForm, undefined, IPluginForm['structure']>
   },
   filePicker?: {
     label?: string
