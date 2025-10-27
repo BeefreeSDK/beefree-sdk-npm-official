@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.4.0-feat-custom-attributes-for-social-menu-icon.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.3.1...v9.4.0-feat-custom-attributes-for-social-menu-icon.0) (2025-10-27)
+
+
+### Features
+
+* adds enable block for custom attributes ([e9555c0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/e9555c03b61b23a89786fc5656d07608b9501e4f))
+
 ### [9.3.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.3.1-chore-open-on-drop.1...v9.3.1) (2025-10-02)
 
 ### [9.3.1-chore-open-on-drop.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.3.1-chore-open-on-drop.0...v9.3.1-chore-open-on-drop.1) (2025-09-23)
