@@ -3,7 +3,6 @@ import { KebabKeys, RecursivePartial, RequireAtLeastOne, ValueOf } from './utils
 import {
   FileManagerAddon,
   SimpleButton,
-  SimpleColumn,
   SimpleDivider,
   SimpleHtml,
   SimpleIcons,
@@ -2580,11 +2579,26 @@ export type IAddOnResponseTitle = {
   value: SimpleTitle
 }
 
-export type SimpleModule = SimpleColumn['modules'][0]
+type SingleModuleAddonResponse =
+  | IAddOnResponseButton
+  | IAddOnResponseDivider
+  | IAddOnResponseHTML
+  | IAddOnResponseIcons
+  | IAddOnResponseImage
+  | IAddOnResponseList
+  | IAddOnResponseMenu
+  | IAddOnResponseParagraph
+  | IAddOnResponseTitle
+
+type IAddOnResponse =
+  | SingleModuleAddonResponse
+  | IAddOnResponseMixed
+  | IAddOnResponseRowAddOn
+  | IAddOnResponseFileManager
 
 export type IAddOnResponseMixed = {
   type: 'mixed',
-  value: SimpleModule[]
+  value: SingleModuleAddonResponse[]
 }
 export type IAddOnResponseRowAddOn = {
   type: 'rowAddon',
@@ -2595,20 +2609,6 @@ export type IAddOnResponseFileManager = {
   type: 'filemanager'
   value: FileManagerAddon
 }
-
-type IAddOnResponse =
-  | IAddOnResponseButton
-  | IAddOnResponseDivider
-  | IAddOnResponseHTML
-  | IAddOnResponseIcons
-  | IAddOnResponseImage
-  | IAddOnResponseList
-  | IAddOnResponseMenu
-  | IAddOnResponseParagraph
-  | IAddOnResponseTitle
-  | IAddOnResponseMixed
-  | IAddOnResponseRowAddOn
-  | IAddOnResponseFileManager
 
 export type BeeContentDialogs = {
   engage?: {
