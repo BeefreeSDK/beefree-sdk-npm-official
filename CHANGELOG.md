@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.4.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.3.1...v9.4.0) (2025-10-28)
+
+
+### Features
+
+* add missing typing for mcp and sidebar positioning ([012b4bb](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/012b4bba264e45e74999fa5de86885dda68e3013))
+
 ### [9.3.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.3.1-chore-open-on-drop.1...v9.3.1) (2025-10-02)
 
 ### [9.3.1-chore-open-on-drop.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.3.1-chore-open-on-drop.0...v9.3.1-chore-open-on-drop.1) (2025-09-23)
