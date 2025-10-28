@@ -1363,6 +1363,11 @@ export type CustomAttributes = {
   enableOpenFields?: boolean
 }
 
+export type DisplayConditionsAdvancedSettings = AdvancedSettingsShowLocked & {
+  CanRemoveDisplayConditions?: boolean
+  CanEditDisplayConditions?: boolean
+}
+
 export type BeePluginAdvancedPermission = RecursivePartial<{
   components: {
     colorPicker?: {
@@ -1423,7 +1428,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     doNotStackOnMobile: AdvancedSettingsShowLocked
     backgroundImage: AdvancedSettingsShowLocked
     backgroundVideo: AdvancedSettingsShowLocked
-    displayConditions: AdvancedSettingsShowLocked
+    displayConditions: DisplayConditionsAdvancedSettings
     columnTabs: AdvancedSettingsShowLocked
     hideOnMobile: AdvancedSettingsShowLocked
     rowLayout: AdvancedSettingsShowLocked
