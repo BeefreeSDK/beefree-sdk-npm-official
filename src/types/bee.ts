@@ -1106,7 +1106,7 @@ export type CustomAttribute = {
 export type CustomAttributes = {
   attributes?: CustomAttribute[]
   enableOpenFields?: boolean
-  enableBlocks?: ['social', 'menu', 'icons', 'video', 'image', 'button', 'textToolbar']
+  enableBlocks?: ('social' | 'menu' | 'icons' | 'video' | 'image' | 'button' | 'textToolbar')[]
 }
 
 export type BeePluginAdvancedPermission = RecursivePartial<{
