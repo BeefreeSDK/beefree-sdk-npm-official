@@ -2460,7 +2460,7 @@ export interface IBeeConfig {
   translations?: Translations
   textEditor?: TextEditor
   customAttributes?: CustomAttributes
-  sidebarPosition?: 'left' | 'right'
+  sidebarPosition?: 'left' | 'right' | 'none'
   rowDisplayConditions?: Array<IPluginDisplayCondition>
   enabledAdvancedPreview?: boolean
   titleMaxLevel?: TitleLevel
@@ -2492,6 +2492,10 @@ export interface IBeeConfig {
     bold: boolean
   }
   forceSanitizeHTML?: boolean
+  mcpEditorClient?: {
+    enabled: boolean
+    sessionId: string
+  }
 }
 
 export interface IBeeConfigFileManager {
