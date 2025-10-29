@@ -3014,3 +3014,20 @@ export interface IBeeConfigFileManager {
 }
 
 export type { KebabCSSProperties }
+
+export type SaveResponse = {
+  data: {
+    json: string
+    html: string
+    htmlAmp: string | null
+    version: number
+    language: string | null
+  }
+}
+
+export type SaveAsTemplateResponse = {
+  data: {
+    json: string
+    version: number
+  }
+}
