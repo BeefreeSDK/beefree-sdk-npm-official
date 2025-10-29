@@ -17,6 +17,8 @@ import {
   ExecCommands,
   IExecCommandOptions,
   ITemplateJson,
+  SaveResponse,
+  SaveAsTemplateResponse,
 } from './types/bee'
 import beeActions, { mockedEmptyToken, BEEJS_URL, API_AUTH_URL } from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -177,7 +179,7 @@ class Bee {
     )
   }
 
-  executeAction = (action: string, param = {}, options = {}) => {
+  executeAction = <A = void>(action: string, param = {}, options = {}): A => {
     const { instance } = this
     return pipe(
       eitherCanExecuteAction(instance, action),
@@ -200,9 +202,9 @@ class Bee {
 
   loadRows = () => this.executeAction(LOAD_ROWS)
 
-  save = (options?: BeeSaveOptions) => this.executeAction(SAVE, options)
+  save = (options?: BeeSaveOptions) => this.executeAction<Promise<SaveResponse>>(SAVE, options)
 
-  saveAsTemplate = () => this.executeAction(SAVE_AS_TEMPLATE)
+  saveAsTemplate = () => this.executeAction<Promise<SaveAsTemplateResponse>>(SAVE_AS_TEMPLATE)
 
   send = (args?: ILanguage) => this.executeAction(SEND, args)
 
@@ -236,9 +238,7 @@ class Bee {
 
   execCommand = (command: ExecCommands, options?: IExecCommandOptions): ExecCommand => this.executeAction(EXEC_COMMAND, command, options)
 
-  getTemplateJson = (): Promise<ITemplateJson> => {
-    return this.executeAction(GET_TEMPLATE_JSON, {})
-  }
+  getTemplateJson = () => this.executeAction<Promise<ITemplateJson>>(GET_TEMPLATE_JSON, {})
 }
 
 
