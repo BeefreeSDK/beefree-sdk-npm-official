@@ -1775,12 +1775,83 @@ export enum WorkspaceStage {
   global = 'global',
 }
 
+type PopupLayout =
+  |'classic-center'
+  | 'drawer-left'
+  | 'drawer-right'
+  | 'bar-bottom'
+  | 'bar-top'
+  | 'default'
+  | 'classic-top-right'
+  | 'classic-top-left'
+  | 'classic-bottom-right'
+  | 'classic-bottom-left'
+
+type PopupTheme =
+  | 'bootstrap'
+  | 'jQuery'
+  | 'custom'
+  | 'banner'
+  | 'material'
+  | 'default'
+
+export type PopupThemeHeader = {
+  readonly display?: string
+  readonly flexShrink?: number
+  readonly alignItems?: string
+  readonly justifyContent?: string
+  readonly padding?: string
+  readonly borderBottom?: string
+  readonly borderTopLeftRadius?: string
+  readonly borderTopRightRadius?: string
+  readonly width?: string
+  readonly position?: string
+  readonly right?: CSS.Properties
+  readonly left?: CSS.Properties
+  readonly alignSelf?: string
+}
+
+export type PopupThemeStyles = {
+  container?: CSS.Properties
+  header?: PopupThemeHeader
+  content?: CSS.Properties
+  footer?: CSS.Properties
+  overlay?: CSS.Properties
+}
+
+export type PopupLayoutStyles = {
+  html?: CSS.Properties
+  body?: CSS.Properties
+  main?: CSS.Properties
+  wrapper?: CSS.Properties
+}
+
+export type PopupWorkspaceConfig = {
+  contentWidth?: number
+  contentWidthMobile?: number
+  layout?: PopupLayout
+  theme?: PopupTheme
+  customStyles?: PopupThemeStyles
+  customLayout?: PopupLayoutStyles
+  backgroundImage?: string
+  backgroundImageMobile?: string
+  desktop?: {
+    customStyles?: PopupThemeStyles
+    customLayout?: PopupLayoutStyles
+  }
+  mobile?: {
+    customStyles?: PopupThemeStyles
+    customLayout?: PopupLayoutStyles
+  }
+}
+
 export type BeePluginWorkspace = {
-  type?: LoadWorkspaceOptions
-  stage?: WorkspaceStage
   displayHidden?: StageDisplayOptions
-  hideStageToggle?: boolean
   editSingleRow?: boolean
+  hideStageToggle?: boolean
+  popup?: PopupWorkspaceConfig
+  stage?: WorkspaceStage
+  type?: LoadWorkspaceOptions
 }
 
 export type IPluginSessionInfo = {
