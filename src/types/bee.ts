@@ -24,6 +24,11 @@ export interface TemplateLanguage {
   value: string
 }
 
+export interface MetadataLanguage {
+  label: string,
+  value: string
+}
+
 export interface BeeSaveOptions {
   language?: string
 }
@@ -2996,6 +3001,9 @@ export interface IBeeConfig {
     bold: boolean
   }
   forceSanitizeHTML?: boolean
+  metadata?: {
+    languages: MetadataLanguage[]
+  }
 }
 
 export interface IBeeConfigFileManager {
