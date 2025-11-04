@@ -1547,6 +1547,9 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         id: AdvancedSettingsShowLocked
         aiIntegration: AdvancedSettingsShowLocked
         hoverStyles: AdvancedSettingsShowLocked
+        customAttributes: AdvancedSettingsShowLocked
+        direction: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
       }
     }
     image: {
