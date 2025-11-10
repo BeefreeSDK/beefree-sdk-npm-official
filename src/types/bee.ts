@@ -2577,6 +2577,13 @@ export type ContentDefaultsRow = Partial<{
     paddingTop: string
     verticalAlign: string
   }>
+  mobileStyles: Partial<{
+    padding: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
 }>
 
 export type ContentDefaultsGeneral = Partial<{
