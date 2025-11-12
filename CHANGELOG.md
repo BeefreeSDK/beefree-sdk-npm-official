@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.4.1-fix-BEE-10878-types.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.0...v9.4.1-fix-BEE-10878-types.0) (2025-11-12)
+
+
+### Bug Fixes
+
+* **BBOX-2231-types:** fixing popup configuration types ([2fae04d](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/2fae04d838311e73738b3def979bc9465fc7b274))
+* **BBOX-2403-types:** adding templateLanguageAutoTranslation type ([dec69d5](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/dec69d5084a9503ebdd6185730e04f9e991e5df9))
+* **BBOX-2403-types:** removing internal properties of TemplateLanguage ([2fe8842](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/2fe8842a69e8e89121c6bb86700e679fe44ec065))
+* **BBOX-2404-types:** fixing contentDefault types ([2b36c12](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/2b36c12d02dc8a84502cdefdb6dde4147d5350ac))
+* **BBOX-2405-types:** fixing mixed addon resolve type ([ebfab69](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/ebfab69f2f3bcbe7ce73b9c41c28c51b701d5849))
+* **BBOX-2406-types:** fixing metadata languages type ([17252c8](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/17252c8ec7cb058d75badc62808e07264f8c1225))
+* **BBOX-2407-types:** fixing loader methods return types ([683d5f8](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/683d5f8cdc4fbb53a97c91348ce767385ea28308))
+* **BBOX-2408-types:** fixing display conditions advanced permissions types ([fbe3f0a](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/fbe3f0a64cae3aca7da87707e232c51fdeb42f7c))
+* **BBOX-2409-types:** fixing Error type ([b066d97](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/b066d970700063baf0c80afec1539933bdda9b6f))
+* **BBOX-2612-types:** fixing onSessionChange type ([9a041f6](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/9a041f67905b309243de7305312ada1332dbf134))
+* **BBOX-2623-types:** fixing content dialog types ([6acd05f](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/6acd05fd4b1085771d564c51f0567a8eaeaf7c85))
+* **BEE-10878-types:** fixing button advanced permissions ([c8a397a](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/c8a397a9b914346c4dafe6359f70a3044ceebf4e))
+* **BEE-10878-types:** fixing row content defaults ([b097199](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/b09719953d3bf6ee6dcfd8748e9444975ca663e6))
+* **BEE-10881-types:** adding missing modules types ([629d011](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/629d01178f3ffa8e610b0f7aa63749b4bdcc62a7))
+* **BEE-10906-types:** fixing AddOn type ([e631855](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/e6318550089c6606825c1a2b0017737f07183064))
+
 ## [9.4.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.3.1...v9.4.0) (2025-10-28)
 
 
