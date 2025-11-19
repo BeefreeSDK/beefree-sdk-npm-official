@@ -2113,17 +2113,17 @@ type TitleLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 export type TitleDefaultStyles = Partial<Record<TitleLevel, TitleDefaultStyle>>
 
 // TOFIX: this module will probably be removed in the near future
-export type ContentDefaultsText = {
+export type ContentDefaultsText = Partial<{
   // we can't use partial for ContentDefaultsText since html is required
   html: string
-  styles?: Partial<{
+  styles: Partial<{
     color: string
     linkColor: string
     fontSize: string
     lineHeight: string
     fontFamily: string
   }>
-  blockOptions?: Partial<{
+  blockOptions: Partial<{
     paddingBottom: string
     paddingLeft: string
     paddingRight: string
@@ -2136,7 +2136,7 @@ export type ContentDefaultsText = {
     paddingBottom: string
     paddingLeft: string
   }>
-}
+}>
 
 export type ContentDefaultsImage = Partial<{
   alt: string
