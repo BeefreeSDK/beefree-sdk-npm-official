@@ -355,6 +355,14 @@ export interface IPluginModuleHeading {
       text: string
       title: 'h1' | 'h2' | 'h3'
     }
+    mobileStyle?: Partial<{
+      'font-size': string
+      'text-align': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 export interface IPluginModuleParagraph {
@@ -392,6 +400,14 @@ export interface IPluginModuleParagraph {
         'text-align': string
       }>
     }
+    mobileStyle?: Partial<{
+      'font-size': string
+      'text-align': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 
@@ -443,6 +459,14 @@ export interface IPluginModuleButton {
         'width': string
       }
     }
+    mobileStyle?: Partial<{
+      'font-size': string
+      'text-align': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 
@@ -487,6 +511,14 @@ export interface IPluginModuleList {
         startListFrom: string
       }
     }
+    mobileStyle?: Partial<{
+      'font-size': string
+      'text-align': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 export interface IPluginModuleDivider {
@@ -511,6 +543,13 @@ export interface IPluginModuleDivider {
         width: string
       }
     }
+    mobileStyle?: Partial<{
+      align: string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 
@@ -594,6 +633,13 @@ export interface IPluginModuleForm {
         }
       }
     }
+    mobileStyle?: Partial<{
+      'font-size': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 export interface IPluginModuleSocialIcon {
@@ -633,6 +679,13 @@ export interface IPluginModuleSocial {
     iconsList: {
       icons: IPluginModuleSocialIcon[]
     }
+    mobileStyle?: Partial<{
+      'text-align': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 
@@ -683,6 +736,14 @@ export interface IPluginModuleMenu {
     menuItemsList: {
       items: IPluginModuleMenuItem[]
     }
+    mobileStyle?: Partial<{
+      'text-align': string
+      'padding-top':string
+      'padding-right':string
+      'padding-bottom':string
+      'padding-left':string
+      'font-size': string
+    }>
   }
 }
 
@@ -796,6 +857,14 @@ export interface IPluginModuleIcons {
       'padding-top': string
       'text-align': string
     }
+    mobileStyle?: Partial<{
+      'font-size': string
+      'text-align': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
   uuid: string
 }
@@ -860,12 +929,12 @@ export interface IPluginModuleVideo {
       width: string
       hideContentOnMobile: boolean
     }
-    mobileStyle?: {
+    mobileStyle?: Partial<{
       'padding-top': string
       'padding-right': string
       'padding-bottom': string
       'padding-left': string
-    }
+    }>
   }
 }
 
@@ -894,12 +963,12 @@ export interface IPluginModuleText {
     computedStyle: {
       hideContentOnMobile: boolean
     }
-    mobileStyle: {
+    mobileStyle?: Partial<{
       'padding-top': string
       'padding-right': string
       'padding-bottom': string
       'padding-left': string
-    }
+    }>
   }
 }
 
@@ -952,13 +1021,13 @@ export interface IPluginModuleImage {
       width: string
       hideContentOnMobile: boolean
     }
-    mobileStyle: {
+    mobileStyle?: Partial<{
       class: string
       'padding-top': string
       'padding-right': string
       'padding-bottom': string
       'padding-left': string
-    }
+    }>
   }
 }
 
@@ -1016,12 +1085,12 @@ export interface IPluginModuleCarousel {
       'padding-bottom': string
       'padding-left': string
     },
-    mobileStyle: {
+    mobileStyle?: Partial<{
       'padding-top': string
       'padding-right': string
       'padding-bottom': string
       'padding-left': string
-    },
+    }>,
     computedStyle: {
       hideContentOnMobile: boolean
       hideContentOnAmp: boolean
@@ -2595,24 +2664,24 @@ export type ContentDefaultsGeneral = Partial<{
 }>
 
 export type ContentDefaults = Partial<{
-  title: ContentDefaultsTitle
-  text: ContentDefaultsText
-  image: ContentDefaultsImage
   button: ContentDefaultsButton
-  divider: ContentDefaultsDivider
-  social: ContentDefaultsSocial
-  dynamic: ContentDefaultsDynamic
-  video: ContentDefaultsVideo
-  form: ContentDefaultsForm
-  paragraph: ContentDefaultsParagraph
-  spacer: ContentDefaultsSpacer
-  menu: ContentDefaultsMenu
-  icons: ContentDefaultsIcons
-  list: ContentDefaultsList
-  general: ContentDefaultsGeneral
-  table: ContentDefaultsTable
   carousel: ContentDefaultsCarousel
+  divider: ContentDefaultsDivider
+  dynamic: ContentDefaultsDynamic
+  form: ContentDefaultsForm
+  general: ContentDefaultsGeneral
+  icons: ContentDefaultsIcons
+  image: ContentDefaultsImage
+  list: ContentDefaultsList
+  menu: ContentDefaultsMenu
+  paragraph: ContentDefaultsParagraph
   row: ContentDefaultsRow
+  social: ContentDefaultsSocial
+  spacer: ContentDefaultsSpacer
+  table: ContentDefaultsTable
+  text: ContentDefaultsText
+  title: ContentDefaultsTitle
+  video: ContentDefaultsVideo
 }>
 
 export enum TokenStatus {
