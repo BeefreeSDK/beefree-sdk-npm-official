@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.4.1-fix-BEE-10878-types.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.1-fix-BEE-10878-types.0...v9.4.1-fix-BEE-10878-types.1) (2025-11-21)
+
+
+### Bug Fixes
+
+* **BEE-10878-types:** adding mobileStyle to modules types ([5482202](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/54822021b34b01dbb708e6dd8b9f8d2354c54666))
+* **BEE-10878-types:** making ContentDefaultsText Partial like the others ([c2fb569](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/c2fb56966c4db6390ad0332a3d51877a51d890fb))
+
 ### [9.4.1-fix-BEE-10878-types.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.0...v9.4.1-fix-BEE-10878-types.0) (2025-11-12)
 
 
