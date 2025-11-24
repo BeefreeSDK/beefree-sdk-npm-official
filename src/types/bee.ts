@@ -429,7 +429,7 @@ export interface IPluginModuleButton {
       hideContentOnMobile: boolean
       width: number
     }
-    hoverStyle: {
+    hoverStyle?: {
       "background-color": string,
       "color": string,
       "border-top": string,
@@ -448,8 +448,11 @@ export interface IPluginModuleButton {
         'border-right': string
         'border-top': string
         'color': string
+        'direction': string
         'font-family': string
+        'font-size': string
         'font-weight': string
+        'letter-spacing': string
         'line-height': string
         'max-width': string
         'padding-bottom': string
@@ -2917,36 +2920,36 @@ export interface AddOnOpenAI {
 }
 
 export interface AddOnAltTextAI {
-  id: 'ai-alt-text',
+  id: 'ai-alt-text'
   settings: {
-    imagesAvailable?: number,
-    imagesUsed?: number,
-    isIconDisabled?: boolean,
-    isUpsellEnabled?: boolean,
+    imagesAvailable?: number
+    imagesUsed?: number
+    isIconDisabled?: boolean
+    isUpsellEnabled?: boolean
     upsellTrigger?: number
   }
 }
 
 export interface AddOnImageGenerationAI {
-  id: 'ai-image-generation',
+  id: 'ai-image-generation'
   settings: {
-    imagesAvailable?: number,
-    imagesUsed?: number,
+    imagesAvailable?: number
+    imagesUsed?: number
     isGenerationDisabled?: boolean
     upsellTrigger?: number
-    isUpsellEnabled?: boolean,
-    folderName?: string,
+    isUpsellEnabled?: boolean
+    folderName?: string
   }
 }
 
 export interface AddOnFileManager {
-  uid?: string,
-  ctaLabel?: string,
-  ctaDataQA?: string,
-  ctaColor?: string,
+  id: string
+  ctaLabel?: string
+  ctaDataQA?: string
+  ctaColor?: string
   settings: {
-    autoInsert?: true,
-    changeDirectory?: true,
+    autoInsert?: true
+    changeDirectory?: true
   },
 }
 
