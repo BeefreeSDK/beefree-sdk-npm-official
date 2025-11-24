@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "9.4.1-fix-BEE-10878-types.3",
+  "version": "9.4.1-fix-BEE-10878-types.4",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -35,7 +35,10 @@
     "release:beta": "yarn prerelease && standard-version --prerelease beta && yarn postrelease",
     "release:unstable": "yarn prerelease && standard-version --prerelease $(git branch --show-current | sed 's/\\//-/g') && yarn postrelease"
   },
-  "repository": "git+https://github.com/BeefreeSDK/beefree-sdk-npm-official",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeefreeSDK/beefree-sdk-npm-official.git"
+  },
   "keywords": [
     "editor",
     "email",

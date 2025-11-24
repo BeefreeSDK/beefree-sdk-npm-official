@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.4.1-fix-BEE-10878-types.4](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.1-fix-BEE-10878-types.3...v9.4.1-fix-BEE-10878-types.4) (2025-11-24)
+
 ### [9.4.1-fix-BEE-10878-types.3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.1-fix-BEE-10878-types.2...v9.4.1-fix-BEE-10878-types.3) (2025-11-24)
 
 ### [9.4.1-fix-BEE-10878-types.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.1-fix-BEE-10878-types.1...v9.4.1-fix-BEE-10878-types.2) (2025-11-24)
