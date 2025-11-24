@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.4.1-fix-BEE-10878-types.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.1-fix-BEE-10878-types.1...v9.4.1-fix-BEE-10878-types.2) (2025-11-24)
+
+
+### Bug Fixes
+
+* **BEE-10878-types:** fixing AddOn type and adding missing properties to module button type ([1bfcbba](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/1bfcbbac98f0b42e48a44072b0a874df917c96be))
+
 ### [9.4.1-fix-BEE-10878-types.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.1-fix-BEE-10878-types.0...v9.4.1-fix-BEE-10878-types.1) (2025-11-21)
 
 
