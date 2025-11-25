@@ -2244,16 +2244,18 @@ export type ContentDefaultsButton = Partial<{
   href: string
   width: string
   styles: Partial<{
-    color: string
-    fontSize: string
-    fontFamily: string
-    fontWeight: string
     backgroundColor: string
     borderBottom: string
     borderLeft: string
     borderRadius: string
     borderRight: string
     borderTop: string
+    color: string
+    direction: string
+    fontFamily: string
+    fontSize: string
+    fontWeight: string
+    letterSpacing: string
     lineHeight: string
     maxWidth: string
     paddingBottom: string
