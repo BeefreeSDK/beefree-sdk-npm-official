@@ -1,5 +1,14 @@
 import * as CSS from 'csstype'
-import { KebabKeys, RecursivePartial, RequireAtLeastOne, valueof, ValueOf } from './utils'
+import { KebabKeys, RecursivePartial, RequireAtLeastOne, ValueOf } from './utils'
+import {
+  FileManagerAddon,
+  SimpleButton,
+  SimpleDivider,
+  SimpleHtml,
+  SimpleIcons,
+  SimpleImage, SimpleList, SimpleMenu, SimpleParagraph,
+  SimpleRow, SimpleTitle
+} from "./simpleSchemas";
 
 export interface IUrlConfig {
   beePluginUrl?: string
@@ -13,8 +22,11 @@ export interface IBeeOptions {
 export interface TemplateLanguage {
   label: string,
   value: string
-  twoCharsCode: string
-  isMain: boolean
+}
+
+export interface MetadataLanguage {
+  label: string,
+  value: string
 }
 
 export interface BeeSaveOptions {
@@ -189,9 +201,10 @@ export enum BeePluginErrorCodes {
 
 export type BeePluginError = {
   code?: BeePluginErrorCodes
-  detail?: string
-  message: string
   data?: BeePluginErrorData
+  detail?: string | Record<string, unknown>
+  message: string
+  name?: string
 }
 
 export enum OnInfoDetailHandle {
@@ -342,6 +355,14 @@ export interface IPluginModuleHeading {
       text: string
       title: 'h1' | 'h2' | 'h3'
     }
+    mobileStyle?: Partial<{
+      'font-size': string
+      'text-align': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 export interface IPluginModuleParagraph {
@@ -379,6 +400,14 @@ export interface IPluginModuleParagraph {
         'text-align': string
       }>
     }
+    mobileStyle?: Partial<{
+      'font-size': string
+      'text-align': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 
@@ -400,7 +429,7 @@ export interface IPluginModuleButton {
       hideContentOnMobile: boolean
       width: number
     }
-    hoverStyle: {
+    hoverStyle?: {
       "background-color": string,
       "color": string,
       "border-top": string,
@@ -419,8 +448,11 @@ export interface IPluginModuleButton {
         'border-right': string
         'border-top': string
         'color': string
+        'direction': string
         'font-family': string
+        'font-size': string
         'font-weight': string
+        'letter-spacing': string
         'line-height': string
         'max-width': string
         'padding-bottom': string
@@ -430,6 +462,14 @@ export interface IPluginModuleButton {
         'width': string
       }
     }
+    mobileStyle?: Partial<{
+      'font-size': string
+      'text-align': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 
@@ -474,6 +514,14 @@ export interface IPluginModuleList {
         startListFrom: string
       }
     }
+    mobileStyle?: Partial<{
+      'font-size': string
+      'text-align': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 export interface IPluginModuleDivider {
@@ -498,6 +546,13 @@ export interface IPluginModuleDivider {
         width: string
       }
     }
+    mobileStyle?: Partial<{
+      align: string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 
@@ -581,6 +636,13 @@ export interface IPluginModuleForm {
         }
       }
     }
+    mobileStyle?: Partial<{
+      'font-size': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 export interface IPluginModuleSocialIcon {
@@ -620,6 +682,13 @@ export interface IPluginModuleSocial {
     iconsList: {
       icons: IPluginModuleSocialIcon[]
     }
+    mobileStyle?: Partial<{
+      'text-align': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
 }
 
@@ -670,11 +739,20 @@ export interface IPluginModuleMenu {
     menuItemsList: {
       items: IPluginModuleMenuItem[]
     }
+    mobileStyle?: Partial<{
+      'text-align': string
+      'padding-top':string
+      'padding-right':string
+      'padding-bottom':string
+      'padding-left':string
+      'font-size': string
+    }>
   }
 }
 
 export interface IPluginModuleTable {
   type: typeof ModuleTypes.TABLE
+  locked?: boolean
   uuid: string
   descriptor: {
     id?: string
@@ -742,8 +820,11 @@ export interface IPluginModuleSpacer {
   }
 }
 
-export type IPluginModuleIcons = {
+export interface IPluginModuleIcons {
+  type: typeof ModuleTypes.ICONS
+  locked?: boolean
   descriptor: {
+    id?: string
     computedStyle: {
       hideContentOnDesktop: boolean
       hideContentOnMobile: boolean
@@ -756,7 +837,6 @@ export type IPluginModuleIcons = {
       }
       itemsSpacing: string
     }
-    id: 'iconsList'
     iconsList: {
       icons: {
         height: string
@@ -780,16 +860,267 @@ export type IPluginModuleIcons = {
       'padding-top': string
       'text-align': string
     }
+    mobileStyle?: Partial<{
+      'font-size': string
+      'text-align': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
   }
-  locked: boolean
-  type: string
   uuid: string
 }
 
+type ModuleVideoMode = (
+  {
+    mode: 'thumbnail'
+    thumbSrc: string
+    thumbRatio: string
+    iconType: number
+    iconColor1: string
+    iconColor2: string
+    iconSize: number
+    iconSrc: string
+    controls?: never
+    loop?: never
+  }
+  | {
+    mode: 'embedded'
+    controls: boolean
+    loop: boolean
+    thumbSrc?: never
+    thumbRatio?: never
+    iconType?: never
+    iconColor1?: never
+    iconColor2?: never
+    iconSize?: never
+    iconSrc?: never
+  }
+  | {
+    mode: 'custom'
+    controls: boolean
+    thumbSrc?: never
+    thumbRatio?: never
+    iconType?: never
+    iconColor1?: never
+    iconColor2?: never
+    iconSize?: never
+    iconSrc?: never
+    loop?: never
+  }
+  )
+
+
+export interface IPluginModuleVideo {
+  type: typeof ModuleTypes.VIDEO
+  locked?: boolean
+  descriptor: {
+    id?: string
+    video: {
+      src: string
+    } & ModuleVideoMode
+    style: {
+      width: string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }
+    computedStyle: {
+      class: string
+      width: string
+      hideContentOnMobile: boolean
+    }
+    mobileStyle?: Partial<{
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
+  }
+}
+
+export interface IPluginModuleText {
+  type: typeof ModuleTypes.TEXT
+  locked?: boolean
+  descriptor: {
+    id?: string
+    text: {
+      html: string
+      style: {
+        color: string
+        'line-height': string
+        'font-family': string
+      }
+      computedStyle: {
+        linkColor: string
+      }
+    }
+    style: {
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }
+    computedStyle: {
+      hideContentOnMobile: boolean
+    }
+    mobileStyle?: Partial<{
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
+  }
+}
+
+export interface IPluginModuleMergeContent {
+  type: typeof ModuleTypes.MERGE_CONTENT
+  locked?: boolean
+  descriptor: {
+    id?: string
+    mergeContent: IMergeContent
+    style: {
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }
+    computedStyle: {
+      hideContentOnMobile: boolean
+    }
+  }
+}
+
+const LinkTarget = {
+  BLANK: '_blank',
+  SELF: '_self',
+  TOP: '_top',
+} as const
+
+export interface IPluginModuleImage {
+  type: typeof ModuleTypes.IMAGE
+  locked?: boolean
+  descriptor: {
+    id?: string
+    image: {
+      alt: string
+      title: string
+      src: string
+      href: string
+      target: ValueOf<typeof LinkTarget>
+    }
+    style: {
+      width: string
+      'border-radius': string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }
+    computedStyle: {
+      class: string
+      width: string
+      hideContentOnMobile: boolean
+    }
+    mobileStyle?: Partial<{
+      class: string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>
+  }
+}
+
+export interface IPluginModuleHtml {
+  type: typeof ModuleTypes.HTML
+  locked?: boolean
+  descriptor: {
+    id?: string
+    html: {
+      html: string
+    },
+    style: {
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    },
+    computedStyle: {
+      hideContentOnMobile: boolean
+      hideContentOnDesktop: boolean
+      hideContentOnAmp: boolean
+      hideContentOnHtml: boolean
+    },
+  }
+}
+
+export interface IPluginModuleEmpty {
+  type: typeof ModuleTypes.EMPTY
+  descriptor: Record<string, never>
+}
+
+interface CarouselSlide {
+  type: string
+  alt: string
+  src: string
+  href: string
+}
+
+export interface IPluginModuleCarousel {
+  type: typeof ModuleTypes.CAROUSEL
+  locked?: boolean
+  descriptor: {
+    id?: string
+    carousel: {
+      slides: CarouselSlide[],
+      autoplayInterval: number
+      dotNavigation: boolean
+      dotColor: string
+      autoPlay: boolean
+    },
+    style: {
+      width: string
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    },
+    mobileStyle?: Partial<{
+      'padding-top': string
+      'padding-right': string
+      'padding-bottom': string
+      'padding-left': string
+    }>,
+    computedStyle: {
+      hideContentOnMobile: boolean
+      hideContentOnAmp: boolean
+      height: number
+    }
+  }
+}
+
 export type IPluginModule =
-  IPluginModuleHeading | IPluginModuleParagraph | IPluginModuleButton |
-  IPluginModuleList | IPluginModuleDivider | IPluginModuleForm | IPluginModuleIcons |
-  IPluginModuleSocial | IPluginModuleMenu | IPluginModuleSpacer | IPluginModuleTable
+  IPluginModuleButton
+  | IPluginModuleCarousel
+  | IPluginModuleDivider
+  | IPluginModuleEmpty
+  | IPluginModuleForm
+  | IPluginModuleHeading
+  | IPluginModuleHtml
+  | IPluginModuleIcons
+  | IPluginModuleImage
+  | IPluginModuleList
+  | IPluginModuleMenu
+  | IPluginModuleMergeContent
+  | IPluginModuleParagraph
+  | IPluginModuleSocial
+  | IPluginModuleSpacer
+  | IPluginModuleTable
+  | IPluginModuleText
+  | IPluginModuleVideo
 
 export interface IPluginColumn {
   'grid-columns': number
@@ -965,7 +1296,7 @@ export type BeePluginContentDialogHandler<K, T = undefined, A = K> = (
   reject: () => void,
   args: A,
   handle?: T
-) => Promise<void>
+) => void | Promise<void>
 
 export type BeePluginConfigurationsHooks = {
   getMentions?: {
@@ -1109,6 +1440,11 @@ export type CustomAttributes = {
   enableBlocks?: ('social' | 'menu' | 'icons' | 'video' | 'image' | 'button' | 'textToolbar')[]
 }
 
+export type DisplayConditionsAdvancedSettings = AdvancedSettingsShowLocked & {
+  CanRemoveDisplayConditions?: boolean
+  CanEditDisplayConditions?: boolean
+}
+
 export type BeePluginAdvancedPermission = RecursivePartial<{
   components: {
     colorPicker?: {
@@ -1169,7 +1505,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     doNotStackOnMobile: AdvancedSettingsShowLocked
     backgroundImage: AdvancedSettingsShowLocked
     backgroundVideo: AdvancedSettingsShowLocked
-    displayConditions: AdvancedSettingsShowLocked
+    displayConditions: DisplayConditionsAdvancedSettings
     columnTabs: AdvancedSettingsShowLocked
     hideOnMobile: AdvancedSettingsShowLocked
     rowLayout: AdvancedSettingsShowLocked
@@ -1285,6 +1621,8 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         aiIntegration: AdvancedSettingsShowLocked
         hoverStyles: AdvancedSettingsShowLocked
         customAttributes: AdvancedSettingsShowLocked
+        direction: AdvancedSettingsShowLocked
+        fontSize: AdvancedSettingsShowLocked
       }
     }
     image: {
@@ -1523,16 +1861,108 @@ export enum WorkspaceStage {
   global = 'global',
 }
 
+type PopupLayout =
+  |'classic-center'
+  | 'drawer-left'
+  | 'drawer-right'
+  | 'bar-bottom'
+  | 'bar-top'
+  | 'default'
+  | 'classic-top-right'
+  | 'classic-top-left'
+  | 'classic-bottom-right'
+  | 'classic-bottom-left'
+
+type PopupTheme =
+  | 'bootstrap'
+  | 'jQuery'
+  | 'custom'
+  | 'banner'
+  | 'material'
+  | 'default'
+
+export type PopupThemeHeader = {
+  readonly display?: string
+  readonly flexShrink?: number
+  readonly alignItems?: string
+  readonly justifyContent?: string
+  readonly padding?: string
+  readonly borderBottom?: string
+  readonly borderTopLeftRadius?: string
+  readonly borderTopRightRadius?: string
+  readonly width?: string
+  readonly position?: string
+  readonly right?: CSS.Properties
+  readonly left?: CSS.Properties
+  readonly alignSelf?: string
+}
+
+export type PopupThemeStyles = {
+  container?: CSS.Properties
+  header?: PopupThemeHeader
+  content?: CSS.Properties
+  footer?: CSS.Properties
+  overlay?: CSS.Properties
+}
+
+export type PopupLayoutStyles = {
+  html?: CSS.Properties
+  body?: CSS.Properties
+  main?: CSS.Properties
+  wrapper?: CSS.Properties
+}
+
+export type PopupWorkspaceConfig = {
+  contentWidth?: number
+  contentWidthMobile?: number
+  layout?: PopupLayout
+  theme?: PopupTheme
+  customStyles?: PopupThemeStyles
+  customLayout?: PopupLayoutStyles
+  backgroundImage?: string
+  backgroundImageMobile?: string
+  desktop?: {
+    customStyles?: PopupThemeStyles
+    customLayout?: PopupLayoutStyles
+  }
+  mobile?: {
+    customStyles?: PopupThemeStyles
+    customLayout?: PopupLayoutStyles
+  }
+}
+
 export type BeePluginWorkspace = {
-  type?: LoadWorkspaceOptions
-  stage?: WorkspaceStage
   displayHidden?: StageDisplayOptions
-  hideStageToggle?: boolean
   editSingleRow?: boolean
+  hideStageToggle?: boolean
+  popup?: PopupWorkspaceConfig
+  stage?: WorkspaceStage
+  type?: LoadWorkspaceOptions
 }
 
 export type IPluginSessionInfo = {
   sessionId: string
+}
+
+const SessionChangeType = {
+  USER_JOINED: 'USER_JOINED',
+  USER_LEFT: 'USER_LEFT',
+} as const
+
+type SessionUser = {
+  userColor: string
+  userId: string
+  username: string
+}
+
+export type IPluginSessionChangeInfo = {
+  change: {
+    type: ValueOf<typeof SessionChangeType>,
+    value: SessionUser
+  },
+  sessionData: {
+    users: Record<SessionUser['userId'], SessionUser>
+  }
 }
 
 export type FontElement = {
@@ -1734,6 +2164,14 @@ export type ContentDefaultsTitle = Partial<{
     paddingBottom: string
     paddingLeft: string
   }>
+  mobileStyles: Partial<{
+    textAlign: string
+    fontSize: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
 }>
 
 export type TitleDefaultStyle = Partial<{
@@ -1753,24 +2191,30 @@ type TitleLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 export type TitleDefaultStyles = Partial<Record<TitleLevel, TitleDefaultStyle>>
 
 // TOFIX: this module will probably be removed in the near future
-export type ContentDefaultsText = {
+export type ContentDefaultsText = Partial<{
   // we can't use partial for ContentDefaultsText since html is required
   html: string
-  styles?: Partial<{
+  styles: Partial<{
     color: string
     linkColor: string
     fontSize: string
     lineHeight: string
     fontFamily: string
   }>
-  blockOptions?: Partial<{
+  blockOptions: Partial<{
     paddingBottom: string
     paddingLeft: string
     paddingRight: string
     paddingTop: string
     hideContentOnMobile: boolean
   }>
-}
+  mobileStyles: Partial<{
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+}>
 
 export type ContentDefaultsImage = Partial<{
   alt: string
@@ -1784,6 +2228,13 @@ export type ContentDefaultsImage = Partial<{
     paddingTop: string
     align: string
     hideContentOnMobile: boolean
+  }>
+  mobileStyles: Partial<{
+    textAlign: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
   }>
 }>
 
@@ -1826,6 +2277,14 @@ export type ContentDefaultsButton = Partial<{
     borderBottom: string
     borderTop: string
   }>
+  mobileStyles: Partial<{
+    textAlign: string
+    fontSize: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
 }>
 
 export type ContentDefaultsDivider = Partial<{
@@ -1838,6 +2297,13 @@ export type ContentDefaultsDivider = Partial<{
     paddingRight: string
     paddingTop: string
     hideContentOnMobile: boolean
+  }>
+  mobileStyles: Partial<{
+    align: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
   }>
 }>
 
@@ -1885,6 +2351,13 @@ export type ContentDefaultsSocial = Partial<{
     // TOFIX: understand why they are not handled in the plugin
     // iconWidth: number
   }>
+  mobileStyles: Partial<{
+    textAlign: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
 }>
 
 export type ContentDefaultsDynamic = Partial<{
@@ -1905,6 +2378,12 @@ export type ContentDefaultsVideo = Partial<{
     paddingRight: string
     paddingTop: string
     hideContentOnMobile: boolean
+  }>
+  mobileStyles: Partial<{
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
   }>
 }>
 
@@ -1972,6 +2451,13 @@ export type ContentDefaultsForm = Partial<{
     backgroundColor: string
     hideContentOnMobile: boolean
     hideContentOnDesktop: boolean
+  }>
+  mobileStyles: Partial<{
+    fontSize: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
   }>
 }>
 
@@ -2051,6 +2537,14 @@ export type ContentDefaultsMenu = Partial<{
     paddingRight: string
     paddingTop: string
   }>
+  mobileStyles: Partial<{
+    textAlign: string
+    fontSize: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
 }>
 
 export type ContentDefaultsSpacer = Partial<{
@@ -2074,6 +2568,14 @@ export type ContentDefaultsParagraph = Partial<{
     paragraphSpacing: string
   }>
   blockOptions: Partial<{
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+  mobileStyles: Partial<{
+    textAlign: string
+    fontSize: string
     paddingTop: string
     paddingRight: string
     paddingBottom: string
@@ -2105,6 +2607,61 @@ export type ContentDefaultsList = Partial<{
     paddingBottom: string
     paddingLeft: string
   }>
+  mobileStyles: Partial<{
+    textAlign: string
+    fontSize: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+}>
+
+export type ContentDefaultsCarousel = Partial<{
+  blockOptions: {
+    paddingBottom: string,
+    paddingLeft: string,
+    paddingRight: string,
+    paddingTop: string,
+    hideContentOnMobile: boolean
+  }
+  mobileStyles: Partial<{
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
+}>
+
+
+export type ContentDefaultsRow = Partial<{
+  styles: Partial<{
+    backgroundColor: string
+    columnsBackgroundColor: string
+    columnsBorderRadius: string
+    columnsPadding: string
+    columnsPaddingBottom: string
+    columnsPaddingLeft: string
+    columnsPaddingRight: string
+    columnsPaddingTop: string
+    columnsReverseStackOnMobile: boolean
+    columnsSpacing: string
+    columnsStackOnMobile: boolean
+    contentAreaBackgroundColor: string
+    padding: string
+    paddingBottom: string
+    paddingLeft: string
+    paddingRight: string
+    paddingTop: string
+    verticalAlign: string
+  }>
+  mobileStyles: Partial<{
+    padding: string
+    paddingTop: string
+    paddingRight: string
+    paddingBottom: string
+    paddingLeft: string
+  }>
 }>
 
 export type ContentDefaultsGeneral = Partial<{
@@ -2116,22 +2673,24 @@ export type ContentDefaultsGeneral = Partial<{
 }>
 
 export type ContentDefaults = Partial<{
-  title: ContentDefaultsTitle
-  text: ContentDefaultsText
-  image: ContentDefaultsImage
   button: ContentDefaultsButton
+  carousel: ContentDefaultsCarousel
   divider: ContentDefaultsDivider
-  social: ContentDefaultsSocial
   dynamic: ContentDefaultsDynamic
-  video: ContentDefaultsVideo
   form: ContentDefaultsForm
-  paragraph: ContentDefaultsParagraph
-  spacer: ContentDefaultsSpacer
-  menu: ContentDefaultsMenu
-  icons: ContentDefaultsIcons
-  list: ContentDefaultsList
   general: ContentDefaultsGeneral
+  icons: ContentDefaultsIcons
+  image: ContentDefaultsImage
+  list: ContentDefaultsList
+  menu: ContentDefaultsMenu
+  paragraph: ContentDefaultsParagraph
+  row: ContentDefaultsRow
+  social: ContentDefaultsSocial
+  spacer: ContentDefaultsSpacer
   table: ContentDefaultsTable
+  text: ContentDefaultsText
+  title: ContentDefaultsTitle
+  video: ContentDefaultsVideo
 }>
 
 export enum TokenStatus {
@@ -2147,42 +2706,73 @@ export interface IToken {
   coediting_session_id: string | null
 }
 
-export interface IAddOnResponseImage {
-  type: 'image',
-  value: {
-    alt: string,
-    href: string,
-    src: string,
-    dynamicSrc: string
-  }
+export type IAddOnResponseButton = {
+  type: SimpleButton['type']
+  value: SimpleButton
 }
-export interface IAddOnResponseHTML {
-  type: 'html',
-  value: {
-    html: string
-  }
+export type IAddOnResponseDivider = {
+  type: SimpleDivider['type']
+  value: SimpleDivider
 }
-export interface IAddOnResponseMixed {
+export type IAddOnResponseHTML = {
+  type: SimpleHtml['type']
+  value: SimpleHtml
+}
+export type IAddOnResponseIcons = {
+  type: SimpleIcons['type']
+  value: SimpleIcons
+}
+export type IAddOnResponseImage = {
+  type: SimpleImage['type']
+  value: SimpleImage
+}
+export type IAddOnResponseList = {
+  type: SimpleList['type']
+  value: SimpleList
+}
+export type IAddOnResponseMenu = {
+  type: SimpleMenu['type']
+  value: SimpleMenu
+}
+export type IAddOnResponseParagraph = {
+  type: SimpleParagraph['type']
+  value: SimpleParagraph
+}
+export type IAddOnResponseTitle = {
+  type: SimpleTitle['type']
+  value: SimpleTitle
+}
+
+type SingleModuleAddonResponse =
+  | IAddOnResponseButton
+  | IAddOnResponseDivider
+  | IAddOnResponseHTML
+  | IAddOnResponseIcons
+  | IAddOnResponseImage
+  | IAddOnResponseList
+  | IAddOnResponseMenu
+  | IAddOnResponseParagraph
+  | IAddOnResponseTitle
+
+type IAddOnResponse =
+  | SingleModuleAddonResponse
+  | IAddOnResponseMixed
+  | IAddOnResponseRowAddOn
+  | IAddOnResponseFileManager
+
+export type IAddOnResponseMixed = {
   type: 'mixed',
-  value: Record<string, string>[] //todo define the specific type for this part
+  value: SingleModuleAddonResponse[]
 }
-export interface IAddOnResponseRowAddOn {
+export type IAddOnResponseRowAddOn = {
   type: 'rowAddon',
-  value: Record<string, string> //todo define the specific type for this part
+  value: SimpleRow
 }
 
-export interface IAddOnResponseFileManager {
+export type IAddOnResponseFileManager = {
   type: 'filemanager'
-  value: {
-    filemanager: {
-      name: string
-      url: string
-      path: string
-    }
-  }
+  value: FileManagerAddon
 }
-
-type IAddOnResponse = IAddOnResponseImage | IAddOnResponseHTML | IAddOnResponseMixed | IAddOnResponseRowAddOn | IAddOnResponseFileManager
 
 export type BeeContentDialogs = {
   engage?: {
@@ -2200,7 +2790,11 @@ export type BeeContentDialogs = {
   }
   addOn?: {
     label: string
-    handler: BeePluginContentDialogHandler<IAddOnResponse, undefined, { contentDialogId: string, hasOpenOnDrop: boolean }>
+    handler: BeePluginContentDialogHandler<IAddOnResponse, undefined, {
+      contentDialogId: string
+      hasOpenOnDrop: boolean
+      value: Record<string, unknown>
+    }>
   }
   specialLinks?: {
     label: string
@@ -2212,7 +2806,7 @@ export type BeeContentDialogs = {
   }
   manageForm?: {
     label?: string
-    handler: BeePluginContentDialogHandler<IPluginForm>
+    handler: BeePluginContentDialogHandler<IPluginForm, undefined, IPluginForm['structure']>
   },
   filePicker?: {
     label?: string
@@ -2304,12 +2898,9 @@ export interface FormStructure {
 }
 
 export interface AddOnPartner {
-id: string
-  enabled: boolean
   label?: string
   ctaLabel?: string
   placeholder?: string
-  openOnDrop?: boolean
 }
 
 type BaseDevicePresetSizes = {
@@ -2335,42 +2926,47 @@ export interface AddOnOpenAI {
 }
 
 export interface AddOnAltTextAI {
-  id: 'ai-alt-text',
+  id: 'ai-alt-text'
   settings: {
-    imagesAvailable?: number,
-    imagesUsed?: number,
-    isIconDisabled?: boolean,
-    isUpsellEnabled?: boolean,
+    imagesAvailable?: number
+    imagesUsed?: number
+    isIconDisabled?: boolean
+    isUpsellEnabled?: boolean
     upsellTrigger?: number
   }
 }
 
 export interface AddOnImageGenerationAI {
-  id: 'ai-image-generation',
+  id: 'ai-image-generation'
   settings: {
-    imagesAvailable?: number,
-    imagesUsed?: number,
+    imagesAvailable?: number
+    imagesUsed?: number
     isGenerationDisabled?: boolean
     upsellTrigger?: number
-    isUpsellEnabled?: boolean,
-    folderName?: string,
+    isUpsellEnabled?: boolean
+    folderName?: string
   }
 }
 
 export interface AddOnFileManager {
-  id: string,
-  uid?: string,
-  ctaLabel?: string,
-  ctaDataQA?: string,
-  ctaColor?: string,
-  enabled: boolean,
+  id: string
+  ctaLabel?: string
+  ctaDataQA?: string
+  ctaColor?: string
   settings: {
-    autoInsert?: true,
-    changeDirectory?: true,
+    autoInsert?: true
+    changeDirectory?: true
   },
 }
 
-export type AddOn = AddOnPartner | AddOnOpenAI | AddOnAltTextAI | AddOnImageGenerationAI | AddOnFileManager
+interface BaseAddon {
+  id: string,
+  editable?: boolean
+  enabled?: boolean
+  openOnDrop?: boolean
+}
+
+export type AddOn = BaseAddon | AddOnPartner | AddOnOpenAI | AddOnAltTextAI | AddOnImageGenerationAI | AddOnFileManager
 
 export interface Translations {
   [key: string]: string | Translations;
@@ -2396,7 +2992,7 @@ export type Size = {
   height: number
 }
 
-export type ValueType<T extends valueof<typeof PREVIEW_CONTROL>> =
+export type ValueType<T extends ValueOf<typeof PREVIEW_CONTROL>> =
   T extends 'dark' ? string :
   T extends 'amp' ? string :
   T extends 'language' ? TemplateLanguage :
@@ -2405,12 +3001,12 @@ export type ValueType<T extends valueof<typeof PREVIEW_CONTROL>> =
   unknown
 
 
-export type onChangePreviewControlArgs<T extends valueof<typeof PREVIEW_CONTROL>> = {
+export type onChangePreviewControlArgs<T extends ValueOf<typeof PREVIEW_CONTROL>> = {
   type: T
   value: ValueType<T>
 }
 
-export type onChangePreviewControl = <T extends valueof<typeof PREVIEW_CONTROL>>(
+export type onChangePreviewControl = <T extends ValueOf<typeof PREVIEW_CONTROL>>(
   args: onChangePreviewControlArgs<T>
 ) => void
 
@@ -2423,6 +3019,7 @@ export interface IBeeConfig {
   language?: string
   templateLanguage?: TemplateLanguage
   templateLanguages?: TemplateLanguage[]
+  templateLanguageAutoTranslation?: boolean
   mergeTags?: IMergeTag[]
   mergeContents?: IMergeContent[]
   specialLinks?: ISpecialLink[]
@@ -2469,7 +3066,7 @@ export interface IBeeConfig {
   onPreview?: (opened: boolean) => void
   onTogglePreview?: (toggled: boolean) => void
   onSessionStarted?: (sessionInfo: IPluginSessionInfo) => void
-  onSessionChange?: (sessionInfo: IPluginSessionInfo) => void
+  onSessionChange?: (sessionChangeInfo: IPluginSessionChangeInfo) => void
   onReady?: (args: Record<string, unknown>) => void
   onSave?: (pageJson: string, pageHtml: string, ampHtml: string | null, templateVersion: number, language: string | null) => void
   onSaveRow?: (rowJson: string, rowHtml: string, pageJson: string) => void
@@ -2485,7 +3082,7 @@ export interface IBeeConfig {
   onInfo?: (info: BeePluginInfo) => void
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
   onViewChange?: (view: ViewTypes) => void
-  onPreviewChange?: (preview: onChangePreviewControlArgs<valueof<typeof PREVIEW_CONTROL>>) => void
+  onPreviewChange?: (preview: onChangePreviewControlArgs<ValueOf<typeof PREVIEW_CONTROL>>) => void
   commentingFiltersOff?: boolean
   logLevel?: number
   titleDefaultConfig?: {
@@ -2495,6 +3092,9 @@ export interface IBeeConfig {
   mcpEditorClient?: {
     enabled: boolean
     sessionId: string
+  }
+  metadata?: {
+    languages: MetadataLanguage[]
   }
 }
 
@@ -2510,3 +3110,20 @@ export interface IBeeConfigFileManager {
 }
 
 export type { KebabCSSProperties }
+
+export type SaveResponse = {
+  data: {
+    json: string
+    html: string
+    htmlAmp: string | null
+    version: number
+    language: string | null
+  }
+}
+
+export type SaveAsTemplateResponse = {
+  data: {
+    json: string
+    version: number
+  }
+}
