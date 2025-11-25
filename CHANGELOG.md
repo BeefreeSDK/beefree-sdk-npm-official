@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.5.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.1-fix-BEE-10878-types.4...v9.5.0) (2025-11-25)
+
+## [9.5.0-feat-custom-attributes-for-social-menu-icon.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.0...v9.5.0-feat-custom-attributes-for-social-menu-icon.0) (2025-10-28)
+
+
+### Bug Fixes
+
+* array enable blocks with optional values ([24f1e52](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/24f1e52ae4ac1d025de2a5f2054c9c2e2e1ff75b))
+
+## [9.4.0-feat-custom-attributes-for-social-menu-icon.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.3.1...v9.4.0-feat-custom-attributes-for-social-menu-icon.0) (2025-10-27)
+
+
+### Features
+
+* adds enable block for custom attributes ([e9555c0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/e9555c03b61b23a89786fc5656d07608b9501e4f))
+
 ## [9.5.0-feat-custom-attributes-for-social-menu-icon.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.0...v9.5.0-feat-custom-attributes-for-social-menu-icon.0) (2025-10-28)
 
 
