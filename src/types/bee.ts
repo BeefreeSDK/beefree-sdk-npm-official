@@ -1437,6 +1437,7 @@ export type CustomAttribute = {
 export type CustomAttributes = {
   attributes?: CustomAttribute[]
   enableOpenFields?: boolean
+  enableBlocks?: ('social' | 'menu' | 'icons' | 'video' | 'image' | 'button' | 'textToolbar')[]
 }
 
 export type DisplayConditionsAdvancedSettings = AdvancedSettingsShowLocked & {
@@ -1637,6 +1638,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
+        customAttributes: AdvancedSettingsShowLocked
       }
     }
     divider: {
@@ -1663,6 +1665,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
+        customAttributes: AdvancedSettingsShowLocked
       }
     }
     dynamic: {
@@ -1692,6 +1695,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
+        customAttributes: AdvancedSettingsShowLocked
       }
     }
     form: {
@@ -1748,6 +1752,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
+        customAttributes: AdvancedSettingsShowLocked
       }
     }
     paragraph: {
@@ -1814,6 +1819,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
         hideOnMobile: AdvancedSettingsShowLocked
         hideOnAmp: AdvancedSettingsShowLocked
         id: AdvancedSettingsShowLocked
+        customAttributes: AdvancedSettingsShowLocked
       }
     },
     table: {
