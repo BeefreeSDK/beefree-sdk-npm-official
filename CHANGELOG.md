@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.5.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.5.0...v9.5.1) (2025-11-25)
+
+
+### Bug Fixes
+
+* **BEE-10878-types:** fixing ContentDefaultsButton missing properties ([7fc3fd9](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/7fc3fd9563d54ea4a69d528e49a5b61c7e8ee99b))
+
 ## [9.5.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.1-fix-BEE-10878-types.4...v9.5.0) (2025-11-25)
 
 ## [9.5.0-feat-custom-attributes-for-social-menu-icon.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.4.0...v9.5.0-feat-custom-attributes-for-social-menu-icon.0) (2025-10-28)
