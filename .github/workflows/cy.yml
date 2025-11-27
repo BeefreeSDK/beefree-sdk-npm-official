@@ -108,6 +108,11 @@ jobs:
       run: yarn build
 
     - name: Publish package
-      run: npm publish --production --access public
+      run: |
+        if [[ "${{ github.ref }}" =~ -alpha\. ]] || [[ "${{ github.ref }}" =~ -beta\. ]] || [[ "${{ github.ref }}" =~ -feat- ]] || [[ "${{ github.ref }}" =~ -fix- ]]; then
+          npm publish --production --access public --tag unstable
+        else
+          npm publish --production --access public
+        fi
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
