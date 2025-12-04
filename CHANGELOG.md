@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.0.0-fix-itoken-update.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.5.1...v10.0.0-fix-itoken-update.0) (2025-12-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* uses only real token info
+
+* uses only real token info ([30a9580](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/30a9580bb857561ccba8aa8bed9666d8d313ffc0))
+
 ### [9.5.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v9.5.0...v9.5.1) (2025-11-25)
 
 
