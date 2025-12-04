@@ -1,4 +1,4 @@
-import { IToken, TokenStatus } from "../types/bee"
+import { IToken } from "../types/bee"
 
 const beeActions = {
   CREATE: 'create',
@@ -28,7 +28,7 @@ const beeActions = {
 }
 
 export const mockedEmptyToken : IToken = {
-  access_token: '', status: TokenStatus.OK, v2: true, coediting_session_id: null, shared: false
+  access_token: '', v2: true,
 }
 
 export const BEEJS_URL = 'https://app-rsrc.getbee.io/plugin/v2/BeePlugin.js'
