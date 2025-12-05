@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.1.0-feat-load-config-async.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.0.0...v10.1.0-feat-load-config-async.0) (2025-12-05)
+
+
+### Features
+
+* makes loadconfig return async ([cd0a686](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/cd0a686b7fbd65808b310913700f178d9a55cc62))
+
 ## [10.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.0.0-fix-itoken-update.0...v10.0.0) (2025-12-04)
 
 
