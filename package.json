@@ -26,7 +26,7 @@
     "prebuild": "yarn lint && yarn clean",
     "prestart": "yarn lint && yarn clean",
     "build": "rollup -c && yarn tsc",
-    "prepare": "husky install",
+    "prepare": "husky",
     "lint": "eslint ./src --ext ts",
     "prerelease": "git pull",
     "release": "standard-version",
