@@ -226,7 +226,7 @@ class Bee {
 
   loadStageMode = (args: ILoadStageMode) => this.executeAction(LOAD_STAGE_MODE, args)
 
-  loadConfig = (args: ILoadConfig) => this.executeAction(LOAD_CONFIG, args)
+  loadConfig = (args: ILoadConfig) => this.executeAction<Promise<ILoadConfig>>(LOAD_CONFIG, args)
 
   updateToken = (updateTokenArgs: IToken) => this.executeAction(UPDATE_TOKEN, updateTokenArgs)
 
