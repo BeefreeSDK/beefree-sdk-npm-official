@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.1.0-feat-BBOX-2555.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.0.0...v10.1.0-feat-BBOX-2555.0) (2025-12-15)
+
+
+### Features
+
+* **BBOX-2555:** adds missing data to entity json ([a965ea6](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/a965ea636b1091462f7e34038fc30f756ad0bf09))
+
+
+### Bug Fixes
+
+* **ci:** fixing unstable publishing ([991ae81](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/991ae819b127d43e82a48e3d951ea59a96ca0f0e))
+
 ## [10.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.0.0-fix-itoken-update.0...v10.0.0) (2025-12-04)
 
 
