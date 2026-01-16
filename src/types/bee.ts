@@ -3029,11 +3029,20 @@ export type onChangePreviewControl = <T extends ValueOf<typeof PREVIEW_CONTROL>>
   args: onChangePreviewControlArgs<T>
 ) => void
 
+export type DebugFeatures = {
+  inspectJson: boolean
+  showTranslationKeys: boolean
+}
+export type DebugConfig = {
+  all?: boolean
+} & Partial<DebugFeatures>
+
 export interface IBeeConfig {
   container: string
   uid?: string
   trackChanges?: boolean
   preventClose?: boolean
+  debug?: DebugConfig
   enable_display_conditions?: boolean
   language?: string
   templateLanguage?: TemplateLanguage
