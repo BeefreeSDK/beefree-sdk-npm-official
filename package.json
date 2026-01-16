@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "10.1.0-feat-load-config-async.1",
+  "version": "10.1.0-feat-load-config-async.2",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
