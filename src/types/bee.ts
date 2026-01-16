@@ -1993,6 +1993,11 @@ export type EntityBody = {
   }
 }
 
+export interface IFavicon {
+  handle: string
+  url: string
+}
+
 export interface IEntityJson {
   body: EntityBody
   description: string
@@ -2001,6 +2006,21 @@ export interface IEntityJson {
     name: string
     type: string
     version: string
+  }
+  head?: {
+    customTags?: string
+    meta?: {
+      favicon?: IFavicon[]
+      lang?: string
+      preheader?: string
+      subject?: string
+      title?: string
+      description?: string
+    },
+  }
+  language?: {
+    label: string
+    value: string
   }
   title: string
 }
