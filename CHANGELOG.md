@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.2.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.1.0...v10.2.0) (2026-01-19)
+
+
+### Features
+
+* **types:** add debug configuration to IBeeConfig ([97dd8e6](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/97dd8e6ff89f87a3a7117d563cbfdf07bd950394))
+
 ## [10.1.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.1.0-feat-BBOX-2555.0...v10.1.0) (2026-01-12)
 
 ## [10.1.0-feat-BBOX-2555.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.0.0...v10.1.0-feat-BBOX-2555.0) (2025-12-15)
