@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.1.0-feat-wrapper-tracking.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.1.0-feat-load-config-async.2...v10.1.0-feat-wrapper-tracking.0) (2026-01-28)
+
+
+### Features
+
+* **wrapper-tracking:** adding tracking from wrappers (React, etc.) ([d5c4702](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/d5c4702b7b9e3c94aff0b1a24fbd90b308990209))
+
 ## [10.1.0-feat-load-config-async.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.1.0-feat-load-config-async.1...v10.1.0-feat-load-config-async.2) (2026-01-16)
 
 
