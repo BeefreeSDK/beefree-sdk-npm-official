@@ -7,7 +7,6 @@ import {
   IBeeOptions,
   ILoadConfig,
   ILoadStageMode,
-  IUrlConfig,
   LoadWorkspaceOptions,
   IToken,
   BeeSaveOptions,
@@ -19,6 +18,7 @@ import {
   ITemplateJson,
   SaveResponse,
   SaveAsTemplateResponse,
+  SDKOptions,
 } from './types/bee'
 import beeActions, { mockedEmptyToken, BEEJS_URL, API_AUTH_URL } from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -57,14 +57,16 @@ const {
 class Bee {
   token: IToken
   instance: any
+  wrapperInfo?: SDKOptions['wrapperInfo']
 
   constructor(
     token?: IToken,
-    urlConfig?: IUrlConfig
+    options?: SDKOptions,
   ) {
-    beeLoaderUrl = urlConfig?.beePluginUrl ?? BEEJS_URL
+    beeLoaderUrl = options?.beePluginUrl ?? BEEJS_URL
     this.token = token || mockedEmptyToken
     this.instance = null
+    this.wrapperInfo = options?.wrapperInfo
   }
 
   bee = (bee) => {
@@ -80,12 +82,12 @@ class Bee {
     clientId: string,
     clientSecret: string,
     uid: string,
-    urlConfig?: IUrlConfig
+    options?: SDKOptions,
   ) => {
 
     const localUrlConfig = {
-      authUrl: urlConfig?.authUrl ?? API_AUTH_URL,
-      beePluginUrl: urlConfig?.beePluginUrl ?? BEEJS_URL,
+      authUrl: options?.authUrl ?? API_AUTH_URL,
+      beePluginUrl: options?.beePluginUrl ?? BEEJS_URL,
     }
 
     if (this.token && this.token.access_token) {
@@ -111,12 +113,13 @@ class Bee {
       E.fold(
         ({ message }) => new Promise(reject => reject(message)),
         () => new Promise(resolve => {
+          const { packageVersion: wrapperVersion, packageName: wrapperName } = this.wrapperInfo ?? {}
           bee(() => BeePlugin.create(
             token,
             {
               ...config,
-              startOrigin: `[npm] ${process.env.NPM_PACKAGE_NAME}`,
-              startOriginVersion: process.env.NPM_PACKAGE_VERSION,
+              startOrigin: `[npm] ${wrapperName ?? process.env.NPM_PACKAGE_NAME}`,
+              startOriginVersion: wrapperVersion ?? process.env.NPM_PACKAGE_VERSION,
             },
             instance => {
               this.instance = instance
