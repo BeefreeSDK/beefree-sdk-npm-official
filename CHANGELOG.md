@@ -2,7 +2,47 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.2.0...v11.0.0) (2026-01-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* making loadconfig return async
+
+### Features
+
+* making loadconfig return async ([d715d7a](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/d715d7aa409f45bc57f2778e5ae3097f3e8b0fac))
+
 ## [10.2.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.1.0...v10.2.0) (2026-01-19)
+## [10.1.0-feat-load-config-async.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.1.0-feat-load-config-async.1...v10.1.0-feat-load-config-async.2) (2026-01-16)
+
+
+### Features
+
+* **types:** add debug configuration to IBeeConfig ([97dd8e6](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/97dd8e6ff89f87a3a7117d563cbfdf07bd950394))
+
+## [10.1.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.1.0-feat-BBOX-2555.0...v10.1.0) (2026-01-12)
+
+## [10.1.0-feat-BBOX-2555.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.1.0-feat-load-config-async.0...v10.1.0-feat-BBOX-2555.0) (2025-12-15)
+
+
+### Features
+
+* **BBOX-2555:** adds missing data to entity json ([a965ea6](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/a965ea636b1091462f7e34038fc30f756ad0bf09))
+
+
+### Bug Fixes
+
+* **ci:** fixing unstable publishing ([991ae81](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/991ae819b127d43e82a48e3d951ea59a96ca0f0e))
+
+## [10.1.0-feat-load-config-async.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.1.0-feat-load-config-async.0...v10.1.0-feat-load-config-async.1) (2026-01-16)
+
+
+### Bug Fixes
+
+* **loadConfig:** fixing return type of loadConfig ([b37971a](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/b37971a6e016ce77d229758e5a0b26d706acdd7b))
+
+## [10.1.0-feat-load-config-async.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.0.0...v10.1.0-feat-load-config-async.0) (2025-12-05)
 
 
 ### Features
@@ -22,6 +62,20 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * **ci:** fixing unstable publishing ([991ae81](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/991ae819b127d43e82a48e3d951ea59a96ca0f0e))
+
+## [10.1.0-feat-load-config-async.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.1.0-feat-load-config-async.0...v10.1.0-feat-load-config-async.1) (2026-01-16)
+
+
+### Bug Fixes
+
+* **loadConfig:** fixing return type of loadConfig ([b37971a](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/b37971a6e016ce77d229758e5a0b26d706acdd7b))
+
+## [10.1.0-feat-load-config-async.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.0.0...v10.1.0-feat-load-config-async.0) (2025-12-05)
+
+
+### Features
+
+* makes loadconfig return async ([cd0a686](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/cd0a686b7fbd65808b310913700f178d9a55cc62))
 
 ## [10.0.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v10.0.0-fix-itoken-update.0...v10.0.0) (2025-12-04)
 

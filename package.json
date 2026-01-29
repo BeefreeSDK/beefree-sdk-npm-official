@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "10.2.0",
+  "version": "11.0.0",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -26,7 +26,7 @@
     "prebuild": "yarn lint && yarn clean",
     "prestart": "yarn lint && yarn clean",
     "build": "rollup -c && yarn tsc",
-    "prepare": "husky install",
+    "prepare": "husky",
     "lint": "eslint ./src --ext ts",
     "prerelease": "git pull",
     "release": "standard-version",
