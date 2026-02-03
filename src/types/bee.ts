@@ -19,6 +19,11 @@ export interface SDKOptions {
   }
 }
 
+/**
+ * @deprecated Use SDKOptions instead
+ */
+export type IUrlConfig = SDKOptions
+
 export interface IBeeOptions {
   shared?: boolean
 }
