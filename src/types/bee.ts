@@ -10,10 +10,19 @@ import {
   SimpleRow, SimpleTitle
 } from "./simpleSchemas";
 
-export interface IUrlConfig {
+export interface SDKOptions {
   beePluginUrl?: string
   authUrl?: string,
+  wrapperInfo?: {
+    packageName: string
+    packageVersion: string
+  }
 }
+
+/**
+ * @deprecated Use SDKOptions instead
+ */
+export type IUrlConfig = SDKOptions
 
 export interface IBeeOptions {
   shared?: boolean
