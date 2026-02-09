@@ -64,6 +64,12 @@ export interface ILoadStageMode {
 
 export type ILoadConfig = ILoadableProps
 
+export interface LoadConfigOptions {
+  mergeArrays?: boolean
+  rejectDebounced?: boolean
+}
+
+
 export interface ILanguage {
   language: string
 }
