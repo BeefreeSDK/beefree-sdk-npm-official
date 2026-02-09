@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.1.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.0.0...v11.1.0) (2026-02-05)
+
+
+### Features
+
+* **wrapper-tracking:** adding tracking from wrappers (React, etc.) ([317dc3d](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/317dc3ddae9e36bd77438348295cf8877ea011f4))
+* **wrapper-tracking:** restoring IUrlConfig but deprecating it ([1193e0b](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/1193e0bd47668794f217d7934f45c455d5bd7373))
+
 ### [11.0.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.0.1-fix-custom-headers.0...v11.0.1) (2026-02-03)
 
 ### [11.0.1-fix-custom-headers.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.0.0...v11.0.1-fix-custom-headers.0) (2026-02-02)
