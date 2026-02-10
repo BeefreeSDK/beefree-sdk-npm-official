@@ -3046,8 +3046,10 @@ export type DebugConfig = {
   all?: boolean
 } & Partial<DebugFeatures>
 
+export type IBeeContainer = string | HTMLElement
+
 export interface IBeeConfig {
-  container: string
+  container: IBeeContainer
   uid?: string
   trackChanges?: boolean
   preventClose?: boolean
