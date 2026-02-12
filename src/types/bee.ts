@@ -3128,7 +3128,7 @@ export interface IBeeConfig {
   forceSanitizeHTML?: boolean
   mcpEditorClient?: {
     enabled: boolean
-    sessionId: string
+    sessionId?: string
   }
   metadata?: {
     languages: MetadataLanguage[]
