@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.2.0...v11.2.1) (2026-02-13)
+
+
+### Bug Fixes
+
+* mcp session id optional ([77a60ca](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/77a60ca3440c44cfac51a9e657b49e438f865ee5))
+
 ## [11.2.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.0.1...v11.2.0) (2026-02-12)
 
 
