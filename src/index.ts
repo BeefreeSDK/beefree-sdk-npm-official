@@ -19,6 +19,7 @@ import {
   SaveResponse,
   SaveAsTemplateResponse,
   SDKOptions,
+  LoadConfigOptions,
 } from './types/bee'
 import beeActions, { mockedEmptyToken, BEEJS_URL, API_AUTH_URL } from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -229,7 +230,7 @@ class Bee {
 
   loadStageMode = (args: ILoadStageMode) => this.executeAction(LOAD_STAGE_MODE, args)
 
-  loadConfig = (args: ILoadConfig) => this.executeAction<Promise<IBeeConfig>>(LOAD_CONFIG, args)
+  loadConfig = (args: ILoadConfig, options?: LoadConfigOptions) => this.executeAction<Promise<IBeeConfig>>(LOAD_CONFIG, args, options)
 
   updateToken = (updateTokenArgs: IToken) => this.executeAction(UPDATE_TOKEN, updateTokenArgs)
 
