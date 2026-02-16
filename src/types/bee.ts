@@ -64,6 +64,11 @@ export interface ILoadStageMode {
 
 export type ILoadConfig = ILoadableProps
 
+export interface LoadConfigOptions {
+  rejectDebounced?: boolean
+}
+
+
 export interface ILanguage {
   language: string
 }
@@ -3130,7 +3135,7 @@ export interface IBeeConfig {
   forceSanitizeHTML?: boolean
   mcpEditorClient?: {
     enabled: boolean
-    sessionId: string
+    sessionId?: string
   }
   metadata?: {
     languages: MetadataLanguage[]
