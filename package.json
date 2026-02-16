@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "11.2.1",
+  "version": "11.2.2-feat-BEE-11067-shadow-dom-compatibility.0",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
