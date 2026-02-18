@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.2.2-feat-BEE-11067-shadow-dom-compatibility.0...v11.2.2) (2026-02-18)
+
 ### [11.2.2-feat-BEE-11067-shadow-dom-compatibility.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.2.1...v11.2.2-feat-BEE-11067-shadow-dom-compatibility.0) (2026-02-16)
 
 ### [11.2.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.2.0...v11.2.1) (2026-02-13)
