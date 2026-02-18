@@ -112,7 +112,6 @@ builder.start(beeConfig, template)
 Here is an example of the configuration; just read the official documentation for an extended version.
 
 ```js
-
 const beeConfig = {
   container: 'beefree-sdk-container', // Identifies the id of div element that contains the Beefree SDK builder
   language: 'en-US',
@@ -129,7 +128,15 @@ const beeConfig = {
     console.log('onError ', errorMessage)
   }
 }
+```
+Alternative use of `container` as HTML Element:
+```js
+const containerElement = document.getElementById('beefree-sdk-container')
 
+const beeConfig = {
+  container: containerElement,
+  ...
+}
 ```
 
 ## Template JSON
