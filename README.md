@@ -1,7 +1,7 @@
 ![Beefree SDK logo](./logo.png)
 
-# Official Beefree SDK wrapper [![CI](https://github.com/BeefreeSDK/beefree-sdk-npm-official/actions/workflows/cy.yml/badge.svg?branch=master)](https://github.com/BeefreeSDK/beefree-sdk-npm-official/actions/workflows/cy.yml)
-
+# Official Beefree SDK wrapper
+[![CI](https://github.com/BeefreeSDK/beefree-sdk-npm-official/actions/workflows/cy.yml/badge.svg?branch=master)](https://github.com/BeefreeSDK/beefree-sdk-npm-official/actions/workflows/cy.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![NPM](https://nodei.co/npm/@beefree.io/sdk.png?compact=true)](https://npmjs.org/package/@beefree.io/sdk)
