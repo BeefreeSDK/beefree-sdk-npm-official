@@ -1,4 +1,4 @@
-![alt bee-plugin-logo](https://developers.beefree.io/static/assets/img/bee-plugin-logo.png)
+![Beefree SDK logo](./logo.png)
 
 # Official Beefree SDK wrapper [![CI](https://github.com/BeefreeSDK/beefree-sdk-npm-official/actions/workflows/cy.yml/badge.svg?branch=master)](https://github.com/BeefreeSDK/beefree-sdk-npm-official/actions/workflows/cy.yml)
 
@@ -32,7 +32,7 @@ It's free to use on ['https://beefree.io'](https://beefree.io): you don't even n
 
 
 ## Do you want to try out an integration locally?
-This project comes with an example integration to run the SDK builder locally.  
+This project comes with an example integration to run the SDK builder locally.
 It uses the SDK sources from the `/src` folder.
 
 1. Install Nodejs (also npm, which should come with nodejs already) or Yarn.
@@ -64,8 +64,8 @@ yarn add @beefree.io/sdk
 > You need to be authorized to start using the editor: Beefree help documentation portal [has a nice post](https://docs.beefree.io/beefree-sdk/readme/installation) explaining how to do it
 
 ### Important Security Notice
-**As of v9.0.0, the `getToken` method has been renamed to `UNSAFE_getToken`.**  
-This change makes it clear that this method is intended **only** for quick start tutorials, POCs, and local testing.  
+**As of v9.0.0, the `getToken` method has been renamed to `UNSAFE_getToken`.**
+This change makes it clear that this method is intended **only** for quick start tutorials, POCs, and local testing.
 To protect your secret key, we strongly recommend implementing `getToken` on the **server-side** in all production environments.
 
 Pass your credential on `UNSAFE_getToken` method and start the SDK in the returning promise. Example below:
@@ -213,7 +213,7 @@ This calls the Beefree SDK `loadConfig` method, which reloads the JSON configura
 This calls the Beefree SDK `updateToken` method, and permits the refresh of the access token.
 
 ### getConfig()
-This calls the Beefree SDK `getConfig` method and returns the clientConfig used by the SDK. 
+This calls the Beefree SDK `getConfig` method and returns the clientConfig used by the SDK.
 
 [node]: https://nodejs.org/en/
 [npm]:  https://www.npmjs.com/
