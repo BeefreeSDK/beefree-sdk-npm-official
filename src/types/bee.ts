@@ -73,6 +73,16 @@ export interface ILanguage {
   language: string
 }
 
+export interface ITranslateTemplateData {
+  templateTranslated: boolean
+  language: string
+}
+
+export interface IResetTemplateTranslationData {
+  templateReset: boolean
+  language: string
+}
+
 export interface IExecCommandReturnValue {
   status: 'success' | 'error'
   data?: Record<string, unknown>
@@ -2787,7 +2797,7 @@ type SingleModuleAddonResponse =
   | IAddOnResponseParagraph
   | IAddOnResponseTitle
 
-type IAddOnResponse =
+export type IAddOnResponse =
   | SingleModuleAddonResponse
   | IAddOnResponseMixed
   | IAddOnResponseRowAddOn
