@@ -2797,7 +2797,7 @@ type SingleModuleAddonResponse =
   | IAddOnResponseParagraph
   | IAddOnResponseTitle
 
-type IAddOnResponse =
+export type IAddOnResponse =
   | SingleModuleAddonResponse
   | IAddOnResponseMixed
   | IAddOnResponseRowAddOn

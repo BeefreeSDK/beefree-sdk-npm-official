@@ -1,11 +1,18 @@
 import Bee from '../src/index'
 import {
   BeeContentDialogs,
+  BeePluginContentDialogHandler,
   ContentDefaults,
   CustomAttributes,
+  IAddOnResponse,
   IAddOnResponseImage,
   IBeeConfig, IMergeContent, IMergeTag, ISpecialLink,
-  LoadWorkspaceOptions, ModuleDescriptorOrderNames, PREVIEW_CONTROL, RowDisplayConditionsHandler, StageDisplayOptions, StageModeOptions, TokenStatus
+  LoadWorkspaceOptions,
+  ModuleDescriptorOrderNames,
+  PREVIEW_CONTROL,
+  RowDisplayConditionsHandler,
+  StageDisplayOptions,
+  StageModeOptions
 } from '../src/types/bee';
 declare let saveAs: any;
 
@@ -40,24 +47,29 @@ const mergeContents: IMergeContent[] = [{
   value: '[content1]'
 }]
 
-const userInput = (message: string, sample) => function handler(resolve, reject) {
-  const data = prompt(message, JSON.stringify(sample));
-  return data == null || data === ''
-    ? reject()
-    : resolve(JSON.parse(data));
-}
+const userInput = <K,>(message: string, sample: Record<string, unknown>): BeePluginContentDialogHandler<K> =>
+  function handler(resolve, reject) {
+    const data = prompt(message, JSON.stringify(sample));
+    return data == null || data === ''
+      ? reject()
+      : resolve(JSON.parse(data));
+  }
 
-const handleSpecialLinks = (resolve) => {
+const handleSpecialLinks: BeePluginContentDialogHandler<ISpecialLink> = (resolve) => {
   const mockedSpecialLinks: ISpecialLink = { id: 1, label: 'Sample special links', link: 'http://sample.com', type: 'test'}
   return resolve(mockedSpecialLinks)
 }
 
-const handleMergeTags = (resolve) => {
+const handleMergeTags: BeePluginContentDialogHandler<IMergeTag> = (resolve) => {
   const mockedMergeTg: IMergeTag = { name: 'Sample merge tag', value:'Lorem Ipsum'}
   return resolve(mockedMergeTg)
 }
 
-const handleImageAddOnResponse = (resolve) => {
+const handleImageAddOnResponse: BeePluginContentDialogHandler<IAddOnResponse, undefined, {
+    contentDialogId: string
+    hasOpenOnDrop: boolean
+    value: Record<string, unknown>
+  }> = (resolve) => {
   const mockedAddOnResponse: IAddOnResponseImage = {
     type: 'image',
     value: {
@@ -69,7 +81,7 @@ const handleImageAddOnResponse = (resolve) => {
   }
   return resolve(mockedAddOnResponse)
 }
-const handleRowDisplayConditionsResponse = (resolve) => {
+const handleRowDisplayConditionsResponse: BeePluginContentDialogHandler<RowDisplayConditionsHandler> = (resolve) => {
   const mockedRowDisplayConditions: RowDisplayConditionsHandler = {
     after: 'sample-after',
     before: 'sample-before',
@@ -113,14 +125,14 @@ const contentDialogs: BeeContentDialogs = {
   }
 }
 
-function save(filename: string, content) {
+function save(filename: string, content: string) {
   saveAs(
     new Blob([content], { type: 'text/plain;charset=utf-8' }),
     filename
   );
 }
 
-function getParameterByName(name) {
+function getParameterByName(name: string) {
   const newUrl = window.location.href;
   name.replace(/[[\]]/g, '\\$&');
   const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`);
@@ -219,9 +231,9 @@ const beeConfig :IBeeConfig = {
       collapsable: true,
       collapsedOnLoad: false,
       modulesNames: [
-       'Dynamics Contents',
-       'Gifs',
-       'Stickers',
+        'Dynamics Contents',
+        'Gifs',
+        'Stickers',
       ]
     }
   ],
@@ -301,8 +313,8 @@ const conf = { authUrl: API_AUTH_URL, beePluginUrl: BEEJS_URL }
 
 const beeTest = new Bee(undefined, conf)
 
-const loadTemplate = (e, method) => {
-  const templateFile = e.target.files[0]
+const loadTemplate = (e: Event, method: 'load' | 'reload') => {
+  const templateFile = (e.target as HTMLInputElement)?.files?.[0]
   const reader = new FileReader()
   reader.onload = () => {
     const templateString = reader.result
@@ -315,11 +327,12 @@ const loadTemplate = (e, method) => {
   }
 
   const loadTemplate = document.getElementById('load-template') as HTMLInputElement
-  const reloadTemplate = document.getElementById('load-template') as HTMLInputElement
+  const reloadTemplate = document.getElementById('reload-template') as HTMLInputElement
 
   loadTemplate.value = ''
   reloadTemplate.value = ''
-  reader.readAsText(templateFile)
+  if (templateFile)
+    reader.readAsText(templateFile)
 }
 
 const addEvents = () => {
@@ -347,10 +360,7 @@ const addEvents = () => {
 
   window.document.getElementById('trigger-updateToken')?.addEventListener('click', () => beeTest.updateToken({
     access_token: accessToken,
-    status: TokenStatus.REFRESHING,
     v2: true,
-    shared: false,
-    coediting_session_id: null
   }), false)
 
   window.document.getElementById('trigger-loadWorkspace')?.addEventListener('click', () => beeTest.loadWorkspace(LoadWorkspaceOptions.MIXED), false)
