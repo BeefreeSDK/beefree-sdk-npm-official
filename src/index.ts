@@ -20,6 +20,8 @@ import {
   SaveAsTemplateResponse,
   SDKOptions,
   LoadConfigOptions,
+  ITranslateTemplateData,
+  IResetTemplateTranslationData,
 } from './types/bee'
 import beeActions, { mockedEmptyToken, BEEJS_URL, API_AUTH_URL } from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -53,6 +55,8 @@ const {
   SWITCH_PREVIEW,
   EXEC_COMMAND,
   GET_TEMPLATE_JSON,
+  TRANSLATE_TEMPLATE,
+  RESET_TEMPLATE_TRANSLATION,
 } = beeActions
 
 class Bee {
@@ -243,6 +247,10 @@ class Bee {
   execCommand = (command: ExecCommands, options?: IExecCommandOptions): ExecCommand => this.executeAction(EXEC_COMMAND, command, options)
 
   getTemplateJson = () => this.executeAction<Promise<ITemplateJson>>(GET_TEMPLATE_JSON, {})
+
+  translateTemplate = (args: ILanguage) => this.executeAction<Promise<ITranslateTemplateData>>(TRANSLATE_TEMPLATE, args)
+
+  resetTemplateTranslation = (args: ILanguage) => this.executeAction<Promise<IResetTemplateTranslationData>>(RESET_TEMPLATE_TRANSLATION, args)
 }
 
 
