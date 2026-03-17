@@ -134,7 +134,6 @@ function save(filename: string, content: string) {
 
 function getParameterByName(name: string) {
   const newUrl = window.location.href;
-  name.replace(/[[\]]/g, '\\$&');
   const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`);
   const results = regex.exec(newUrl);
   if (!results) return '';

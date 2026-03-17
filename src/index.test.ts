@@ -21,6 +21,8 @@ describe("BeePlugin", () => {
     expect(typeof beeInstance.loadWorkspace).toBe('function')
     expect(typeof beeInstance.loadConfig).toBe('function')
     expect(typeof beeInstance.execCommand).toBe('function')
+    expect(typeof beeInstance.translateTemplate).toBe('function')
+    expect(typeof beeInstance.resetTemplateTranslation).toBe('function')
   })
 
   test('should call UNSAFE_getToken', async () => {

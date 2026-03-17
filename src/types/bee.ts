@@ -73,13 +73,8 @@ export interface ILanguage {
   language: string
 }
 
-export interface ITranslateTemplateData {
-  templateTranslated: boolean
-  language: string
-}
-
-export interface IResetTemplateTranslationData {
-  templateReset: boolean
+export interface ITemplateTranslationData {
+  error?: BeePluginError
   language: string
 }
 
@@ -225,7 +220,7 @@ export enum BeePluginErrorCodes {
 
 export type BeePluginError = {
   code?: BeePluginErrorCodes
-  data?: BeePluginErrorData
+  data?: BeePluginErrorData | Record<string, unknown>
   detail?: string | Record<string, unknown>
   message: string
   name?: string
