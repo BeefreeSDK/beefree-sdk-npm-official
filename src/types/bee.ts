@@ -73,6 +73,11 @@ export interface ILanguage {
   language: string
 }
 
+export interface ITemplateTranslationData {
+  error?: BeePluginError
+  language: string
+}
+
 export interface IExecCommandReturnValue {
   status: 'success' | 'error'
   data?: Record<string, unknown>
@@ -215,7 +220,7 @@ export enum BeePluginErrorCodes {
 
 export type BeePluginError = {
   code?: BeePluginErrorCodes
-  data?: BeePluginErrorData
+  data?: BeePluginErrorData | Record<string, unknown>
   detail?: string | Record<string, unknown>
   message: string
   name?: string
@@ -2787,7 +2792,7 @@ type SingleModuleAddonResponse =
   | IAddOnResponseParagraph
   | IAddOnResponseTitle
 
-type IAddOnResponse =
+export type IAddOnResponse =
   | SingleModuleAddonResponse
   | IAddOnResponseMixed
   | IAddOnResponseRowAddOn

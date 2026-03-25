@@ -215,6 +215,12 @@ This calls the Beefree SDK `updateToken` method, and permits the refresh of the 
 ### getConfig()
 This calls the Beefree SDK `getConfig` method and returns the clientConfig used by the SDK.
 
+### translateTemplate(arg)
+This calls the Beefree SDK `translateTemplate` method, which accepts an object containing the language and returns a Promise. Visit [the docs](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/deepl) for more details about auto translation.
+
+### resetTemplateTranslation(arg)
+This calls the Beefree SDK `resetTemplateTranslation` method, which accepts an object containing the language and returns a Promise. Visit [the docs](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/deepl) for more details about auto translation.
+
 [node]: https://nodejs.org/en/
 [npm]:  https://www.npmjs.com/
 [yarn]: https://yarnpkg.com
