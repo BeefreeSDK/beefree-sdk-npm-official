@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.3.0-master.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.2.3...v11.3.0-master.0) (2026-03-26)
+
+
+### Features
+
+* add translateTemplate and resetTemplateTranslaton methods ([b56a35a](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/b56a35a4978873af49837b2cb47e1a35093c9a45))
+
+
+### Bug Fixes
+
+* **integration.ts:** fix types ([5aec4c9](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/5aec4c981523d3a358ad14df1b32f2106164e804))
+
 ### [11.2.3](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.2.2...v11.2.3) (2026-02-26)
 
 ### [11.2.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.2.2-feat-BEE-11067-shadow-dom-compatibility.0...v11.2.2) (2026-02-18)
