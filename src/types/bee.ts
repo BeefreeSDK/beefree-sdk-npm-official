@@ -3058,6 +3058,11 @@ export type DebugConfig = {
 
 export type IBeeContainer = string | HTMLElement
 
+export type SelectedElement = {
+  type: 'module' | 'row'
+  uuid: string
+}
+
 export interface IBeeConfig {
   container: IBeeContainer
   uid?: string
@@ -3132,6 +3137,7 @@ export interface IBeeConfig {
   onLoadWorkspace?: (worspaceType: LoadWorkspaceOptions) => void
   onViewChange?: (view: ViewTypes) => void
   onPreviewChange?: (preview: onChangePreviewControlArgs<ValueOf<typeof PREVIEW_CONTROL>>) => void
+  onSelectElement?: (selectedElement: SelectedElement) => void
   commentingFiltersOff?: boolean
   logLevel?: number
   titleDefaultConfig?: {
