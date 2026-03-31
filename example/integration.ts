@@ -275,6 +275,7 @@ const beeConfig :IBeeConfig = {
     console.log(`${new Date().toISOString()} autosaving...,`, jsonFile)
     window.localStorage.setItem('newsletter.autosave', jsonFile)
   },
+  onSelectElement: ({type, uuid}) => console.log(`*** [integration] user is selecting a ${type} with uuid ${uuid}`),
   onSend: (htmlFile) => console.log('onSend', htmlFile),
   onError: (errorMessage) => console.log('onError ', errorMessage),
   onChange: (msg, response) => console.warn('*** [integration] (OnChange) message --> ', msg, response),

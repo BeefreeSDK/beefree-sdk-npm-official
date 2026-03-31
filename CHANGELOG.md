@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.4.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.3.0...v11.4.0) (2026-03-31)
+
+
+### Features
+
+* add onSelectElement callback to IBeeConfig for element selection handling ([97befee](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/97befee0ccab355af1cc7dae8ab45478c745a162))
+
 ### [11.3.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.2.3...v11.3.0) (2026-03-26)
 
 
