@@ -342,6 +342,8 @@ const addEvents = () => {
 
   window.document.getElementById('trigger-save')?.addEventListener('click', () => beeTest.save(), false)
 
+  window.document.getElementById('trigger-saveRow')?.addEventListener('click', () => beeTest.saveRow(), false)
+
   window.document.getElementById('trigger-send')?.addEventListener('click', () => beeTest.send(), false)
 
   window.document.getElementById('trigger-saveAsTemplate')?.addEventListener('click', () => beeTest.saveAsTemplate(), false)

@@ -8,6 +8,7 @@ const beeActions = {
   SEND: 'send',
   PREVIEW: 'preview',
   SAVE_AS_TEMPLATE: 'saveAsTemplate',
+  SAVE_ROW: 'saveRow',
   TOGGLE_STRUCTURE: 'toggleStructure',
   TOGGLE_COMMENTS: 'toggleComments',
   TOGGLE_PREVIEW: 'togglePreview',
