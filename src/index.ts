@@ -56,7 +56,8 @@ const {
   GET_TEMPLATE_JSON,
   TRANSLATE_TEMPLATE,
   RESET_TEMPLATE_TRANSLATION,
-  START_MCP_SESSION,
+  SAVE_ROW,
+  START_MCP_SESSION
 } = beeActions
 
 class Bee {
@@ -223,6 +224,8 @@ class Bee {
   togglePreview = () => this.executeAction(TOGGLE_PREVIEW)
 
   toggleComments = () => this.executeAction(TOGGLE_COMMENTS)
+
+  saveRow = () => this.executeAction(SAVE_ROW)
 
   toggleMergeTagsPreview = () => this.executeAction(TOGGLE_MERGETAGS_PREVIEW)
 
