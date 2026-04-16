@@ -56,6 +56,7 @@ const {
   GET_TEMPLATE_JSON,
   TRANSLATE_TEMPLATE,
   RESET_TEMPLATE_TRANSLATION,
+  START_MCP_SESSION,
 } = beeActions
 
 class Bee {
@@ -250,6 +251,8 @@ class Bee {
   translateTemplate = (args: ILanguage) => this.executeAction<Promise<ITemplateTranslationData>>(TRANSLATE_TEMPLATE, args)
 
   resetTemplateTranslation = (args: ILanguage) => this.executeAction<Promise<ITemplateTranslationData>>(RESET_TEMPLATE_TRANSLATION, args)
+
+  startMcpSession = () => this.executeAction<Promise<beeTypes.IMcpSessionData>>(START_MCP_SESSION)
 }
 
 

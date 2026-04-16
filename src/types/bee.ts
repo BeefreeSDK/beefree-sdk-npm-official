@@ -78,6 +78,51 @@ export interface ITemplateTranslationData {
   language: string
 }
 
+export interface IMcpSessionData {
+  templateId?: string
+}
+
+export type IMcpSessionChangeEventSessionStarted = {
+  type: 'SESSION_STARTED'
+  templateId: string
+}
+
+export type IMcpSessionChangeEventSessionEnded = {
+  type: 'SESSION_ENDED'
+  change: { value: SessionUser[] }
+  sessionData: { users: Record<string, SessionUser> }
+}
+
+export type IMcpSessionChangeEventUserJoined = {
+  type: 'USER_JOINED'
+  change: { type: 'USER_JOINED', value: SessionUser }
+  sessionData: { users: Record<string, SessionUser> }
+}
+
+export type IMcpSessionChangeEventUserLeft = {
+  type: 'USER_LEFT'
+  change: { type: 'USER_LEFT', value: SessionUser }
+  sessionData: { users: Record<string, SessionUser> }
+}
+
+export type IMcpSessionChangeEventRemoteChange = {
+  type: 'REMOTE_CHANGE'
+  message: string
+  changes: {
+    code: string
+    description: string
+    patches: BeePluginMessageEditDetailPatch[]
+    value: string
+  }
+}
+
+export type IMcpSessionChangeEvent =
+  | IMcpSessionChangeEventSessionStarted
+  | IMcpSessionChangeEventSessionEnded
+  | IMcpSessionChangeEventUserJoined
+  | IMcpSessionChangeEventUserLeft
+  | IMcpSessionChangeEventRemoteChange
+
 export interface IExecCommandReturnValue {
   status: 'success' | 'error'
   data?: Record<string, unknown>
@@ -3121,6 +3166,7 @@ export interface IBeeConfig {
   onTogglePreview?: (toggled: boolean) => void
   onSessionStarted?: (sessionInfo: IPluginSessionInfo) => void
   onSessionChange?: (sessionChangeInfo: IPluginSessionChangeInfo) => void
+  onMcpSessionChange?: (event: IMcpSessionChangeEvent) => void
   onReady?: (args: Record<string, unknown>) => void
   onSave?: (pageJson: string, pageHtml: string, ampHtml: string | null, templateVersion: number, language: string | null) => void
   onSaveRow?: (rowJson: string, rowHtml: string, pageJson: string) => void

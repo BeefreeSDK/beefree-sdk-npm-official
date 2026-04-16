@@ -27,6 +27,7 @@ const beeActions = {
   GET_TEMPLATE_JSON: 'getTemplateJson',
   TRANSLATE_TEMPLATE: 'translateTemplate',
   RESET_TEMPLATE_TRANSLATION: 'resetTemplateTranslation',
+  START_MCP_SESSION: 'startMcpSession',
 }
 
 export const mockedEmptyToken : IToken = {
