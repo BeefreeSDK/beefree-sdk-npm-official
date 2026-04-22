@@ -79,49 +79,17 @@ export interface ITemplateTranslationData {
 }
 
 export interface IMcpSessionData {
-  templateId?: string
-}
-
-export type IMcpSessionChangeEventSessionStarted = {
-  type: 'SESSION_STARTED'
   templateId: string
 }
 
-export type IMcpSessionChangeEventSessionEnded = {
-  type: 'SESSION_ENDED'
-  change: { value: SessionUser[] }
-  sessionData: { users: Record<string, SessionUser> }
-}
+type McpSessionChangeEventType = 'SESSION_STARTED' | 'USER_JOINED' | 'USER_LEFT' | 'SESSION_ENDED'
 
-export type IMcpSessionChangeEventUserJoined = {
-  type: 'USER_JOINED'
-  change: { type: 'USER_JOINED', value: SessionUser }
-  sessionData: { users: Record<string, SessionUser> }
+export type IMcpSessionChangeEvent = {
+  type: McpSessionChangeEventType
+  templateId?: string
+  change?: IPluginSessionChange
+  sessionData?: SessionUsers
 }
-
-export type IMcpSessionChangeEventUserLeft = {
-  type: 'USER_LEFT'
-  change: { type: 'USER_LEFT', value: SessionUser }
-  sessionData: { users: Record<string, SessionUser> }
-}
-
-export type IMcpSessionChangeEventRemoteChange = {
-  type: 'REMOTE_CHANGE'
-  message: string
-  changes: {
-    code: string
-    description: string
-    patches: BeePluginMessageEditDetailPatch[]
-    value: string
-  }
-}
-
-export type IMcpSessionChangeEvent =
-  | IMcpSessionChangeEventSessionStarted
-  | IMcpSessionChangeEventSessionEnded
-  | IMcpSessionChangeEventUserJoined
-  | IMcpSessionChangeEventUserLeft
-  | IMcpSessionChangeEventRemoteChange
 
 export interface IExecCommandReturnValue {
   status: 'success' | 'error'
@@ -2020,14 +1988,16 @@ type SessionUser = {
   username: string
 }
 
-export type IPluginSessionChangeInfo = {
-  change: {
+type SessionUsers = { users: Record<SessionUser['userId'], SessionUser> }
+
+type IPluginSessionChange = {
     type: ValueOf<typeof SessionChangeType>,
     value: SessionUser
-  },
-  sessionData: {
-    users: Record<SessionUser['userId'], SessionUser>
   }
+
+export type IPluginSessionChangeInfo = {
+  change: IPluginSessionChange,
+  sessionData: SessionUsers
 }
 
 export type FontElement = {
