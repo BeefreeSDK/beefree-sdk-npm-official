@@ -78,6 +78,19 @@ export interface ITemplateTranslationData {
   language: string
 }
 
+export interface IMcpSessionData {
+  templateId: string
+}
+
+type McpSessionChangeEventType = 'SESSION_STARTED' | 'USER_JOINED' | 'USER_LEFT' | 'SESSION_ENDED'
+
+export type IMcpSessionChangeEvent = {
+  type: McpSessionChangeEventType
+  templateId?: string
+  change?: IPluginSessionChange
+  sessionData?: SessionUsers
+}
+
 export interface IExecCommandReturnValue {
   status: 'success' | 'error'
   data?: Record<string, unknown>
@@ -1975,14 +1988,16 @@ type SessionUser = {
   username: string
 }
 
-export type IPluginSessionChangeInfo = {
-  change: {
+type SessionUsers = { users: Record<SessionUser['userId'], SessionUser> }
+
+type IPluginSessionChange = {
     type: ValueOf<typeof SessionChangeType>,
     value: SessionUser
-  },
-  sessionData: {
-    users: Record<SessionUser['userId'], SessionUser>
   }
+
+export type IPluginSessionChangeInfo = {
+  change: IPluginSessionChange,
+  sessionData: SessionUsers
 }
 
 export type FontElement = {
@@ -3122,6 +3137,7 @@ export interface IBeeConfig {
   onTogglePreview?: (toggled: boolean) => void
   onSessionStarted?: (sessionInfo: IPluginSessionInfo) => void
   onSessionChange?: (sessionChangeInfo: IPluginSessionChangeInfo) => void
+  onMcpSessionChange?: (event: IMcpSessionChangeEvent) => void
   onReady?: (args: Record<string, unknown>) => void
   onSave?: (pageJson: string, pageHtml: string, ampHtml: string | null, templateVersion: number, language: string | null) => void
   onSaveRow?: (rowJson: string, rowHtml: string, pageJson: string) => void
