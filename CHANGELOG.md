@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.5.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.4.1...v11.5.0) (2026-05-07)
+
+
+### Features
+
+* add startMcpSession action and onMcpSessionChange callback type ([2d643d5](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/2d643d5eedb23637410c0fc375cb0c8f3b3e5537))
+
 ### [11.4.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.4.0...v11.4.1) (2026-04-16)
 
 ## [11.4.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.3.0...v11.4.0) (2026-03-31)
