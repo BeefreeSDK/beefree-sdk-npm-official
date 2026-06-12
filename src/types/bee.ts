@@ -1983,6 +1983,7 @@ const SessionChangeType = {
 } as const
 
 type SessionUser = {
+  isMcpUser: boolean
   userColor: string
   userId: string
   username: string
