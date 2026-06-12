@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.5.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.5.0...v11.5.1) (2026-06-12)
+
+
+### Bug Fixes
+
+* added isMcpUser type to SessionUser ([#228](https://github.com/BeefreeSDK/beefree-sdk-npm-official/issues/228)) ([84210bb](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/84210bb36b400177c9ad30b49b24a82221ee7573))
+
 ## [11.5.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.4.1...v11.5.0) (2026-05-07)
 
 
