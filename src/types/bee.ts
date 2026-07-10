@@ -138,6 +138,7 @@ export enum BeePluginErrorCodes {
   LOCKED_ROW_CLICKED = 1300,
   LOCKED_MODULE_CLICKED = 1310,
   WORKSPACE_NOT_AVAILABLE = 1002,
+  AI_AGENT_MESSAGES_CHANGED = 1010,
   FEATURE_NOT_AVAILABLE_FOR_PLAN = 1704,
   FEATURE_NOT_AVAILABLE_FOR_WORKSPACE = 1707,
   GENERIC_BUMP_ERROR = 2000,
@@ -243,7 +244,8 @@ export type BeePluginError = {
 export enum OnInfoDetailHandle {
   AI_INTEGRATION = 'ai-integration',
   AI_ALT_TEXT = 'ai-alt-text',
-  AI_IMAGE_GENERATION = 'ai-image-generation'
+  AI_IMAGE_GENERATION = 'ai-image-generation',
+  AI_AGENT = 'ai-agent'
 }
 
 export type AiIntegrationErrorDetail = {
@@ -274,10 +276,15 @@ export type AiImageGenerationErrorDetail = {
   consumedImages: number
 }
 
+export type AiAgentMessagesChangedDetail = {
+  handle: OnInfoDetailHandle.AI_AGENT
+  messages: unknown[]
+}
+
 export type BeePluginInfo = {
   code: BeePluginErrorCodes
   message: string
-  detail: AiIntegrationErrorDetail | AiAltTextErrorDetail | AiImageGenerationErrorDetail
+  detail: AiIntegrationErrorDetail | AiAltTextErrorDetail | AiImageGenerationErrorDetail | AiAgentMessagesChangedDetail
 }
 
 type KebabCSSProperties = KebabKeys<CSS.Properties>
@@ -3003,6 +3010,22 @@ export interface AddOnImageGenerationAI {
   }
 }
 
+export interface AddOnAiAgent {
+  id: 'ai-agent'
+  enabled?: boolean
+  settings: {
+    /**
+     * Chat history seed shown when the panel opens. Pair with the
+     * `onInfo` AI_AGENT_MESSAGES_CHANGED event to persist and restore
+     * conversations. Messages follow the vercel ai-sdk `UIMessage` shape.
+     */
+    initialMessages?: unknown[]
+    loadingPhrases?: string[]
+    maxIterations?: number
+    systemPrompt?: string
+  }
+}
+
 export interface AddOnFileManager {
   id: string
   ctaLabel?: string
@@ -3021,7 +3044,7 @@ interface BaseAddon {
   openOnDrop?: boolean
 }
 
-export type AddOn = BaseAddon | AddOnPartner | AddOnOpenAI | AddOnAltTextAI | AddOnImageGenerationAI | AddOnFileManager
+export type AddOn = BaseAddon | AddOnPartner | AddOnOpenAI | AddOnAltTextAI | AddOnImageGenerationAI | AddOnFileManager | AddOnAiAgent
 
 export interface Translations {
   [key: string]: string | Translations;
