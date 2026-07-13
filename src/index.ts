@@ -132,7 +132,7 @@ class Bee {
               this.instance = instance
               instance.start(template, options)
               resolve(instance)
-            }, bucketDir
+            }, bucketDir, config.logLevel
           ))
         })
       )
