@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.6.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.5.1...v11.6.0) (2026-07-17)
+
+
+### Features
+
+* add ai addon type and new on info callback shape ([2ccc869](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/2ccc8697b13e985f3de18f856793e90b77f5bc58))
+
 ### [11.5.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.5.0...v11.5.1) (2026-06-12)
 
 
