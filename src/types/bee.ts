@@ -1578,6 +1578,7 @@ export type BeePluginAdvancedPermission = RecursivePartial<{
     defaultFontFamily: AdvancedSettingsShowLocked
     linkColor: AdvancedSettingsShowLocked
     containerBackgroundImage: AdvancedSettingsShowLocked
+    customHeadTags: AdvancedSettingsShowLocked
   }
   columns: {
     behaviors: {

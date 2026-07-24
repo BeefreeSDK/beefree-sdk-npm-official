@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.6.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.6.1-fix-advanced-permissions-custom-head-tags.0...v11.6.1) (2026-07-24)
+
+### [11.6.1-fix-advanced-permissions-custom-head-tags.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.6.0...v11.6.1-fix-advanced-permissions-custom-head-tags.0) (2026-07-24)
+
+
+### Bug Fixes
+
+* missing customHeadTags property in advancedPermissions type ([dddaf95](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/dddaf9535b3cf3034d6e6b7a0bd8127254c7811d))
+
 ## [11.6.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.5.1...v11.6.0) (2026-07-17)
 
 
