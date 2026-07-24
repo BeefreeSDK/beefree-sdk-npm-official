@@ -1,6 +1,6 @@
 {
   "name": "@beefree.io/sdk",
-  "version": "11.6.1-fix-advanced-permissions-custom-head-tags.0",
+  "version": "11.6.1",
   "description": "wrapper of BeefreeSDK",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
