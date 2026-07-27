@@ -3104,6 +3104,31 @@ export type SelectedElement = {
   uuid: string
 }
 
+export type QualityCheckCategory =
+  | 'missingAltText'
+  | 'missingImageLink'
+  | 'missingCopyLink'
+  | 'missingHeadings'
+  | 'overageHeadings'
+  | 'overageImageWeight'
+  | 'missingDetailsEmail'
+  | 'overageHtmlWeight'
+  | 'missingMainLanguage'
+  | 'insufficientColorContrast'
+  | 'insufficientFontSize'
+  | 'missingDetailsPage'
+
+export interface QualityCheckTypeConfig {
+  thresholds?: Record<string, number>
+  checks?: QualityCheckCategory[]
+}
+
+export interface QualityCheckConfig {
+  email?: QualityCheckTypeConfig
+  page?: QualityCheckTypeConfig
+  row?: QualityCheckTypeConfig
+}
+
 export interface IBeeConfig {
   container: IBeeContainer
   uid?: string
@@ -3193,6 +3218,7 @@ export interface IBeeConfig {
   metadata?: {
     languages: MetadataLanguage[]
   }
+  qualityCheck?: QualityCheckConfig
 }
 
 export interface IBeeConfigFileManager {
