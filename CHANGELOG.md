@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.7.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.6.2...v11.7.0) (2026-09-17)
+
+
+### Features
+
+* **types:** add support for brand rules ([5339379](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/533937972adb8460df187dd55b2d368faa7e1eb7))
+* **types:** export BrandRules type from brandRules module ([9de1759](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/9de175926462ef7089e830bf2bd28a44f3bdaa55))
+
 ### [11.6.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.6.1...v11.6.2) (2026-07-27)
 
 
