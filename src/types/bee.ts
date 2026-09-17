@@ -9,6 +9,7 @@ import {
   SimpleImage, SimpleList, SimpleMenu, SimpleParagraph,
   SimpleRow, SimpleTitle
 } from "./simpleSchemas";
+import { BrandRules } from './brandRules';
 
 export interface SDKOptions {
   beePluginUrl?: string
@@ -1425,6 +1426,7 @@ export interface IMergeTag {
   value: string
   previewValue?: string
 }
+
 export interface IMergeContent {
   name: string
   value: string
@@ -3024,6 +3026,7 @@ export interface AddOnAiAgent {
     loadingPhrases?: string[]
     maxIterations?: number
     systemPrompt?: string
+    brandRules?: BrandRules
   }
 }
 
@@ -3142,6 +3145,7 @@ export interface IBeeConfig {
   templateLanguageAutoTranslation?: boolean
   mergeTags?: IMergeTag[]
   mergeContents?: IMergeContent[]
+  brandRules?: BrandRules
   specialLinks?: ISpecialLink[]
   username?: string
   userColor?: string
