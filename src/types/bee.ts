@@ -11,6 +11,8 @@ import {
 } from "./simpleSchemas";
 import { BrandRules } from './brandRules';
 
+export type { BrandRules } from './brandRules';
+
 export interface SDKOptions {
   beePluginUrl?: string
   authUrl?: string,
