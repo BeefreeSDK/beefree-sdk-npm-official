@@ -2869,7 +2869,10 @@ export type BeeContentDialogs = {
   }
   mergeTags?: {
     label: string
-    handler: BeePluginContentDialogHandler<IMergeTag>
+    handler: BeePluginContentDialogHandler<IMergeTag, undefined, {
+      context: string
+      mergeTag?: IMergeTag
+    }>
   }
   manageForm?: {
     label?: string
