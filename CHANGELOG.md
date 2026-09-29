@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.7.1-fix-BEE-12535-tinymce-contentdialog-types.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.7.0...v11.7.1-fix-BEE-12535-tinymce-contentdialog-types.0) (2026-09-29)
+
+
+### Bug Fixes
+
+* **BEE-12535:** mergeTags contentDialog type ([9301e33](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/9301e335f6e05b86f49b23ac72d9adbab85e160a))
+
 ## [11.7.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.6.2...v11.7.0) (2026-09-17)
 
 
