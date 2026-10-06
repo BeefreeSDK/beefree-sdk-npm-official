@@ -10,8 +10,10 @@ import {
   SimpleRow, SimpleTitle
 } from "./simpleSchemas";
 import { BrandRules } from './brandRules';
+import { McpReusableRows } from './mcpReusableRows';
 
 export type { BrandRules } from './brandRules';
+export type { McpReusableRows, McpReusableRow, McpReusableRowMetadata } from './mcpReusableRows';
 
 export interface SDKOptions {
   beePluginUrl?: string
@@ -3221,6 +3223,7 @@ export interface IBeeConfig {
     enabled: boolean
     sessionId?: string
   }
+  mcpReusableRows?: McpReusableRows
   metadata?: {
     languages: MetadataLanguage[]
   }
