@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.7.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.7.1-fix-BEE-12535-tinymce-contentdialog-types.0...v11.7.1) (2026-10-08)
+
 ### [11.7.1-fix-BEE-12535-tinymce-contentdialog-types.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.7.0...v11.7.1-fix-BEE-12535-tinymce-contentdialog-types.0) (2026-09-29)
 
 
