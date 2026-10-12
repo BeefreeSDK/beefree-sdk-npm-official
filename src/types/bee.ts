@@ -10,8 +10,10 @@ import {
   SimpleRow, SimpleTitle
 } from "./simpleSchemas";
 import { BrandRules } from './brandRules';
+import { ReusableRows } from './reusableRows';
 
 export type { BrandRules } from './brandRules';
+export type { ReusableRows, ReusableRow, ReusableRowMetadata } from './reusableRows';
 
 export interface SDKOptions {
   beePluginUrl?: string
@@ -83,6 +85,18 @@ export interface ITemplateTranslationData {
 
 export interface IMcpSessionData {
   templateId: string
+}
+
+/**
+ * Optional data for the MCP session `startMcpSession` starts. Called without
+ * it, the session uses the top-level `brandRules` of the config and no
+ * reusable rows.
+ */
+export interface StartMcpSessionArgs {
+  /** Brand rules for this session, in place of the top-level `brandRules`. */
+  brandRules?: BrandRules
+  /** Saved rows the agent can search and place in this session. */
+  reusableRows?: ReusableRows
 }
 
 type McpSessionChangeEventType = 'SESSION_STARTED' | 'USER_JOINED' | 'USER_LEFT' | 'SESSION_ENDED'
@@ -3032,6 +3046,11 @@ export interface AddOnAiAgent {
     maxIterations?: number
     systemPrompt?: string
     brandRules?: BrandRules
+    /**
+     * Saved rows the AI agent can search and place in the MCP sessions it
+     * starts.
+     */
+    reusableRows?: ReusableRows
   }
 }
 
