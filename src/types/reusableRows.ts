@@ -8,7 +8,7 @@ import type { BeePluginFont } from './bee'
  * Sent to the MCP worker when the session starts. A library over 1000 rows
  * or about 1.5 MB of row data is truncated, keeping the rows in the order
  * they are listed, and the builder reports it through `onWarning`
- * (code 5120). A row that breaks the limits below is not truncated: the
+ * (code 1770). A row that breaks the limits below is not truncated: the
  * session fails to start. The whole session request, template included, is
  * also capped at 2 MB: a larger one is refused before any truncation.
  */
