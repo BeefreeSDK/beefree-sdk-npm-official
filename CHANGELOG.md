@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.7.2-BEEPRO-9678.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.7.2-fix-BEEPRO-9678.0...v11.7.2-BEEPRO-9678.0) (2026-10-13)
+
+### [11.7.2-fix-BEEPRO-9678.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.7.1...v11.7.2-fix-BEEPRO-9678.0) (2026-10-13)
+
+
+### Bug Fixes
+
+* **BEEPRO-9678:** updated the IBeeConfigFileManager ([83c232a](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/83c232a1bc648eda76af13e36d0ea4a8a4e41b6a))
+
 ### [11.7.1](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.7.1-fix-BEE-12535-tinymce-contentdialog-types.0...v11.7.1) (2026-10-08)
 
 ### [11.7.1-fix-BEE-12535-tinymce-contentdialog-types.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.7.0...v11.7.1-fix-BEE-12535-tinymce-contentdialog-types.0) (2026-09-29)

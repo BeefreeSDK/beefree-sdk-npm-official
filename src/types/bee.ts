@@ -3237,6 +3237,7 @@ export interface IBeeConfigFileManager {
   addOns: AddOn[];
   customHeaders?: BeePluginCustomHeader[]
   contentDialog?: BeeContentDialogs;
+  advancedPermissions?: BeePluginAdvancedPermission
   customAssetsOptions: Record<string, unknown>
   onFilePickerInsert?: (data: unknown) => void
   onFilePickerCancel?: () => void
