@@ -3032,6 +3032,7 @@ export interface AddOnAiAgent {
     maxIterations?: number
     systemPrompt?: string
     brandRules?: BrandRules
+    submitOnEnterKey?: boolean
   }
 }
 
