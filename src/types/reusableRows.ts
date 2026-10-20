@@ -33,18 +33,26 @@ export interface ReusableRow {
   [k: string]: unknown
 }
 
+/**
+ * The metadata the agent reads. Any other field (the builder's `uuid`, your
+ * own ids or dates...) is kept as it is, but neither checked nor searched.
+ */
 export interface ReusableRowMetadata {
   /** Shown to the agent and searched. Non-empty, max 200 characters. */
   name: string
   /** A category name or id. As a string, non-empty and max 200 characters. */
   category?: string | number
-  /** Non-empty, max 64 characters. */
-  uuid?: string
-  /** Max 200 characters. */
-  slug?: string
-  /** Max 200 characters. */
+  /**
+   * One line on what the row is for. Highly recommended: the agent searches
+   * it, and it is often what settles a choice between rows. Max 200 characters.
+   */
   description?: string
-  /** Up to 12 tags, each non-empty and max 32 characters. */
-  tags?: string[]
+  /**
+   * An array of strings, or one comma-separated string (`'promo, blue'`), as
+   * saved rows often store them: the row keeps the format you chose. Up to 12
+   * tags, each non-empty and max 32 characters. In a string, the spaces around
+   * each tag and the empty entries are ignored.
+   */
+  tags?: string[] | string
   [k: string]: unknown
 }
