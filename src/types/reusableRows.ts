@@ -9,8 +9,10 @@ import type { BeePluginFont } from './bee'
  * or about 1.5 MB of row data is truncated, keeping the rows in the order
  * they are listed, and the builder reports it through `onWarning`
  * (code 1770). A row that breaks the limits below is not truncated: the
- * session fails to start. The whole session request, template included, is
- * also capped at 2 MB: a larger one is refused before any truncation.
+ * session fails to start. The whole session request is capped at 3.5 MB, and
+ * everything in it but `reusableRows` (template, merge tags, brand rules...)
+ * at 2 MB: beyond either, it is refused before any truncation. An empty
+ * `entries` array counts as no library.
  */
 export interface ReusableRows {
   entries: ReusableRow[]
