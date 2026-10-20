@@ -3046,10 +3046,6 @@ export interface AddOnAiAgent {
     maxIterations?: number
     systemPrompt?: string
     brandRules?: BrandRules
-    /**
-     * Saved rows the AI agent can search and place in the MCP sessions it
-     * starts.
-     */
     reusableRows?: ReusableRows
   }
 }
