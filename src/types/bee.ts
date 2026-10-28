@@ -11,9 +11,11 @@ import {
 } from "./simpleSchemas";
 import { BrandRules } from './brandRules';
 import { ReusableRows } from './reusableRows';
+import { McpFileManager } from './fileManager';
 
 export type { BrandRules } from './brandRules';
 export type { ReusableRows, ReusableRow, ReusableRowMetadata } from './reusableRows';
+export type { McpFileManager } from './fileManager';
 
 export interface SDKOptions {
   beePluginUrl?: string
@@ -89,14 +91,16 @@ export interface IMcpSessionData {
 
 /**
  * Optional data for the MCP session `startMcpSession` starts. Called without
- * it, the session uses the top-level `brandRules` of the config and no
- * reusable rows.
+ * it, the session uses the top-level `brandRules` of the config, no reusable
+ * rows and no File Manager.
  */
 export interface StartMcpSessionArgs {
   /** Brand rules for this session, in place of the top-level `brandRules`. */
   brandRules?: BrandRules
   /** Saved rows the agent can search and place in this session. */
   reusableRows?: ReusableRows
+  /** The File Manager folders the agent can use in this session. */
+  fileManager?: McpFileManager
 }
 
 type McpSessionChangeEventType = 'SESSION_STARTED' | 'USER_JOINED' | 'USER_LEFT' | 'SESSION_ENDED'
@@ -3047,6 +3051,7 @@ export interface AddOnAiAgent {
     systemPrompt?: string
     brandRules?: BrandRules
     reusableRows?: ReusableRows
+    fileManager?: McpFileManager
   }
 }
 
