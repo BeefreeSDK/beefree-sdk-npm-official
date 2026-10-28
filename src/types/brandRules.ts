@@ -7,27 +7,42 @@
 
 /* ---- brandRules.schema.json ---- */
 
+export type Color = string
+export type FontFamily = string
+export type Pixels = string
+export type FontWeight = string
+export type Percentage = string
+export type TextAlign = 'left' | 'center' | 'right' | 'justify'
+export type Direction = 'ltr' | 'rtl'
+export type LetterSpacing = string
+export type Padding = string
+export type Align = 'left' | 'center' | 'right'
+export type ZeroOrPixels = string
+export type Border = string
+export type Width = string
+
 export interface BrandRules {
   presets?: {
     blocks?: {
       paragraph?: {
         [k: string]: {
+          label?: string
           description?: string
           properties?: {
-            color?: string
-            fontFamily?: string
-            fontSize?: string
-            fontWeight?: string
-            lineHeight?: string
-            textAlign?: string
-            direction?: string
-            letterSpacing?: string
-            padding?: string
-            mobileFontSize?: string
-            mobileAlign?: string
-            mobilePadding?: string
-            linkColor?: string
-            paragraphSpacing?: string
+            color?: Color
+            fontFamily?: FontFamily
+            fontSize?: Pixels
+            fontWeight?: FontWeight
+            lineHeight?: Percentage
+            textAlign?: TextAlign
+            direction?: Direction
+            letterSpacing?: LetterSpacing
+            padding?: Padding
+            mobileFontSize?: Pixels
+            mobileAlign?: TextAlign
+            mobilePadding?: Padding
+            linkColor?: Color
+            paragraphSpacing?: Pixels
             html?: string
             hideOnMobile?: boolean
             hideOnDesktop?: boolean
@@ -38,23 +53,24 @@ export interface BrandRules {
       }
       title?: {
         [k: string]: {
+          label?: string
           description?: string
           properties?: {
-            color?: string
-            fontFamily?: string
-            fontSize?: string
-            fontWeight?: string
-            lineHeight?: string
-            textAlign?: string
-            direction?: string
-            letterSpacing?: string
-            padding?: string
-            mobileFontSize?: string
-            mobileAlign?: string
-            mobilePadding?: string
-            linkColor?: string
+            color?: Color
+            fontFamily?: FontFamily
+            fontSize?: Pixels
+            fontWeight?: FontWeight
+            lineHeight?: Percentage
+            textAlign?: TextAlign
+            direction?: Direction
+            letterSpacing?: LetterSpacing
+            padding?: Padding
+            mobileFontSize?: Pixels
+            mobileAlign?: TextAlign
+            mobilePadding?: Padding
+            linkColor?: Color
             text?: string
-            headingLevel?: string
+            headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
             hideOnMobile?: boolean
             hideOnDesktop?: boolean
             [k: string]: unknown
@@ -64,25 +80,26 @@ export interface BrandRules {
       }
       list?: {
         [k: string]: {
+          label?: string
           description?: string
           properties?: {
-            color?: string
-            fontFamily?: string
-            fontSize?: string
-            fontWeight?: string
-            lineHeight?: string
-            textAlign?: string
-            direction?: string
-            letterSpacing?: string
-            padding?: string
-            mobileFontSize?: string
-            mobileAlign?: string
-            mobilePadding?: string
-            linkColor?: string
-            liSpacing?: string
-            liIndent?: string
+            color?: Color
+            fontFamily?: FontFamily
+            fontSize?: Pixels
+            fontWeight?: FontWeight
+            lineHeight?: Percentage
+            textAlign?: TextAlign
+            direction?: Direction
+            letterSpacing?: LetterSpacing
+            padding?: Padding
+            mobileFontSize?: Pixels
+            mobileAlign?: TextAlign
+            mobilePadding?: Padding
+            linkColor?: Color
+            liSpacing?: Pixels
+            liIndent?: Pixels
             listStyleType?: string
-            listStylePosition?: string
+            listStylePosition?: 'inside' | 'outside'
             listType?: 'ul' | 'ol'
             items?: string[]
             startFrom?: number
@@ -95,14 +112,15 @@ export interface BrandRules {
       }
       image?: {
         [k: string]: {
+          label?: string
           description?: string
           properties?: {
-            padding?: string
+            padding?: Padding
             src?: string
             alt?: string
             href?: string
-            align?: string
-            borderRadius?: string
+            align?: Align
+            borderRadius?: Padding
             width?: number
             hideOnMobile?: boolean
             hideOnDesktop?: boolean
@@ -113,27 +131,29 @@ export interface BrandRules {
       }
       button?: {
         [k: string]: {
+          label?: string
           description?: string
           properties?: {
-            color?: string
-            fontFamily?: string
-            fontSize?: string
-            fontWeight?: string
-            lineHeight?: string
-            textAlign?: string
-            direction?: string
-            letterSpacing?: string
-            padding?: string
-            mobileFontSize?: string
-            mobileAlign?: string
-            mobilePadding?: string
-            backgroundColor?: string
-            borderRadius?: string
-            borderTop?: string
-            borderRight?: string
-            borderBottom?: string
-            borderLeft?: string
-            width?: string
+            color?: Color
+            fontFamily?: FontFamily
+            fontSize?: Pixels
+            fontWeight?: FontWeight
+            lineHeight?: Percentage
+            textAlign?: TextAlign
+            direction?: Direction
+            letterSpacing?: LetterSpacing
+            padding?: Padding
+            mobileFontSize?: Pixels
+            mobileAlign?: TextAlign
+            mobilePadding?: Padding
+            backgroundColor?: Color
+            borderRadius?: ZeroOrPixels
+            borderTop?: Border
+            borderRight?: Border
+            borderBottom?: Border
+            borderLeft?: Border
+            width?: Width
+            contentPadding?: Padding
             maxWidth?: string
             text?: string
             href?: string
@@ -146,15 +166,40 @@ export interface BrandRules {
       }
       social?: {
         [k: string]: {
+          label?: string
           description?: string
           properties?: {
-            padding?: string
-            textAlign?: string
-            mobileAlign?: string
-            mobilePadding?: string
-            iconStyle?: string
-            iconSpacing?: string
-            align?: string
+            padding?: Padding
+            textAlign?: TextAlign
+            mobileAlign?: TextAlign
+            mobilePadding?: Padding
+            iconStyle?:
+              | 'circle-color'
+              | 'circle-black'
+              | 'circle-blue'
+              | 'circle-gray'
+              | 'circle-dark-gray'
+              | 'colored'
+              | 'default-black'
+              | 'blue'
+              | 'default-gray'
+              | 'dark-gray'
+              | 't-circle-color'
+              | 't-circle-dark-gray'
+              | 't-circle-default-gray'
+              | 't-circle-white'
+              | 't-only-logo-color'
+              | 't-only-logo-default-black'
+              | 't-only-logo-dark-gray'
+              | 't-only-logo-default-gray'
+              | 't-only-logo-white'
+              | 't-outline-circle-color'
+              | 't-outline-circle-dark-black'
+              | 't-outline-circle-dark-gray'
+              | 't-outline-circle-default-gray'
+              | 't-outline-circle-white'
+            iconSpacing?: '5px' | '10px' | '15px' | '20px'
+            align?: 'left' | 'center' | 'right'
             socialIcons?: string[]
             iconSize?: number
             hideOnMobile?: boolean
@@ -166,20 +211,21 @@ export interface BrandRules {
       }
       icon?: {
         [k: string]: {
+          label?: string
           description?: string
           properties?: {
-            padding?: string
-            mobileFontSize?: string
-            mobileAlign?: string
-            mobilePadding?: string
-            color?: string
-            fontFamily?: string
-            fontSize?: string
-            fontWeight?: string
-            textAlign?: string
-            itemSpacing?: string
-            iconSpacing?: string
-            iconHeight?: string
+            padding?: Padding
+            mobileFontSize?: Pixels
+            mobileAlign?: TextAlign
+            mobilePadding?: Padding
+            color?: Color
+            fontFamily?: FontFamily
+            fontSize?: Pixels
+            fontWeight?: FontWeight
+            textAlign?: TextAlign
+            itemSpacing?: '0px' | '5px' | '10px' | '15px' | '20px'
+            iconSpacing?: ZeroOrPixels
+            iconHeight?: Pixels
             hideOnMobile?: boolean
             hideOnDesktop?: boolean
             icons?: {
@@ -200,9 +246,10 @@ export interface BrandRules {
       }
       spacer?: {
         [k: string]: {
+          label?: string
           description?: string
           properties?: {
-            height?: string
+            height?: Pixels
             hideOnMobile?: boolean
             hideOnDesktop?: boolean
             [k: string]: unknown
@@ -212,12 +259,13 @@ export interface BrandRules {
       }
       divider?: {
         [k: string]: {
+          label?: string
           description?: string
           properties?: {
-            padding?: string
-            line?: string
-            width?: string
-            align?: string
+            padding?: Padding
+            line?: Border
+            width?: Percentage
+            align?: Align
             hideOnMobile?: boolean
             hideOnDesktop?: boolean
             [k: string]: unknown
@@ -227,26 +275,27 @@ export interface BrandRules {
       }
       table?: {
         [k: string]: {
+          label?: string
           description?: string
           properties?: {
-            color?: string
-            fontFamily?: string
-            fontSize?: string
-            fontWeight?: string
-            lineHeight?: string
-            textAlign?: string
-            direction?: string
-            letterSpacing?: string
-            padding?: string
-            linkColor?: string
-            backgroundColor?: string
-            border?: string
-            alternateRowBackgroundColor?: string
-            headersFontSize?: string
-            headersFontWeight?: string
-            headersTextAlign?: string
-            headersBackgroundColor?: string
-            headersColor?: string
+            color?: Color
+            fontFamily?: FontFamily
+            fontSize?: Pixels
+            fontWeight?: FontWeight
+            lineHeight?: Percentage
+            textAlign?: TextAlign
+            direction?: Direction
+            letterSpacing?: LetterSpacing
+            padding?: Padding
+            linkColor?: Color
+            backgroundColor?: Color
+            border?: Border
+            alternateRowBackgroundColor?: Color
+            headersFontSize?: Pixels
+            headersFontWeight?: FontWeight
+            headersTextAlign?: TextAlign
+            headersBackgroundColor?: Color
+            headersColor?: Color
             headers?: {
               cells: {
                 html: string
@@ -270,39 +319,40 @@ export interface BrandRules {
       }
       menu?: {
         [k: string]: {
+          label?: string
           description?: string
           properties?: {
-            padding?: string
-            color?: string
-            fontFamily?: string
-            fontSize?: string
-            fontWeight?: string
-            linkColor?: string
-            textAlign?: string
-            letterSpacing?: string
+            padding?: Padding
+            color?: Color
+            fontFamily?: FontFamily
+            fontSize?: Pixels
+            fontWeight?: FontWeight
+            linkColor?: Color
+            textAlign?: TextAlign
+            letterSpacing?: LetterSpacing
             separator?: string
             hideOnMobile?: boolean
             hideOnDesktop?: boolean
             layout?: 'horizontal' | 'vertical'
             itemsSpacing?: {
-              paddingTop?: string
-              paddingRight?: string
-              paddingBottom?: string
-              paddingLeft?: string
+              paddingTop?: ZeroOrPixels
+              paddingRight?: ZeroOrPixels
+              paddingBottom?: ZeroOrPixels
+              paddingLeft?: ZeroOrPixels
               [k: string]: unknown
             }
             hamburger?: {
               mobile?: boolean
-              foregroundColor?: string
-              backgroundColor?: string
+              foregroundColor?: Color
+              backgroundColor?: Color
               iconSize?: string
               iconType?: string
               [k: string]: unknown
             }
             mobileStyles?: {
-              textAlign?: string
-              mobilePadding?: string
-              fontSize?: string
+              textAlign?: TextAlign
+              mobilePadding?: Padding
+              fontSize?: Pixels
               [k: string]: unknown
             }
             items?: {
@@ -320,44 +370,23 @@ export interface BrandRules {
           [k: string]: unknown
         }
       }
-      video?: {
-        [k: string]: {
-          description?: string
-          properties?: {
-            padding?: string
-            mobilePadding?: string
-            src?: string
-            thumbSrc?: string
-            thumbAlt?: string
-            thumbRatio?: string
-            iconSrc?: string
-            iconSize?: string
-            mode?: 'embedded' | 'thumbnail' | 'custom'
-            controls?: boolean
-            loop?: boolean
-            hideOnMobile?: boolean
-            hideOnDesktop?: boolean
-            [k: string]: unknown
-          }
-          [k: string]: unknown
-        }
-      }
       [k: string]: unknown
     }
     rows?: {
       [k: string]: {
+        label?: string
         description?: string
         properties?: {
-          rowBackgroundColor?: string
-          contentAreaBackgroundColor?: string
-          contentAreaBorderLeft?: string
-          contentAreaBorderRight?: string
-          contentAreaBorderTop?: string
-          contentAreaBorderBottom?: string
-          contentAreaBorderRadius?: string
-          contentAreaPadding?: string
-          columnsSpacing?: string
-          columnsBorderRadius?: string
+          rowBackgroundColor?: Color
+          contentAreaBackgroundColor?: Color
+          contentAreaBorderLeft?: Border
+          contentAreaBorderRight?: Border
+          contentAreaBorderTop?: Border
+          contentAreaBorderBottom?: Border
+          contentAreaBorderRadius?: Padding
+          contentAreaPadding?: Padding
+          columnsSpacing?: Pixels
+          columnsBorderRadius?: Padding
           hideOnMobile?: boolean
           hideOnDesktop?: boolean
           verticalAlign?: 'top' | 'middle' | 'bottom'
@@ -371,12 +400,12 @@ export interface BrandRules {
           }
           columns?: {
             weight: number
-            columnBackgroundColor?: string
-            columnPadding?: string
-            columnBorderLeft?: string
-            columnBorderRight?: string
-            columnBorderTop?: string
-            columnBorderBottom?: string
+            columnBackgroundColor?: Color
+            columnPadding?: Padding
+            columnBorderLeft?: Border
+            columnBorderRight?: Border
+            columnBorderTop?: Border
+            columnBorderBottom?: Border
             [k: string]: unknown
           }[]
           [k: string]: unknown
@@ -386,14 +415,15 @@ export interface BrandRules {
     }
     columns?: {
       [k: string]: {
+        label?: string
         description?: string
         properties?: {
-          columnBackgroundColor?: string
-          columnPadding?: string
-          columnBorderLeft?: string
-          columnBorderRight?: string
-          columnBorderTop?: string
-          columnBorderBottom?: string
+          columnBackgroundColor?: Color
+          columnPadding?: Padding
+          columnBorderLeft?: Border
+          columnBorderRight?: Border
+          columnBorderTop?: Border
+          columnBorderBottom?: Border
           [k: string]: unknown
         }
         [k: string]: unknown
@@ -401,13 +431,14 @@ export interface BrandRules {
     }
     settings?: {
       [k: string]: {
+        label?: string
         description?: string
         properties?: {
-          contentAreaWidth?: string
-          contentAreaAlignment?: string
-          backgroundColor?: string
+          contentAreaWidth?: Pixels
+          contentAreaAlignment?: 'left' | 'center'
+          backgroundColor?: Color
           contentAreaBackgroundColor?: string
-          fontFamily?: string
+          fontFamily?: FontFamily
           linkColor?: string
           [k: string]: unknown
         }
@@ -430,7 +461,6 @@ export interface BrandRules {
         | 'divider'
         | 'table'
         | 'menu'
-        | 'video'
       )[]
       noUpdate?: (
         | 'paragraph'
@@ -444,7 +474,6 @@ export interface BrandRules {
         | 'divider'
         | 'table'
         | 'menu'
-        | 'video'
       )[]
       noDelete?: (
         | 'paragraph'
