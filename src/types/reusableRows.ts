@@ -16,6 +16,15 @@ import type { BeePluginFont } from './bee'
  */
 export interface ReusableRows {
   entries: ReusableRow[]
+  /**
+   * The metadata field that holds your own key for each row, such as
+   * `'customUUID'`. Max 64 characters. When set, every row must carry it,
+   * with a unique value of at most 128 characters that does not start with
+   * `rr_`, and the agent places a row by that key, also when it finds the key
+   * in a template or email in its context. Without it, rows are identified by
+   * their content.
+   */
+  rowIdentifierLabel?: string
 }
 
 /**
