@@ -51,7 +51,7 @@ export interface ReusableRow {
 export interface ReusableRowMetadata {
   /** Shown to the agent and searched. Non-empty, max 200 characters. */
   name: string
-  /** A category name or id. As a string, non-empty and max 200 characters. */
+  /** A category name or id. As a string, max 200 characters. */
   category?: string | number
   /**
    * One line on what the row is for. Highly recommended: the agent searches
