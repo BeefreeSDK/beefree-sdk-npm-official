@@ -105,6 +105,11 @@ export enum SidebarTabs {
   ROWS = 'rows',
 }
 
+export enum CheckerTabs {
+  QUALITY = 'quality',
+  BRAND = 'brand',
+}
+
 export type ExecCommand = Promise<IExecCommandReturnValue>
 
 export enum ExecCommands {
@@ -113,6 +118,8 @@ export enum ExecCommands {
   HIGHLIGHT = 'highlight',
   FOCUS = 'focus',
   TAB = 'tab',
+  TOGGLE_AGENT = 'toggleAgent',
+  TOGGLE_CHECKER = 'toggleChecker',
 }
 
 export interface IExecCommandOptions {
@@ -123,7 +130,7 @@ export interface IExecCommandOptions {
     module?: number
     key?: string
     selector?: string
-  } | SidebarTabs
+  } | SidebarTabs | CheckerTabs
 }
 
 export enum LoadWorkspaceOptions {
