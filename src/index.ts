@@ -22,6 +22,7 @@ import {
   LoadConfigOptions,
   ITemplateTranslationData,
   IMcpSessionData,
+  StartMcpSessionArgs,
 } from './types/bee'
 import beeActions, { mockedEmptyToken, BEEJS_URL, API_AUTH_URL } from './utils/Constants'
 import { fetchToken } from './services/api'
@@ -256,7 +257,8 @@ class Bee {
 
   resetTemplateTranslation = (args: ILanguage) => this.executeAction<Promise<ITemplateTranslationData>>(RESET_TEMPLATE_TRANSLATION, args)
 
-  startMcpSession = () => this.executeAction<Promise<IMcpSessionData>>(START_MCP_SESSION)
+  startMcpSession = (args?: StartMcpSessionArgs) =>
+    this.executeAction<Promise<IMcpSessionData>>(START_MCP_SESSION, args)
 }
 
 export default Bee
