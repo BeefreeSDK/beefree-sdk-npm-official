@@ -1355,7 +1355,19 @@ export type BeePluginConfigurationsHooks = {
   },
   getRows?: {
     handler: BeePluginContentDialogHandler<IPluginRow[], undefined, {handle: string; value: string}>
+  },
+  aiAgentBeforeSend?: {
+    handler: BeePluginContentDialogHandler<IAiAgentBeforeSendResult, undefined, IAiAgentBeforeSendArgs>
   }
+}
+
+export type IAiAgentBeforeSendArgs = {
+  promptText: string
+}
+
+export type IAiAgentBeforeSendResult = {
+  allowed: boolean
+  message?: string
 }
 
 export enum OnCommentChangeEnum {
@@ -3040,6 +3052,7 @@ export interface AddOnAiAgent {
     maxIterations?: number
     systemPrompt?: string
     brandRules?: BrandRules
+    beforeSendTimeout?: number
   }
 }
 
