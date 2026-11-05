@@ -3054,6 +3054,7 @@ export interface AddOnAiAgent {
     systemPrompt?: string
     brandRules?: BrandRules
     beforeSendTimeout?: number
+    submitOnEnterKey?: boolean
   }
 }
 
