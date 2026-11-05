@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.8.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.7.2...v11.8.0) (2026-11-05)
+
+
+### Features
+
+* **api:** align checker config and brand rules types ([3baf83b](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/3baf83b62f8c3590872dbe209f89cfd9fc754c3f))
+* **BEE-12549:** add promptStarters to the ai-agent addon settings ([e7ca013](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/e7ca013541cd00bf61f3eeaa7f520ada1d814ab3))
+* **BEE-12571:** add aiAgentBeforeSend hook and beforeSendTimeout types ([0ae48c0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/0ae48c0c61ecd37cbb9347c18d0d531649abee1a))
+* **BEE-12719:** add submitOnEnterKey to the AI agent addon settings ([e0fa36e](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/e0fa36e08abbe19a6584fef7eed4d12bdfc1255c))
+* **types:** add commands to ExecCommands ([3d46a3a](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/3d46a3a83cfa7b67f7d3e019e7a6c30fe6763f59))
+* **types:** add fileManager to startMcpSession and the AI agent addon (BEEPRO-9708) ([9df857c](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/9df857c7443351ccd0540bd44d50b1f3b40edbd5))
+* **types:** add reusableRows to the AI agent addon and arguments to startMcpSession (BEE-12596) ([571f324](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/571f32408305d5b990d1211883e40a3da409fef8))
+* **types:** reusable rows metadata is name, category, description and tags (BEE-12596) ([20082e9](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/20082e99dd1646350a2b82c0dc89832556fbc1c3))
+* **types:** rowIdentifierLabel on the reusable rows library (BEE-12467) ([e14b412](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/e14b41241619ac9583e3b0fad8e9c5fd0294c438))
+
+
+### Bug Fixes
+
+* **types:** align Brand Rules references and video permissions ([a99ff26](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/a99ff2633615351e4be272950334535edae5350f))
+* **types:** allow an empty reusable row category (BEE-12596) ([3c9e7b2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/3c9e7b2cac30118fb9d5128dc320b8adfcfd5f9d))
+
 ### [11.7.2](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.7.2-BEEPRO-9678.0...v11.7.2) (2026-10-20)
 
 ### [11.7.2-BEEPRO-9678.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.7.2-fix-BEEPRO-9678.0...v11.7.2-BEEPRO-9678.0) (2026-10-13)
