@@ -3049,6 +3049,7 @@ export interface AddOnAiAgent {
      */
     initialMessages?: unknown[]
     loadingPhrases?: string[]
+    promptStarters?: string[]
     maxIterations?: number
     systemPrompt?: string
     brandRules?: BrandRules
