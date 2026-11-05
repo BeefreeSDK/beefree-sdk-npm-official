@@ -105,6 +105,11 @@ export enum SidebarTabs {
   ROWS = 'rows',
 }
 
+export enum CheckerTabs {
+  QUALITY = 'quality',
+  BRAND = 'brand',
+}
+
 export type ExecCommand = Promise<IExecCommandReturnValue>
 
 export enum ExecCommands {
@@ -113,6 +118,8 @@ export enum ExecCommands {
   HIGHLIGHT = 'highlight',
   FOCUS = 'focus',
   TAB = 'tab',
+  TOGGLE_AGENT = 'toggleAgent',
+  TOGGLE_CHECKER = 'toggleChecker',
 }
 
 export interface IExecCommandOptions {
@@ -123,7 +130,7 @@ export interface IExecCommandOptions {
     module?: number
     key?: string
     selector?: string
-  } | SidebarTabs
+  } | SidebarTabs | CheckerTabs
 }
 
 export enum LoadWorkspaceOptions {
@@ -144,6 +151,7 @@ export enum BeePluginErrorCodes {
   AI_AGENT_MESSAGES_CHANGED = 1010,
   FEATURE_NOT_AVAILABLE_FOR_PLAN = 1704,
   FEATURE_NOT_AVAILABLE_FOR_WORKSPACE = 1707,
+  INVALID_BRAND_RULES = 1770,
   GENERIC_BUMP_ERROR = 2000,
   INVALID_TARGET_VERSION = 2100,
   VALIDATION_ERROR_DETAIL = 2200,
@@ -3132,6 +3140,7 @@ export interface QualityCheckTypeConfig {
 }
 
 export interface QualityCheckConfig {
+  enabled?: boolean
   email?: QualityCheckTypeConfig
   page?: QualityCheckTypeConfig
   row?: QualityCheckTypeConfig
@@ -3228,6 +3237,7 @@ export interface IBeeConfig {
     languages: MetadataLanguage[]
   }
   qualityCheck?: QualityCheckConfig
+  brandCheck?: { enabled?: boolean }
 }
 
 export interface IBeeConfigFileManager {
