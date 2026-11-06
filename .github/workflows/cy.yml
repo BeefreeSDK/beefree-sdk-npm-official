@@ -69,6 +69,9 @@ jobs:
         run: yarn --frozen-lockfile
         if: steps.cache-yarn-cache.outputs.cache-hit != 'true' || steps.cache-node-modules.outputs.cache-hit != 'true'
 
+      - name: Check Brand Rules schema and types
+        run: yarn test:brand-rules && yarn check:brand-rules
+
       - name: Unit tests
         run: yarn test --all --cacheDirectory .jest-cache --watchAll false
 

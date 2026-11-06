@@ -6,7 +6,8 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "files": [
-    "dist"
+    "dist",
+    "schemas/brandRules.schema.json"
   ],
   "husky": {
     "hooks": {
@@ -21,6 +22,9 @@
   "scripts": {
     "start": "rollup -c rollup.serve.config.mjs -w",
     "test": "jest",
+    "test:brand-rules": "node --test scripts/brand-rules.test.mjs",
+    "generate:brand-rules": "node scripts/generate-brand-rules.mjs",
+    "check:brand-rules": "node scripts/generate-brand-rules.mjs --check",
     "tsc": "tsc",
     "clean": "rimraf dist",
     "prebuild": "yarn lint && yarn clean",
@@ -69,6 +73,7 @@
     "eslint-plugin-import": "^2.27.5",
     "husky": "9.1.7",
     "jest": "^29.5.0",
+    "json-schema-to-typescript": "15.0.4",
     "lint-staged": "13.2.1",
     "rimraf": "^5.0.10",
     "rollup": "^4.44.1",
