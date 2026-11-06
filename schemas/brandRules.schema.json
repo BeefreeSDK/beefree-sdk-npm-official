@@ -1,0 +1,1504 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "brandRulesSchema",
+  "type": "object",
+  "definitions": {
+    "fontWeight": {
+      "type": "string",
+      "pattern": "^(?:[1-9][0-9]{0,2}|1000)(?![\\s\\S])"
+    },
+    "pixels": {
+      "type": "string",
+      "pattern": "^[0-9]+px(?![\\s\\S])"
+    },
+    "zeroOrPixels": {
+      "type": "string",
+      "pattern": "^(?:0|[0-9]+px)(?![\\s\\S])"
+    },
+    "percentage": {
+      "type": "string",
+      "pattern": "^[0-9]+%(?![\\s\\S])"
+    },
+    "padding": {
+      "type": "string",
+      "pattern": "^(?:0|[0-9]+px)(?:\\s+(?:0|[0-9]+px)){0,3}(?![\\s\\S])"
+    },
+    "letterSpacing": {
+      "type": "string",
+      "pattern": "^-?[0-9]+px(?![\\s\\S])"
+    },
+    "color": {
+      "type": "string",
+      "pattern": "^(?:#[0-9a-fA-F]{6}|[tT][rR][aA][nN][sS][pP][aA][rR][eE][nN][tT])(?![\\s\\S])"
+    },
+    "border": {
+      "type": "string",
+      "pattern": "^[0-9]+px\\s+(?:solid|dashed|dotted)\\s+(?:#[0-9a-fA-F]{6}|transparent)(?![\\s\\S])"
+    },
+    "textAlign": {
+      "type": "string",
+      "enum": [
+        "left",
+        "center",
+        "right",
+        "justify"
+      ]
+    },
+    "align": {
+      "type": "string",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "ltr",
+        "rtl"
+      ]
+    },
+    "width": {
+      "type": "string",
+      "pattern": "^(?:auto|[0-9]+(?:px|%))(?![\\s\\S])"
+    },
+    "maxWidth": {
+      "type": "string",
+      "pattern": "^(?:none|[0-9]+(?:px|%))(?![\\s\\S])"
+    },
+    "fontFamily": {
+      "$comment": "Must exactly match a fontFamily available in the editor configured font catalog (default fonts or editorFonts.customFonts). Validated at runtime; loading font CSS alone is not sufficient.",
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "properties": {
+    "presets": {
+      "$comment": "Groups contain dictionaries keyed by integrator-defined preset IDs. Each preset contains optional label, description and properties. label is Brand Check only; description is MCP/Copilot guidance, not a matching rule. Properties are shared unless marked MCP/Copilot only. Unknown extension fields remain accepted.",
+      "type": "object",
+      "properties": {
+        "blocks": {
+          "type": "object",
+          "properties": {
+            "paragraph": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "fontFamily": {
+                        "$ref": "#/definitions/fontFamily"
+                      },
+                      "fontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "fontWeight": {
+                        "$ref": "#/definitions/fontWeight"
+                      },
+                      "lineHeight": {
+                        "$ref": "#/definitions/percentage"
+                      },
+                      "textAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "direction": {
+                        "$ref": "#/definitions/direction"
+                      },
+                      "letterSpacing": {
+                        "$ref": "#/definitions/letterSpacing"
+                      },
+                      "padding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "mobileFontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "mobileAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "mobilePadding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "linkColor": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "paragraphSpacing": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "html": {
+                        "$comment": "MCP/Copilot only. Paragraph content; ignored by Brand Check.",
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "hideOnMobile": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "title": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "fontFamily": {
+                        "$ref": "#/definitions/fontFamily"
+                      },
+                      "fontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "fontWeight": {
+                        "$ref": "#/definitions/fontWeight"
+                      },
+                      "lineHeight": {
+                        "$ref": "#/definitions/percentage"
+                      },
+                      "textAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "direction": {
+                        "$ref": "#/definitions/direction"
+                      },
+                      "letterSpacing": {
+                        "$ref": "#/definitions/letterSpacing"
+                      },
+                      "padding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "mobileFontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "mobileAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "mobilePadding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "linkColor": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "text": {
+                        "$comment": "MCP/Copilot only. Title content; ignored by Brand Check.",
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "headingLevel": {
+                        "type": "string",
+                        "enum": [
+                          "h1",
+                          "h2",
+                          "h3",
+                          "h4",
+                          "h5",
+                          "h6"
+                        ]
+                      },
+                      "hideOnMobile": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "list": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "fontFamily": {
+                        "$ref": "#/definitions/fontFamily"
+                      },
+                      "fontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "fontWeight": {
+                        "$ref": "#/definitions/fontWeight"
+                      },
+                      "lineHeight": {
+                        "$ref": "#/definitions/percentage"
+                      },
+                      "textAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "direction": {
+                        "$ref": "#/definitions/direction"
+                      },
+                      "letterSpacing": {
+                        "$ref": "#/definitions/letterSpacing"
+                      },
+                      "padding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "mobileFontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "mobileAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "mobilePadding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "linkColor": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "liSpacing": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "liIndent": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "listStyleType": {
+                        "$comment": "MCP/Copilot only. List marker type; ignored by Brand Check.",
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "listStylePosition": {
+                        "$comment": "MCP/Copilot only. No editor sidebar control; ignored by Brand Check.",
+                        "type": "string",
+                        "enum": [
+                          "inside",
+                          "outside"
+                        ]
+                      },
+                      "listType": {
+                        "$comment": "MCP/Copilot only. List tag; ignored by Brand Check.",
+                        "type": "string",
+                        "enum": [
+                          "ul",
+                          "ol"
+                        ]
+                      },
+                      "items": {
+                        "$comment": "MCP/Copilot only. Entire list content array; ignored by Brand Check.",
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "startFrom": {
+                        "$comment": "MCP/Copilot only. Numbering start; ignored by Brand Check.",
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "hideOnMobile": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "image": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "padding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "src": {
+                        "$comment": "MCP/Copilot only. Image source; ignored by Brand Check.",
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "alt": {
+                        "$comment": "MCP/Copilot only. Alternative text; ignored by Brand Check.",
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "href": {
+                        "$comment": "MCP/Copilot only. Image link; ignored by Brand Check.",
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "align": {
+                        "$ref": "#/definitions/align"
+                      },
+                      "borderRadius": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "width": {
+                        "$comment": "MCP/Copilot only. Image percentage width; ignored by Brand Check.",
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 100
+                      },
+                      "hideOnMobile": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "button": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "fontFamily": {
+                        "$ref": "#/definitions/fontFamily"
+                      },
+                      "fontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "fontWeight": {
+                        "$ref": "#/definitions/fontWeight"
+                      },
+                      "lineHeight": {
+                        "$ref": "#/definitions/percentage"
+                      },
+                      "textAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "direction": {
+                        "$ref": "#/definitions/direction"
+                      },
+                      "letterSpacing": {
+                        "$ref": "#/definitions/letterSpacing"
+                      },
+                      "padding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "mobileFontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "mobileAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "mobilePadding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "backgroundColor": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "borderRadius": {
+                        "$ref": "#/definitions/zeroOrPixels"
+                      },
+                      "borderTop": {
+                        "$ref": "#/definitions/border"
+                      },
+                      "borderRight": {
+                        "$ref": "#/definitions/border"
+                      },
+                      "borderBottom": {
+                        "$ref": "#/definitions/border"
+                      },
+                      "borderLeft": {
+                        "$ref": "#/definitions/border"
+                      },
+                      "width": {
+                        "$ref": "#/definitions/width"
+                      },
+                      "contentPadding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "maxWidth": {
+                        "$comment": "MCP/Copilot only. No editor sidebar control; ignored by Brand Check.",
+                        "$ref": "#/definitions/maxWidth"
+                      },
+                      "text": {
+                        "$comment": "MCP/Copilot only. Button text; ignored by Brand Check.",
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "href": {
+                        "$comment": "MCP/Copilot only. Button link; ignored by Brand Check.",
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "hideOnMobile": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "social": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "padding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "textAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "mobileAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "mobilePadding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "iconStyle": {
+                        "type": "string",
+                        "enum": [
+                          "circle-color",
+                          "circle-black",
+                          "circle-blue",
+                          "circle-gray",
+                          "circle-dark-gray",
+                          "colored",
+                          "default-black",
+                          "blue",
+                          "default-gray",
+                          "dark-gray",
+                          "t-circle-color",
+                          "t-circle-dark-gray",
+                          "t-circle-default-gray",
+                          "t-circle-white",
+                          "t-only-logo-color",
+                          "t-only-logo-default-black",
+                          "t-only-logo-dark-gray",
+                          "t-only-logo-default-gray",
+                          "t-only-logo-white",
+                          "t-outline-circle-color",
+                          "t-outline-circle-dark-black",
+                          "t-outline-circle-dark-gray",
+                          "t-outline-circle-default-gray",
+                          "t-outline-circle-white"
+                        ]
+                      },
+                      "iconSpacing": {
+                        "type": "string",
+                        "enum": [
+                          "5px",
+                          "10px",
+                          "15px",
+                          "20px"
+                        ]
+                      },
+                      "align": {
+                        "$comment": "MCP/Copilot only. Alias for textAlign; ignored by Brand Check. Use textAlign for Brand Check presets.",
+                        "$ref": "#/definitions/align"
+                      },
+                      "socialIcons": {
+                        "$comment": "MCP/Copilot only. Entire social network selection array; ignored by Brand Check.",
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "uniqueItems": true
+                      },
+                      "iconSize": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "hideOnMobile": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "icon": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "padding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "mobileFontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "mobileAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "mobilePadding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "color": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "fontFamily": {
+                        "$ref": "#/definitions/fontFamily"
+                      },
+                      "fontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "fontWeight": {
+                        "$ref": "#/definitions/fontWeight"
+                      },
+                      "textAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "itemSpacing": {
+                        "type": "string",
+                        "enum": [
+                          "0px",
+                          "5px",
+                          "10px",
+                          "15px",
+                          "20px"
+                        ]
+                      },
+                      "iconSpacing": {
+                        "$ref": "#/definitions/zeroOrPixels"
+                      },
+                      "iconHeight": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "hideOnMobile": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "icons": {
+                        "$comment": "MCP/Copilot only. Entire array including nested content and styling; ignored by Brand Check.",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "src"
+                          ],
+                          "properties": {
+                            "src": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "alt": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "text": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "textPosition": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "width": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "height": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "href": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "target": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "spacer": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "height": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "hideOnMobile": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "divider": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "padding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "line": {
+                        "$ref": "#/definitions/border"
+                      },
+                      "width": {
+                        "$ref": "#/definitions/percentage"
+                      },
+                      "align": {
+                        "$ref": "#/definitions/align"
+                      },
+                      "hideOnMobile": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "table": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "fontFamily": {
+                        "$ref": "#/definitions/fontFamily"
+                      },
+                      "fontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "fontWeight": {
+                        "$ref": "#/definitions/fontWeight"
+                      },
+                      "lineHeight": {
+                        "$ref": "#/definitions/percentage"
+                      },
+                      "textAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "direction": {
+                        "$ref": "#/definitions/direction"
+                      },
+                      "letterSpacing": {
+                        "$ref": "#/definitions/letterSpacing"
+                      },
+                      "padding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "linkColor": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "backgroundColor": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "border": {
+                        "$ref": "#/definitions/border"
+                      },
+                      "alternateRowBackgroundColor": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "headersFontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "headersFontWeight": {
+                        "$ref": "#/definitions/fontWeight"
+                      },
+                      "headersTextAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "headersBackgroundColor": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "headersColor": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "headers": {
+                        "$comment": "MCP/Copilot only. Entire table header content array; ignored by Brand Check.",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "cells"
+                          ],
+                          "properties": {
+                            "cells": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "html"
+                                ],
+                                "properties": {
+                                  "html": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "rows": {
+                        "$comment": "MCP/Copilot only. Entire table body content array; ignored by Brand Check.",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "cells"
+                          ],
+                          "properties": {
+                            "cells": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "html"
+                                ],
+                                "properties": {
+                                  "html": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "hideOnMobile": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "menu": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "padding": {
+                        "$ref": "#/definitions/padding"
+                      },
+                      "color": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "fontFamily": {
+                        "$ref": "#/definitions/fontFamily"
+                      },
+                      "fontSize": {
+                        "$ref": "#/definitions/pixels"
+                      },
+                      "fontWeight": {
+                        "$ref": "#/definitions/fontWeight"
+                      },
+                      "linkColor": {
+                        "$ref": "#/definitions/color"
+                      },
+                      "textAlign": {
+                        "$ref": "#/definitions/textAlign"
+                      },
+                      "letterSpacing": {
+                        "$ref": "#/definitions/letterSpacing"
+                      },
+                      "separator": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "hideOnMobile": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                        "type": "boolean"
+                      },
+                      "layout": {
+                        "type": "string",
+                        "enum": [
+                          "horizontal",
+                          "vertical"
+                        ]
+                      },
+                      "itemsSpacing": {
+                        "type": "object",
+                        "properties": {
+                          "paddingTop": {
+                            "$ref": "#/definitions/zeroOrPixels"
+                          },
+                          "paddingRight": {
+                            "$ref": "#/definitions/zeroOrPixels"
+                          },
+                          "paddingBottom": {
+                            "$ref": "#/definitions/zeroOrPixels"
+                          },
+                          "paddingLeft": {
+                            "$ref": "#/definitions/zeroOrPixels"
+                          }
+                        }
+                      },
+                      "hamburger": {
+                        "type": "object",
+                        "properties": {
+                          "mobile": {
+                            "type": "boolean"
+                          },
+                          "foregroundColor": {
+                            "$ref": "#/definitions/color"
+                          },
+                          "backgroundColor": {
+                            "$ref": "#/definitions/color"
+                          },
+                          "iconSize": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "iconType": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      },
+                      "mobileStyles": {
+                        "type": "object",
+                        "properties": {
+                          "textAlign": {
+                            "$ref": "#/definitions/textAlign"
+                          },
+                          "mobilePadding": {
+                            "$ref": "#/definitions/padding"
+                          },
+                          "fontSize": {
+                            "$ref": "#/definitions/pixels"
+                          }
+                        }
+                      },
+                      "items": {
+                        "$comment": "MCP/Copilot only. Entire menu items array including text and links; ignored by Brand Check.",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "text": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "link": {
+                              "type": "object",
+                              "properties": {
+                                "href": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "target": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "title": {
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "rows": {
+          "type": "object",
+          "propertyNames": {
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 500
+              },
+              "properties": {
+                "type": "object",
+                "properties": {
+                  "rowBackgroundColor": {
+                    "$ref": "#/definitions/color"
+                  },
+                  "contentAreaBackgroundColor": {
+                    "$ref": "#/definitions/color"
+                  },
+                  "contentAreaBorderLeft": {
+                    "$ref": "#/definitions/border"
+                  },
+                  "contentAreaBorderRight": {
+                    "$ref": "#/definitions/border"
+                  },
+                  "contentAreaBorderTop": {
+                    "$ref": "#/definitions/border"
+                  },
+                  "contentAreaBorderBottom": {
+                    "$ref": "#/definitions/border"
+                  },
+                  "contentAreaBorderRadius": {
+                    "$ref": "#/definitions/padding"
+                  },
+                  "contentAreaPadding": {
+                    "$ref": "#/definitions/padding"
+                  },
+                  "columnsSpacing": {
+                    "$ref": "#/definitions/pixels"
+                  },
+                  "columnsBorderRadius": {
+                    "$ref": "#/definitions/padding"
+                  },
+                  "hideOnMobile": {
+                    "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                    "type": "boolean"
+                  },
+                  "hideOnDesktop": {
+                    "$comment": "MCP/Copilot only. Visibility; ignored by Brand Check.",
+                    "type": "boolean"
+                  },
+                  "verticalAlign": {
+                    "type": "string",
+                    "enum": [
+                      "top",
+                      "middle",
+                      "bottom"
+                    ]
+                  },
+                  "rowBackgroundImage": {
+                    "$comment": "MCP/Copilot only. Entire background-image object; ignored by Brand Check.",
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "repeat": {
+                        "type": "boolean"
+                      },
+                      "center": {
+                        "type": "boolean"
+                      },
+                      "fit": {
+                        "type": "boolean"
+                      },
+                      "width": {
+                        "type": "string",
+                        "enum": [
+                          "row",
+                          "content area"
+                        ]
+                      }
+                    }
+                  },
+                  "columns": {
+                    "$comment": "MCP/Copilot only. Entire column-structure array; ignored by Brand Check. Standalone presets.columns is also MCP-only; row-owned columnsSpacing and columnsBorderRadius remain shared.",
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "weight"
+                      ],
+                      "properties": {
+                        "weight": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 12
+                        },
+                        "columnBackgroundColor": {
+                          "$ref": "#/definitions/color"
+                        },
+                        "columnPadding": {
+                          "$ref": "#/definitions/padding"
+                        },
+                        "columnBorderLeft": {
+                          "$ref": "#/definitions/border"
+                        },
+                        "columnBorderRight": {
+                          "$ref": "#/definitions/border"
+                        },
+                        "columnBorderTop": {
+                          "$ref": "#/definitions/border"
+                        },
+                        "columnBorderBottom": {
+                          "$ref": "#/definitions/border"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "columns": {
+          "$comment": "MCP/Copilot only. Entire standalone column preset group; ignored by Brand Check.",
+          "type": "object",
+          "propertyNames": {
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 500
+              },
+              "properties": {
+                "type": "object",
+                "properties": {
+                  "columnBackgroundColor": {
+                    "$ref": "#/definitions/color"
+                  },
+                  "columnPadding": {
+                    "$ref": "#/definitions/padding"
+                  },
+                  "columnBorderLeft": {
+                    "$ref": "#/definitions/border"
+                  },
+                  "columnBorderRight": {
+                    "$ref": "#/definitions/border"
+                  },
+                  "columnBorderTop": {
+                    "$ref": "#/definitions/border"
+                  },
+                  "columnBorderBottom": {
+                    "$ref": "#/definitions/border"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "settings": {
+          "type": "object",
+          "propertyNames": {
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 500
+              },
+              "properties": {
+                "type": "object",
+                "properties": {
+                  "contentAreaWidth": {
+                    "$ref": "#/definitions/pixels"
+                  },
+                  "contentAreaAlignment": {
+                    "type": "string",
+                    "enum": [
+                      "left",
+                      "center"
+                    ]
+                  },
+                  "backgroundColor": {
+                    "$ref": "#/definitions/color"
+                  },
+                  "contentAreaBackgroundColor": {
+                    "$comment": "MCP/Copilot only. Ignored by Brand Check.",
+                    "$ref": "#/definitions/color"
+                  },
+                  "fontFamily": {
+                    "$ref": "#/definitions/fontFamily"
+                  },
+                  "linkColor": {
+                    "$comment": "MCP/Copilot only. Ignored by Brand Check.",
+                    "$ref": "#/definitions/color"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "permissions": {
+      "$comment": "MCP/Copilot only. AI operation restrictions; ignored by Brand Check, not human-editor permissions or co-edit locks.",
+      "type": "object",
+      "properties": {
+        "blocks": {
+          "type": "object",
+          "properties": {
+            "noAdd": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "paragraph",
+                  "title",
+                  "list",
+                  "image",
+                  "button",
+                  "social",
+                  "icon",
+                  "spacer",
+                  "divider",
+                  "table",
+                  "menu"
+                ]
+              },
+              "uniqueItems": true
+            },
+            "noUpdate": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "paragraph",
+                  "title",
+                  "list",
+                  "image",
+                  "button",
+                  "social",
+                  "icon",
+                  "spacer",
+                  "divider",
+                  "table",
+                  "menu"
+                ]
+              },
+              "uniqueItems": true
+            },
+            "noDelete": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "paragraph",
+                  "title",
+                  "list",
+                  "image",
+                  "button",
+                  "social",
+                  "icon",
+                  "spacer",
+                  "divider",
+                  "table",
+                  "menu",
+                  "video"
+                ]
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      }
+    },
+    "limits": {
+      "$comment": "MCP/Copilot only. AI content limits; ignored by Brand Check.",
+      "type": "object",
+      "properties": {
+        "rows": {
+          "type": "object",
+          "properties": {
+            "max": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "min": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "columns": {
+          "type": "object",
+          "properties": {
+            "maxPerRow": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            }
+          }
+        },
+        "blocks": {
+          "type": "object",
+          "properties": {
+            "max": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "maxPerType": {
+              "type": "object",
+              "properties": {
+                "paragraph": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "title": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "list": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "image": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "button": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "social": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "icon": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "spacer": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "divider": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "table": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "menu": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "video": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

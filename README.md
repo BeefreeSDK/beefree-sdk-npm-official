@@ -139,6 +139,11 @@ const beeConfig = {
 }
 ```
 
+## Brand Rules schema
+
+The package includes the shared Brand Rules JSON Schema at
+`@beefree.io/sdk/schemas/brandRules.schema.json`.
+
 ## Template JSON
 > It requires an initial template to start editing. Learn more [here](http://help.beefree.io/hc/en-us/articles/203135882-Sample-code-and-templates)
 
