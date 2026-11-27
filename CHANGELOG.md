@@ -9,6 +9,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 * bundle Brand Rules schema and generate types locally ([87a387c](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/87a387c5b9131411a84601da776d46d816515795))
 
+
+### Security
+
+* **BEE-12975:** harden npm package publishing: releases are now published from GitHub Actions via npm trusted publishing (OIDC) with signed provenance attestations, replacing the long-lived npm token ([948f55e](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/948f55e2d3db20c99e8058b000cdbecc44e450e4))
+
 ## [11.8.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.7.2...v11.8.0) (2026-11-05)
 
 
