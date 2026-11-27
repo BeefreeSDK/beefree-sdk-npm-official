@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.9.0-beta.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.8.0...v11.9.0-beta.0) (2026-11-27)
+
+
+### Features
+
+* bundle Brand Rules schema and generate types locally ([87a387c](https://github.com/BeefreeSDK/beefree-sdk-npm-official/commit/87a387c5b9131411a84601da776d46d816515795))
+
 ## [11.8.0](https://github.com/BeefreeSDK/beefree-sdk-npm-official/compare/v11.7.2...v11.8.0) (2026-11-05)
 
 
